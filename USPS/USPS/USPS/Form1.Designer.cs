@@ -226,6 +226,7 @@
             this.requestRefill.TabIndex = 24;
             this.requestRefill.Text = "Request Refill";
             this.requestRefill.UseVisualStyleBackColor = true;
+            this.requestRefill.Click += new System.EventHandler(this.requestRefill_Click);
             // 
             // Save
             // 

@@ -22,7 +22,8 @@ namespace USPS
         public Form1()
         {
             InitializeComponent();
-            
+            //Change title bar name from 'Form1' to 'USPS'
+            this.Text = "USPS";
             //hide currently unused elements
             panel2.Visible = false;
             Previous.Visible = false;
@@ -160,7 +161,7 @@ namespace USPS
         {
             if (!editCheck)
             {
-                DialogResult dR = MessageBox.Show("Edit your information?", "Delete", MessageBoxButtons.OKCancel);
+                DialogResult dR = MessageBox.Show("Edit your information?", "System Message", MessageBoxButtons.OKCancel);
                 if (dR == DialogResult.OK)
                 {
                     editCheck = true;
@@ -194,7 +195,7 @@ namespace USPS
         {
             if (saveCheck)
             {
-                DialogResult dR = MessageBox.Show("Save your information?", "Delete", MessageBoxButtons.OKCancel);
+                DialogResult dR = MessageBox.Show("Save your information?", "System Message", MessageBoxButtons.OKCancel);
                 if (dR == DialogResult.OK)
                 {
                     saveCheck = false;

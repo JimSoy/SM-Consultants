@@ -106,6 +106,7 @@
             this.uspsLogo.Margin = new System.Windows.Forms.Padding(2);
             this.uspsLogo.Name = "uspsLogo";
             this.uspsLogo.Size = new System.Drawing.Size(155, 125);
+            this.uspsLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.uspsLogo.TabIndex = 6;
             this.uspsLogo.TabStop = false;
             // 

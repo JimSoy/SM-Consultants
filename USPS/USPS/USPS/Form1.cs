@@ -46,11 +46,6 @@ namespace USPS
                 //shift 2nd panel to first panel position
                 panel2.Location = new System.Drawing.Point(27, 29);
             }
-            else
-            {
-                panel1.Visible = true;
-                panel2.Visible = false;
-            }
         }
         public static void errorBox(string errMessage)
         {
@@ -239,16 +234,6 @@ namespace USPS
             if (String.IsNullOrEmpty(pass.Text.Trim()))
             {
                 errorBox("Fields cannot be left blank.");
-            }
-        }
-
-        private void logOutButton_Click(object sender, EventArgs e)
-        {
-            DialogResult dR = MessageBox.Show("Log Out?", "System Message", MessageBoxButtons.OKCancel);
-            if (dR == DialogResult.OK)
-            {
-                db.logOut();
-                formSwitch1();
             }
         }
     }

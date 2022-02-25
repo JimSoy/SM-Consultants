@@ -48,11 +48,6 @@ namespace USPS
             
         }
 
-        public void logOut()
-        {
-            Form1.errorBox("Successfully logged out.");
-            Form1.customerPanelSwitch = false;
-        }
         public string getCustomerNames()
         {
             string names = "";

@@ -66,6 +66,7 @@
             this.lastName = new System.Windows.Forms.Label();
             this.firstName = new System.Windows.Forms.Label();
             this.next = new System.Windows.Forms.Button();
+            this.logOutButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.uspsLogo)).BeginInit();
             this.panel2.SuspendLayout();
@@ -106,6 +107,7 @@
             this.uspsLogo.Margin = new System.Windows.Forms.Padding(2);
             this.uspsLogo.Name = "uspsLogo";
             this.uspsLogo.Size = new System.Drawing.Size(155, 125);
+            this.uspsLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.uspsLogo.TabIndex = 6;
             this.uspsLogo.TabStop = false;
             // 
@@ -185,6 +187,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.logOutButton);
             this.panel2.Controls.Add(this.requestRefill);
             this.panel2.Controls.Add(this.Save);
             this.panel2.Controls.Add(this.edit);
@@ -218,13 +221,14 @@
             // 
             // requestRefill
             // 
-            this.requestRefill.Location = new System.Drawing.Point(275, 319);
+            this.requestRefill.Location = new System.Drawing.Point(292, 282);
             this.requestRefill.Margin = new System.Windows.Forms.Padding(2);
             this.requestRefill.Name = "requestRefill";
             this.requestRefill.Size = new System.Drawing.Size(94, 19);
             this.requestRefill.TabIndex = 24;
             this.requestRefill.Text = "Request Refill";
             this.requestRefill.UseVisualStyleBackColor = true;
+            this.requestRefill.Click += new System.EventHandler(this.requestRefill_Click);
             // 
             // Save
             // 
@@ -475,6 +479,16 @@
             this.next.Text = "Next";
             this.next.UseVisualStyleBackColor = true;
             // 
+            // logOutButton
+            // 
+            this.logOutButton.Location = new System.Drawing.Point(293, 319);
+            this.logOutButton.Name = "logOutButton";
+            this.logOutButton.Size = new System.Drawing.Size(93, 19);
+            this.logOutButton.TabIndex = 25;
+            this.logOutButton.Text = "Log Out";
+            this.logOutButton.UseVisualStyleBackColor = true;
+            this.logOutButton.Click += new System.EventHandler(this.logOutButton_Click);
+            // 
             // Form1
             // 
             this.AcceptButton = this.submit;
@@ -537,6 +551,7 @@
         private System.Windows.Forms.Button Save;
         private System.Windows.Forms.Button edit;
         private System.Windows.Forms.Button submit;
+        private System.Windows.Forms.Button logOutButton;
     }
 }
 

@@ -22,7 +22,8 @@ namespace USPS
         public Form1()
         {
             InitializeComponent();
-            
+            //Change title bar name from 'Form1' to 'USPS'
+            this.Text = "USPS";
             //hide currently unused elements
             panel2.Visible = false;
             Previous.Visible = false;
@@ -44,6 +45,11 @@ namespace USPS
                 panel2.Visible = true;
                 //shift 2nd panel to first panel position
                 panel2.Location = new System.Drawing.Point(27, 29);
+            }
+            else
+            {
+                panel1.Visible = true;
+                panel2.Visible = false;
             }
         }
         public static void errorBox(string errMessage)
@@ -160,7 +166,7 @@ namespace USPS
         {
             if (!editCheck)
             {
-                DialogResult dR = MessageBox.Show("Edit your information?", "Delete", MessageBoxButtons.OKCancel);
+                DialogResult dR = MessageBox.Show("Edit your information?", "System Message", MessageBoxButtons.OKCancel);
                 if (dR == DialogResult.OK)
                 {
                     editCheck = true;
@@ -194,7 +200,7 @@ namespace USPS
         {
             if (saveCheck)
             {
-                DialogResult dR = MessageBox.Show("Save your information?", "Delete", MessageBoxButtons.OKCancel);
+                DialogResult dR = MessageBox.Show("Save your information?", "System Message", MessageBoxButtons.OKCancel);
                 if (dR == DialogResult.OK)
                 {
                     saveCheck = false;
@@ -233,6 +239,16 @@ namespace USPS
             if (String.IsNullOrEmpty(pass.Text.Trim()))
             {
                 errorBox("Fields cannot be left blank.");
+            }
+        }
+
+        private void logOutButton_Click(object sender, EventArgs e)
+        {
+            DialogResult dR = MessageBox.Show("Log Out?", "System Message", MessageBoxButtons.OKCancel);
+            if (dR == DialogResult.OK)
+            {
+                db.logOut();
+                formSwitch1();
             }
         }
     }

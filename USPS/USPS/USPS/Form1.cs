@@ -35,6 +35,7 @@ namespace USPS
             this.AutoSize = true;
             this.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             Save.Enabled = false;
+            saveChanges.Enabled = false;
         }
 
         private void formSwitch1()
@@ -151,17 +152,14 @@ namespace USPS
         {
             SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
             builder.DataSource = "localhost\\SQLExpress";
-            builder.InitialCatalog = "USPS_IT488"; //Whatever Database, used one from a previous course for testing
+            builder.InitialCatalog = "USPS_IT488";
             builder.TrustServerCertificate = true;
             builder.Password = userPass;
             builder.UserID = userID;
-            //connectionstring = builder.ConnectionString;
 
             db = new DB();
 
             db.DBLogin(userPass, userID);
-
-            
 
             infoFill();
 
@@ -170,20 +168,31 @@ namespace USPS
 
         public void infoFill()
         {
+            //populate user query data into dictionary, then use those keys to populate textboxes
             Dictionary<string, string> info = db.infoUpdateQuery();
 
             if (info != null)
             {
                 firstNameTextBox.Text = info["fname"];
+                textBox_firstName.Text = info["fname"];
                 lastNameTextBox.Text = info["lname"];
+                textBox_lastName.Text = info["lname"];
                 dateOfBirthTextBox.Text = info["dob"];
+                textBox_dateOfBirth.Text = info["dob"];
                 //emailTextBox.Text = info["email"];
+                textBox_email.Text = info["email"];
                 //phoneTextBox.Text = info["phone"];
+                textBox_telephone.Text = info["phone"];
                 streetAddressTextBox.Text = info["address"];
+                textBox_streetAddress.Text = info["address"];
                 stateTextBox.Text = info["state"];
+                textBox_state.Text = info["state"];
                 cityTextBox.Text = info["city"];
+                textBox_city.Text = info["city"];
                 zipCodeTextBox.Text = info["zip"];
+                textBox_zipcode.Text = info["zip"];
                 drugAllergyTextBox1.Text = info["allergy"];
+                textBox_drugAllergies1.Text = info["allergy"];
                 dbID = info["ID"];
             }
 
@@ -199,22 +208,74 @@ namespace USPS
                 pharmPanelSwitch = true;
             }
         }
+        public void searchResults(Dictionary<string, string> info)
+        {
+            if (info != null)
+            {
+                firstNameTextBox.Text = info["fname"];
+                textBox_firstName.Text = info["fname"];
+                lastNameTextBox.Text = info["lname"];
+                textBox_lastName.Text = info["lname"];
+                dateOfBirthTextBox.Text = info["dob"];
+                textBox_dateOfBirth.Text = info["dob"];
+                //emailTextBox.Text = info["email"];
+                textBox_email.Text = info["email"];
+                //phoneTextBox.Text = info["phone"];
+                textBox_telephone.Text = info["phone"];
+                streetAddressTextBox.Text = info["address"];
+                textBox_streetAddress.Text = info["address"];
+                stateTextBox.Text = info["state"];
+                textBox_state.Text = info["state"];
+                cityTextBox.Text = info["city"];
+                textBox_city.Text = info["city"];
+                zipCodeTextBox.Text = info["zip"];
+                textBox_zipcode.Text = info["zip"];
+                drugAllergyTextBox1.Text = info["allergy"];
+                textBox_drugAllergies1.Text = info["allergy"];
+                dbID = info["ID"];
+            }
+        }
 
         public void infoUpdate()
         {
-            Dictionary<string, string> info = new Dictionary<string, string>();
-            info.Add("fname", firstNameTextBox.Text);
-            info.Add("lname", lastNameTextBox.Text);
-            info.Add("dob", dateOfBirthTextBox.Text);
-            //info.Add("phone", phoneTextBox.Text);
-            //info.Add("email", emailTextBox.Text);
-            info.Add("address", streetAddressTextBox.Text);
-            info.Add("city", cityTextBox.Text);
-            info.Add("state", stateTextBox.Text);
-            info.Add("zip", zipCodeTextBox.Text);
-            info.Add("allergy", drugAllergyTextBox1.Text);
+            //update dictionary values with edited data from textboxes and send to db for updating database
 
-            db.infoUpdater(info);
+            //user side
+            if (panel2.Visible == true)
+            {
+                Dictionary<string, string> info = new Dictionary<string, string>();
+                info.Add("fname", firstNameTextBox.Text);
+                info.Add("lname", lastNameTextBox.Text);
+                info.Add("dob", dateOfBirthTextBox.Text);
+                //info.Add("phone", phoneTextBox.Text);
+                //info.Add("email", emailTextBox.Text);
+                info.Add("address", streetAddressTextBox.Text);
+                info.Add("city", cityTextBox.Text);
+                info.Add("state", stateTextBox.Text);
+                info.Add("zip", zipCodeTextBox.Text);
+                info.Add("allergy", drugAllergyTextBox1.Text);
+
+                db.infoUpdater(info);
+            }
+            //pharm side
+            else
+            {
+                Dictionary<string, string> info = new Dictionary<string, string>();
+                info.Add("fname", textBox_firstName.Text);
+                info.Add("lname", textBox_lastName.Text);
+                info.Add("dob", textBox_dateOfBirth.Text);
+                info.Add("phone", textBox_telephone.Text);
+                info.Add("email", textBox_email.Text);
+                info.Add("address", textBox_streetAddress.Text);
+                info.Add("city", textBox_city.Text);
+                info.Add("state", textBox_state.Text);
+                info.Add("zip", textBox_zipcode.Text);
+                info.Add("allergy", textBox_drugAllergies1.Text);
+
+                db.infoUpdater(info);
+            }
+
+            
         }
         private void requestRefill_Click(object sender, EventArgs e)
         {
@@ -225,6 +286,7 @@ namespace USPS
 
         private void edit_Click(object sender, EventArgs e)
         {
+            //user side edit checks to enable changes
             if (!editCheck)
             {
                 DialogResult dR = MessageBox.Show("Edit your information?", "System Message", MessageBoxButtons.OKCancel);
@@ -233,7 +295,9 @@ namespace USPS
                     editCheck = true;
                     saveCheck = true;
                     edit.Enabled = false;
+                    Edit_onPharmForm.Enabled = false;
                     Save.Enabled = true;
+                    saveChanges.Enabled = true;
 
                     firstNameTextBox.ReadOnly = false;
                     lastNameTextBox.ReadOnly = false;
@@ -259,6 +323,7 @@ namespace USPS
 
         private void Save_Click(object sender, EventArgs e)
         {
+            //user side save checks to verify intent to save and then disable textboxes again
             if (saveCheck)
             {
                 DialogResult dR = MessageBox.Show("Save your information?", "System Message", MessageBoxButtons.OKCancel);
@@ -267,6 +332,7 @@ namespace USPS
                     infoUpdate();
                     saveCheck = false;
                     Save.Enabled = false;
+                    saveChanges.Enabled = false;
 
                     firstNameTextBox.ReadOnly = true;
                     lastNameTextBox.ReadOnly = true;
@@ -282,12 +348,13 @@ namespace USPS
                     drugAllergyTextBox3.ReadOnly = true;
 
                     edit.Enabled = true;
+                    Edit_onPharmForm.Enabled = true;
                     editCheck = false;
                 }
             }
             
         }
-
+        //disallow empty fields in username and password
         private void user_Validating(object sender, CancelEventArgs e)
         {
             if (String.IsNullOrEmpty(user.Text.Trim()))
@@ -303,7 +370,7 @@ namespace USPS
                 errorBox("Fields cannot be left blank.");
             }
         }
-
+        //logout and return to sign in screen
         private void logOutButton_Click(object sender, EventArgs e)
         {
             DialogResult dR = MessageBox.Show("Log Out?", "System Message", MessageBoxButtons.OKCancel);
@@ -472,6 +539,91 @@ namespace USPS
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void Edit_onPharmForm_Click(object sender, EventArgs e)
+        {
+            //pharm side edit checks
+            if (!editCheck)
+            {
+                DialogResult dR = MessageBox.Show("Edit your information?", "System Message", MessageBoxButtons.OKCancel);
+                if (dR == DialogResult.OK)
+                {
+                    editCheck = true;
+                    saveCheck = true;
+                    Edit_onPharmForm.Enabled = false;
+                    saveChanges.Enabled = true;
+
+                    textBox_firstName.ReadOnly = false;
+                    textBox_lastName.ReadOnly = false;
+                    textBox_dateOfBirth.ReadOnly = false;
+                    textBox_telephone.ReadOnly = false;
+                    textBox_email.ReadOnly = false;
+                    textBox_streetAddress.ReadOnly = false;
+                    textBox_state.ReadOnly = false;
+                    textBox_city.ReadOnly = false;
+                    textBox_zipcode.ReadOnly = false;
+                    textBox_insurance.ReadOnly = false;
+                    textBox_paymentMethod.ReadOnly = false;
+                    textBox_drugAllergies1.ReadOnly = false;
+                    textBox_drugAllergies2.ReadOnly = false;
+                    textBox_drugAllergies3.ReadOnly = false;
+                }
+                else
+                {
+                    editCheck = false;
+                    saveCheck = false;
+                }
+            }
+        }
+
+        private void saveChanges_Click(object sender, EventArgs e)
+        {
+            //pharm side save checks
+            if (saveCheck)
+            {
+                DialogResult dR = MessageBox.Show("Save your information?", "System Message", MessageBoxButtons.OKCancel);
+                if (dR == DialogResult.OK)
+                {
+                    infoUpdate();
+                    saveCheck = false;
+                    saveChanges.Enabled = false;
+
+                    textBox_firstName.ReadOnly = true;
+                    textBox_lastName.ReadOnly = true;
+                    textBox_dateOfBirth.ReadOnly = true;
+                    textBox_telephone.ReadOnly = true;
+                    textBox_email.ReadOnly = true;
+                    textBox_streetAddress.ReadOnly = true;
+                    textBox_state.ReadOnly = true;
+                    textBox_city.ReadOnly = true;
+                    textBox_zipcode.ReadOnly = true;
+                    textBox_insurance.ReadOnly = true;
+                    textBox_paymentMethod.ReadOnly = true;
+                    textBox_drugAllergies1.ReadOnly = true;
+                    textBox_drugAllergies2.ReadOnly = true;
+                    textBox_drugAllergies3.ReadOnly = true;
+
+                    Edit_onPharmForm.Enabled = true;
+                    editCheck = false;
+                }
+            }
+        }
+        //trigger event when enter key pressed in search field
+        private void SearchKeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                //Do something
+                Dictionary<string, string> info = db.searchCustomers(textBox_searchName.Text);
+                searchResults(info);
+                e.Handled = true;
+            }
+        }
+
+        private void textBox_searchName_TextChanged(object sender, EventArgs e)
+        {
+            textBox_searchName.KeyUp += SearchKeyUp;
         }
     }
 }

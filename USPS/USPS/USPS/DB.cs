@@ -132,6 +132,66 @@ namespace USPS
 
             return info;
         }
+
+        public Dictionary<string, string> searchCustomers(string searchString)
+        {
+            string queryString = $"SELECT * FROM Customers_List WHERE Customer_FirstName = '{searchString}' " +
+                $"OR Customer_LastName = '{searchString}'";
+
+            Dictionary<string, string> info = new Dictionary<string, string>();
+            info.Add("ID", "");
+            info.Add("fname", "");
+            info.Add("lname", "");
+            info.Add("dob", "");
+            info.Add("phone", "");
+            info.Add("email", "");
+            info.Add("address", "");
+            info.Add("city", "");
+            info.Add("state", "");
+            info.Add("zip", "");
+            info.Add("allergy", "");
+
+            SqlDataReader dataReader;
+
+            SqlConnection cnn = new SqlConnection(connectionstring);
+            cnn.Open();
+
+            SqlCommand cmd = new SqlCommand(queryString, cnn);
+            try
+            {
+                dataReader = cmd.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    try
+                    {
+                        info["ID"] = dataReader[0].ToString();
+                        info["fname"] = dataReader[1].ToString();
+                        info["lname"] = dataReader[2].ToString();
+                        info["dob"] = dataReader[3].ToString();
+                        info["phone"] = dataReader[4].ToString();
+                        info["email"] = dataReader[5].ToString();
+                        info["address"] = dataReader[6].ToString();
+                        info["city"] = dataReader[7].ToString();
+                        info["state"] = dataReader[8].ToString();
+                        info["zip"] = dataReader[9].ToString();
+                        info["allergy"] = dataReader[10].ToString();
+                    }
+                    catch (Exception ex)
+                    {
+                        Form1.errorBox("Error with query.");
+                        Console.WriteLine(ex.Message);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Form1.errorBox(ex.Message);
+            }
+
+            dbID = info["ID"];
+
+            return info;
+        }
         public string getCustomerNames()
         {
             string names = "";

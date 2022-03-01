@@ -15,6 +15,7 @@ namespace USPS
     {
         DB db;
         public static bool customerPanelSwitch = false;
+        public static bool pharmPanelSwitch = false;
         static bool editCheck = false;
         static bool saveCheck = false;
         static string userPass;
@@ -26,8 +27,6 @@ namespace USPS
             this.Text = "USPS";
             //hide currently unused elements
             panel2.Visible = false;
-            Previous.Visible = false;
-            next.Visible = false;
 
             //set form to autosize to currently used elements
             this.AutoSize = true;
@@ -45,6 +44,13 @@ namespace USPS
                 panel2.Visible = true;
                 //shift 2nd panel to first panel position
                 panel2.Location = new System.Drawing.Point(27, 29);
+            }
+            else if (pharmPanelSwitch == true)
+            {
+                panel1.Visible = false;
+                panel3.Visible = true;
+
+                panel3.Location = new System.Drawing.Point(27, 29);
             }
             else
             {
@@ -155,6 +161,13 @@ namespace USPS
             formSwitch1();
         }
 
+        public void infoUpdate()
+        {
+            Dictionary<string, string> info = ;
+
+
+        }
+
         private void requestRefill_Click(object sender, EventArgs e)
         {
             //temporary query for testing
@@ -250,6 +263,166 @@ namespace USPS
                 db.logOut();
                 formSwitch1();
             }
+        }
+
+        private void cityTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox3_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox12_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox5_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox4_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox3_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox21_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox22_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox23_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox25_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox24_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox30_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox19_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox18_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox20_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox17_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox16_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox15_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox14_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox13_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox11_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label15_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label17_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

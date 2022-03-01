@@ -39,7 +39,8 @@ namespace USPS
                 //open session
                 conn.Open();
                 Form1.errorBox("Successfully connected!");
-                Form1.customerPanelSwitch = true;
+                //Form1.customerPanelSwitch = true;
+
             }
             catch (Exception ex)
             {
@@ -53,6 +54,7 @@ namespace USPS
         {
             Form1.errorBox("Successfully logged out.");
             Form1.customerPanelSwitch = false;
+            Form1.pharmPanelSwitch = false;
         }
 
         public void infoUpdater(Dictionary<string, string> info)
@@ -85,7 +87,15 @@ namespace USPS
             SqlConnection cnn = new SqlConnection(connectionstring);
             cnn.Open();
 
-            string infoQuery = "SELECT * FROM Customers_List WHERE Customer_ID = 1";
+            //temp for login checking (strips last name from username for query)
+            string userCheck = "";
+
+            for (int i = 1; i < userID.Length - 2; i++)
+            {
+                userCheck = userCheck + userID[i].ToString();
+            }
+
+            string infoQuery = $"SELECT * FROM Customers_List WHERE Customer_LastName = '{userCheck}'";
             SqlCommand cmd = new SqlCommand(infoQuery, cnn);
             try
             {

@@ -20,6 +20,8 @@ namespace USPS
         static bool saveCheck = false;
         static string userPass;
         static string userID;
+        static string dbID;
+
         public Form1()
         {
             InitializeComponent();
@@ -56,6 +58,7 @@ namespace USPS
             {
                 panel1.Visible = true;
                 panel2.Visible = false;
+                panel3.Visible = false;
             }
         }
         public static void errorBox(string errMessage)
@@ -158,9 +161,11 @@ namespace USPS
 
             db.DBLogin(userPass, userID);
 
-            formSwitch1();
+            
 
             infoFill();
+
+            formSwitch1();
         }
 
         public void infoFill()
@@ -179,6 +184,19 @@ namespace USPS
                 cityTextBox.Text = info["city"];
                 zipCodeTextBox.Text = info["zip"];
                 drugAllergyTextBox1.Text = info["allergy"];
+                dbID = info["ID"];
+            }
+
+            //temporary solution to check for escalated privelege,
+            //should change to check for 'admin' user
+
+            if (Int16.Parse(dbID) == 1)
+            {
+                customerPanelSwitch = true;
+            }
+            else if (Int16.Parse(dbID) == 2)
+            {
+                pharmPanelSwitch = true;
             }
         }
 

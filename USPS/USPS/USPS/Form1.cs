@@ -142,7 +142,7 @@ namespace USPS
         {
             SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
             builder.DataSource = "localhost\\SQLExpress";
-            builder.InitialCatalog = "Northwind"; //Whatever Database, used one from a previous course for testing
+            builder.InitialCatalog = "USPS_IT488"; //Whatever Database, used one from a previous course for testing
             builder.TrustServerCertificate = true;
             builder.Password = userPass;
             builder.UserID = userID;

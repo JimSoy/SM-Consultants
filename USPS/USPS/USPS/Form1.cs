@@ -27,11 +27,11 @@ namespace USPS
             this.Text = "USPS";
             //hide currently unused elements
             panel2.Visible = false;
+            panel3.Visible = false;
 
             //set form to autosize to currently used elements
             this.AutoSize = true;
             this.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-
             Save.Enabled = false;
         }
 
@@ -159,15 +159,45 @@ namespace USPS
             db.DBLogin(userPass, userID);
 
             formSwitch1();
+
+            infoFill();
+        }
+
+        public void infoFill()
+        {
+            Dictionary<string, string> info = db.infoUpdateQuery();
+
+            if (info != null)
+            {
+                firstNameTextBox.Text = info["fname"];
+                lastNameTextBox.Text = info["lname"];
+                dateOfBirthTextBox.Text = info["dob"];
+                //emailTextBox.Text = info["email"];
+                //phoneTextBox.Text = info["phone"];
+                streetAddressTextBox.Text = info["address"];
+                stateTextBox.Text = info["state"];
+                cityTextBox.Text = info["city"];
+                zipCodeTextBox.Text = info["zip"];
+                drugAllergyTextBox1.Text = info["allergy"];
+            }
         }
 
         public void infoUpdate()
         {
-            Dictionary<string, string> info = ;
+            Dictionary<string, string> info = new Dictionary<string, string>();
+            info.Add("fname", firstNameTextBox.Text);
+            info.Add("lname", lastNameTextBox.Text);
+            info.Add("dob", dateOfBirthTextBox.Text);
+            //info.Add("phone", phoneTextBox.Text);
+            //info.Add("email", emailTextBox.Text);
+            info.Add("address", streetAddressTextBox.Text);
+            info.Add("city", cityTextBox.Text);
+            info.Add("state", stateTextBox.Text);
+            info.Add("zip", zipCodeTextBox.Text);
+            info.Add("allergy", drugAllergyTextBox1.Text);
 
-
+            db.infoUpdater(info);
         }
-
         private void requestRefill_Click(object sender, EventArgs e)
         {
             //temporary query for testing
@@ -216,6 +246,7 @@ namespace USPS
                 DialogResult dR = MessageBox.Show("Save your information?", "System Message", MessageBoxButtons.OKCancel);
                 if (dR == DialogResult.OK)
                 {
+                    infoUpdate();
                     saveCheck = false;
                     Save.Enabled = false;
 

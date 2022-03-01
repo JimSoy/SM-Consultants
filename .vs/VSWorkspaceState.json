@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\USPS",
+    "\\USPS\\USPS",
+    "\\USPS\\USPS\\USPS"
   ],
-  "SelectedNode": "\\C:\\Users\\Youan\\Source\\Repos\\SMConsultants",
+  "SelectedNode": "\\USPS\\USPS\\USPS.sln",
   "PreviewInSolutionExplorer": false
 }

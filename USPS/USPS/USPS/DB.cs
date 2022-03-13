@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Data.SqlClient;
+using System.Text.RegularExpressions;
 
 namespace USPS
 {
@@ -144,8 +145,30 @@ namespace USPS
 
         public Dictionary<string, string> searchCustomers(string searchString)
         {
-            string queryString = $"SELECT * FROM Customers_List WHERE Customer_FirstName = '{searchString}' " +
+            //temp string to store and convert date if present
+            string dt = "";
+            string queryString = "";
+
+            //check the string to see if date is present, then store to string dt
+            if (!Regex.IsMatch(searchString, "[^0-9/]"))
+            {
+                dt = searchString;
+                string[] dateSplit = dt.Split('/');
+                DateTime td = new DateTime(Convert.ToInt32(dateSplit[2]),
+                    Convert.ToInt32(dateSplit[0]), Convert.ToInt32(dateSplit[1]));
+                dt = td.ToShortDateString();
+            }
+            
+            //if dt is not empty, search by date, otherwise search by name
+            if (dt != "")
+            {
+                queryString = $"SELECT * FROM Customers_List WHERE Customer_DateOfBirth = '{dt}'";
+            }
+            else
+            {
+                queryString = $"SELECT * FROM Customers_List WHERE Customer_FirstName = '{searchString}' " +
                 $"OR Customer_LastName = '{searchString}'";
+            }
 
             Dictionary<string, string> info = new Dictionary<string, string>();
             info.Add("ID", "");

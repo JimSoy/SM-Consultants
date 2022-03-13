@@ -27,7 +27,7 @@ namespace USPS
             //builder class allows to use variables for user and password fields (get user input)
             SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
             builder.DataSource = "localhost\\SQLExpress";
-            builder.InitialCatalog = "USPS_IT488"; //Whatever Database, used one from a previous course for testing
+            builder.InitialCatalog = "IT488_USPS";
             builder.TrustServerCertificate = true;
             builder.Password = pass;
             builder.UserID = user;
@@ -38,12 +38,13 @@ namespace USPS
             {
                 //open session
                 conn.Open();
+                Form1.failed = false;
                 Form1.errorBox("Successfully connected!");
-                //Form1.customerPanelSwitch = true;
 
             }
             catch (Exception ex)
             {
+                Form1.failed = true;
                 Form1.errorBox("Login failed.");
                 Console.WriteLine(ex.Message);
             }
@@ -62,7 +63,12 @@ namespace USPS
             SqlConnection cnn = new SqlConnection(connectionstring);
             cnn.Open();
 
-            string infoQuery = $"UPDATE Customers_List SET Customer_FirstName = '{info["fname"]}', Customer_LastName = '{info["lname"]}', Customer_DateOfBirth = '{info["dob"]}', Customer_Address = '{info["address"]}', Customer_City = '{info["city"]}', Customer_State = '{info["state"]}', Customer_ZipCode = '{info["zip"]}', Customer_DrugAllergy = '{info["allergy"]}' WHERE Customer_ID = '{dbID}'";
+            string infoQuery = $"UPDATE Customers_List SET Customer_FirstName = '{info["fname"]}', " +
+                $"Customer_LastName = '{info["lname"]}', Customer_DateOfBirth = '{info["dob"]}', " +
+                $"Customer_Address = '{info["address"]}', Customer_City = '{info["city"]}', " +
+                $"Customer_State = '{info["state"]}', Customer_ZipCode = '{info["zip"]}', " +
+                $"Customer_DrugAllergy = '{info["allergy"]}' WHERE Customer_ID = '{dbID}'";
+
             SqlCommand cmd = new SqlCommand(infoQuery, cnn);
             cmd.BeginExecuteNonQuery();
         }
@@ -85,52 +91,55 @@ namespace USPS
             SqlDataReader dataReader;
 
             SqlConnection cnn = new SqlConnection(connectionstring);
-            cnn.Open();
-
-            //temp for login checking (strips last name from username for query)
-            string userCheck = "";
-
-            for (int i = 1; i < userID.Length - 2; i++)
-            {
-                userCheck = userCheck + userID[i].ToString();
-            }
-
-            string infoQuery = $"SELECT * FROM Customers_List WHERE Customer_LastName = '{userCheck}'";
-            SqlCommand cmd = new SqlCommand(infoQuery, cnn);
             try
             {
-                dataReader = cmd.ExecuteReader();
-                while (dataReader.Read())
+                cnn.Open();
+
+                string infoQuery = $"SELECT * FROM Customers_List WHERE Customer_UserName = '{userID}'";
+                SqlCommand cmd = new SqlCommand(infoQuery, cnn);
+                try
                 {
-                    try
+                    dataReader = cmd.ExecuteReader();
+                    while (dataReader.Read())
                     {
-                        info["ID"] = dataReader[0].ToString();
-                        info["fname"] = dataReader[1].ToString();
-                        info["lname"] = dataReader[2].ToString();
-                        info["dob"] = dataReader[3].ToString();
-                        info["phone"] = dataReader[4].ToString();
-                        info["email"] = dataReader[5].ToString();
-                        info["address"] = dataReader[6].ToString();
-                        info["city"] = dataReader[7].ToString();
-                        info["state"] = dataReader[8].ToString();
-                        info["zip"] = dataReader[9].ToString();
-                        info["allergy"] = dataReader[10].ToString();
-                    }
-                    catch (Exception ex)
-                    {
-                        Form1.errorBox("Error with query.");
-                        Console.WriteLine(ex.Message);
+                        try
+                        {
+                            info["ID"] = dataReader[0].ToString();
+                            info["fname"] = dataReader[1].ToString();
+                            info["lname"] = dataReader[2].ToString();
+                            info["dob"] = dataReader[5].ToString().Remove(10);
+                            info["phone"] = dataReader[6].ToString();
+                            info["email"] = dataReader[7].ToString();
+                            info["address"] = dataReader[8].ToString();
+                            info["city"] = dataReader[9].ToString();
+                            info["state"] = dataReader[10].ToString();
+                            info["zip"] = dataReader[11].ToString();
+                            info["allergy"] = dataReader[12].ToString();
+                        }
+                        catch (Exception ex)
+                        {
+                            Form1.errorBox("Error with query.");
+                            Console.WriteLine(ex.Message);
+                        }
                     }
                 }
+                catch (Exception ex)
+                {
+                    Form1.errorBox(ex.Message);
+                    return null;
+                }
+
+                dbID = info["ID"];
+
+                return info;
             }
             catch (Exception ex)
             {
                 Form1.errorBox(ex.Message);
+
             }
-
-            dbID = info["ID"];
-
-            return info;
+            return null;
+            
         }
 
         public Dictionary<string, string> searchCustomers(string searchString)
@@ -167,14 +176,14 @@ namespace USPS
                         info["ID"] = dataReader[0].ToString();
                         info["fname"] = dataReader[1].ToString();
                         info["lname"] = dataReader[2].ToString();
-                        info["dob"] = dataReader[3].ToString();
-                        info["phone"] = dataReader[4].ToString();
-                        info["email"] = dataReader[5].ToString();
-                        info["address"] = dataReader[6].ToString();
-                        info["city"] = dataReader[7].ToString();
-                        info["state"] = dataReader[8].ToString();
-                        info["zip"] = dataReader[9].ToString();
-                        info["allergy"] = dataReader[10].ToString();
+                        info["dob"] = dataReader[5].ToString().Remove(10);
+                        info["phone"] = dataReader[6].ToString();
+                        info["email"] = dataReader[7].ToString();
+                        info["address"] = dataReader[8].ToString();
+                        info["city"] = dataReader[9].ToString();
+                        info["state"] = dataReader[10].ToString();
+                        info["zip"] = dataReader[11].ToString();
+                        info["allergy"] = dataReader[12].ToString();
                     }
                     catch (Exception ex)
                     {
@@ -191,39 +200,6 @@ namespace USPS
             dbID = info["ID"];
 
             return info;
-        }
-        public string getCustomerNames()
-        {
-            string names = "";
-            SqlDataReader dataReader;
-
-            SqlConnection cnn = new SqlConnection(connectionstring);
-            cnn.Open();
-
-            string countQuery = "SELECT SUBSTRING(ContactName, CHARINDEX(' ', ContactName) + 1, LEN(ContactName) - CHARINDEX(' ', ContactName)) AS LastName from dbo.Customers;";
-            SqlCommand cmd = new SqlCommand(countQuery, cnn);
-            try
-            {
-                dataReader = cmd.ExecuteReader();
-                while (dataReader.Read())
-                {
-                    try
-                    {
-                        names = names + dataReader.GetValue(0) + "\n";
-                    }
-                    catch (Exception ex)
-                    {
-                        Form1.errorBox("Error with query.");
-                        Console.WriteLine(ex.Message);
-                    }
-                }
-                //return names;
-            }
-            catch (Exception ex)
-            {
-                Form1.errorBox(ex.Message);
-            }
-            return names;
         }
     }
 }

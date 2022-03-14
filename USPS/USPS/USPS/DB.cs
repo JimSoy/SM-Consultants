@@ -64,6 +64,7 @@ namespace USPS
             SqlConnection cnn = new SqlConnection(connectionstring);
             cnn.Open();
 
+            //insert if statement here for check new register. if !register run this, if register run INSERT version
             string infoQuery = $"UPDATE Customers_List SET Customer_FirstName = '{info["fname"]}', " +
                 $"Customer_LastName = '{info["lname"]}', Customer_DateOfBirth = '{info["dob"]}', " +
                 $"Customer_Address = '{info["address"]}', Customer_City = '{info["city"]}', " +

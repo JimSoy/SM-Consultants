@@ -1457,6 +1457,31 @@ namespace USPS
                 SubmitOrder.Enabled = false;
             }
         }
+
+        private void label22_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label22_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Adherence_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void report_btn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox11_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
     public static partial class ValidationFunctions
     {

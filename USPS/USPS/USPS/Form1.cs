@@ -17,6 +17,8 @@ namespace USPS
         DB db;
         public static bool customerPanelSwitch = false;
         public static bool pharmPanelSwitch = false;
+        public static bool adminPanelSwitch = false;
+        public static bool newUserCheck = false;
         static bool editCheck = false;
         static bool saveCheck = false;
         static string userPass;
@@ -30,16 +32,14 @@ namespace USPS
             InitializeComponent();
             //Change title bar name from 'Form1' to 'USPS'
             this.Text = "USPS";
+
             //hide currently unused elements
-            panel2.Visible = false;
-            panel3.Visible = false;
-            panel4.Visible = false;
+            userPanel.Visible = pharmPanel.Visible = adminPanel.Visible = refillPanel.Visible = false;
 
             //set form to autosize to currently used elements
             this.AutoSize = true;
             this.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            Save.Enabled = false;
-            saveChanges.Enabled = false;
+            saveUser.Enabled = savePharm.Enabled = saveAdmin.Enabled = false;
         }
 
         private void formSwitch1()
@@ -47,29 +47,38 @@ namespace USPS
             if (customerPanelSwitch == true)
             {
                 //switch visible panels
-                panel1.Visible = false;
-                panel2.Visible = true;
+                loginPanel.Visible = false;
                 //shift 2nd panel to first panel position
-                panel2.Location = new System.Drawing.Point(27, 29);
+                userPanel.Location = new System.Drawing.Point(27, 29);
+                userPanel.Visible = true;
+                if (newUserCheck)
+                {
+                    editUser.PerformClick();
+                }
+            }
+            else if (adminPanelSwitch == true)
+            {
+                loginPanel.Visible = false;
+                adminPanel.Location = new System.Drawing.Point(23, 29);
+                adminPanel.Visible = true;
             }
             else if (pharmPanelSwitch == true)
             {
-                panel1.Visible = false;
-                panel3.Visible = true;
-
-                panel3.Location = new System.Drawing.Point(27, 29);
+                loginPanel.Visible = false;
+                pharmPanel.Location = new System.Drawing.Point(27, 29);
+                pharmPanel.Visible = true;
             }
             else
             {
-                panel1.Visible = true;
-                panel2.Visible = false;
-                panel3.Visible = false;
+                loginPanel.Visible = true;
+                userPanel.Visible = pharmPanel.Visible = adminPanel.Visible = false;
+                newUser.Checked = false;
             }
         }
-        public static void errorBox(string errMessage)
+        public static void mySystemMessage(string systemMessage)
         {
-            string err = errMessage;
-            MessageBox.Show(err);
+            string sysMess = systemMessage;
+            MessageBox.Show(sysMess);
         }
 
         private void user_TextChanged(object sender, EventArgs e)
@@ -82,7 +91,13 @@ namespace USPS
 
             userPass = pass.Text;
         }
-
+        private void newUser_CheckedChanged(object sender, EventArgs e)
+        {
+            if (newUser.Checked == true)
+            {
+                newUserCheck = true;
+            }
+        }
         private void submit_Click(object sender, EventArgs e)
         {
             SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
@@ -97,8 +112,6 @@ namespace USPS
             db.DBLogin(userPass, userID);
 
             infoFill();
-
-
         }
 
         public void infoFill()
@@ -108,31 +121,26 @@ namespace USPS
 
             if (info != null)
             {
-                firstNameTextBox.Text = info["fname"];
-                textBox_firstName.Text = info["fname"];
-                lastNameTextBox.Text = info["lname"];
-                textBox_lastName.Text = info["lname"];
-                dateOfBirthTextBox.Text = info["dob"];
-                textBox_dateOfBirth.Text = info["dob"];
-                emailTextBox.Text = info["email"];
-                textBox_email.Text = info["email"];
-                telephoneNumberTextBox.Text = info["phone"];
-                textBox_telephone.Text = info["phone"];
-                streetAddressTextBox.Text = info["address"];
-                textBox_streetAddress.Text = info["address"];
-                stateTextBox.Text = info["state"];
-                textBox_state.Text = info["state"];
-                cityTextBox.Text = info["city"];
-                textBox_city.Text = info["city"];
-                zipCodeTextBox.Text = info["zip"];
-                textBox_zipcode.Text = info["zip"];
-                allergyTextBox.Text = info["allergy"];
-                textBox_drugAllergies1.Text = info["allergy"];
+                fnameUser.Text = fnamePharm.Text = fnameAdmin.Text = info["fname"];
+                lnameUser.Text = lnamePharm.Text = lnameAdmin.Text = info["lname"];
+                dobUser.Text = dobPharm.Text = dobAdmin.Text = info["dob"];
+                emailUser.Text = emailPharm.Text = emailAdmin.Text = info["email"];
+                telephoneUser.Text = telephonePharm.Text = telephoneAdmin.Text = info["phone"];
+                streetUser.Text = streetPharm.Text = streetAdmin.Text = info["address"];
+                stateUser.Text = statePharm.Text = stateAdmin.Text = info["state"];
+                cityUser.Text = cityPharm.Text = cityAdmin.Text = info["city"];
+                zipUser.Text = zipPharm.Text =zipAdmin.Text = info["zip"];
+                allergiesUser.Text = allergiesPharm.Text = allergiesAdmin.Text = info["allergy"];
                 dbID = info["ID"];
             }
             if (!failed)
             {
                 if (userID == "IT488_Admin")
+                {
+                    adminPanelSwitch = true;
+                    formSwitch1();
+                }
+                else if (userID == "Pharmacy")
                 {
                     pharmPanelSwitch = true;
                     formSwitch1();
@@ -148,26 +156,16 @@ namespace USPS
         {
             if (info != null)
             {
-                firstNameTextBox.Text = info["fname"];
-                textBox_firstName.Text = info["fname"];
-                lastNameTextBox.Text = info["lname"];
-                textBox_lastName.Text = info["lname"];
-                dateOfBirthTextBox.Text = info["dob"];
-                textBox_dateOfBirth.Text = info["dob"];
-                emailTextBox.Text = info["email"];
-                textBox_email.Text = info["email"];
-                telephoneNumberTextBox.Text = info["phone"];
-                textBox_telephone.Text = info["phone"];
-                streetAddressTextBox.Text = info["address"];
-                textBox_streetAddress.Text = info["address"];
-                stateTextBox.Text = info["state"];
-                textBox_state.Text = info["state"];
-                cityTextBox.Text = info["city"];
-                textBox_city.Text = info["city"];
-                zipCodeTextBox.Text = info["zip"];
-                textBox_zipcode.Text = info["zip"];
-                allergyTextBox.Text = info["allergy"];
-                textBox_drugAllergies1.Text = info["allergy"];
+                fnameUser.Text = fnamePharm.Text = fnameAdmin.Text = info["fname"];
+                lnameUser.Text = lnamePharm.Text = lnameAdmin.Text = info["lname"];
+                dobUser.Text = dobPharm.Text = dobAdmin.Text = info["dob"];
+                emailUser.Text = emailPharm.Text = emailAdmin.Text = info["email"];
+                telephoneUser.Text = telephonePharm.Text = telephoneAdmin.Text = info["phone"];
+                streetUser.Text = streetPharm.Text = streetAdmin.Text = info["address"];
+                stateUser.Text = statePharm.Text = stateAdmin.Text = info["state"];
+                cityUser.Text = cityPharm.Text = cityAdmin.Text = info["city"];
+                zipUser.Text = zipPharm.Text = zipAdmin.Text = info["zip"];
+                allergiesUser.Text = allergiesPharm.Text = allergiesAdmin.Text = info["allergy"];
                 dbID = info["ID"];
             }
         }
@@ -177,76 +175,83 @@ namespace USPS
             //update dictionary values with edited data from textboxes and send to db for updating database
 
             //user side
-            if (panel2.Visible == true)
+            if (userPanel.Visible == true)
             {
                 Dictionary<string, string> info = new Dictionary<string, string>();
-                info.Add("fname", firstNameTextBox.Text);
-                info.Add("lname", lastNameTextBox.Text);
-                info.Add("dob", dateOfBirthTextBox.Text);
-                info.Add("phone", telephoneNumberTextBox.Text);
-                info.Add("email", emailTextBox.Text);
-                info.Add("address", streetAddressTextBox.Text);
-                info.Add("city", cityTextBox.Text);
-                info.Add("state", stateTextBox.Text);
-                info.Add("zip", zipCodeTextBox.Text);
-                info.Add("allergy", allergyTextBox.Text);
+                info.Add("fname", fnameUser.Text);
+                info.Add("lname", lnameUser.Text);
+                info.Add("dob", dobUser.Text);
+                info.Add("phone", telephoneUser.Text);
+                info.Add("email", emailUser.Text);
+                info.Add("address", streetUser.Text);
+                info.Add("city", cityUser.Text);
+                info.Add("state", stateUser.Text);
+                info.Add("zip", zipUser.Text);
+                info.Add("allergy", allergiesUser.Text);
 
                 db.infoUpdater(info);
             }
             //pharm side
-            else
+            else if (pharmPanel.Visible == true)
             {
                 Dictionary<string, string> info = new Dictionary<string, string>();
-                info.Add("fname", textBox_firstName.Text);
-                info.Add("lname", textBox_lastName.Text);
-                info.Add("dob", textBox_dateOfBirth.Text);
-                info.Add("phone", textBox_telephone.Text);
-                info.Add("email", textBox_email.Text);
-                info.Add("address", textBox_streetAddress.Text);
-                info.Add("city", textBox_city.Text);
-                info.Add("state", textBox_state.Text);
-                info.Add("zip", textBox_zipcode.Text);
-                info.Add("allergy", textBox_drugAllergies1.Text);
+                info.Add("fname", fnamePharm.Text);
+                info.Add("lname", lnamePharm.Text);
+                info.Add("dob", dobPharm.Text);
+                info.Add("phone", telephonePharm.Text);
+                info.Add("email", emailPharm.Text);
+                info.Add("address", streetPharm.Text);
+                info.Add("city", cityPharm.Text);
+                info.Add("state", statePharm.Text);
+                info.Add("zip", zipPharm.Text);
+                info.Add("allergy", allergiesPharm.Text);
 
                 db.infoUpdater(info);
             }
+            //admin side
+            else if (adminPanel.Visible == true)
+            {
+                Dictionary<string, string> info = new Dictionary<string, string>();
+                info.Add("fname", fnameAdmin.Text);
+                info.Add("lname", lnameAdmin.Text);
+                info.Add("dob", dobAdmin.Text);
+                info.Add("phone", telephoneAdmin.Text);
+                info.Add("email", emailAdmin.Text);
+                info.Add("address", streetAdmin.Text);
+                info.Add("city", cityAdmin.Text);
+                info.Add("state", stateAdmin.Text);
+                info.Add("zip", zipAdmin.Text);
+                info.Add("allergy", allergiesAdmin.Text);
 
-
+                db.infoUpdater(info);
+            }
         }
-        private void requestRefill_Click(object sender, EventArgs e)
-        {
-            panel4.Location = new System.Drawing.Point(450, 29);
-            panel4.Size = new System.Drawing.Size(287, 315);
-            panel4.Visible = true;
-        }
 
-        private void edit_Click(object sender, EventArgs e)
+        //user side edits and saves
+        private void editUser_Click(object sender, EventArgs e)
         {
             //user side edit checks to enable changes
             if (!editCheck)
             {
-                DialogResult dR = MessageBox.Show("Edit your information?", "System Message", MessageBoxButtons.OKCancel);
+                DialogResult dR = MessageBox.Show("Continue to edit user information.", "System Message", MessageBoxButtons.OKCancel);
                 if (dR == DialogResult.OK)
                 {
-                    editCheck = true;
-                    saveCheck = true;
-                    edit.Enabled = false;
-                    Edit_onPharmForm.Enabled = false;
-                    Save.Enabled = true;
-                    saveChanges.Enabled = true;
+                    editCheck = saveCheck = true;
+                    editUser.Enabled = false;
+                    saveUser.Enabled = true;
 
-                    firstNameTextBox.ReadOnly = false;
-                    lastNameTextBox.ReadOnly = false;
-                    dateOfBirthTextBox.ReadOnly = false;
-                    streetAddressTextBox.ReadOnly = false;
-                    cityTextBox.ReadOnly = false;
-                    stateTextBox.ReadOnly = false;
-                    zipCodeTextBox.ReadOnly = false;
-                    insuranceTextBox.ReadOnly = false;
-                    paymentMethodTextBox.ReadOnly = false;
-                    allergyTextBox.ReadOnly = false;
-                    telephoneNumberTextBox.ReadOnly = false;
-                    emailTextBox.ReadOnly = false;
+                    fnameUser.ReadOnly = false;
+                    lnameUser.ReadOnly = false;
+                    dobUser.ReadOnly = false;
+                    streetUser.ReadOnly = false;
+                    cityUser.ReadOnly = false;
+                    stateUser.ReadOnly = false;
+                    zipUser.ReadOnly = false;
+                    insuranceUser.ReadOnly = false;
+                    ccUser.ReadOnly = false;
+                    allergiesUser.ReadOnly = false;
+                    telephoneUser.ReadOnly = false;
+                    emailUser.ReadOnly = false;
                 }
                 else
                 {
@@ -254,41 +259,203 @@ namespace USPS
                     saveCheck = false;
                 }
             }
-
         }
 
-        private void Save_Click(object sender, EventArgs e)
+        private void saveUser_Click(object sender, EventArgs e)
         {
             //user side save checks to verify intent to save and then disable textboxes again
             if (saveCheck)
             {
-                DialogResult dR = MessageBox.Show("Save your information?", "System Message", MessageBoxButtons.OKCancel);
+                DialogResult dR = MessageBox.Show("Save user information?", "System Message", MessageBoxButtons.OKCancel);
                 if (dR == DialogResult.OK)
                 {
                     infoUpdate();
                     saveCheck = false;
-                    Save.Enabled = false;
-                    saveChanges.Enabled = false;
+                    saveUser.Enabled = false;
+                    savePharm.Enabled = false;
 
-                    firstNameTextBox.ReadOnly = true;
-                    lastNameTextBox.ReadOnly = true;
-                    dateOfBirthTextBox.ReadOnly = true;
-                    streetAddressTextBox.ReadOnly = true;
-                    cityTextBox.ReadOnly = true;
-                    stateTextBox.ReadOnly = true;
-                    zipCodeTextBox.ReadOnly = true;
-                    insuranceTextBox.ReadOnly = true;
-                    paymentMethodTextBox.ReadOnly = true;
-                    allergyTextBox.ReadOnly = true;
-                    telephoneNumberTextBox.ReadOnly = true;
-                    emailTextBox.ReadOnly = true;
+                    fnameUser.ReadOnly = true;
+                    lnameUser.ReadOnly = true;
+                    dobUser.ReadOnly = true;
+                    streetUser.ReadOnly = true;
+                    cityUser.ReadOnly = true;
+                    stateUser.ReadOnly = true;
+                    zipUser.ReadOnly = true;
+                    insuranceUser.ReadOnly = true;
+                    ccUser.ReadOnly = true;
+                    allergiesUser.ReadOnly = true;
+                    telephoneUser.ReadOnly = true;
+                    emailUser.ReadOnly = true;
 
-                    edit.Enabled = true;
-                    Edit_onPharmForm.Enabled = true;
+                    editUser.Enabled = true;
+                    editPharm.Enabled = true;
                     editCheck = false;
                 }
             }
+        }
 
+        //pharm side edits and saves
+        private void editPharm_Click(object sender, EventArgs e)
+        {
+            //pharm side edit checks
+            if (!editCheck)
+            {
+                DialogResult dR = MessageBox.Show("Edit user information?", "System Message", MessageBoxButtons.OKCancel);
+                if (dR == DialogResult.OK)
+                {
+                    editCheck = true;
+                    saveCheck = true;
+                    editPharm.Enabled = false;
+                    searchPharm.Enabled = false;
+                    savePharm.Enabled = true;
+
+                    fnamePharm.ReadOnly = false;
+                    lnamePharm.ReadOnly = false;
+                    dobPharm.ReadOnly = false;
+                    telephonePharm.ReadOnly = false;
+                    emailPharm.ReadOnly = false;
+                    streetPharm.ReadOnly = false;
+                    statePharm.ReadOnly = false;
+                    cityPharm.ReadOnly = false;
+                    zipPharm.ReadOnly = false;
+                    insurancePharm.ReadOnly = false;
+                    ccPharm.ReadOnly = false;
+                    allergiesPharm.ReadOnly = false;
+                }
+                else
+                {
+                    editCheck = false;
+                    saveCheck = false;
+                }
+            }
+        }
+
+        private void savePharm_Click(object sender, EventArgs e)
+        {
+            //pharm side save checks
+            if (saveCheck)
+            {
+                DialogResult dR = MessageBox.Show("Save user information?", "System Message", MessageBoxButtons.OKCancel);
+                if (dR == DialogResult.OK)
+                {
+                    infoUpdate();
+                    saveCheck = false;
+                    savePharm.Enabled = false;
+                    searchPharm.Enabled = true;
+
+                    fnamePharm.ReadOnly = true;
+                    lnamePharm.ReadOnly = true;
+                    dobPharm.ReadOnly = true;
+                    telephonePharm.ReadOnly = true;
+                    emailPharm.ReadOnly = true;
+                    streetPharm.ReadOnly = true;
+                    statePharm.ReadOnly = true;
+                    cityPharm.ReadOnly = true;
+                    zipPharm.ReadOnly = true;
+                    insurancePharm.ReadOnly = true;
+                    ccPharm.ReadOnly = true;
+                    allergiesPharm.ReadOnly = true;
+
+                    editPharm.Enabled = true;
+                    editCheck = false;
+                }
+            }
+        }
+        //trigger event when enter key pressed in search field
+        private void SearchKeyUp_Pharm(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                //Do something
+                Dictionary<string, string> info = db.searchCustomers(searchPharm.Text);
+                searchResults(info);
+                e.Handled = true;
+            }
+        }
+        private void searchPharm_TextChanged(object sender, EventArgs e)
+        {
+            searchPharm.KeyUp += SearchKeyUp_Pharm;
+        }
+
+        //admin side edits and saves
+        private void editAdmin_Click(object sender, EventArgs e)
+        {
+            //admin side edit checks
+            if (!editCheck)
+            {
+                DialogResult dR = MessageBox.Show("Edit user information?", "System Message", MessageBoxButtons.OKCancel);
+                if (dR == DialogResult.OK)
+                {
+                    editCheck = true;
+                    saveCheck = true;
+                    editAdmin.Enabled = false;
+                    searchAdmin.Enabled = false;
+                    saveAdmin.Enabled = true;
+
+                    fnameAdmin.ReadOnly = false;
+                    lnameAdmin.ReadOnly = false;
+                    dobAdmin.ReadOnly = false;
+                    telephoneAdmin.ReadOnly = false;
+                    emailAdmin.ReadOnly = false;
+                    streetAdmin.ReadOnly = false;
+                    stateAdmin.ReadOnly = false;
+                    cityAdmin.ReadOnly = false;
+                    zipAdmin.ReadOnly = false;
+                    insuranceAdmin.ReadOnly = false;
+                    ccAdmin.ReadOnly = false;
+                    allergiesAdmin.ReadOnly = false;
+                }
+                else
+                {
+                    editCheck = false;
+                    saveCheck = false;
+                }
+            }
+        }
+        private void saveAdmin_Click(object sender, EventArgs e)
+        {
+            //admin side save checks
+            if (saveCheck)
+            {
+                DialogResult dR = MessageBox.Show("Save user information?", "System Message", MessageBoxButtons.OKCancel);
+                if (dR == DialogResult.OK)
+                {
+                    infoUpdate();
+                    saveCheck = false;
+                    saveAdmin.Enabled = false;
+                    searchAdmin.Enabled = true;
+
+                    fnameAdmin.ReadOnly = true;
+                    lnameAdmin.ReadOnly = true;
+                    dobAdmin.ReadOnly = true;
+                    telephoneAdmin.ReadOnly = true;
+                    emailAdmin.ReadOnly = true;
+                    streetAdmin.ReadOnly = true;
+                    stateAdmin.ReadOnly = true;
+                    cityAdmin.ReadOnly = true;
+                    zipAdmin.ReadOnly = true;
+                    insuranceAdmin.ReadOnly = true;
+                    ccAdmin.ReadOnly = true;
+                    allergiesAdmin.ReadOnly = true;
+
+                    editAdmin.Enabled = true;
+                    editCheck = false;
+                }
+            }
+        }
+        private void SearchKeyUp_Admin(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                //Do something
+                Dictionary<string, string> info = db.searchCustomers(searchAdmin.Text);
+                searchResults(info);
+                e.Handled = true;
+            }
+        }
+        private void searchAdmin_TextChanged(object sender, EventArgs e)
+        {
+            searchAdmin.KeyUp += SearchKeyUp_Admin;
         }
 
         //logout and return to sign in screen
@@ -302,87 +469,185 @@ namespace USPS
             }
         }
 
-        private void Edit_onPharmForm_Click(object sender, EventArgs e)
+        //refil panel stuff
+        private void requestRefill_Click(object sender, EventArgs e)
         {
-            //pharm side edit checks
-            if (!editCheck)
-            {
-                DialogResult dR = MessageBox.Show("Edit your information?", "System Message", MessageBoxButtons.OKCancel);
-                if (dR == DialogResult.OK)
-                {
-                    editCheck = true;
-                    saveCheck = true;
-                    Edit_onPharmForm.Enabled = false;
-                    textBox_searchName.Enabled = false;
-                    saveChanges.Enabled = true;
+            refillPanel.Location = new System.Drawing.Point(450, 29);
+            refillPanel.Size = new System.Drawing.Size(287, 315);
+            refillPanel.Visible = true;
+        }
+        private void backRefill_Click(object sender, EventArgs e)
+        {
+            refillPanel.Visible = false;
+        }
 
-                    textBox_firstName.ReadOnly = false;
-                    textBox_lastName.ReadOnly = false;
-                    textBox_dateOfBirth.ReadOnly = false;
-                    textBox_telephone.ReadOnly = false;
-                    textBox_email.ReadOnly = false;
-                    textBox_streetAddress.ReadOnly = false;
-                    textBox_state.ReadOnly = false;
-                    textBox_city.ReadOnly = false;
-                    textBox_zipcode.ReadOnly = false;
-                    textBox_insurance.ReadOnly = false;
-                    textBox_paymentMethod.ReadOnly = false;
-                    textBox_drugAllergies1.ReadOnly = false;
-                }
-                else
-                {
-                    editCheck = false;
-                    saveCheck = false;
-                }
+        //refill checkbox area -- customer
+        private void checkBox1Refill_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1Refill.Checked == true)
+            {
+                submitRefill.Enabled = true;
+            }
+            else if ((checkBox5Refill.Checked == true) || (checkBox4Refill.Checked == true) ||
+                (checkBox3Refill.Checked == true) || (checkBox2Refill.Checked == true) || (checkBox1Refill.Checked == true))
+            {
+                submitRefill.Enabled = true;
+            }
+            else
+            {
+                submitRefill.Enabled = false;
             }
         }
 
-        private void saveChanges_Click(object sender, EventArgs e)
+        private void checkBox2Refill_CheckedChanged(object sender, EventArgs e)
         {
-            //pharm side save checks
-            if (saveCheck)
+            if (checkBox2Refill.Checked == true)
             {
-                DialogResult dR = MessageBox.Show("Save your information?", "System Message", MessageBoxButtons.OKCancel);
-                if (dR == DialogResult.OK)
-                {
-                    infoUpdate();
-                    saveCheck = false;
-                    saveChanges.Enabled = false;
-                    textBox_searchName.Enabled = true;
-
-                    textBox_firstName.ReadOnly = true;
-                    textBox_lastName.ReadOnly = true;
-                    textBox_dateOfBirth.ReadOnly = true;
-                    textBox_telephone.ReadOnly = true;
-                    textBox_email.ReadOnly = true;
-                    textBox_streetAddress.ReadOnly = true;
-                    textBox_state.ReadOnly = true;
-                    textBox_city.ReadOnly = true;
-                    textBox_zipcode.ReadOnly = true;
-                    textBox_insurance.ReadOnly = true;
-                    textBox_paymentMethod.ReadOnly = true;
-                    textBox_drugAllergies1.ReadOnly = true;
-
-                    Edit_onPharmForm.Enabled = true;
-                    editCheck = false;
-                }
+                submitRefill.Enabled = true;
             }
-        }
-        //trigger event when enter key pressed in search field
-        private void SearchKeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
+            else if ((checkBox5Refill.Checked == true) || (checkBox4Refill.Checked == true) ||
+                (checkBox3Refill.Checked == true) || (checkBox2Refill.Checked == true) || (checkBox1Refill.Checked == true))
             {
-                //Do something
-                Dictionary<string, string> info = db.searchCustomers(textBox_searchName.Text);
-                searchResults(info);
-                e.Handled = true;
+                submitRefill.Enabled = true;
+            }
+            else
+            {
+                submitRefill.Enabled = false;
             }
         }
 
-        private void textBox_searchName_TextChanged(object sender, EventArgs e)
+        private void checkBox3Refill_CheckedChanged(object sender, EventArgs e)
         {
-            textBox_searchName.KeyUp += SearchKeyUp;
+            if (checkBox3Refill.Checked == true)
+            {
+                submitRefill.Enabled = true;
+            }
+            else if ((checkBox5Refill.Checked == true) || (checkBox4Refill.Checked == true) ||
+                (checkBox3Refill.Checked == true) || (checkBox2Refill.Checked == true) || (checkBox1Refill.Checked == true))
+            {
+                submitRefill.Enabled = true;
+            }
+            else
+            {
+                submitRefill.Enabled = false;
+            }
+        }
+
+        private void checkBox4Refill_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox4Refill.Checked == true)
+            {
+                submitRefill.Enabled = true;
+            }
+            else if ((checkBox5Refill.Checked == true) || (checkBox4Refill.Checked == true) ||
+                (checkBox3Refill.Checked == true) || (checkBox2Refill.Checked == true) || (checkBox1Refill.Checked == true))
+            {
+                submitRefill.Enabled = true;
+            }
+            else
+            {
+                submitRefill.Enabled = false;
+            }
+        }
+
+        private void checkBox5Refill_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox5Refill.Checked == true)
+            {
+                submitRefill.Enabled = true;
+            }
+            else if ((checkBox5Refill.Checked == true) || (checkBox4Refill.Checked == true) ||
+                (checkBox3Refill.Checked == true) || (checkBox2Refill.Checked == true) || (checkBox1Refill.Checked == true))
+            {
+                submitRefill.Enabled = true;
+            }
+            else
+            {
+                submitRefill.Enabled = false;
+            }
+        }
+
+        //refil checkbox area -- pharm
+
+        private void checkBox1Pharm_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1Pharm.Checked == true)
+            {
+                SubmitOrderPharm.Enabled = true;
+            }
+            else if ((checkBox1Pharm.Checked == true) || (checkBox2Pharm.Checked == true) ||
+                (checkBox3Pharm.Checked == true) || (checkBox4Pharm.Checked == true) || (checkBox5Pharm.Checked == true))
+            {
+                SubmitOrderPharm.Enabled = true;
+            }
+            else
+            {
+                SubmitOrderPharm.Enabled = false;
+            }
+        }
+        private void checkBox2Pharm_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox2Pharm.Checked == true)
+            {
+                SubmitOrderPharm.Enabled = true;
+            }
+            else if ((checkBox1Pharm.Checked == true) || (checkBox2Pharm.Checked == true) ||
+                (checkBox3Pharm.Checked == true) || (checkBox4Pharm.Checked == true) || (checkBox5Pharm.Checked == true))
+            {
+                SubmitOrderPharm.Enabled = true;
+            }
+            else
+            {
+                SubmitOrderPharm.Enabled = false;
+            }
+        }
+        private void checkBox3Pharm_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox3Pharm.Checked == true)
+            {
+                SubmitOrderPharm.Enabled = true;
+            }
+            else if ((checkBox1Pharm.Checked == true) || (checkBox2Pharm.Checked == true) ||
+                (checkBox3Pharm.Checked == true) || (checkBox4Pharm.Checked == true) || (checkBox5Pharm.Checked == true))
+            {
+                SubmitOrderPharm.Enabled = true;
+            }
+            else
+            {
+                SubmitOrderPharm.Enabled = false;
+            }
+        }
+        private void checkBox4Pharm_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox4Pharm.Checked == true)
+            {
+                SubmitOrderPharm.Enabled = true;
+            }
+            else if ((checkBox1Pharm.Checked == true) || (checkBox2Pharm.Checked == true) ||
+                (checkBox3Pharm.Checked == true) || (checkBox4Pharm.Checked == true) || (checkBox5Pharm.Checked == true))
+            {
+                SubmitOrderPharm.Enabled = true;
+            }
+            else
+            {
+                SubmitOrderPharm.Enabled = false;
+            }
+        }
+        private void checkBox5Pharm_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox5Pharm.Checked == true)
+            {
+                SubmitOrderPharm.Enabled = true;
+            }
+            else if ((checkBox1Pharm.Checked == true) || (checkBox2Pharm.Checked == true) ||
+                (checkBox3Pharm.Checked == true) || (checkBox4Pharm.Checked == true) || (checkBox5Pharm.Checked == true))
+            {
+                SubmitOrderPharm.Enabled = true;
+            }
+            else
+            {
+                SubmitOrderPharm.Enabled = false;
+            }
         }
 
         // ---- textbox validation section -----
@@ -400,10 +665,9 @@ namespace USPS
             {
                 //the e.Cancel bit keeps the cursor from leaving the field until the error is completed
                 e.Cancel = true;
-                errorBox("Fields cannot be left blank.");
+                mySystemMessage("Fields cannot be left blank.");
             }
         }
-
         private void pass_Validating(object sender, CancelEventArgs e)
         {
             if (this.ActiveControl.Equals(sender))
@@ -413,286 +677,295 @@ namespace USPS
             if (String.IsNullOrEmpty(pass.Text.Trim()))
             {
                 e.Cancel = true;
-                errorBox("Fields cannot be left blank.");
+                mySystemMessage("Fields cannot be left blank.");
             }
         }
 
         // panel 1 Customer validation
-        private void firstNameTextBox_Validating(object sender, CancelEventArgs e)
+        private void fnameUser_Validating(object sender, CancelEventArgs e)
         {
             //the editCheck makes sure that you are actually editing the data when validations are triggered
             //otherwise it tries to validate even when you aren't editing/changing anything
             if (editCheck)
             {
-                firstNameTextBox.Text = firstNameTextBox.Text.Trim();
+                fnameUser.Text = fnameUser.Text.Trim();
 
                 if (this.ActiveControl.Equals(sender))
                 {
                     return;
                 }
 
-                if (String.IsNullOrEmpty(firstNameTextBox.Text))
+                if (String.IsNullOrEmpty(fnameUser.Text))
                 {
                     e.Cancel = true;
-                    errorBox("Fields cannot be left blank.");
+                    mySystemMessage("Fields cannot be left blank.");
                 }
 
-                if (firstNameTextBox.Text.isAlpha())
+                if (fnameUser.Text.isAlpha())
                 {
                     e.Cancel = true;
-                    errorBox("Only letters allowed in name fields.");
+                    mySystemMessage("Only letters allowed in name fields.");
                 }
             }
         }
-
-        private void lastNameTextBox_Validating(object sender, CancelEventArgs e)
+        private void lnameUser_Validating(object sender, CancelEventArgs e)
         {
             if (editCheck)
             {
-                lastNameTextBox.Text = lastNameTextBox.Text.Trim();
+                lnameUser.Text = lnameUser.Text.Trim();
 
                 if (this.ActiveControl.Equals(sender))
                 {
                     return;
                 }
 
-                if (String.IsNullOrEmpty(lastNameTextBox.Text))
+                if (String.IsNullOrEmpty(lnameUser.Text))
                 {
                     e.Cancel = true;
-                    errorBox("Fields cannot be left blank.");
+                    mySystemMessage("Fields cannot be left blank.");
                 }
 
-                if (lastNameTextBox.Text.isAlpha())
+                if (lnameUser.Text.isAlpha())
                 {
                     e.Cancel = true;
-                    errorBox("Only letters allowed in name fields.");
+                    mySystemMessage("Only letters allowed in name fields.");
                 }
             }
         }
-
-        private void dateOfBirthTextBox_Validating(object sender, CancelEventArgs e)
+        private void dobUser_Validating(object sender, CancelEventArgs e)
         {
             if (editCheck)
             {
-                dateOfBirthTextBox.Text = dateOfBirthTextBox.Text.Trim();
+                dobUser.Text = dobUser.Text.Trim();
 
                 if (this.ActiveControl.Equals(sender))
                 {
                     return;
                 }
 
-                if (String.IsNullOrEmpty(dateOfBirthTextBox.Text))
+                if (String.IsNullOrEmpty(dobUser.Text))
                 {
                     e.Cancel = true;
-                    errorBox("Fields cannot be left blank.");
+                    mySystemMessage("Fields cannot be left blank.");
                 }
 
-                if (!ValidationFunctions.isDOB(dateOfBirthTextBox.Text))
+                if (!ValidationFunctions.isDOB(dobUser.Text))
                 {
                     e.Cancel = true;
-                    errorBox("DOB must be in ##/##/#### format.");
+                    mySystemMessage("DOB must be in ##/##/#### format.");
                 }
             }
         }
-
-        private void streetAddressTextBox_Validating(object sender, CancelEventArgs e)
+        private void streetUser_Validating(object sender, CancelEventArgs e)
         {
             if (editCheck)
             {
-                streetAddressTextBox.Text = streetAddressTextBox.Text.Trim();
+                streetUser.Text = streetUser.Text.Trim();
 
                 if (this.ActiveControl.Equals(sender))
                 {
                     return;
                 }
 
-                if (String.IsNullOrEmpty(streetAddressTextBox.Text))
+                if (String.IsNullOrEmpty(streetUser.Text))
                 {
                     e.Cancel = true;
-                    errorBox("Fields cannot be left blank.");
+                    mySystemMessage("Fields cannot be left blank.");
                 }
 
-                if (streetAddressTextBox.Text.isAlphaNum())
+                if (streetUser.Text.isAlphaNum())
                 {
                     e.Cancel = true;
-                    errorBox("Only letters and numbers allowed in Address field.");
+                    mySystemMessage("Only letters and numbers allowed in Address field.");
                 }
             }
         }
-
-        private void cityTextBox_Validating(object sender, CancelEventArgs e)
+        private void cityUser_Validating(object sender, CancelEventArgs e)
         {
             if (editCheck)
             {
-                cityTextBox.Text = cityTextBox.Text.Trim();
+                cityUser.Text = cityUser.Text.Trim();
 
                 if (this.ActiveControl.Equals(sender))
                 {
                     return;
                 }
 
-                if (String.IsNullOrEmpty(cityTextBox.Text))
+                if (String.IsNullOrEmpty(cityUser.Text))
                 {
                     e.Cancel = true;
-                    errorBox("Fields cannot be left blank.");
+                    mySystemMessage("Fields cannot be left blank.");
                 }
 
-                if (cityTextBox.Text.isAlpha())
+                if (cityUser.Text.isAlpha())
                 {
                     e.Cancel = true;
-                    errorBox("Only letters allowed in City field.");
+                    mySystemMessage("Only letters allowed in City field.");
                 }
             }
         }
-
-        private void stateTextBox_Validating(object sender, CancelEventArgs e)
+        private void stateUser_Validating(object sender, CancelEventArgs e)
         {
             if (editCheck)
             {
-                stateTextBox.Text = stateTextBox.Text.Trim();
+                stateUser.Text = stateUser.Text.Trim();
 
                 if (this.ActiveControl.Equals(sender))
                 {
                     return;
                 }
 
-                if (String.IsNullOrEmpty(stateTextBox.Text))
+                if (String.IsNullOrEmpty(stateUser.Text))
                 {
                     e.Cancel = true;
-                    errorBox("Fields cannot be left blank.");
+                    mySystemMessage("Fields cannot be left blank.");
                 }
 
-                if (stateTextBox.Text.isAlpha())
+                if (stateUser.Text.isAlpha())
                 {
                     e.Cancel = true;
-                    errorBox("Only letters allowed in State field.");
+                    mySystemMessage("Only letters allowed in State field.");
                 }
             }
         }
-
-        private void stateTextBox_TextChanged(object sender, EventArgs e)
+        private void stateUser_TextChanged(object sender, EventArgs e)
         {
             //force uppercase for valid state code
-            stateTextBox.Text = stateTextBox.Text.ToUpper();
+            stateUser.Text = stateUser.Text.ToUpper();
         }
-
-        private void zipCodeTextBox_Validating(object sender, CancelEventArgs e)
+        private void zipUser_Validating(object sender, CancelEventArgs e)
         {
             if (editCheck)
             {
-                zipCodeTextBox.Text = zipCodeTextBox.Text.Trim();
+                zipUser.Text = zipUser.Text.Trim();
 
                 if (this.ActiveControl.Equals(sender))
                 {
                     return;
                 }
 
-                if (String.IsNullOrEmpty(zipCodeTextBox.Text))
+                if (String.IsNullOrEmpty(zipUser.Text))
                 {
                     e.Cancel = true;
-                    errorBox("Fields cannot be left blank.");
+                    mySystemMessage("Fields cannot be left blank.");
                 }
 
-                if (zipCodeTextBox.Text.isNum())
+                if (zipUser.Text.isNum())
                 {
                     e.Cancel = true;
-                    errorBox("Zipcode field must be in ##### format.");
+                    mySystemMessage("Zipcode field must be in ##### format.");
                 }
             }
         }
-
-        private void insuranceTextBox_Validating(object sender, CancelEventArgs e)
+        private void insuranceUser_Validating(object sender, CancelEventArgs e)
         {
             if (editCheck)
             {
-                insuranceTextBox.Text = insuranceTextBox.Text.Trim();
+                insuranceUser.Text = insuranceUser.Text.Trim();
 
                 if (this.ActiveControl.Equals(sender))
                 {
                     return;
                 }
 
-                if (String.IsNullOrEmpty(insuranceTextBox.Text))
+                if (String.IsNullOrEmpty(insuranceUser.Text))
                 {
                     e.Cancel = true;
-                    errorBox("Fields cannot be left blank.");
+                    mySystemMessage("Fields cannot be left blank.");
                 }
 
-                if (insuranceTextBox.Text.isAlphaNum())
+                if (insuranceUser.Text.isAlphaNum())
                 {
                     e.Cancel = true;
-                    errorBox("Only letters and numbers allowed in Address field.");
+                    mySystemMessage("Only letters and numbers allowed in Address field.");
                 }
             }
         }
-
-        private void emailTextBox_Validating(object sender, CancelEventArgs e)
+        private void emailUser_Validating(object sender, CancelEventArgs e)
         {
             if (editCheck)
             {
-                emailTextBox.Text = emailTextBox.Text.Trim();
+                emailUser.Text = emailUser.Text.Trim();
 
                 if (this.ActiveControl.Equals(sender))
                 {
                     return;
                 }
 
-                if (String.IsNullOrEmpty(emailTextBox.Text))
+                if (String.IsNullOrEmpty(emailUser.Text))
                 {
                     e.Cancel = true;
-                    errorBox("Fields cannot be left blank.");
+                    mySystemMessage("Fields cannot be left blank.");
                 }
 
-                if (!ValidationFunctions.IsEmail(emailTextBox.Text))
+                if (!ValidationFunctions.IsEmail(emailUser.Text))
                 {
                     e.Cancel = true;
-                    errorBox("Please enter a valid email address.");
+                    mySystemMessage("Please enter a valid email address.");
                 }
             }
         }
-
-        private void telephoneNumberTextBox_Validating(object sender, CancelEventArgs e)
+        private void telephoneUser_Validating(object sender, CancelEventArgs e)
         {
             if (editCheck)
             {
-                telephoneNumberTextBox.Text = telephoneNumberTextBox.Text.Trim();
+                telephoneUser.Text = telephoneUser.Text.Trim();
 
                 if (this.ActiveControl.Equals(sender))
                 {
                     return;
                 }
 
-                if (String.IsNullOrEmpty(telephoneNumberTextBox.Text))
+                if (String.IsNullOrEmpty(telephoneUser.Text))
                 {
                     e.Cancel = true;
-                    errorBox("Fields cannot be left blank.");
+                    mySystemMessage("Fields cannot be left blank.");
                 }
 
-                if (telephoneNumberTextBox.Text.isPhone())
+                if (telephoneUser.Text.isPhone())
                 {
                     e.Cancel = true;
-                    errorBox("Telephone Number field must be in ###-###-#### format.");
+                    mySystemMessage("Telephone Number field must be in ###-###-#### format.");
                 }
             }
         }
-
-        private void telephoneNumberTextBox_TextChanged(object sender, EventArgs e)
+        private void telephoneUser_TextChanged(object sender, EventArgs e)
         {
             //when inputting a phone number, automatically insert "-" after first three digits and
             //next three digits, then put the cursor after the dash
-            if (telephoneNumberTextBox.Text.Length == 3)
+            if (telephoneUser.Text.Length > 2)
             {
-                telephoneNumberTextBox.Text = telephoneNumberTextBox.Text + "-";
-                telephoneNumberTextBox.SelectionStart = 4;
-            }
-            if (telephoneNumberTextBox.Text.Length == 7)
+                if (telephoneUser.Text[telephoneUser.Text.Length - 1] != '-')
+                {
+                    if (telephoneUser.Text.Length == 3)
+                    {
+                        telephoneUser.Text = telephoneUser.Text + "-";
+                        telephoneUser.SelectionStart = 4;
+                    }
+                    if (telephoneUser.Text.Length == 7)
+                    {
+                        telephoneUser.Text = telephoneUser.Text + "-";
+                        telephoneUser.SelectionStart = 8;
+                    }
+                }
+            }       
+        }
+        private void telephoneUser_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (telephoneUser.Text.Length > 2)
             {
-                telephoneNumberTextBox.Text = telephoneNumberTextBox.Text + "-";
-                telephoneNumberTextBox.SelectionStart = 8;
+                if (telephoneUser.Text[telephoneUser.Text.Length - 1] == '-')
+                {
+                    if (e.KeyCode == Keys.Back)
+                    {
+                        telephoneUser.Text = telephoneUser.Text.Remove(telephoneUser.Text.Length - 2, 1);
+                        telephoneUser.SelectionStart = telephoneUser.TextLength;
+                    }
+                }
             }
         }
 
-        private void paymentMethodTextBox_Validating(object sender, CancelEventArgs e)
+        private void ccUser_Validating(object sender, CancelEventArgs e)
         {
             //We can include regex to verify that input is a valid cc number, but for
             //now it simply checks for the right number of digits
@@ -703,27 +976,26 @@ namespace USPS
                     return;
                 }
 
-                paymentMethodTextBox.Text = paymentMethodTextBox.Text.Trim();
+                ccUser.Text = ccUser.Text.Trim();
 
-                if (String.IsNullOrEmpty(paymentMethodTextBox.Text))
+                if (String.IsNullOrEmpty(ccUser.Text))
                 {
                     e.Cancel = true;
-                    errorBox("Fields cannot be left blank.");
+                    mySystemMessage("Fields cannot be left blank.");
                 }
 
-                if ((paymentMethodTextBox.Text.isNum()) || (paymentMethodTextBox.Text.Length < 15))
+                if ((ccUser.Text.isNum()) || (ccUser.Text.Length < 15))
                 {
                     e.Cancel = true;
-                    errorBox("Payment Method field must be between 15 and 19 numerical characters.");
+                    mySystemMessage("Payment Method field must be between 15 and 19 numerical characters.");
                 }
             }
         }
-
-        private void allergyTextBox_Validating(object sender, CancelEventArgs e)
+        private void allergiesUser_Validating(object sender, CancelEventArgs e)
         {
             if (editCheck)
             {
-                allergyTextBox.Text = allergyTextBox.Text.Trim();
+                allergiesUser.Text = allergiesUser.Text.Trim();
 
                 if (this.ActiveControl.Equals(sender))
                 {
@@ -731,291 +1003,299 @@ namespace USPS
                 }
 
                 //no null check, as this is the only field that may not always be used
-                if (allergyTextBox.Text.isAlphaNum())
+                if (allergiesUser.Text.isAlphaNum())
                 {
                     e.Cancel = true;
-                    errorBox("Only letters and numbers allowed in Drug Allergies field.");
+                    mySystemMessage("Only letters and numbers allowed in Drug Allergies field.");
                 }
             }
         }
 
         //panel 2 Pharm validation
 
-        private void textBox_firstName_Validating(object sender, CancelEventArgs e)
+        private void fnamePharm_Validating(object sender, CancelEventArgs e)
         {
             //the editCheck makes sure that you are actually editing the data when validations are triggered
             //otherwise it tries to validate even when you aren't editing/changing anything
             if (editCheck)
             {
-                textBox_firstName.Text = textBox_firstName.Text.Trim();
+                fnamePharm.Text = fnamePharm.Text.Trim();
 
                 if (this.ActiveControl.Equals(sender))
                 {
                     return;
                 }
 
-                if (String.IsNullOrEmpty(textBox_firstName.Text))
+                if (String.IsNullOrEmpty(fnamePharm.Text))
                 {
                     e.Cancel = true;
-                    errorBox("Fields cannot be left blank.");
+                    mySystemMessage("Fields cannot be left blank.");
                 }
 
-                if (textBox_firstName.Text.isAlpha())
+                if (fnamePharm.Text.isAlpha())
                 {
                     e.Cancel = true;
-                    errorBox("Only letters allowed in name fields.");
+                    mySystemMessage("Only letters allowed in name fields.");
                 }
             }
         }
-
-        private void textBox_lastName_Validating(object sender, CancelEventArgs e)
+        private void lnamePharm_Validating(object sender, CancelEventArgs e)
         {
             if (editCheck)
             {
-                textBox_lastName.Text = textBox_lastName.Text.Trim();
+                lnamePharm.Text = lnamePharm.Text.Trim();
 
                 if (this.ActiveControl.Equals(sender))
                 {
                     return;
                 }
 
-                if (String.IsNullOrEmpty(textBox_lastName.Text))
+                if (String.IsNullOrEmpty(lnamePharm.Text))
                 {
                     e.Cancel = true;
-                    errorBox("Fields cannot be left blank.");
+                    mySystemMessage("Fields cannot be left blank.");
                 }
 
-                if (textBox_lastName.Text.isAlpha())
+                if (lnamePharm.Text.isAlpha())
                 {
                     e.Cancel = true;
-                    errorBox("Only letters allowed in name fields.");
+                    mySystemMessage("Only letters allowed in name fields.");
                 }
             }
         }
-
-        private void textBox_dateOfBirth_Validating(object sender, CancelEventArgs e)
+        private void dobPharm_Validating(object sender, CancelEventArgs e)
         {
             if (editCheck)
             {
-                textBox_dateOfBirth.Text = textBox_dateOfBirth.Text.Trim();
+                dobPharm.Text = dobPharm.Text.Trim();
 
                 if (this.ActiveControl.Equals(sender))
                 {
                     return;
                 }
 
-                if (String.IsNullOrEmpty(textBox_dateOfBirth.Text))
+                if (String.IsNullOrEmpty(dobPharm.Text))
                 {
                     e.Cancel = true;
-                    errorBox("Fields cannot be left blank.");
+                    mySystemMessage("Fields cannot be left blank.");
                 }
 
-                if (!ValidationFunctions.isDOB(textBox_dateOfBirth.Text))
+                if (!ValidationFunctions.isDOB(dobPharm.Text))
                 {
                     e.Cancel = true;
-                    errorBox("DOB must be in ##/##/#### format.");
+                    mySystemMessage("DOB must be in ##/##/#### format.");
                 }
             }
         }
-
-        private void textBox_streetAddress_Validating(object sender, CancelEventArgs e)
+        private void streetPharm_Validating(object sender, CancelEventArgs e)
         {
             if (editCheck)
             {
-                textBox_streetAddress.Text = textBox_streetAddress.Text.Trim();
+                streetPharm.Text = streetPharm.Text.Trim();
 
                 if (this.ActiveControl.Equals(sender))
                 {
                     return;
                 }
 
-                if (String.IsNullOrEmpty(textBox_streetAddress.Text))
+                if (String.IsNullOrEmpty(streetPharm.Text))
                 {
                     e.Cancel = true;
-                    errorBox("Fields cannot be left blank.");
+                    mySystemMessage("Fields cannot be left blank.");
                 }
 
-                if (textBox_streetAddress.Text.isAlphaNum())
+                if (streetPharm.Text.isAlphaNum())
                 {
                     e.Cancel = true;
-                    errorBox("Only letters and numbers allowed in Address field.");
+                    mySystemMessage("Only letters and numbers allowed in Address field.");
                 }
             }
         }
-
-        private void textBox_city_Validating(object sender, CancelEventArgs e)
+        private void cityPharm_Validating(object sender, CancelEventArgs e)
         {
             if (editCheck)
             {
-                textBox_city.Text = textBox_city.Text.Trim();
+                cityPharm.Text = cityPharm.Text.Trim();
 
                 if (this.ActiveControl.Equals(sender))
                 {
                     return;
                 }
 
-                if (String.IsNullOrEmpty(textBox_city.Text))
+                if (String.IsNullOrEmpty(cityPharm.Text))
                 {
                     e.Cancel = true;
-                    errorBox("Fields cannot be left blank.");
+                    mySystemMessage("Fields cannot be left blank.");
                 }
 
-                if (textBox_city.Text.isAlpha())
+                if (cityPharm.Text.isAlpha())
                 {
                     e.Cancel = true;
-                    errorBox("Only letters allowed in City field.");
+                    mySystemMessage("Only letters allowed in City field.");
                 }
             }
         }
-
-        private void textBox_state_Validating(object sender, CancelEventArgs e)
+        private void statePharm_Validating(object sender, CancelEventArgs e)
         {
             if (editCheck)
             {
-                textBox_state.Text = textBox_state.Text.Trim();
+                statePharm.Text = statePharm.Text.Trim();
 
                 if (this.ActiveControl.Equals(sender))
                 {
                     return;
                 }
 
-                if (String.IsNullOrEmpty(textBox_state.Text))
+                if (String.IsNullOrEmpty(statePharm.Text))
                 {
                     e.Cancel = true;
-                    errorBox("Fields cannot be left blank.");
+                    mySystemMessage("Fields cannot be left blank.");
                 }
 
-                if (textBox_state.Text.isAlpha())
+                if (statePharm.Text.isAlpha())
                 {
                     e.Cancel = true;
-                    errorBox("Only letters allowed in State field.");
+                    mySystemMessage("Only letters allowed in State field.");
                 }
             }
         }
-
-        private void textBox_state_TextChanged(object sender, EventArgs e)
+        private void statePharm_TextChanged(object sender, EventArgs e)
         {
             //force uppercase for valid state code
-            stateTextBox.Text = stateTextBox.Text.ToUpper();
+            stateUser.Text = stateUser.Text.ToUpper();
         }
-
-        private void textBox_zipcode_Validating(object sender, CancelEventArgs e)
+        private void zipPharm_Validating(object sender, CancelEventArgs e)
         {
             if (editCheck)
             {
-                textBox_zipcode.Text = textBox_zipcode.Text.Trim();
+                zipPharm.Text = zipPharm.Text.Trim();
 
                 if (this.ActiveControl.Equals(sender))
                 {
                     return;
                 }
 
-                if (String.IsNullOrEmpty(textBox_zipcode.Text))
+                if (String.IsNullOrEmpty(zipPharm.Text))
                 {
                     e.Cancel = true;
-                    errorBox("Fields cannot be left blank.");
+                    mySystemMessage("Fields cannot be left blank.");
                 }
 
-                if (textBox_zipcode.Text.isNum())
+                if (zipPharm.Text.isNum())
                 {
                     e.Cancel = true;
-                    errorBox("Zipcode field must be in ##### format.");
+                    mySystemMessage("Zipcode field must be in ##### format.");
                 }
             }
         }
-
-        private void textBox_insurance_Validating(object sender, CancelEventArgs e)
+        private void insurancePharm_Validating(object sender, CancelEventArgs e)
         {
             if (editCheck)
             {
-                textBox_insurance.Text = textBox_insurance.Text.Trim();
+                insurancePharm.Text = insurancePharm.Text.Trim();
 
                 if (this.ActiveControl.Equals(sender))
                 {
                     return;
                 }
 
-                if (String.IsNullOrEmpty(textBox_insurance.Text))
+                if (String.IsNullOrEmpty(insurancePharm.Text))
                 {
                     e.Cancel = true;
-                    errorBox("Fields cannot be left blank.");
+                    mySystemMessage("Fields cannot be left blank.");
                 }
 
-                if (textBox_insurance.Text.isAlphaNum())
+                if (insurancePharm.Text.isAlphaNum())
                 {
                     e.Cancel = true;
-                    errorBox("Only letters and numbers allowed in Address field.");
+                    mySystemMessage("Only letters and numbers allowed in Address field.");
                 }
             }
         }
-
-        private void textBox_email_Validating(object sender, CancelEventArgs e)
+        private void emailPharm_Validating(object sender, CancelEventArgs e)
         {
             if (editCheck)
             {
-                textBox_email.Text = textBox_email.Text.Trim();
+                emailPharm.Text = emailPharm.Text.Trim();
 
                 if (this.ActiveControl.Equals(sender))
                 {
                     return;
                 }
 
-                if (String.IsNullOrEmpty(textBox_email.Text))
+                if (String.IsNullOrEmpty(emailPharm.Text))
                 {
                     e.Cancel = true;
-                    errorBox("Fields cannot be left blank.");
+                    mySystemMessage("Fields cannot be left blank.");
                 }
 
-                if (!ValidationFunctions.IsEmail(textBox_email.Text))
+                if (!ValidationFunctions.IsEmail(emailPharm.Text))
                 {
                     e.Cancel = true;
-                    errorBox("Please enter a valid email address.");
+                    mySystemMessage("Please enter a valid email address.");
                 }
             }
         }
-
-        private void textBox_telephone_Validating(object sender, CancelEventArgs e)
+        private void telephonePharm_Validating(object sender, CancelEventArgs e)
         {
             if (editCheck)
             {
-                textBox_telephone.Text = textBox_telephone.Text.Trim();
+                telephonePharm.Text = telephonePharm.Text.Trim();
 
                 if (this.ActiveControl.Equals(sender))
                 {
                     return;
                 }
 
-                if (String.IsNullOrEmpty(textBox_telephone.Text))
+                if (String.IsNullOrEmpty(telephonePharm.Text))
                 {
                     e.Cancel = true;
-                    errorBox("Fields cannot be left blank.");
+                    mySystemMessage("Fields cannot be left blank.");
                 }
 
-                if (textBox_telephone.Text.isPhone())
+                if (telephonePharm.Text.isPhone())
                 {
                     e.Cancel = true;
-                    errorBox("Telephone Number field must be in ###-###-#### format.");
+                    mySystemMessage("Telephone Number field must be in ###-###-#### format.");
                 }
             }
         }
-
-        private void textBox_telephone_TextChanged(object sender, EventArgs e)
+        private void telephonePharm_TextChanged(object sender, EventArgs e)
         {
             //when inputting a phone number, automatically insert "-" after first three digits and
             //next three digits, then put the cursor after the dash
-            if (textBox_telephone.Text.Length == 3)
+            if (telephonePharm.Text.Length > 2)
             {
-                textBox_telephone.Text = textBox_telephone.Text + "-";
-                textBox_telephone.SelectionStart = 4;
-            }
-            if (textBox_telephone.Text.Length == 7)
-            {
-                textBox_telephone.Text = textBox_telephone.Text + "-";
-                textBox_telephone.SelectionStart = 8;
+                if (telephonePharm.Text[telephonePharm.Text.Length - 1] != '-')
+                {
+                    if (telephonePharm.Text.Length == 3)
+                    {
+                        telephonePharm.Text = telephonePharm.Text + "-";
+                        telephonePharm.SelectionStart = 4;
+                    }
+                    if (telephonePharm.Text.Length == 7)
+                    {
+                        telephonePharm.Text = telephonePharm.Text + "-";
+                        telephonePharm.SelectionStart = 8;
+                    }
+                }
             }
         }
-
-        private void textBox_paymentMethod_Validating(object sender, CancelEventArgs e)
+        private void telephonePharm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (telephonePharm.Text.Length > 2)
+            {
+                if (telephonePharm.Text[telephonePharm.Text.Length - 1] == '-')
+                {
+                    if (e.KeyCode == Keys.Back)
+                    {
+                        telephonePharm.Text = telephonePharm.Text.Remove(telephonePharm.Text.Length - 2, 1);
+                        telephonePharm.SelectionStart = telephonePharm.TextLength;
+                    }
+                }
+            }
+        }
+        private void ccPharm_Validating(object sender, CancelEventArgs e)
         {
             //We can include regex to verify that input is a valid cc number, but for
             //now it simply checks for the right number of digits
@@ -1026,27 +1306,26 @@ namespace USPS
                     return;
                 }
 
-                textBox_paymentMethod.Text = textBox_paymentMethod.Text.Trim();
+                ccPharm.Text = ccPharm.Text.Trim();
 
-                if (String.IsNullOrEmpty(textBox_paymentMethod.Text))
+                if (String.IsNullOrEmpty(ccPharm.Text))
                 {
                     e.Cancel = true;
-                    errorBox("Fields cannot be left blank.");
+                    mySystemMessage("Fields cannot be left blank.");
                 }
 
-                if ((textBox_paymentMethod.Text.isNum()) || (textBox_paymentMethod.Text.Length < 15))
+                if ((ccPharm.Text.isNum()) || (ccPharm.Text.Length < 15))
                 {
                     e.Cancel = true;
-                    errorBox("Payment Method field must be between 15 and 19 numerical characters.");
+                    mySystemMessage("Payment Method field must be between 15 and 19 numerical characters.");
                 }
             }
         }
-
-        private void textBox_drugAllergies1_Validating(object sender, CancelEventArgs e)
+        private void allergiesPharm_Validating(object sender, CancelEventArgs e)
         {
             if (editCheck)
             {
-                textBox_drugAllergies1.Text = textBox_drugAllergies1.Text.Trim();
+                allergiesPharm.Text = allergiesPharm.Text.Trim();
 
                 if (this.ActiveControl.Equals(sender))
                 {
@@ -1054,10 +1333,341 @@ namespace USPS
                 }
 
                 //no null check, as this is the only field that may not always be used
-                if (textBox_drugAllergies1.Text.isAlphaNum())
+                if (allergiesPharm.Text.isAlphaNum())
                 {
                     e.Cancel = true;
-                    errorBox("Only letters and numbers allowed in Drug Allergies field.");
+                    mySystemMessage("Only letters and numbers allowed in Drug Allergies field.");
+                }
+            }
+        }
+
+        //admin panel validating
+
+        private void fnameAdmin_Validating(object sender, CancelEventArgs e)
+        {
+            //the editCheck makes sure that you are actually editing the data when validations are triggered
+            //otherwise it tries to validate even when you aren't editing/changing anything
+            if (editCheck)
+            {
+                fnameAdmin.Text = fnameAdmin.Text.Trim();
+
+                if (this.ActiveControl.Equals(sender))
+                {
+                    return;
+                }
+
+                if (String.IsNullOrEmpty(fnameAdmin.Text))
+                {
+                    e.Cancel = true;
+                    mySystemMessage("Fields cannot be left blank.");
+                }
+
+                if (fnameAdmin.Text.isAlpha())
+                {
+                    e.Cancel = true;
+                    mySystemMessage("Only letters allowed in name fields.");
+                }
+            }
+        }
+        private void lnameAdmin_Validating(object sender, CancelEventArgs e)
+        {
+            if (editCheck)
+            {
+                lnameAdmin.Text = lnameAdmin.Text.Trim();
+
+                if (this.ActiveControl.Equals(sender))
+                {
+                    return;
+                }
+
+                if (String.IsNullOrEmpty(lnameAdmin.Text))
+                {
+                    e.Cancel = true;
+                    mySystemMessage("Fields cannot be left blank.");
+                }
+
+                if (lnameAdmin.Text.isAlpha())
+                {
+                    e.Cancel = true;
+                    mySystemMessage("Only letters allowed in name fields.");
+                }
+            }
+        }
+        private void dobAdmin_Validating(object sender, CancelEventArgs e)
+        {
+            if (editCheck)
+            {
+                dobAdmin.Text = dobAdmin.Text.Trim();
+
+                if (this.ActiveControl.Equals(sender))
+                {
+                    return;
+                }
+
+                if (String.IsNullOrEmpty(dobAdmin.Text))
+                {
+                    e.Cancel = true;
+                    mySystemMessage("Fields cannot be left blank.");
+                }
+
+                if (!ValidationFunctions.isDOB(dobAdmin.Text))
+                {
+                    e.Cancel = true;
+                    mySystemMessage("DOB must be in ##/##/#### format.");
+                }
+            }
+        }
+        private void streetAdmin_Validating(object sender, CancelEventArgs e)
+        {
+            if (editCheck)
+            {
+                streetAdmin.Text = streetAdmin.Text.Trim();
+
+                if (this.ActiveControl.Equals(sender))
+                {
+                    return;
+                }
+
+                if (String.IsNullOrEmpty(streetAdmin.Text))
+                {
+                    e.Cancel = true;
+                    mySystemMessage("Fields cannot be left blank.");
+                }
+
+                if (streetAdmin.Text.isAlphaNum())
+                {
+                    e.Cancel = true;
+                    mySystemMessage("Only letters and numbers allowed in Address field.");
+                }
+            }
+        }
+        private void cityAdmin_Validating(object sender, CancelEventArgs e)
+        {
+            if (editCheck)
+            {
+                cityAdmin.Text = cityAdmin.Text.Trim();
+
+                if (this.ActiveControl.Equals(sender))
+                {
+                    return;
+                }
+
+                if (String.IsNullOrEmpty(cityAdmin.Text))
+                {
+                    e.Cancel = true;
+                    mySystemMessage("Fields cannot be left blank.");
+                }
+
+                if (cityAdmin.Text.isAlpha())
+                {
+                    e.Cancel = true;
+                    mySystemMessage("Only letters allowed in City field.");
+                }
+            }
+        }
+        private void stateAdmin_Validating(object sender, CancelEventArgs e)
+        {
+            if (editCheck)
+            {
+                stateAdmin.Text = stateAdmin.Text.Trim();
+
+                if (this.ActiveControl.Equals(sender))
+                {
+                    return;
+                }
+
+                if (String.IsNullOrEmpty(stateAdmin.Text))
+                {
+                    e.Cancel = true;
+                    mySystemMessage("Fields cannot be left blank.");
+                }
+
+                if (stateAdmin.Text.isAlpha())
+                {
+                    e.Cancel = true;
+                    mySystemMessage("Only letters allowed in State field.");
+                }
+            }
+        }
+        private void stateAdmin_TextChanged(object sender, EventArgs e)
+        {
+            //force uppercase for valid state code
+            stateAdmin.Text = stateAdmin.Text.ToUpper();
+        }
+        private void zipAdmin_Validating(object sender, CancelEventArgs e)
+        {
+            if (editCheck)
+            {
+                zipAdmin.Text = zipAdmin.Text.Trim();
+
+                if (this.ActiveControl.Equals(sender))
+                {
+                    return;
+                }
+
+                if (String.IsNullOrEmpty(zipAdmin.Text))
+                {
+                    e.Cancel = true;
+                    mySystemMessage("Fields cannot be left blank.");
+                }
+
+                if (zipAdmin.Text.isNum())
+                {
+                    e.Cancel = true;
+                    mySystemMessage("Zipcode field must be in ##### format.");
+                }
+            }
+        }
+        private void insuranceAdmin_Validating(object sender, CancelEventArgs e)
+        {
+            if (editCheck)
+            {
+                insuranceAdmin.Text = insuranceAdmin.Text.Trim();
+
+                if (this.ActiveControl.Equals(sender))
+                {
+                    return;
+                }
+
+                if (String.IsNullOrEmpty(insuranceAdmin.Text))
+                {
+                    e.Cancel = true;
+                    mySystemMessage("Fields cannot be left blank.");
+                }
+
+                if (insuranceAdmin.Text.isAlphaNum())
+                {
+                    e.Cancel = true;
+                    mySystemMessage("Only letters and numbers allowed in Address field.");
+                }
+            }
+        }
+        private void emailAdmin_Validating(object sender, CancelEventArgs e)
+        {
+            if (editCheck)
+            {
+                emailAdmin.Text = emailAdmin.Text.Trim();
+
+                if (this.ActiveControl.Equals(sender))
+                {
+                    return;
+                }
+
+                if (String.IsNullOrEmpty(emailAdmin.Text))
+                {
+                    e.Cancel = true;
+                    mySystemMessage("Fields cannot be left blank.");
+                }
+
+                if (!ValidationFunctions.IsEmail(emailAdmin.Text))
+                {
+                    e.Cancel = true;
+                    mySystemMessage("Please enter a valid email address.");
+                }
+            }
+        }
+        private void telephoneAdmin_Validating(object sender, CancelEventArgs e)
+        {
+            if (editCheck)
+            {
+                telephoneAdmin.Text = telephoneAdmin.Text.Trim();
+
+                if (this.ActiveControl.Equals(sender))
+                {
+                    return;
+                }
+
+                if (String.IsNullOrEmpty(telephoneAdmin.Text))
+                {
+                    e.Cancel = true;
+                    mySystemMessage("Fields cannot be left blank.");
+                }
+
+                if (telephoneAdmin.Text.isPhone())
+                {
+                    e.Cancel = true;
+                    mySystemMessage("Telephone Number field must be in ###-###-#### format.");
+                }
+            }
+        }
+
+        private void telephoneAdmin_TextChanged(object sender, EventArgs e)
+        {
+            if (telephoneAdmin.Text.Length > 2)
+            {
+                if (telephoneAdmin.Text[telephoneAdmin.Text.Length - 1] != '-')
+                {
+                    if (telephoneAdmin.Text.Length == 3)
+                    {
+                        telephoneAdmin.Text = telephoneAdmin.Text + "-";
+                        telephoneAdmin.SelectionStart = 4;
+                    }
+                    if (telephoneAdmin.Text.Length == 7)
+                    {
+                        telephoneAdmin.Text = telephoneAdmin.Text + "-";
+                        telephoneAdmin.SelectionStart = 8;
+                    }
+                }
+            }
+        }
+
+        private void telephoneAdmin_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (telephoneAdmin.Text.Length > 2)
+            {
+                if (telephoneAdmin.Text[telephoneAdmin.Text.Length - 1] == '-')
+                {
+                    if (e.KeyCode == Keys.Back)
+                    {
+                        telephoneAdmin.Text = telephoneAdmin.Text.Remove(telephoneAdmin.Text.Length - 2, 1);
+                        telephoneAdmin.SelectionStart = telephoneAdmin.TextLength;
+                    }
+                }
+            }
+        }
+
+        private void ccAdmin_Validating(object sender, CancelEventArgs e)
+        {
+            //We can include regex to verify that input is a valid cc number, but for
+            //now it simply checks for the right number of digits
+            if (editCheck)
+            {
+                if (this.ActiveControl.Equals(sender))
+                {
+                    return;
+                }
+
+                ccAdmin.Text = ccAdmin.Text.Trim();
+
+                if (String.IsNullOrEmpty(ccAdmin.Text))
+                {
+                    e.Cancel = true;
+                    mySystemMessage("Fields cannot be left blank.");
+                }
+
+                if ((ccAdmin.Text.isNum()) || (ccAdmin.Text.Length < 15))
+                {
+                    e.Cancel = true;
+                    mySystemMessage("Payment Method field must be between 15 and 19 numerical characters.");
+                }
+            }
+        }
+        private void allergiesAdmin_Validating(object sender, CancelEventArgs e)
+        {
+            if (editCheck)
+            {
+                allergiesAdmin.Text = allergiesAdmin.Text.Trim();
+
+                if (this.ActiveControl.Equals(sender))
+                {
+                    return;
+                }
+
+                //no null check, as this is the only field that may not always be used
+                if (allergiesAdmin.Text.isAlphaNum())
+                {
+                    e.Cancel = true;
+                    mySystemMessage("Only letters and numbers allowed in Drug Allergies field.");
                 }
             }
         }
@@ -1159,8 +1769,6 @@ namespace USPS
 
         }
 
-        
-
         private void textBox12_TextChanged(object sender, EventArgs e)
         {
 
@@ -1170,14 +1778,6 @@ namespace USPS
         {
 
         }
-
-        
-
-        
-
-        
-
-        
 
         private void label12_Click(object sender, EventArgs e)
         {
@@ -1284,180 +1884,6 @@ namespace USPS
 
         }
 
-        private void goBack_btn_Click_1(object sender, EventArgs e)
-        {
-            panel4.Visible = false;
-        }
-
-        //refill checkbox area -- customer
-        private void checkBox5_CheckedChanged_1(object sender, EventArgs e)
-        {
-            if (checkBox5.Checked == true)
-            {
-                button3.Enabled = true;
-            }
-            else if ((checkBox1.Checked == true) || (checkBox2.Checked == true) ||
-                (checkBox3.Checked == true) || (checkBox4.Checked == true) || (checkBox5.Checked == true))
-            {
-                button3.Enabled = true;
-            }
-            else
-            {
-                button3.Enabled = false;
-            }
-        }
-
-        private void checkBox4_CheckedChanged_1(object sender, EventArgs e)
-        {
-            if (checkBox4.Checked == true)
-            {
-                button3.Enabled = true;
-            }
-            else if ((checkBox1.Checked == true) || (checkBox2.Checked == true) ||
-                (checkBox3.Checked == true) || (checkBox4.Checked == true) || (checkBox5.Checked == true))
-            {
-                button3.Enabled = true;
-            }
-            else
-            {
-                button3.Enabled = false;
-            }
-        }
-
-        private void checkBox3_CheckedChanged_1(object sender, EventArgs e)
-        {
-            if (checkBox3.Checked == true)
-            {
-                button3.Enabled = true;
-            }
-            else if ((checkBox1.Checked == true) || (checkBox2.Checked == true) ||
-                (checkBox3.Checked == true) || (checkBox4.Checked == true) || (checkBox5.Checked == true))
-            {
-                button3.Enabled = true;
-            }
-            else
-            {
-                button3.Enabled = false;
-            }
-        }
-
-        private void checkBox2_CheckedChanged_1(object sender, EventArgs e)
-        {
-            if (checkBox2.Checked == true)
-            {
-                button3.Enabled = true;
-            }
-            else if ((checkBox1.Checked == true) || (checkBox2.Checked == true) ||
-                (checkBox3.Checked == true) || (checkBox4.Checked == true) || (checkBox5.Checked == true))
-            {
-                button3.Enabled = true;
-            }
-            else
-            {
-                button3.Enabled = false;
-            }
-        }
-
-        private void checkBox1_CheckedChanged_1(object sender, EventArgs e)
-        {
-            if (checkBox1.Checked == true)
-            {
-                button3.Enabled = true;
-            }
-            else if ((checkBox1.Checked == true) || (checkBox2.Checked == true) || 
-                (checkBox3.Checked == true) || (checkBox4.Checked == true) || (checkBox5.Checked == true))
-            {
-                button3.Enabled = true;
-            }
-            else
-            {
-                button3.Enabled = false;
-            }
-        }
-
-        //refil checkbox area -- pharm
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkBox1_reorder.Checked == true)
-            {
-                SubmitOrder.Enabled = true;
-            }
-            else if ((checkBox1_reorder.Checked == true) || (checkBox2__reorder.Checked == true) ||
-                (checkBox3_reorder.Checked == true) || (checkBox4_reorder.Checked == true) || (checkBox5_reorder.Checked == true))
-            {
-                SubmitOrder.Enabled = true;
-            }
-            else
-            {
-                SubmitOrder.Enabled = false;
-            }
-        }
-        private void checkBox2_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkBox2__reorder.Checked == true)
-            {
-                SubmitOrder.Enabled = true;
-            }
-            else if ((checkBox1_reorder.Checked == true) || (checkBox2__reorder.Checked == true) ||
-                (checkBox3_reorder.Checked == true) || (checkBox4_reorder.Checked == true) || (checkBox5_reorder.Checked == true))
-            {
-                SubmitOrder.Enabled = true;
-            }
-            else
-            {
-                SubmitOrder.Enabled = false;
-            }
-        }
-        private void checkBox3_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkBox3_reorder.Checked == true)
-            {
-                SubmitOrder.Enabled = true;
-            }
-            else if ((checkBox1_reorder.Checked == true) || (checkBox2__reorder.Checked == true) ||
-                (checkBox3_reorder.Checked == true) || (checkBox4_reorder.Checked == true) || (checkBox5_reorder.Checked == true))
-            {
-                SubmitOrder.Enabled = true;
-            }
-            else
-            {
-                SubmitOrder.Enabled = false;
-            }
-        }
-        private void checkBox4_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkBox4_reorder.Checked == true)
-            {
-                SubmitOrder.Enabled = true;
-            }
-            else if ((checkBox1_reorder.Checked == true) || (checkBox2__reorder.Checked == true) ||
-                (checkBox3_reorder.Checked == true) || (checkBox4_reorder.Checked == true) || (checkBox5_reorder.Checked == true))
-            {
-                SubmitOrder.Enabled = true;
-            }
-            else
-            {
-                SubmitOrder.Enabled = false;
-            }
-        }
-        private void checkBox5_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkBox5_reorder.Checked == true)
-            {
-                SubmitOrder.Enabled = true;
-            }
-            else if ((checkBox1_reorder.Checked == true) || (checkBox2__reorder.Checked == true) ||
-                (checkBox3_reorder.Checked == true) || (checkBox4_reorder.Checked == true) || (checkBox5_reorder.Checked == true))
-            {
-                SubmitOrder.Enabled = true;
-            }
-            else
-            {
-                SubmitOrder.Enabled = false;
-            }
-        }
-
         private void label22_Click(object sender, EventArgs e)
         {
 
@@ -1478,10 +1904,11 @@ namespace USPS
 
         }
 
-        private void checkBox11_CheckedChanged(object sender, EventArgs e)
+        private void ccAdmin_TextChanged(object sender, EventArgs e)
         {
 
         }
+
     }
     public static partial class ValidationFunctions
     {

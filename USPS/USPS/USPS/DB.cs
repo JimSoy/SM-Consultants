@@ -40,13 +40,13 @@ namespace USPS
                 //open session
                 conn.Open();
                 Form1.failed = false;
-                Form1.errorBox("Successfully connected!");
+                Form1.mySystemMessage("Successfully connected!");
 
             }
             catch (Exception ex)
             {
                 Form1.failed = true;
-                Form1.errorBox("Login failed.");
+                Form1.mySystemMessage("Login failed.");
                 Console.WriteLine(ex.Message);
             }
 
@@ -54,25 +54,93 @@ namespace USPS
 
         public void logOut()
         {
-            Form1.errorBox("Successfully logged out.");
-            Form1.customerPanelSwitch = false;
-            Form1.pharmPanelSwitch = false;
+            Form1.mySystemMessage("Successfully logged out.");
+            Form1.customerPanelSwitch = Form1.adminPanelSwitch = Form1.pharmPanelSwitch = false;
         }
 
         public void infoUpdater(Dictionary<string, string> info)
         {
-            SqlConnection cnn = new SqlConnection(connectionstring);
-            cnn.Open();
+            //Check if new user
+            if (Form1.newUserCheck)
+            {
+                SqlConnection cnn = new SqlConnection(connectionstring);
+                cnn.Open();
 
-            //insert if statement here for check new register. if !register run this, if register run INSERT version
-            string infoQuery = $"UPDATE Customers_List SET Customer_FirstName = '{info["fname"]}', " +
-                $"Customer_LastName = '{info["lname"]}', Customer_DateOfBirth = '{info["dob"]}', " +
-                $"Customer_Address = '{info["address"]}', Customer_City = '{info["city"]}', " +
-                $"Customer_State = '{info["state"]}', Customer_ZipCode = '{info["zip"]}', " +
-                $"Customer_DrugAllergy = '{info["allergy"]}' WHERE Customer_ID = '{dbID}'";
+                //check if username exists
+                SqlCommand cmd = new SqlCommand("SELECT count(*) FROM Customers_List WHERE Customer_ID = @id", cnn);
 
-            SqlCommand cmd = new SqlCommand(infoQuery, cnn);
-            cmd.BeginExecuteNonQuery();
+                cmd.Parameters.AddWithValue("@id", dbID);
+
+                int exists = (Int32)cmd.ExecuteScalar();
+
+                //if username already exists, they have logged in with the correct credentials,
+                //so inform them that the user exists and update their data
+                if (exists > 0)
+                {
+                    Form1.mySystemMessage("User already exists. Updating your information.");
+                    Form1.newUserCheck = false;
+                    infoUpdater(info);
+                }
+                else
+                {
+                    cmd = new SqlCommand("INSERT INTO Customers_List (Customer_FirstName, Customer_LastName, " +
+                    $"Customer_DateOfBirth, Customer_Address, Customer_City, Customer_State, Customer_ZipCode, " +
+                    $"Customer_DrugAllergy, Customer_Phone, Customer_Email, Customer_UserName) VALUES (@fn, @ln, " +
+                    $"@db, @ad, @ci, @st, @zp, @al, @ph, @em, @id)", cnn);
+
+                    cmd.Parameters.AddWithValue("@fn", info["fname"]);
+                    cmd.Parameters.AddWithValue("@ln", info["lname"]);
+                    cmd.Parameters.AddWithValue("@db", info["dob"]);
+                    cmd.Parameters.AddWithValue("@ad", info["address"]);
+                    cmd.Parameters.AddWithValue("@ci", info["city"]);
+                    cmd.Parameters.AddWithValue("@st", info["state"]);
+                    cmd.Parameters.AddWithValue("@zp", info["zip"]);
+                    cmd.Parameters.AddWithValue("@al", info["allergy"]);
+                    cmd.Parameters.AddWithValue("@ph", info["phone"]);
+                    cmd.Parameters.AddWithValue("@em", info["email"]);
+                    cmd.Parameters.AddWithValue("@id", userID);
+
+                    cmd.ExecuteNonQuery();
+                    Form1.newUserCheck = false;
+                }
+            }
+            //if not new user do usual update
+            else
+            {
+                SqlConnection cnn = new SqlConnection(connectionstring);
+                cnn.Open();
+
+                SqlCommand cmd = new SqlCommand("UPDATE Customers_List SET Customer_FirstName = @fn, " +
+                                $"Customer_LastName = @ln, Customer_DateOfBirth = @db, Customer_Address = @ad, " +
+                                $"Customer_City = @ci, Customer_State = @st, Customer_ZipCode = @zp, " +
+                                $"Customer_DrugAllergy = @al, Customer_Phone = @ph, Customer_Email = @em " +
+                                $"WHERE Customer_ID = @id", cnn);
+
+                cmd.Parameters.AddWithValue("@fn", info["fname"]);
+                cmd.Parameters.AddWithValue("@ln", info["lname"]);
+                cmd.Parameters.AddWithValue("@db", info["dob"]);
+                cmd.Parameters.AddWithValue("@ad", info["address"]);
+                cmd.Parameters.AddWithValue("@ci", info["city"]);
+                cmd.Parameters.AddWithValue("@st", info["state"]);
+                cmd.Parameters.AddWithValue("@zp", info["zip"]);
+                cmd.Parameters.AddWithValue("@al", info["allergy"]);
+                cmd.Parameters.AddWithValue("@ph", info["phone"]);
+                cmd.Parameters.AddWithValue("@em", info["email"]);
+                cmd.Parameters.AddWithValue("@id", dbID);
+
+                using (cmd)
+                {
+                    try
+                    {
+                        cmd.ExecuteNonQuery();
+                    }
+                    catch (Exception ex)
+                    {
+                        Form1.mySystemMessage(ex.Message);
+                    }
+                }
+                
+            }
         }
         
         public Dictionary<string, string> infoUpdateQuery()
@@ -120,14 +188,14 @@ namespace USPS
                         }
                         catch (Exception ex)
                         {
-                            Form1.errorBox("Error with query.");
+                            Form1.mySystemMessage("Error with query.");
                             Console.WriteLine(ex.Message);
                         }
                     }
                 }
                 catch (Exception ex)
                 {
-                    Form1.errorBox(ex.Message);
+                    Form1.mySystemMessage(ex.Message);
                     return null;
                 }
 
@@ -137,7 +205,7 @@ namespace USPS
             }
             catch (Exception ex)
             {
-                Form1.errorBox(ex.Message);
+                Form1.mySystemMessage(ex.Message);
 
             }
             return null;
@@ -211,14 +279,14 @@ namespace USPS
                     }
                     catch (Exception ex)
                     {
-                        Form1.errorBox("Error with query.");
+                        Form1.mySystemMessage("Error with query.");
                         Console.WriteLine(ex.Message);
                     }
                 }
             }
             catch (Exception ex)
             {
-                Form1.errorBox(ex.Message);
+                Form1.mySystemMessage(ex.Message);
             }
 
             dbID = info["ID"];

@@ -29,8 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.submit = new System.Windows.Forms.Button();
+            this.loginPanel = new System.Windows.Forms.Panel();
+            this.newUser = new System.Windows.Forms.CheckBox();
+            this.login = new System.Windows.Forms.Button();
             this.uspsLogo = new System.Windows.Forms.PictureBox();
             this.loginLabel = new System.Windows.Forms.Label();
             this.welcomeText = new System.Windows.Forms.Label();
@@ -38,25 +39,27 @@
             this.pass = new System.Windows.Forms.TextBox();
             this.user = new System.Windows.Forms.TextBox();
             this.userName = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.allergyTextBox = new System.Windows.Forms.RichTextBox();
-            this.emailTextBox = new System.Windows.Forms.TextBox();
+            this.userPanel = new System.Windows.Forms.Panel();
+            this.expUser = new System.Windows.Forms.TextBox();
+            this.expDate_label = new System.Windows.Forms.Label();
+            this.allergiesUser = new System.Windows.Forms.RichTextBox();
+            this.emailUser = new System.Windows.Forms.TextBox();
             this.email = new System.Windows.Forms.Label();
-            this.telephoneNumberTextBox = new System.Windows.Forms.TextBox();
+            this.telephoneUser = new System.Windows.Forms.TextBox();
             this.phoneNumber = new System.Windows.Forms.Label();
-            this.logOutButton = new System.Windows.Forms.Button();
+            this.logOutUser = new System.Windows.Forms.Button();
             this.requestRefill = new System.Windows.Forms.Button();
-            this.Save = new System.Windows.Forms.Button();
-            this.edit = new System.Windows.Forms.Button();
-            this.paymentMethodTextBox = new System.Windows.Forms.TextBox();
-            this.insuranceTextBox = new System.Windows.Forms.TextBox();
-            this.zipCodeTextBox = new System.Windows.Forms.TextBox();
-            this.stateTextBox = new System.Windows.Forms.TextBox();
-            this.cityTextBox = new System.Windows.Forms.TextBox();
-            this.streetAddressTextBox = new System.Windows.Forms.TextBox();
-            this.dateOfBirthTextBox = new System.Windows.Forms.TextBox();
-            this.lastNameTextBox = new System.Windows.Forms.TextBox();
-            this.firstNameTextBox = new System.Windows.Forms.TextBox();
+            this.saveUser = new System.Windows.Forms.Button();
+            this.editUser = new System.Windows.Forms.Button();
+            this.ccUser = new System.Windows.Forms.TextBox();
+            this.insuranceUser = new System.Windows.Forms.TextBox();
+            this.zipUser = new System.Windows.Forms.TextBox();
+            this.stateUser = new System.Windows.Forms.TextBox();
+            this.cityUser = new System.Windows.Forms.TextBox();
+            this.streetUser = new System.Windows.Forms.TextBox();
+            this.dobUser = new System.Windows.Forms.TextBox();
+            this.lnameUser = new System.Windows.Forms.TextBox();
+            this.fnameUser = new System.Windows.Forms.TextBox();
             this.drugAllergies = new System.Windows.Forms.Label();
             this.dob = new System.Windows.Forms.Label();
             this.paymentMethod = new System.Windows.Forms.Label();
@@ -67,55 +70,57 @@
             this.streetAddress = new System.Windows.Forms.Label();
             this.lastName = new System.Windows.Forms.Label();
             this.firstName = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.pharmPanel = new System.Windows.Forms.Panel();
+            this.expPharm = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
             this.logOutPharm = new System.Windows.Forms.Button();
-            this.Edit_onPharmForm = new System.Windows.Forms.Button();
-            this.saveChanges = new System.Windows.Forms.Button();
-            this.SubmitOrder = new System.Windows.Forms.Button();
-            this.textBox_lastShippedDate = new System.Windows.Forms.TextBox();
-            this.textBox_email = new System.Windows.Forms.TextBox();
-            this.textBox_telephone = new System.Windows.Forms.TextBox();
+            this.editPharm = new System.Windows.Forms.Button();
+            this.savePharm = new System.Windows.Forms.Button();
+            this.SubmitOrderPharm = new System.Windows.Forms.Button();
+            this.shippedPharm = new System.Windows.Forms.TextBox();
+            this.emailPharm = new System.Windows.Forms.TextBox();
+            this.telephonePharm = new System.Windows.Forms.TextBox();
             this.label_email = new System.Windows.Forms.Label();
             this.label_telephone = new System.Windows.Forms.Label();
             this.label_lastShippedDate = new System.Windows.Forms.Label();
             this.label_insurance = new System.Windows.Forms.Label();
-            this.textBox_insurance = new System.Windows.Forms.TextBox();
-            this.textBox_paymentMethod = new System.Windows.Forms.TextBox();
+            this.insurancePharm = new System.Windows.Forms.TextBox();
+            this.ccPharm = new System.Windows.Forms.TextBox();
             this.label_paymentMethod = new System.Windows.Forms.Label();
-            this.checkBox5_reorder = new System.Windows.Forms.CheckBox();
-            this.checkBox4_reorder = new System.Windows.Forms.CheckBox();
-            this.checkBox3_reorder = new System.Windows.Forms.CheckBox();
-            this.checkBox2__reorder = new System.Windows.Forms.CheckBox();
-            this.checkBox1_reorder = new System.Windows.Forms.CheckBox();
+            this.checkBox5Pharm = new System.Windows.Forms.CheckBox();
+            this.checkBox4Pharm = new System.Windows.Forms.CheckBox();
+            this.checkBox3Pharm = new System.Windows.Forms.CheckBox();
+            this.checkBox2Pharm = new System.Windows.Forms.CheckBox();
+            this.checkBox1Pharm = new System.Windows.Forms.CheckBox();
             this.label_reorder = new System.Windows.Forms.Label();
-            this.textBox_prescriber1 = new System.Windows.Forms.TextBox();
-            this.textBox__prescriber2 = new System.Windows.Forms.TextBox();
-            this.textBox__prescriber3 = new System.Windows.Forms.TextBox();
-            this.textBox__prescriber5 = new System.Windows.Forms.TextBox();
-            this.textBox__prescriber4 = new System.Windows.Forms.TextBox();
+            this.prescriber1Pharm = new System.Windows.Forms.TextBox();
+            this.prescriber2Pharm = new System.Windows.Forms.TextBox();
+            this.prescriber3Pharm = new System.Windows.Forms.TextBox();
+            this.prescriber5Pharm = new System.Windows.Forms.TextBox();
+            this.prescriber4Pharm = new System.Windows.Forms.TextBox();
             this.label_prescriber = new System.Windows.Forms.Label();
             this.label_refill = new System.Windows.Forms.Label();
-            this.textBox__refill5 = new System.Windows.Forms.TextBox();
-            this.textBox__refill4 = new System.Windows.Forms.TextBox();
-            this.textBox_refill3 = new System.Windows.Forms.TextBox();
-            this.textBox_refill2 = new System.Windows.Forms.TextBox();
-            this.textBox_refill1 = new System.Windows.Forms.TextBox();
+            this.refill5Pharm = new System.Windows.Forms.TextBox();
+            this.refill4Pharm = new System.Windows.Forms.TextBox();
+            this.refill3Pharm = new System.Windows.Forms.TextBox();
+            this.refill2Pharm = new System.Windows.Forms.TextBox();
+            this.refill1Pharm = new System.Windows.Forms.TextBox();
             this.label_prescriptionList = new System.Windows.Forms.Label();
-            this.textBox_RxList1 = new System.Windows.Forms.TextBox();
-            this.textBox_RxList2 = new System.Windows.Forms.TextBox();
-            this.textBox_RxList3 = new System.Windows.Forms.TextBox();
-            this.textBox_RxList5 = new System.Windows.Forms.TextBox();
-            this.textBox_RxList4 = new System.Windows.Forms.TextBox();
-            this.textBox_drugAllergies1 = new System.Windows.Forms.TextBox();
-            this.textBox_zipcode = new System.Windows.Forms.TextBox();
-            this.textBox_state = new System.Windows.Forms.TextBox();
-            this.textBox_city = new System.Windows.Forms.TextBox();
-            this.textBox_streetAddress = new System.Windows.Forms.TextBox();
-            this.textBox_dateOfBirth = new System.Windows.Forms.TextBox();
-            this.textBox_lastName = new System.Windows.Forms.TextBox();
-            this.textBox_firstName = new System.Windows.Forms.TextBox();
+            this.prescript1Pharm = new System.Windows.Forms.TextBox();
+            this.prescript2Pharm = new System.Windows.Forms.TextBox();
+            this.prescript3Pharm = new System.Windows.Forms.TextBox();
+            this.prescript5Pharm = new System.Windows.Forms.TextBox();
+            this.prescript4Pharm = new System.Windows.Forms.TextBox();
+            this.allergiesPharm = new System.Windows.Forms.TextBox();
+            this.zipPharm = new System.Windows.Forms.TextBox();
+            this.statePharm = new System.Windows.Forms.TextBox();
+            this.cityPharm = new System.Windows.Forms.TextBox();
+            this.streetPharm = new System.Windows.Forms.TextBox();
+            this.dobPharm = new System.Windows.Forms.TextBox();
+            this.lnamePharm = new System.Windows.Forms.TextBox();
+            this.fnamePharm = new System.Windows.Forms.TextBox();
             this.label_search = new System.Windows.Forms.Label();
-            this.textBox_searchName = new System.Windows.Forms.TextBox();
+            this.searchPharm = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label_drugAllergies = new System.Windows.Forms.Label();
             this.label_dateOfBirth = new System.Windows.Forms.Label();
@@ -125,77 +130,82 @@
             this.label_streetAddress = new System.Windows.Forms.Label();
             this.label_lastName = new System.Windows.Forms.Label();
             this.label_firstName = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.goBack_btn = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
+            this.refillPanel = new System.Windows.Forms.Panel();
+            this.backRefill = new System.Windows.Forms.Button();
+            this.submitRefill = new System.Windows.Forms.Button();
+            this.checkBox5Refill = new System.Windows.Forms.CheckBox();
+            this.checkBox4Refill = new System.Windows.Forms.CheckBox();
+            this.checkBox3Refill = new System.Windows.Forms.CheckBox();
+            this.checkBox2Refill = new System.Windows.Forms.CheckBox();
+            this.checkBox1Refill = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.refill5Refill = new System.Windows.Forms.TextBox();
+            this.refill4Refill = new System.Windows.Forms.TextBox();
+            this.refill3Refill = new System.Windows.Forms.TextBox();
+            this.refill2Refill = new System.Windows.Forms.TextBox();
+            this.refill1Refill = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.prescript1Refill = new System.Windows.Forms.TextBox();
+            this.prescript2Refill = new System.Windows.Forms.TextBox();
+            this.prescript3Refill = new System.Windows.Forms.TextBox();
+            this.prescript5Refill = new System.Windows.Forms.TextBox();
+            this.prescript4Refill = new System.Windows.Forms.TextBox();
             this.RefillRequestTitle = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.save_btn = new System.Windows.Forms.Button();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.adminPanel = new System.Windows.Forms.Panel();
+            this.expAdmin = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.dailyFill_chkbox = new System.Windows.Forms.CheckBox();
+            this.report_btn = new System.Windows.Forms.Button();
+            this.orderStatus_dropdown = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.to_label = new System.Windows.Forms.Label();
+            this.dateRange_label = new System.Windows.Forms.Label();
+            this.dateRangeTo_picker = new System.Windows.Forms.DateTimePicker();
+            this.dateRangeFrom_picker = new System.Windows.Forms.DateTimePicker();
+            this.adminPanel_label = new System.Windows.Forms.Label();
+            this.editAdmin = new System.Windows.Forms.Button();
+            this.saveAdmin = new System.Windows.Forms.Button();
+            this.logOutAdmin = new System.Windows.Forms.Button();
+            this.shippedAdmin = new System.Windows.Forms.TextBox();
+            this.emailAdmin = new System.Windows.Forms.TextBox();
+            this.telephoneAdmin = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.insuranceAdmin = new System.Windows.Forms.TextBox();
+            this.ccAdmin = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.checkBox6 = new System.Windows.Forms.CheckBox();
-            this.checkBox7 = new System.Windows.Forms.CheckBox();
-            this.checkBox8 = new System.Windows.Forms.CheckBox();
-            this.checkBox9 = new System.Windows.Forms.CheckBox();
-            this.checkBox10 = new System.Windows.Forms.CheckBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textBox16 = new System.Windows.Forms.TextBox();
-            this.textBox17 = new System.Windows.Forms.TextBox();
-            this.textBox18 = new System.Windows.Forms.TextBox();
-            this.textBox19 = new System.Windows.Forms.TextBox();
-            this.textBox20 = new System.Windows.Forms.TextBox();
+            this.prescriber1Admin = new System.Windows.Forms.TextBox();
+            this.prescriber2Admin = new System.Windows.Forms.TextBox();
+            this.prescriber3Admin = new System.Windows.Forms.TextBox();
+            this.prescriber5Admin = new System.Windows.Forms.TextBox();
+            this.prescriber4Admin = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox21 = new System.Windows.Forms.TextBox();
-            this.textBox22 = new System.Windows.Forms.TextBox();
-            this.textBox23 = new System.Windows.Forms.TextBox();
-            this.textBox24 = new System.Windows.Forms.TextBox();
-            this.textBox25 = new System.Windows.Forms.TextBox();
+            this.refill5Admin = new System.Windows.Forms.TextBox();
+            this.refill4Admin = new System.Windows.Forms.TextBox();
+            this.refill3Admin = new System.Windows.Forms.TextBox();
+            this.refill2Admin = new System.Windows.Forms.TextBox();
+            this.refill1Admin = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox26 = new System.Windows.Forms.TextBox();
-            this.textBox27 = new System.Windows.Forms.TextBox();
-            this.textBox28 = new System.Windows.Forms.TextBox();
-            this.textBox29 = new System.Windows.Forms.TextBox();
-            this.textBox30 = new System.Windows.Forms.TextBox();
-            this.textBox31 = new System.Windows.Forms.TextBox();
-            this.textBox32 = new System.Windows.Forms.TextBox();
-            this.textBox33 = new System.Windows.Forms.TextBox();
-            this.textBox34 = new System.Windows.Forms.TextBox();
-            this.textBox35 = new System.Windows.Forms.TextBox();
-            this.textBox36 = new System.Windows.Forms.TextBox();
-            this.textBox37 = new System.Windows.Forms.TextBox();
-            this.textBox38 = new System.Windows.Forms.TextBox();
+            this.prescript1Admin = new System.Windows.Forms.TextBox();
+            this.prescript2Admin = new System.Windows.Forms.TextBox();
+            this.prescript3Admin = new System.Windows.Forms.TextBox();
+            this.prescript5Admin = new System.Windows.Forms.TextBox();
+            this.prescript4Admin = new System.Windows.Forms.TextBox();
+            this.allergiesAdmin = new System.Windows.Forms.TextBox();
+            this.zipAdmin = new System.Windows.Forms.TextBox();
+            this.stateAdmin = new System.Windows.Forms.TextBox();
+            this.cityAdmin = new System.Windows.Forms.TextBox();
+            this.streetAdmin = new System.Windows.Forms.TextBox();
+            this.dobAdmin = new System.Windows.Forms.TextBox();
+            this.lnameAdmin = new System.Windows.Forms.TextBox();
+            this.fnameAdmin = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox39 = new System.Windows.Forms.TextBox();
+            this.searchAdmin = new System.Windows.Forms.TextBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -205,69 +215,65 @@
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
-            this.adminPanel_label = new System.Windows.Forms.Label();
-            this.dateRangeFrom_picker = new System.Windows.Forms.DateTimePicker();
-            this.dateRangeTo_picker = new System.Windows.Forms.DateTimePicker();
-            this.dateRange_label = new System.Windows.Forms.Label();
-            this.to_label = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.orderStatus_dropdown = new System.Windows.Forms.Label();
-            this.report_btn = new System.Windows.Forms.Button();
-            this.dailyFill_chkbox = new System.Windows.Forms.CheckBox();
-            this.expDate_label = new System.Windows.Forms.Label();
-            this.textbox_expDate1 = new System.Windows.Forms.TextBox();
-            this.textbox_expDate2 = new System.Windows.Forms.TextBox();
-            this.label22 = new System.Windows.Forms.Label();
-            this.textbox_expDate3 = new System.Windows.Forms.TextBox();
-            this.label23 = new System.Windows.Forms.Label();
-            this.newUser_chkBox = new System.Windows.Forms.CheckBox();
-            this.panel1.SuspendLayout();
+            this.loginPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.uspsLogo)).BeginInit();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.userPanel.SuspendLayout();
+            this.pharmPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel4.SuspendLayout();
+            this.refillPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.panel5.SuspendLayout();
+            this.adminPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // loginPanel
             // 
-            this.panel1.Controls.Add(this.newUser_chkBox);
-            this.panel1.Controls.Add(this.submit);
-            this.panel1.Controls.Add(this.uspsLogo);
-            this.panel1.Controls.Add(this.loginLabel);
-            this.panel1.Controls.Add(this.welcomeText);
-            this.panel1.Controls.Add(this.password);
-            this.panel1.Controls.Add(this.pass);
-            this.panel1.Controls.Add(this.user);
-            this.panel1.Controls.Add(this.userName);
-            this.panel1.Location = new System.Drawing.Point(12, 36);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(359, 434);
-            this.panel1.TabIndex = 0;
+            this.loginPanel.Controls.Add(this.newUser);
+            this.loginPanel.Controls.Add(this.login);
+            this.loginPanel.Controls.Add(this.uspsLogo);
+            this.loginPanel.Controls.Add(this.loginLabel);
+            this.loginPanel.Controls.Add(this.welcomeText);
+            this.loginPanel.Controls.Add(this.password);
+            this.loginPanel.Controls.Add(this.pass);
+            this.loginPanel.Controls.Add(this.user);
+            this.loginPanel.Controls.Add(this.userName);
+            this.loginPanel.Location = new System.Drawing.Point(9, 29);
+            this.loginPanel.Margin = new System.Windows.Forms.Padding(2);
+            this.loginPanel.Name = "loginPanel";
+            this.loginPanel.Size = new System.Drawing.Size(269, 353);
+            this.loginPanel.TabIndex = 0;
             // 
-            // submit
+            // newUser
             // 
-            this.submit.Location = new System.Drawing.Point(125, 369);
-            this.submit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.submit.Name = "submit";
-            this.submit.Size = new System.Drawing.Size(75, 23);
-            this.submit.TabIndex = 3;
-            this.submit.Text = "Login";
-            this.submit.UseVisualStyleBackColor = true;
-            this.submit.Click += new System.EventHandler(this.submit_Click);
+            this.newUser.AutoSize = true;
+            this.newUser.Location = new System.Drawing.Point(88, 328);
+            this.newUser.Margin = new System.Windows.Forms.Padding(2);
+            this.newUser.Name = "newUser";
+            this.newUser.Size = new System.Drawing.Size(73, 17);
+            this.newUser.TabIndex = 7;
+            this.newUser.Text = "New User";
+            this.newUser.UseVisualStyleBackColor = true;
+            this.newUser.CheckedChanged += new System.EventHandler(this.newUser_CheckedChanged);
+            // 
+            // login
+            // 
+            this.login.Location = new System.Drawing.Point(94, 300);
+            this.login.Margin = new System.Windows.Forms.Padding(2);
+            this.login.Name = "login";
+            this.login.Size = new System.Drawing.Size(56, 19);
+            this.login.TabIndex = 3;
+            this.login.Text = "Login";
+            this.login.UseVisualStyleBackColor = true;
+            this.login.Click += new System.EventHandler(this.submit_Click);
             // 
             // uspsLogo
             // 
             this.uspsLogo.Image = ((System.Drawing.Image)(resources.GetObject("uspsLogo.Image")));
             this.uspsLogo.InitialImage = ((System.Drawing.Image)(resources.GetObject("uspsLogo.InitialImage")));
-            this.uspsLogo.Location = new System.Drawing.Point(75, 17);
-            this.uspsLogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.uspsLogo.Location = new System.Drawing.Point(56, 14);
+            this.uspsLogo.Margin = new System.Windows.Forms.Padding(2);
             this.uspsLogo.Name = "uspsLogo";
-            this.uspsLogo.Size = new System.Drawing.Size(207, 154);
+            this.uspsLogo.Size = new System.Drawing.Size(155, 125);
             this.uspsLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.uspsLogo.TabIndex = 6;
             this.uspsLogo.TabStop = false;
@@ -275,37 +281,40 @@
             // loginLabel
             // 
             this.loginLabel.AutoSize = true;
-            this.loginLabel.Location = new System.Drawing.Point(96, 223);
+            this.loginLabel.Location = new System.Drawing.Point(72, 181);
+            this.loginLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.loginLabel.Name = "loginLabel";
-            this.loginLabel.Size = new System.Drawing.Size(129, 16);
+            this.loginLabel.Size = new System.Drawing.Size(103, 13);
             this.loginLabel.TabIndex = 5;
             this.loginLabel.Text = "Please Login Below.";
             // 
             // welcomeText
             // 
             this.welcomeText.AutoSize = true;
-            this.welcomeText.Location = new System.Drawing.Point(29, 196);
+            this.welcomeText.Location = new System.Drawing.Point(22, 159);
+            this.welcomeText.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.welcomeText.Name = "welcomeText";
-            this.welcomeText.Size = new System.Drawing.Size(276, 16);
+            this.welcomeText.Size = new System.Drawing.Size(223, 13);
             this.welcomeText.TabIndex = 4;
             this.welcomeText.Text = "Welcome to the United States Postal Service!";
             // 
             // password
             // 
             this.password.AutoSize = true;
-            this.password.Location = new System.Drawing.Point(72, 314);
+            this.password.Location = new System.Drawing.Point(54, 255);
+            this.password.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.password.Name = "password";
-            this.password.Size = new System.Drawing.Size(67, 16);
+            this.password.Size = new System.Drawing.Size(53, 13);
             this.password.TabIndex = 3;
             this.password.Text = "Password";
             this.password.Click += new System.EventHandler(this.password_Click);
             // 
             // pass
             // 
-            this.pass.Location = new System.Drawing.Point(72, 334);
-            this.pass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pass.Location = new System.Drawing.Point(54, 271);
+            this.pass.Margin = new System.Windows.Forms.Padding(2);
             this.pass.Name = "pass";
-            this.pass.Size = new System.Drawing.Size(199, 22);
+            this.pass.Size = new System.Drawing.Size(150, 20);
             this.pass.TabIndex = 2;
             this.pass.UseSystemPasswordChar = true;
             this.pass.TextChanged += new System.EventHandler(this.pass_TextChanged);
@@ -313,10 +322,10 @@
             // 
             // user
             // 
-            this.user.Location = new System.Drawing.Point(72, 281);
-            this.user.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.user.Location = new System.Drawing.Point(54, 228);
+            this.user.Margin = new System.Windows.Forms.Padding(2);
             this.user.Name = "user";
-            this.user.Size = new System.Drawing.Size(199, 22);
+            this.user.Size = new System.Drawing.Size(150, 20);
             this.user.TabIndex = 1;
             this.user.TextChanged += new System.EventHandler(this.user_TextChanged);
             this.user.Validating += new System.ComponentModel.CancelEventHandler(this.user_Validating);
@@ -324,270 +333,293 @@
             // userName
             // 
             this.userName.AutoSize = true;
-            this.userName.Location = new System.Drawing.Point(71, 261);
+            this.userName.Location = new System.Drawing.Point(53, 212);
+            this.userName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.userName.Name = "userName";
-            this.userName.Size = new System.Drawing.Size(73, 16);
+            this.userName.Size = new System.Drawing.Size(58, 13);
             this.userName.TabIndex = 0;
             this.userName.Text = "User name";
             this.userName.Click += new System.EventHandler(this.label1_Click_1);
             // 
-            // panel2
+            // userPanel
             // 
-            this.panel2.Controls.Add(this.textbox_expDate1);
-            this.panel2.Controls.Add(this.expDate_label);
-            this.panel2.Controls.Add(this.allergyTextBox);
-            this.panel2.Controls.Add(this.emailTextBox);
-            this.panel2.Controls.Add(this.email);
-            this.panel2.Controls.Add(this.telephoneNumberTextBox);
-            this.panel2.Controls.Add(this.phoneNumber);
-            this.panel2.Controls.Add(this.logOutButton);
-            this.panel2.Controls.Add(this.requestRefill);
-            this.panel2.Controls.Add(this.Save);
-            this.panel2.Controls.Add(this.edit);
-            this.panel2.Controls.Add(this.paymentMethodTextBox);
-            this.panel2.Controls.Add(this.insuranceTextBox);
-            this.panel2.Controls.Add(this.zipCodeTextBox);
-            this.panel2.Controls.Add(this.stateTextBox);
-            this.panel2.Controls.Add(this.cityTextBox);
-            this.panel2.Controls.Add(this.streetAddressTextBox);
-            this.panel2.Controls.Add(this.dateOfBirthTextBox);
-            this.panel2.Controls.Add(this.lastNameTextBox);
-            this.panel2.Controls.Add(this.firstNameTextBox);
-            this.panel2.Controls.Add(this.drugAllergies);
-            this.panel2.Controls.Add(this.dob);
-            this.panel2.Controls.Add(this.paymentMethod);
-            this.panel2.Controls.Add(this.insurance);
-            this.panel2.Controls.Add(this.zipCode);
-            this.panel2.Controls.Add(this.state);
-            this.panel2.Controls.Add(this.city);
-            this.panel2.Controls.Add(this.streetAddress);
-            this.panel2.Controls.Add(this.lastName);
-            this.panel2.Controls.Add(this.firstName);
-            this.panel2.Location = new System.Drawing.Point(12, 474);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(557, 538);
-            this.panel2.TabIndex = 2;
+            this.userPanel.Controls.Add(this.expUser);
+            this.userPanel.Controls.Add(this.expDate_label);
+            this.userPanel.Controls.Add(this.allergiesUser);
+            this.userPanel.Controls.Add(this.emailUser);
+            this.userPanel.Controls.Add(this.email);
+            this.userPanel.Controls.Add(this.telephoneUser);
+            this.userPanel.Controls.Add(this.phoneNumber);
+            this.userPanel.Controls.Add(this.logOutUser);
+            this.userPanel.Controls.Add(this.requestRefill);
+            this.userPanel.Controls.Add(this.saveUser);
+            this.userPanel.Controls.Add(this.editUser);
+            this.userPanel.Controls.Add(this.ccUser);
+            this.userPanel.Controls.Add(this.insuranceUser);
+            this.userPanel.Controls.Add(this.zipUser);
+            this.userPanel.Controls.Add(this.stateUser);
+            this.userPanel.Controls.Add(this.cityUser);
+            this.userPanel.Controls.Add(this.streetUser);
+            this.userPanel.Controls.Add(this.dobUser);
+            this.userPanel.Controls.Add(this.lnameUser);
+            this.userPanel.Controls.Add(this.fnameUser);
+            this.userPanel.Controls.Add(this.drugAllergies);
+            this.userPanel.Controls.Add(this.dob);
+            this.userPanel.Controls.Add(this.paymentMethod);
+            this.userPanel.Controls.Add(this.insurance);
+            this.userPanel.Controls.Add(this.zipCode);
+            this.userPanel.Controls.Add(this.state);
+            this.userPanel.Controls.Add(this.city);
+            this.userPanel.Controls.Add(this.streetAddress);
+            this.userPanel.Controls.Add(this.lastName);
+            this.userPanel.Controls.Add(this.firstName);
+            this.userPanel.Location = new System.Drawing.Point(9, 385);
+            this.userPanel.Margin = new System.Windows.Forms.Padding(2);
+            this.userPanel.Name = "userPanel";
+            this.userPanel.Size = new System.Drawing.Size(418, 437);
+            this.userPanel.TabIndex = 2;
             // 
-            // allergyTextBox
+            // expUser
             // 
-            this.allergyTextBox.Location = new System.Drawing.Point(35, 377);
-            this.allergyTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.allergyTextBox.MaxLength = 300;
-            this.allergyTextBox.Name = "allergyTextBox";
-            this.allergyTextBox.ReadOnly = true;
-            this.allergyTextBox.Size = new System.Drawing.Size(325, 96);
-            this.allergyTextBox.TabIndex = 15;
-            this.allergyTextBox.Text = "";
-            this.allergyTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.allergyTextBox_Validating);
+            this.expUser.Location = new System.Drawing.Point(338, 248);
+            this.expUser.Margin = new System.Windows.Forms.Padding(2);
+            this.expUser.Name = "expUser";
+            this.expUser.Size = new System.Drawing.Size(65, 20);
+            this.expUser.TabIndex = 30;
             // 
-            // emailTextBox
+            // expDate_label
             // 
-            this.emailTextBox.Location = new System.Drawing.Point(257, 235);
-            this.emailTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.emailTextBox.MaxLength = 33;
-            this.emailTextBox.Name = "emailTextBox";
-            this.emailTextBox.ReadOnly = true;
-            this.emailTextBox.Size = new System.Drawing.Size(231, 22);
-            this.emailTextBox.TabIndex = 12;
-            this.emailTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.emailTextBox_Validating);
+            this.expDate_label.AutoSize = true;
+            this.expDate_label.Location = new System.Drawing.Point(338, 232);
+            this.expDate_label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.expDate_label.Name = "expDate_label";
+            this.expDate_label.Size = new System.Drawing.Size(54, 13);
+            this.expDate_label.TabIndex = 29;
+            this.expDate_label.Text = "Exp. Date";
+            // 
+            // allergiesUser
+            // 
+            this.allergiesUser.Location = new System.Drawing.Point(26, 306);
+            this.allergiesUser.Margin = new System.Windows.Forms.Padding(2);
+            this.allergiesUser.MaxLength = 300;
+            this.allergiesUser.Name = "allergiesUser";
+            this.allergiesUser.ReadOnly = true;
+            this.allergiesUser.Size = new System.Drawing.Size(245, 79);
+            this.allergiesUser.TabIndex = 15;
+            this.allergiesUser.Text = "";
+            this.allergiesUser.Validating += new System.ComponentModel.CancelEventHandler(this.allergiesUser_Validating);
+            // 
+            // emailUser
+            // 
+            this.emailUser.Location = new System.Drawing.Point(193, 191);
+            this.emailUser.Margin = new System.Windows.Forms.Padding(2);
+            this.emailUser.MaxLength = 33;
+            this.emailUser.Name = "emailUser";
+            this.emailUser.ReadOnly = true;
+            this.emailUser.Size = new System.Drawing.Size(174, 20);
+            this.emailUser.TabIndex = 12;
+            this.emailUser.Validating += new System.ComponentModel.CancelEventHandler(this.emailUser_Validating);
             // 
             // email
             // 
             this.email.AutoSize = true;
-            this.email.Location = new System.Drawing.Point(267, 215);
+            this.email.Location = new System.Drawing.Point(200, 175);
+            this.email.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.email.Name = "email";
-            this.email.Size = new System.Drawing.Size(45, 16);
+            this.email.Size = new System.Drawing.Size(35, 13);
             this.email.TabIndex = 28;
             this.email.Text = "E-mail";
             // 
-            // telephoneNumberTextBox
+            // telephoneUser
             // 
-            this.telephoneNumberTextBox.Location = new System.Drawing.Point(37, 235);
-            this.telephoneNumberTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.telephoneNumberTextBox.MaxLength = 12;
-            this.telephoneNumberTextBox.Name = "telephoneNumberTextBox";
-            this.telephoneNumberTextBox.ReadOnly = true;
-            this.telephoneNumberTextBox.Size = new System.Drawing.Size(160, 22);
-            this.telephoneNumberTextBox.TabIndex = 11;
-            this.telephoneNumberTextBox.TextChanged += new System.EventHandler(this.telephoneNumberTextBox_TextChanged);
-            this.telephoneNumberTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.telephoneNumberTextBox_Validating);
+            this.telephoneUser.Location = new System.Drawing.Point(28, 191);
+            this.telephoneUser.Margin = new System.Windows.Forms.Padding(2);
+            this.telephoneUser.MaxLength = 12;
+            this.telephoneUser.Name = "telephoneUser";
+            this.telephoneUser.ReadOnly = true;
+            this.telephoneUser.Size = new System.Drawing.Size(121, 20);
+            this.telephoneUser.TabIndex = 11;
+            this.telephoneUser.TextChanged += new System.EventHandler(this.telephoneUser_TextChanged);
+            this.telephoneUser.KeyDown += new System.Windows.Forms.KeyEventHandler(this.telephoneUser_KeyDown);
+            this.telephoneUser.Validating += new System.ComponentModel.CancelEventHandler(this.telephoneUser_Validating);
             // 
             // phoneNumber
             // 
             this.phoneNumber.AutoSize = true;
-            this.phoneNumber.Location = new System.Drawing.Point(41, 214);
+            this.phoneNumber.Location = new System.Drawing.Point(31, 174);
+            this.phoneNumber.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.phoneNumber.Name = "phoneNumber";
-            this.phoneNumber.Size = new System.Drawing.Size(124, 16);
+            this.phoneNumber.Size = new System.Drawing.Size(98, 13);
             this.phoneNumber.TabIndex = 26;
             this.phoneNumber.Text = "Telephone Number";
             // 
-            // logOutButton
+            // logOutUser
             // 
-            this.logOutButton.Location = new System.Drawing.Point(389, 480);
-            this.logOutButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.logOutButton.Name = "logOutButton";
-            this.logOutButton.Size = new System.Drawing.Size(124, 32);
-            this.logOutButton.TabIndex = 19;
-            this.logOutButton.Text = "Log Out";
-            this.logOutButton.UseVisualStyleBackColor = true;
-            this.logOutButton.Click += new System.EventHandler(this.logOutButton_Click);
+            this.logOutUser.Location = new System.Drawing.Point(292, 390);
+            this.logOutUser.Name = "logOutUser";
+            this.logOutUser.Size = new System.Drawing.Size(93, 26);
+            this.logOutUser.TabIndex = 19;
+            this.logOutUser.Text = "Log Out";
+            this.logOutUser.UseVisualStyleBackColor = true;
+            this.logOutUser.Click += new System.EventHandler(this.logOutButton_Click);
             // 
             // requestRefill
             // 
-            this.requestRefill.Location = new System.Drawing.Point(387, 434);
-            this.requestRefill.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.requestRefill.Location = new System.Drawing.Point(290, 353);
+            this.requestRefill.Margin = new System.Windows.Forms.Padding(2);
             this.requestRefill.Name = "requestRefill";
-            this.requestRefill.Size = new System.Drawing.Size(125, 39);
+            this.requestRefill.Size = new System.Drawing.Size(94, 32);
             this.requestRefill.TabIndex = 18;
             this.requestRefill.Text = "Request Refill";
             this.requestRefill.UseVisualStyleBackColor = true;
             this.requestRefill.Click += new System.EventHandler(this.requestRefill_Click);
             // 
-            // Save
+            // saveUser
             // 
-            this.Save.Location = new System.Drawing.Point(125, 489);
-            this.Save.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Save.Name = "Save";
-            this.Save.Size = new System.Drawing.Size(75, 23);
-            this.Save.TabIndex = 17;
-            this.Save.Text = "Save";
-            this.Save.UseVisualStyleBackColor = true;
-            this.Save.Click += new System.EventHandler(this.Save_Click);
+            this.saveUser.Location = new System.Drawing.Point(94, 397);
+            this.saveUser.Margin = new System.Windows.Forms.Padding(2);
+            this.saveUser.Name = "saveUser";
+            this.saveUser.Size = new System.Drawing.Size(56, 19);
+            this.saveUser.TabIndex = 17;
+            this.saveUser.Text = "Save";
+            this.saveUser.UseVisualStyleBackColor = true;
+            this.saveUser.Click += new System.EventHandler(this.saveUser_Click);
             // 
-            // edit
+            // editUser
             // 
-            this.edit.Location = new System.Drawing.Point(41, 489);
-            this.edit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.edit.Name = "edit";
-            this.edit.Size = new System.Drawing.Size(75, 23);
-            this.edit.TabIndex = 16;
-            this.edit.Text = "Edit";
-            this.edit.UseVisualStyleBackColor = true;
-            this.edit.Click += new System.EventHandler(this.edit_Click);
+            this.editUser.Location = new System.Drawing.Point(31, 397);
+            this.editUser.Margin = new System.Windows.Forms.Padding(2);
+            this.editUser.Name = "editUser";
+            this.editUser.Size = new System.Drawing.Size(56, 19);
+            this.editUser.TabIndex = 16;
+            this.editUser.Text = "Edit";
+            this.editUser.UseVisualStyleBackColor = true;
+            this.editUser.Click += new System.EventHandler(this.editUser_Click);
             // 
-            // paymentMethodTextBox
+            // ccUser
             // 
-            this.paymentMethodTextBox.Location = new System.Drawing.Point(243, 305);
-            this.paymentMethodTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.paymentMethodTextBox.MaxLength = 19;
-            this.paymentMethodTextBox.Name = "paymentMethodTextBox";
-            this.paymentMethodTextBox.ReadOnly = true;
-            this.paymentMethodTextBox.Size = new System.Drawing.Size(193, 22);
-            this.paymentMethodTextBox.TabIndex = 14;
-            this.paymentMethodTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.paymentMethodTextBox_Validating);
+            this.ccUser.Location = new System.Drawing.Point(182, 248);
+            this.ccUser.Margin = new System.Windows.Forms.Padding(2);
+            this.ccUser.MaxLength = 19;
+            this.ccUser.Name = "ccUser";
+            this.ccUser.ReadOnly = true;
+            this.ccUser.Size = new System.Drawing.Size(146, 20);
+            this.ccUser.TabIndex = 14;
+            this.ccUser.Validating += new System.ComponentModel.CancelEventHandler(this.ccUser_Validating);
             // 
-            // insuranceTextBox
+            // insuranceUser
             // 
-            this.insuranceTextBox.Location = new System.Drawing.Point(35, 305);
-            this.insuranceTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.insuranceTextBox.MaxLength = 66;
-            this.insuranceTextBox.Name = "insuranceTextBox";
-            this.insuranceTextBox.ReadOnly = true;
-            this.insuranceTextBox.Size = new System.Drawing.Size(192, 22);
-            this.insuranceTextBox.TabIndex = 13;
-            this.insuranceTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.insuranceTextBox_Validating);
+            this.insuranceUser.Location = new System.Drawing.Point(26, 248);
+            this.insuranceUser.Margin = new System.Windows.Forms.Padding(2);
+            this.insuranceUser.MaxLength = 66;
+            this.insuranceUser.Name = "insuranceUser";
+            this.insuranceUser.ReadOnly = true;
+            this.insuranceUser.Size = new System.Drawing.Size(145, 20);
+            this.insuranceUser.TabIndex = 13;
+            this.insuranceUser.Validating += new System.ComponentModel.CancelEventHandler(this.insuranceUser_Validating);
             // 
-            // zipCodeTextBox
+            // zipUser
             // 
-            this.zipCodeTextBox.Location = new System.Drawing.Point(281, 164);
-            this.zipCodeTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.zipCodeTextBox.MaxLength = 5;
-            this.zipCodeTextBox.Name = "zipCodeTextBox";
-            this.zipCodeTextBox.ReadOnly = true;
-            this.zipCodeTextBox.Size = new System.Drawing.Size(79, 22);
-            this.zipCodeTextBox.TabIndex = 10;
-            this.zipCodeTextBox.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
-            this.zipCodeTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.zipCodeTextBox_Validating);
+            this.zipUser.Location = new System.Drawing.Point(211, 133);
+            this.zipUser.Margin = new System.Windows.Forms.Padding(2);
+            this.zipUser.MaxLength = 5;
+            this.zipUser.Name = "zipUser";
+            this.zipUser.ReadOnly = true;
+            this.zipUser.Size = new System.Drawing.Size(60, 20);
+            this.zipUser.TabIndex = 10;
+            this.zipUser.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
+            this.zipUser.Validating += new System.ComponentModel.CancelEventHandler(this.zipUser_Validating);
             // 
-            // stateTextBox
+            // stateUser
             // 
-            this.stateTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.stateTextBox.Cursor = System.Windows.Forms.Cursors.SizeAll;
-            this.stateTextBox.Location = new System.Drawing.Point(220, 164);
-            this.stateTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.stateTextBox.MaxLength = 2;
-            this.stateTextBox.Name = "stateTextBox";
-            this.stateTextBox.ReadOnly = true;
-            this.stateTextBox.Size = new System.Drawing.Size(45, 22);
-            this.stateTextBox.TabIndex = 9;
-            this.stateTextBox.TextChanged += new System.EventHandler(this.stateTextBox_TextChanged);
-            this.stateTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.stateTextBox_Validating);
+            this.stateUser.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.stateUser.Cursor = System.Windows.Forms.Cursors.SizeAll;
+            this.stateUser.Location = new System.Drawing.Point(165, 133);
+            this.stateUser.Margin = new System.Windows.Forms.Padding(2);
+            this.stateUser.MaxLength = 2;
+            this.stateUser.Name = "stateUser";
+            this.stateUser.ReadOnly = true;
+            this.stateUser.Size = new System.Drawing.Size(35, 20);
+            this.stateUser.TabIndex = 9;
+            this.stateUser.TextChanged += new System.EventHandler(this.stateUser_TextChanged);
+            this.stateUser.Validating += new System.ComponentModel.CancelEventHandler(this.stateUser_Validating);
             // 
-            // cityTextBox
+            // cityUser
             // 
-            this.cityTextBox.Location = new System.Drawing.Point(37, 164);
-            this.cityTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cityTextBox.MaxLength = 33;
-            this.cityTextBox.Name = "cityTextBox";
-            this.cityTextBox.ReadOnly = true;
-            this.cityTextBox.Size = new System.Drawing.Size(160, 22);
-            this.cityTextBox.TabIndex = 8;
-            this.cityTextBox.TextChanged += new System.EventHandler(this.cityTextBox_TextChanged);
-            this.cityTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.cityTextBox_Validating);
+            this.cityUser.Location = new System.Drawing.Point(28, 133);
+            this.cityUser.Margin = new System.Windows.Forms.Padding(2);
+            this.cityUser.MaxLength = 33;
+            this.cityUser.Name = "cityUser";
+            this.cityUser.ReadOnly = true;
+            this.cityUser.Size = new System.Drawing.Size(121, 20);
+            this.cityUser.TabIndex = 8;
+            this.cityUser.TextChanged += new System.EventHandler(this.cityTextBox_TextChanged);
+            this.cityUser.Validating += new System.ComponentModel.CancelEventHandler(this.cityUser_Validating);
             // 
-            // streetAddressTextBox
+            // streetUser
             // 
-            this.streetAddressTextBox.Location = new System.Drawing.Point(37, 114);
-            this.streetAddressTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.streetAddressTextBox.MaxLength = 33;
-            this.streetAddressTextBox.Name = "streetAddressTextBox";
-            this.streetAddressTextBox.ReadOnly = true;
-            this.streetAddressTextBox.Size = new System.Drawing.Size(235, 22);
-            this.streetAddressTextBox.TabIndex = 7;
-            this.streetAddressTextBox.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
-            this.streetAddressTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.streetAddressTextBox_Validating);
+            this.streetUser.Location = new System.Drawing.Point(28, 93);
+            this.streetUser.Margin = new System.Windows.Forms.Padding(2);
+            this.streetUser.MaxLength = 33;
+            this.streetUser.Name = "streetUser";
+            this.streetUser.ReadOnly = true;
+            this.streetUser.Size = new System.Drawing.Size(177, 20);
+            this.streetUser.TabIndex = 7;
+            this.streetUser.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.streetUser.Validating += new System.ComponentModel.CancelEventHandler(this.streetUser_Validating);
             // 
-            // dateOfBirthTextBox
+            // dobUser
             // 
-            this.dateOfBirthTextBox.Location = new System.Drawing.Point(389, 58);
-            this.dateOfBirthTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dateOfBirthTextBox.MaxLength = 10;
-            this.dateOfBirthTextBox.Name = "dateOfBirthTextBox";
-            this.dateOfBirthTextBox.ReadOnly = true;
-            this.dateOfBirthTextBox.Size = new System.Drawing.Size(127, 22);
-            this.dateOfBirthTextBox.TabIndex = 6;
-            this.dateOfBirthTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.dateOfBirthTextBox_Validating);
+            this.dobUser.Location = new System.Drawing.Point(292, 47);
+            this.dobUser.Margin = new System.Windows.Forms.Padding(2);
+            this.dobUser.MaxLength = 10;
+            this.dobUser.Name = "dobUser";
+            this.dobUser.ReadOnly = true;
+            this.dobUser.Size = new System.Drawing.Size(96, 20);
+            this.dobUser.TabIndex = 6;
+            this.dobUser.Validating += new System.ComponentModel.CancelEventHandler(this.dobUser_Validating);
             // 
-            // lastNameTextBox
+            // lnameUser
             // 
-            this.lastNameTextBox.Location = new System.Drawing.Point(187, 58);
-            this.lastNameTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.lastNameTextBox.MaxLength = 33;
-            this.lastNameTextBox.Name = "lastNameTextBox";
-            this.lastNameTextBox.ReadOnly = true;
-            this.lastNameTextBox.Size = new System.Drawing.Size(188, 22);
-            this.lastNameTextBox.TabIndex = 5;
-            this.lastNameTextBox.TextChanged += new System.EventHandler(this.lastNameTextBox_TextChanged);
-            this.lastNameTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.lastNameTextBox_Validating);
+            this.lnameUser.Location = new System.Drawing.Point(140, 47);
+            this.lnameUser.Margin = new System.Windows.Forms.Padding(2);
+            this.lnameUser.MaxLength = 33;
+            this.lnameUser.Name = "lnameUser";
+            this.lnameUser.ReadOnly = true;
+            this.lnameUser.Size = new System.Drawing.Size(142, 20);
+            this.lnameUser.TabIndex = 5;
+            this.lnameUser.TextChanged += new System.EventHandler(this.lastNameTextBox_TextChanged);
+            this.lnameUser.Validating += new System.ComponentModel.CancelEventHandler(this.lnameUser_Validating);
             // 
-            // firstNameTextBox
+            // fnameUser
             // 
-            this.firstNameTextBox.Location = new System.Drawing.Point(37, 58);
-            this.firstNameTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.firstNameTextBox.MaxLength = 33;
-            this.firstNameTextBox.Name = "firstNameTextBox";
-            this.firstNameTextBox.ReadOnly = true;
-            this.firstNameTextBox.Size = new System.Drawing.Size(133, 22);
-            this.firstNameTextBox.TabIndex = 4;
-            this.firstNameTextBox.TextChanged += new System.EventHandler(this.firstNameTextBox_TextChanged);
-            this.firstNameTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.firstNameTextBox_Validating);
+            this.fnameUser.Location = new System.Drawing.Point(28, 47);
+            this.fnameUser.Margin = new System.Windows.Forms.Padding(2);
+            this.fnameUser.MaxLength = 33;
+            this.fnameUser.Name = "fnameUser";
+            this.fnameUser.ReadOnly = true;
+            this.fnameUser.Size = new System.Drawing.Size(101, 20);
+            this.fnameUser.TabIndex = 4;
+            this.fnameUser.TextChanged += new System.EventHandler(this.firstNameTextBox_TextChanged);
+            this.fnameUser.Validating += new System.ComponentModel.CancelEventHandler(this.fnameUser_Validating);
             // 
             // drugAllergies
             // 
             this.drugAllergies.AutoSize = true;
-            this.drugAllergies.Location = new System.Drawing.Point(39, 354);
+            this.drugAllergies.Location = new System.Drawing.Point(29, 288);
+            this.drugAllergies.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.drugAllergies.Name = "drugAllergies";
-            this.drugAllergies.Size = new System.Drawing.Size(92, 16);
+            this.drugAllergies.Size = new System.Drawing.Size(72, 13);
             this.drugAllergies.TabIndex = 9;
             this.drugAllergies.Text = "Drug Allergies";
             // 
             // dob
             // 
             this.dob.AutoSize = true;
-            this.dob.Location = new System.Drawing.Point(387, 38);
+            this.dob.Location = new System.Drawing.Point(290, 31);
+            this.dob.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.dob.Name = "dob";
-            this.dob.Size = new System.Drawing.Size(79, 16);
+            this.dob.Size = new System.Drawing.Size(66, 13);
             this.dob.TabIndex = 8;
             this.dob.Text = "Date of Birth";
             this.dob.Click += new System.EventHandler(this.label1_Click_5);
@@ -595,54 +627,60 @@
             // paymentMethod
             // 
             this.paymentMethod.AutoSize = true;
-            this.paymentMethod.Location = new System.Drawing.Point(243, 286);
+            this.paymentMethod.Location = new System.Drawing.Point(182, 232);
+            this.paymentMethod.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.paymentMethod.Name = "paymentMethod";
-            this.paymentMethod.Size = new System.Drawing.Size(125, 16);
+            this.paymentMethod.Size = new System.Drawing.Size(99, 13);
             this.paymentMethod.TabIndex = 7;
             this.paymentMethod.Text = "Credit Card Number";
             // 
             // insurance
             // 
             this.insurance.AutoSize = true;
-            this.insurance.Location = new System.Drawing.Point(35, 284);
+            this.insurance.Location = new System.Drawing.Point(26, 231);
+            this.insurance.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.insurance.Name = "insurance";
-            this.insurance.Size = new System.Drawing.Size(65, 16);
+            this.insurance.Size = new System.Drawing.Size(54, 13);
             this.insurance.TabIndex = 6;
             this.insurance.Text = "Insurance";
             // 
             // zipCode
             // 
             this.zipCode.AutoSize = true;
-            this.zipCode.Location = new System.Drawing.Point(281, 144);
+            this.zipCode.Location = new System.Drawing.Point(211, 117);
+            this.zipCode.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.zipCode.Name = "zipCode";
-            this.zipCode.Size = new System.Drawing.Size(62, 16);
+            this.zipCode.Size = new System.Drawing.Size(50, 13);
             this.zipCode.TabIndex = 5;
             this.zipCode.Text = "Zip Code";
             // 
             // state
             // 
             this.state.AutoSize = true;
-            this.state.Location = new System.Drawing.Point(217, 144);
+            this.state.Location = new System.Drawing.Point(163, 117);
+            this.state.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.state.Name = "state";
-            this.state.Size = new System.Drawing.Size(38, 16);
+            this.state.Size = new System.Drawing.Size(32, 13);
             this.state.TabIndex = 4;
             this.state.Text = "State";
             // 
             // city
             // 
             this.city.AutoSize = true;
-            this.city.Location = new System.Drawing.Point(41, 145);
+            this.city.Location = new System.Drawing.Point(31, 118);
+            this.city.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.city.Name = "city";
-            this.city.Size = new System.Drawing.Size(29, 16);
+            this.city.Size = new System.Drawing.Size(24, 13);
             this.city.TabIndex = 3;
             this.city.Text = "City";
             // 
             // streetAddress
             // 
             this.streetAddress.AutoSize = true;
-            this.streetAddress.Location = new System.Drawing.Point(41, 95);
+            this.streetAddress.Location = new System.Drawing.Point(31, 77);
+            this.streetAddress.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.streetAddress.Name = "streetAddress";
-            this.streetAddress.Size = new System.Drawing.Size(96, 16);
+            this.streetAddress.Size = new System.Drawing.Size(76, 13);
             this.streetAddress.TabIndex = 2;
             this.streetAddress.Text = "Street Address";
             this.streetAddress.Click += new System.EventHandler(this.label1_Click_4);
@@ -650,9 +688,10 @@
             // lastName
             // 
             this.lastName.AutoSize = true;
-            this.lastName.Location = new System.Drawing.Point(185, 38);
+            this.lastName.Location = new System.Drawing.Point(139, 31);
+            this.lastName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lastName.Name = "lastName";
-            this.lastName.Size = new System.Drawing.Size(72, 16);
+            this.lastName.Size = new System.Drawing.Size(58, 13);
             this.lastName.TabIndex = 1;
             this.lastName.Text = "Last Name";
             this.lastName.Click += new System.EventHandler(this.label1_Click_3);
@@ -660,165 +699,185 @@
             // firstName
             // 
             this.firstName.AutoSize = true;
-            this.firstName.Location = new System.Drawing.Point(41, 39);
+            this.firstName.Location = new System.Drawing.Point(31, 32);
+            this.firstName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.firstName.Name = "firstName";
-            this.firstName.Size = new System.Drawing.Size(72, 16);
+            this.firstName.Size = new System.Drawing.Size(57, 13);
             this.firstName.TabIndex = 0;
             this.firstName.Text = "First Name";
             this.firstName.Click += new System.EventHandler(this.label1_Click_2);
             // 
-            // panel3
+            // pharmPanel
             // 
-            this.panel3.Controls.Add(this.textbox_expDate2);
-            this.panel3.Controls.Add(this.label22);
-            this.panel3.Controls.Add(this.logOutPharm);
-            this.panel3.Controls.Add(this.Edit_onPharmForm);
-            this.panel3.Controls.Add(this.saveChanges);
-            this.panel3.Controls.Add(this.SubmitOrder);
-            this.panel3.Controls.Add(this.textBox_lastShippedDate);
-            this.panel3.Controls.Add(this.textBox_email);
-            this.panel3.Controls.Add(this.textBox_telephone);
-            this.panel3.Controls.Add(this.label_email);
-            this.panel3.Controls.Add(this.label_telephone);
-            this.panel3.Controls.Add(this.label_lastShippedDate);
-            this.panel3.Controls.Add(this.label_insurance);
-            this.panel3.Controls.Add(this.textBox_insurance);
-            this.panel3.Controls.Add(this.textBox_paymentMethod);
-            this.panel3.Controls.Add(this.label_paymentMethod);
-            this.panel3.Controls.Add(this.checkBox5_reorder);
-            this.panel3.Controls.Add(this.checkBox4_reorder);
-            this.panel3.Controls.Add(this.checkBox3_reorder);
-            this.panel3.Controls.Add(this.checkBox2__reorder);
-            this.panel3.Controls.Add(this.checkBox1_reorder);
-            this.panel3.Controls.Add(this.label_reorder);
-            this.panel3.Controls.Add(this.textBox_prescriber1);
-            this.panel3.Controls.Add(this.textBox__prescriber2);
-            this.panel3.Controls.Add(this.textBox__prescriber3);
-            this.panel3.Controls.Add(this.textBox__prescriber5);
-            this.panel3.Controls.Add(this.textBox__prescriber4);
-            this.panel3.Controls.Add(this.label_prescriber);
-            this.panel3.Controls.Add(this.label_refill);
-            this.panel3.Controls.Add(this.textBox__refill5);
-            this.panel3.Controls.Add(this.textBox__refill4);
-            this.panel3.Controls.Add(this.textBox_refill3);
-            this.panel3.Controls.Add(this.textBox_refill2);
-            this.panel3.Controls.Add(this.textBox_refill1);
-            this.panel3.Controls.Add(this.label_prescriptionList);
-            this.panel3.Controls.Add(this.textBox_RxList1);
-            this.panel3.Controls.Add(this.textBox_RxList2);
-            this.panel3.Controls.Add(this.textBox_RxList3);
-            this.panel3.Controls.Add(this.textBox_RxList5);
-            this.panel3.Controls.Add(this.textBox_RxList4);
-            this.panel3.Controls.Add(this.textBox_drugAllergies1);
-            this.panel3.Controls.Add(this.textBox_zipcode);
-            this.panel3.Controls.Add(this.textBox_state);
-            this.panel3.Controls.Add(this.textBox_city);
-            this.panel3.Controls.Add(this.textBox_streetAddress);
-            this.panel3.Controls.Add(this.textBox_dateOfBirth);
-            this.panel3.Controls.Add(this.textBox_lastName);
-            this.panel3.Controls.Add(this.textBox_firstName);
-            this.panel3.Controls.Add(this.label_search);
-            this.panel3.Controls.Add(this.textBox_searchName);
-            this.panel3.Controls.Add(this.pictureBox1);
-            this.panel3.Controls.Add(this.label_drugAllergies);
-            this.panel3.Controls.Add(this.label_dateOfBirth);
-            this.panel3.Controls.Add(this.label_zipcode);
-            this.panel3.Controls.Add(this.label_state);
-            this.panel3.Controls.Add(this.label_city);
-            this.panel3.Controls.Add(this.label_streetAddress);
-            this.panel3.Controls.Add(this.label_lastName);
-            this.panel3.Controls.Add(this.label_firstName);
-            this.panel3.Location = new System.Drawing.Point(767, 36);
-            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(565, 730);
-            this.panel3.TabIndex = 4;
+            this.pharmPanel.Controls.Add(this.expPharm);
+            this.pharmPanel.Controls.Add(this.label22);
+            this.pharmPanel.Controls.Add(this.logOutPharm);
+            this.pharmPanel.Controls.Add(this.editPharm);
+            this.pharmPanel.Controls.Add(this.savePharm);
+            this.pharmPanel.Controls.Add(this.SubmitOrderPharm);
+            this.pharmPanel.Controls.Add(this.shippedPharm);
+            this.pharmPanel.Controls.Add(this.emailPharm);
+            this.pharmPanel.Controls.Add(this.telephonePharm);
+            this.pharmPanel.Controls.Add(this.label_email);
+            this.pharmPanel.Controls.Add(this.label_telephone);
+            this.pharmPanel.Controls.Add(this.label_lastShippedDate);
+            this.pharmPanel.Controls.Add(this.label_insurance);
+            this.pharmPanel.Controls.Add(this.insurancePharm);
+            this.pharmPanel.Controls.Add(this.ccPharm);
+            this.pharmPanel.Controls.Add(this.label_paymentMethod);
+            this.pharmPanel.Controls.Add(this.checkBox5Pharm);
+            this.pharmPanel.Controls.Add(this.checkBox4Pharm);
+            this.pharmPanel.Controls.Add(this.checkBox3Pharm);
+            this.pharmPanel.Controls.Add(this.checkBox2Pharm);
+            this.pharmPanel.Controls.Add(this.checkBox1Pharm);
+            this.pharmPanel.Controls.Add(this.label_reorder);
+            this.pharmPanel.Controls.Add(this.prescriber1Pharm);
+            this.pharmPanel.Controls.Add(this.prescriber2Pharm);
+            this.pharmPanel.Controls.Add(this.prescriber3Pharm);
+            this.pharmPanel.Controls.Add(this.prescriber5Pharm);
+            this.pharmPanel.Controls.Add(this.prescriber4Pharm);
+            this.pharmPanel.Controls.Add(this.label_prescriber);
+            this.pharmPanel.Controls.Add(this.label_refill);
+            this.pharmPanel.Controls.Add(this.refill5Pharm);
+            this.pharmPanel.Controls.Add(this.refill4Pharm);
+            this.pharmPanel.Controls.Add(this.refill3Pharm);
+            this.pharmPanel.Controls.Add(this.refill2Pharm);
+            this.pharmPanel.Controls.Add(this.refill1Pharm);
+            this.pharmPanel.Controls.Add(this.label_prescriptionList);
+            this.pharmPanel.Controls.Add(this.prescript1Pharm);
+            this.pharmPanel.Controls.Add(this.prescript2Pharm);
+            this.pharmPanel.Controls.Add(this.prescript3Pharm);
+            this.pharmPanel.Controls.Add(this.prescript5Pharm);
+            this.pharmPanel.Controls.Add(this.prescript4Pharm);
+            this.pharmPanel.Controls.Add(this.allergiesPharm);
+            this.pharmPanel.Controls.Add(this.zipPharm);
+            this.pharmPanel.Controls.Add(this.statePharm);
+            this.pharmPanel.Controls.Add(this.cityPharm);
+            this.pharmPanel.Controls.Add(this.streetPharm);
+            this.pharmPanel.Controls.Add(this.dobPharm);
+            this.pharmPanel.Controls.Add(this.lnamePharm);
+            this.pharmPanel.Controls.Add(this.fnamePharm);
+            this.pharmPanel.Controls.Add(this.label_search);
+            this.pharmPanel.Controls.Add(this.searchPharm);
+            this.pharmPanel.Controls.Add(this.pictureBox1);
+            this.pharmPanel.Controls.Add(this.label_drugAllergies);
+            this.pharmPanel.Controls.Add(this.label_dateOfBirth);
+            this.pharmPanel.Controls.Add(this.label_zipcode);
+            this.pharmPanel.Controls.Add(this.label_state);
+            this.pharmPanel.Controls.Add(this.label_city);
+            this.pharmPanel.Controls.Add(this.label_streetAddress);
+            this.pharmPanel.Controls.Add(this.label_lastName);
+            this.pharmPanel.Controls.Add(this.label_firstName);
+            this.pharmPanel.Location = new System.Drawing.Point(575, 29);
+            this.pharmPanel.Margin = new System.Windows.Forms.Padding(2);
+            this.pharmPanel.Name = "pharmPanel";
+            this.pharmPanel.Size = new System.Drawing.Size(424, 593);
+            this.pharmPanel.TabIndex = 4;
+            // 
+            // expPharm
+            // 
+            this.expPharm.Location = new System.Drawing.Point(305, 318);
+            this.expPharm.Margin = new System.Windows.Forms.Padding(2);
+            this.expPharm.Name = "expPharm";
+            this.expPharm.Size = new System.Drawing.Size(65, 20);
+            this.expPharm.TabIndex = 85;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(306, 302);
+            this.label22.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(54, 13);
+            this.label22.TabIndex = 84;
+            this.label22.Text = "Exp. Date";
             // 
             // logOutPharm
             // 
-            this.logOutPharm.Location = new System.Drawing.Point(288, 673);
-            this.logOutPharm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.logOutPharm.Location = new System.Drawing.Point(216, 547);
             this.logOutPharm.Name = "logOutPharm";
-            this.logOutPharm.Size = new System.Drawing.Size(124, 36);
+            this.logOutPharm.Size = new System.Drawing.Size(93, 29);
             this.logOutPharm.TabIndex = 77;
             this.logOutPharm.Text = "Log Out";
             this.logOutPharm.UseVisualStyleBackColor = true;
             this.logOutPharm.Click += new System.EventHandler(this.logOutButton_Click);
             // 
-            // Edit_onPharmForm
+            // editPharm
             // 
-            this.Edit_onPharmForm.Location = new System.Drawing.Point(37, 430);
-            this.Edit_onPharmForm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Edit_onPharmForm.Name = "Edit_onPharmForm";
-            this.Edit_onPharmForm.Size = new System.Drawing.Size(68, 30);
-            this.Edit_onPharmForm.TabIndex = 54;
-            this.Edit_onPharmForm.Text = "Edit";
-            this.Edit_onPharmForm.UseVisualStyleBackColor = true;
-            this.Edit_onPharmForm.Click += new System.EventHandler(this.Edit_onPharmForm_Click);
+            this.editPharm.Location = new System.Drawing.Point(28, 349);
+            this.editPharm.Margin = new System.Windows.Forms.Padding(2);
+            this.editPharm.Name = "editPharm";
+            this.editPharm.Size = new System.Drawing.Size(51, 24);
+            this.editPharm.TabIndex = 54;
+            this.editPharm.Text = "Edit";
+            this.editPharm.UseVisualStyleBackColor = true;
+            this.editPharm.Click += new System.EventHandler(this.editPharm_Click);
             // 
-            // saveChanges
+            // savePharm
             // 
-            this.saveChanges.Location = new System.Drawing.Point(112, 430);
-            this.saveChanges.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.saveChanges.Name = "saveChanges";
-            this.saveChanges.Size = new System.Drawing.Size(120, 30);
-            this.saveChanges.TabIndex = 55;
-            this.saveChanges.Text = "Save Changes";
-            this.saveChanges.UseVisualStyleBackColor = true;
-            this.saveChanges.Click += new System.EventHandler(this.saveChanges_Click);
+            this.savePharm.Location = new System.Drawing.Point(84, 349);
+            this.savePharm.Margin = new System.Windows.Forms.Padding(2);
+            this.savePharm.Name = "savePharm";
+            this.savePharm.Size = new System.Drawing.Size(90, 24);
+            this.savePharm.TabIndex = 55;
+            this.savePharm.Text = "Save Changes";
+            this.savePharm.UseVisualStyleBackColor = true;
+            this.savePharm.Click += new System.EventHandler(this.savePharm_Click);
             // 
-            // SubmitOrder
+            // SubmitOrderPharm
             // 
-            this.SubmitOrder.Enabled = false;
-            this.SubmitOrder.Location = new System.Drawing.Point(423, 673);
-            this.SubmitOrder.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.SubmitOrder.Name = "SubmitOrder";
-            this.SubmitOrder.Size = new System.Drawing.Size(103, 36);
-            this.SubmitOrder.TabIndex = 78;
-            this.SubmitOrder.Text = "Submit Order";
-            this.SubmitOrder.UseVisualStyleBackColor = true;
-            this.SubmitOrder.Click += new System.EventHandler(this.button1_Click_1);
+            this.SubmitOrderPharm.Enabled = false;
+            this.SubmitOrderPharm.Location = new System.Drawing.Point(317, 547);
+            this.SubmitOrderPharm.Margin = new System.Windows.Forms.Padding(2);
+            this.SubmitOrderPharm.Name = "SubmitOrderPharm";
+            this.SubmitOrderPharm.Size = new System.Drawing.Size(77, 29);
+            this.SubmitOrderPharm.TabIndex = 78;
+            this.SubmitOrderPharm.Text = "Submit Order";
+            this.SubmitOrderPharm.UseVisualStyleBackColor = true;
+            this.SubmitOrderPharm.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // textBox_lastShippedDate
+            // shippedPharm
             // 
-            this.textBox_lastShippedDate.Location = new System.Drawing.Point(37, 687);
-            this.textBox_lastShippedDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox_lastShippedDate.MaxLength = 10;
-            this.textBox_lastShippedDate.Name = "textBox_lastShippedDate";
-            this.textBox_lastShippedDate.ReadOnly = true;
-            this.textBox_lastShippedDate.Size = new System.Drawing.Size(169, 22);
-            this.textBox_lastShippedDate.TabIndex = 76;
-            this.textBox_lastShippedDate.TextChanged += new System.EventHandler(this.textBox30_TextChanged);
+            this.shippedPharm.Location = new System.Drawing.Point(28, 558);
+            this.shippedPharm.Margin = new System.Windows.Forms.Padding(2);
+            this.shippedPharm.MaxLength = 10;
+            this.shippedPharm.Name = "shippedPharm";
+            this.shippedPharm.ReadOnly = true;
+            this.shippedPharm.Size = new System.Drawing.Size(128, 20);
+            this.shippedPharm.TabIndex = 76;
+            this.shippedPharm.TextChanged += new System.EventHandler(this.textBox30_TextChanged);
             // 
-            // textBox_email
+            // emailPharm
             // 
-            this.textBox_email.Location = new System.Drawing.Point(216, 287);
-            this.textBox_email.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox_email.MaxLength = 33;
-            this.textBox_email.Name = "textBox_email";
-            this.textBox_email.ReadOnly = true;
-            this.textBox_email.Size = new System.Drawing.Size(276, 22);
-            this.textBox_email.TabIndex = 50;
-            this.textBox_email.Validating += new System.ComponentModel.CancelEventHandler(this.textBox_email_Validating);
+            this.emailPharm.Location = new System.Drawing.Point(162, 233);
+            this.emailPharm.Margin = new System.Windows.Forms.Padding(2);
+            this.emailPharm.MaxLength = 33;
+            this.emailPharm.Name = "emailPharm";
+            this.emailPharm.ReadOnly = true;
+            this.emailPharm.Size = new System.Drawing.Size(208, 20);
+            this.emailPharm.TabIndex = 50;
+            this.emailPharm.Validating += new System.ComponentModel.CancelEventHandler(this.emailPharm_Validating);
             // 
-            // textBox_telephone
+            // telephonePharm
             // 
-            this.textBox_telephone.Location = new System.Drawing.Point(37, 287);
-            this.textBox_telephone.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox_telephone.MaxLength = 12;
-            this.textBox_telephone.Name = "textBox_telephone";
-            this.textBox_telephone.ReadOnly = true;
-            this.textBox_telephone.Size = new System.Drawing.Size(169, 22);
-            this.textBox_telephone.TabIndex = 49;
-            this.textBox_telephone.TextChanged += new System.EventHandler(this.textBox_telephone_TextChanged);
-            this.textBox_telephone.Validating += new System.ComponentModel.CancelEventHandler(this.textBox_telephone_Validating);
+            this.telephonePharm.Location = new System.Drawing.Point(28, 233);
+            this.telephonePharm.Margin = new System.Windows.Forms.Padding(2);
+            this.telephonePharm.MaxLength = 12;
+            this.telephonePharm.Name = "telephonePharm";
+            this.telephonePharm.ReadOnly = true;
+            this.telephonePharm.Size = new System.Drawing.Size(128, 20);
+            this.telephonePharm.TabIndex = 49;
+            this.telephonePharm.TextChanged += new System.EventHandler(this.telephonePharm_TextChanged);
+            this.telephonePharm.KeyDown += new System.Windows.Forms.KeyEventHandler(this.telephonePharm_KeyDown);
+            this.telephonePharm.Validating += new System.ComponentModel.CancelEventHandler(this.telephonePharm_Validating);
             // 
             // label_email
             // 
             this.label_email.AutoSize = true;
-            this.label_email.Location = new System.Drawing.Point(220, 266);
+            this.label_email.Location = new System.Drawing.Point(165, 216);
+            this.label_email.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_email.Name = "label_email";
-            this.label_email.Size = new System.Drawing.Size(45, 16);
+            this.label_email.Size = new System.Drawing.Size(35, 13);
             this.label_email.TabIndex = 83;
             this.label_email.Text = "E-mail";
             this.label_email.Click += new System.EventHandler(this.label17_Click);
@@ -826,18 +885,20 @@
             // label_telephone
             // 
             this.label_telephone.AutoSize = true;
-            this.label_telephone.Location = new System.Drawing.Point(39, 266);
+            this.label_telephone.Location = new System.Drawing.Point(29, 216);
+            this.label_telephone.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_telephone.Name = "label_telephone";
-            this.label_telephone.Size = new System.Drawing.Size(124, 16);
+            this.label_telephone.Size = new System.Drawing.Size(98, 13);
             this.label_telephone.TabIndex = 82;
             this.label_telephone.Text = "Telephone Number";
             // 
             // label_lastShippedDate
             // 
             this.label_lastShippedDate.AutoSize = true;
-            this.label_lastShippedDate.Location = new System.Drawing.Point(39, 666);
+            this.label_lastShippedDate.Location = new System.Drawing.Point(29, 541);
+            this.label_lastShippedDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_lastShippedDate.Name = "label_lastShippedDate";
-            this.label_lastShippedDate.Size = new System.Drawing.Size(118, 16);
+            this.label_lastShippedDate.Size = new System.Drawing.Size(95, 13);
             this.label_lastShippedDate.TabIndex = 81;
             this.label_lastShippedDate.Text = "Last Shipped Date";
             this.label_lastShippedDate.Click += new System.EventHandler(this.label15_Click);
@@ -845,169 +906,173 @@
             // label_insurance
             // 
             this.label_insurance.AutoSize = true;
-            this.label_insurance.Location = new System.Drawing.Point(284, 419);
+            this.label_insurance.Location = new System.Drawing.Point(213, 340);
+            this.label_insurance.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_insurance.Name = "label_insurance";
-            this.label_insurance.Size = new System.Drawing.Size(65, 16);
+            this.label_insurance.Size = new System.Drawing.Size(54, 13);
             this.label_insurance.TabIndex = 80;
             this.label_insurance.Text = "Insurance";
             // 
-            // textBox_insurance
+            // insurancePharm
             // 
-            this.textBox_insurance.Location = new System.Drawing.Point(283, 438);
-            this.textBox_insurance.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox_insurance.MaxLength = 66;
-            this.textBox_insurance.Name = "textBox_insurance";
-            this.textBox_insurance.ReadOnly = true;
-            this.textBox_insurance.Size = new System.Drawing.Size(209, 22);
-            this.textBox_insurance.TabIndex = 53;
-            this.textBox_insurance.Validating += new System.ComponentModel.CancelEventHandler(this.textBox_insurance_Validating);
+            this.insurancePharm.Location = new System.Drawing.Point(212, 356);
+            this.insurancePharm.Margin = new System.Windows.Forms.Padding(2);
+            this.insurancePharm.MaxLength = 66;
+            this.insurancePharm.Name = "insurancePharm";
+            this.insurancePharm.ReadOnly = true;
+            this.insurancePharm.Size = new System.Drawing.Size(158, 20);
+            this.insurancePharm.TabIndex = 53;
+            this.insurancePharm.Validating += new System.ComponentModel.CancelEventHandler(this.insurancePharm_Validating);
             // 
-            // textBox_paymentMethod
+            // ccPharm
             // 
-            this.textBox_paymentMethod.Location = new System.Drawing.Point(283, 337);
-            this.textBox_paymentMethod.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox_paymentMethod.MaxLength = 19;
-            this.textBox_paymentMethod.Name = "textBox_paymentMethod";
-            this.textBox_paymentMethod.ReadOnly = true;
-            this.textBox_paymentMethod.Size = new System.Drawing.Size(209, 22);
-            this.textBox_paymentMethod.TabIndex = 52;
-            this.textBox_paymentMethod.Validating += new System.ComponentModel.CancelEventHandler(this.textBox_paymentMethod_Validating);
+            this.ccPharm.Location = new System.Drawing.Point(212, 274);
+            this.ccPharm.Margin = new System.Windows.Forms.Padding(2);
+            this.ccPharm.MaxLength = 19;
+            this.ccPharm.Name = "ccPharm";
+            this.ccPharm.ReadOnly = true;
+            this.ccPharm.Size = new System.Drawing.Size(158, 20);
+            this.ccPharm.TabIndex = 52;
+            this.ccPharm.Validating += new System.ComponentModel.CancelEventHandler(this.ccPharm_Validating);
             // 
             // label_paymentMethod
             // 
             this.label_paymentMethod.AutoSize = true;
-            this.label_paymentMethod.Location = new System.Drawing.Point(284, 318);
+            this.label_paymentMethod.Location = new System.Drawing.Point(213, 258);
+            this.label_paymentMethod.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_paymentMethod.Name = "label_paymentMethod";
-            this.label_paymentMethod.Size = new System.Drawing.Size(125, 16);
+            this.label_paymentMethod.Size = new System.Drawing.Size(99, 13);
             this.label_paymentMethod.TabIndex = 77;
             this.label_paymentMethod.Text = "Credit Card Number";
             // 
-            // checkBox5_reorder
+            // checkBox5Pharm
             // 
-            this.checkBox5_reorder.AutoSize = true;
-            this.checkBox5_reorder.Location = new System.Drawing.Point(504, 633);
-            this.checkBox5_reorder.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.checkBox5_reorder.Name = "checkBox5_reorder";
-            this.checkBox5_reorder.Size = new System.Drawing.Size(18, 17);
-            this.checkBox5_reorder.TabIndex = 75;
-            this.checkBox5_reorder.UseVisualStyleBackColor = true;
-            this.checkBox5_reorder.CheckedChanged += new System.EventHandler(this.checkBox5_CheckedChanged);
+            this.checkBox5Pharm.AutoSize = true;
+            this.checkBox5Pharm.Location = new System.Drawing.Point(378, 514);
+            this.checkBox5Pharm.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBox5Pharm.Name = "checkBox5Pharm";
+            this.checkBox5Pharm.Size = new System.Drawing.Size(15, 14);
+            this.checkBox5Pharm.TabIndex = 75;
+            this.checkBox5Pharm.UseVisualStyleBackColor = true;
+            this.checkBox5Pharm.CheckedChanged += new System.EventHandler(this.checkBox5Pharm_CheckedChanged);
             // 
-            // checkBox4_reorder
+            // checkBox4Pharm
             // 
-            this.checkBox4_reorder.AutoSize = true;
-            this.checkBox4_reorder.Location = new System.Drawing.Point(504, 604);
-            this.checkBox4_reorder.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.checkBox4_reorder.Name = "checkBox4_reorder";
-            this.checkBox4_reorder.Size = new System.Drawing.Size(18, 17);
-            this.checkBox4_reorder.TabIndex = 71;
-            this.checkBox4_reorder.UseVisualStyleBackColor = true;
-            this.checkBox4_reorder.CheckedChanged += new System.EventHandler(this.checkBox4_CheckedChanged);
+            this.checkBox4Pharm.AutoSize = true;
+            this.checkBox4Pharm.Location = new System.Drawing.Point(378, 491);
+            this.checkBox4Pharm.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBox4Pharm.Name = "checkBox4Pharm";
+            this.checkBox4Pharm.Size = new System.Drawing.Size(15, 14);
+            this.checkBox4Pharm.TabIndex = 71;
+            this.checkBox4Pharm.UseVisualStyleBackColor = true;
+            this.checkBox4Pharm.CheckedChanged += new System.EventHandler(this.checkBox4Pharm_CheckedChanged);
             // 
-            // checkBox3_reorder
+            // checkBox3Pharm
             // 
-            this.checkBox3_reorder.AutoSize = true;
-            this.checkBox3_reorder.Location = new System.Drawing.Point(504, 576);
-            this.checkBox3_reorder.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.checkBox3_reorder.Name = "checkBox3_reorder";
-            this.checkBox3_reorder.Size = new System.Drawing.Size(18, 17);
-            this.checkBox3_reorder.TabIndex = 67;
-            this.checkBox3_reorder.UseVisualStyleBackColor = true;
-            this.checkBox3_reorder.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
+            this.checkBox3Pharm.AutoSize = true;
+            this.checkBox3Pharm.Location = new System.Drawing.Point(378, 468);
+            this.checkBox3Pharm.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBox3Pharm.Name = "checkBox3Pharm";
+            this.checkBox3Pharm.Size = new System.Drawing.Size(15, 14);
+            this.checkBox3Pharm.TabIndex = 67;
+            this.checkBox3Pharm.UseVisualStyleBackColor = true;
+            this.checkBox3Pharm.CheckedChanged += new System.EventHandler(this.checkBox3Pharm_CheckedChanged);
             // 
-            // checkBox2__reorder
+            // checkBox2Pharm
             // 
-            this.checkBox2__reorder.AutoSize = true;
-            this.checkBox2__reorder.Location = new System.Drawing.Point(504, 548);
-            this.checkBox2__reorder.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.checkBox2__reorder.Name = "checkBox2__reorder";
-            this.checkBox2__reorder.Size = new System.Drawing.Size(18, 17);
-            this.checkBox2__reorder.TabIndex = 63;
-            this.checkBox2__reorder.UseVisualStyleBackColor = true;
-            this.checkBox2__reorder.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
+            this.checkBox2Pharm.AutoSize = true;
+            this.checkBox2Pharm.Location = new System.Drawing.Point(378, 445);
+            this.checkBox2Pharm.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBox2Pharm.Name = "checkBox2Pharm";
+            this.checkBox2Pharm.Size = new System.Drawing.Size(15, 14);
+            this.checkBox2Pharm.TabIndex = 63;
+            this.checkBox2Pharm.UseVisualStyleBackColor = true;
+            this.checkBox2Pharm.CheckedChanged += new System.EventHandler(this.checkBox2Pharm_CheckedChanged);
             // 
-            // checkBox1_reorder
+            // checkBox1Pharm
             // 
-            this.checkBox1_reorder.AutoSize = true;
-            this.checkBox1_reorder.Location = new System.Drawing.Point(504, 519);
-            this.checkBox1_reorder.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.checkBox1_reorder.Name = "checkBox1_reorder";
-            this.checkBox1_reorder.Size = new System.Drawing.Size(18, 17);
-            this.checkBox1_reorder.TabIndex = 59;
-            this.checkBox1_reorder.UseVisualStyleBackColor = true;
-            this.checkBox1_reorder.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.checkBox1Pharm.AutoSize = true;
+            this.checkBox1Pharm.Location = new System.Drawing.Point(378, 422);
+            this.checkBox1Pharm.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBox1Pharm.Name = "checkBox1Pharm";
+            this.checkBox1Pharm.Size = new System.Drawing.Size(15, 14);
+            this.checkBox1Pharm.TabIndex = 59;
+            this.checkBox1Pharm.UseVisualStyleBackColor = true;
+            this.checkBox1Pharm.CheckedChanged += new System.EventHandler(this.checkBox1Pharm_CheckedChanged);
             // 
             // label_reorder
             // 
             this.label_reorder.AutoSize = true;
-            this.label_reorder.Location = new System.Drawing.Point(479, 495);
+            this.label_reorder.Location = new System.Drawing.Point(359, 402);
+            this.label_reorder.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_reorder.Name = "label_reorder";
-            this.label_reorder.Size = new System.Drawing.Size(57, 16);
+            this.label_reorder.Size = new System.Drawing.Size(45, 13);
             this.label_reorder.TabIndex = 71;
             this.label_reorder.Text = "Reorder";
             this.label_reorder.Click += new System.EventHandler(this.label12_Click);
             // 
-            // textBox_prescriber1
+            // prescriber1Pharm
             // 
-            this.textBox_prescriber1.Location = new System.Drawing.Point(297, 516);
-            this.textBox_prescriber1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox_prescriber1.MaxLength = 33;
-            this.textBox_prescriber1.Name = "textBox_prescriber1";
-            this.textBox_prescriber1.ReadOnly = true;
-            this.textBox_prescriber1.Size = new System.Drawing.Size(176, 22);
-            this.textBox_prescriber1.TabIndex = 58;
-            this.textBox_prescriber1.TextChanged += new System.EventHandler(this.textBox21_TextChanged);
+            this.prescriber1Pharm.Location = new System.Drawing.Point(223, 419);
+            this.prescriber1Pharm.Margin = new System.Windows.Forms.Padding(2);
+            this.prescriber1Pharm.MaxLength = 33;
+            this.prescriber1Pharm.Name = "prescriber1Pharm";
+            this.prescriber1Pharm.ReadOnly = true;
+            this.prescriber1Pharm.Size = new System.Drawing.Size(133, 20);
+            this.prescriber1Pharm.TabIndex = 58;
+            this.prescriber1Pharm.TextChanged += new System.EventHandler(this.textBox21_TextChanged);
             // 
-            // textBox__prescriber2
+            // prescriber2Pharm
             // 
-            this.textBox__prescriber2.Location = new System.Drawing.Point(297, 544);
-            this.textBox__prescriber2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox__prescriber2.MaxLength = 33;
-            this.textBox__prescriber2.Name = "textBox__prescriber2";
-            this.textBox__prescriber2.ReadOnly = true;
-            this.textBox__prescriber2.Size = new System.Drawing.Size(176, 22);
-            this.textBox__prescriber2.TabIndex = 62;
-            this.textBox__prescriber2.TextChanged += new System.EventHandler(this.textBox22_TextChanged);
+            this.prescriber2Pharm.Location = new System.Drawing.Point(223, 442);
+            this.prescriber2Pharm.Margin = new System.Windows.Forms.Padding(2);
+            this.prescriber2Pharm.MaxLength = 33;
+            this.prescriber2Pharm.Name = "prescriber2Pharm";
+            this.prescriber2Pharm.ReadOnly = true;
+            this.prescriber2Pharm.Size = new System.Drawing.Size(133, 20);
+            this.prescriber2Pharm.TabIndex = 62;
+            this.prescriber2Pharm.TextChanged += new System.EventHandler(this.textBox22_TextChanged);
             // 
-            // textBox__prescriber3
+            // prescriber3Pharm
             // 
-            this.textBox__prescriber3.Location = new System.Drawing.Point(297, 572);
-            this.textBox__prescriber3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox__prescriber3.MaxLength = 33;
-            this.textBox__prescriber3.Name = "textBox__prescriber3";
-            this.textBox__prescriber3.ReadOnly = true;
-            this.textBox__prescriber3.Size = new System.Drawing.Size(176, 22);
-            this.textBox__prescriber3.TabIndex = 66;
-            this.textBox__prescriber3.TextChanged += new System.EventHandler(this.textBox23_TextChanged);
+            this.prescriber3Pharm.Location = new System.Drawing.Point(223, 465);
+            this.prescriber3Pharm.Margin = new System.Windows.Forms.Padding(2);
+            this.prescriber3Pharm.MaxLength = 33;
+            this.prescriber3Pharm.Name = "prescriber3Pharm";
+            this.prescriber3Pharm.ReadOnly = true;
+            this.prescriber3Pharm.Size = new System.Drawing.Size(133, 20);
+            this.prescriber3Pharm.TabIndex = 66;
+            this.prescriber3Pharm.TextChanged += new System.EventHandler(this.textBox23_TextChanged);
             // 
-            // textBox__prescriber5
+            // prescriber5Pharm
             // 
-            this.textBox__prescriber5.Location = new System.Drawing.Point(297, 628);
-            this.textBox__prescriber5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox__prescriber5.MaxLength = 33;
-            this.textBox__prescriber5.Name = "textBox__prescriber5";
-            this.textBox__prescriber5.ReadOnly = true;
-            this.textBox__prescriber5.Size = new System.Drawing.Size(176, 22);
-            this.textBox__prescriber5.TabIndex = 74;
-            this.textBox__prescriber5.TextChanged += new System.EventHandler(this.textBox24_TextChanged);
+            this.prescriber5Pharm.Location = new System.Drawing.Point(223, 510);
+            this.prescriber5Pharm.Margin = new System.Windows.Forms.Padding(2);
+            this.prescriber5Pharm.MaxLength = 33;
+            this.prescriber5Pharm.Name = "prescriber5Pharm";
+            this.prescriber5Pharm.ReadOnly = true;
+            this.prescriber5Pharm.Size = new System.Drawing.Size(133, 20);
+            this.prescriber5Pharm.TabIndex = 74;
+            this.prescriber5Pharm.TextChanged += new System.EventHandler(this.textBox24_TextChanged);
             // 
-            // textBox__prescriber4
+            // prescriber4Pharm
             // 
-            this.textBox__prescriber4.Location = new System.Drawing.Point(297, 601);
-            this.textBox__prescriber4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox__prescriber4.MaxLength = 33;
-            this.textBox__prescriber4.Name = "textBox__prescriber4";
-            this.textBox__prescriber4.ReadOnly = true;
-            this.textBox__prescriber4.Size = new System.Drawing.Size(176, 22);
-            this.textBox__prescriber4.TabIndex = 70;
-            this.textBox__prescriber4.TextChanged += new System.EventHandler(this.textBox25_TextChanged);
+            this.prescriber4Pharm.Location = new System.Drawing.Point(223, 488);
+            this.prescriber4Pharm.Margin = new System.Windows.Forms.Padding(2);
+            this.prescriber4Pharm.MaxLength = 33;
+            this.prescriber4Pharm.Name = "prescriber4Pharm";
+            this.prescriber4Pharm.ReadOnly = true;
+            this.prescriber4Pharm.Size = new System.Drawing.Size(133, 20);
+            this.prescriber4Pharm.TabIndex = 70;
+            this.prescriber4Pharm.TextChanged += new System.EventHandler(this.textBox25_TextChanged);
             // 
             // label_prescriber
             // 
             this.label_prescriber.AutoSize = true;
-            this.label_prescriber.Location = new System.Drawing.Point(301, 495);
+            this.label_prescriber.Location = new System.Drawing.Point(226, 402);
+            this.label_prescriber.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_prescriber.Name = "label_prescriber";
-            this.label_prescriber.Size = new System.Drawing.Size(69, 16);
+            this.label_prescriber.Size = new System.Drawing.Size(54, 13);
             this.label_prescriber.TabIndex = 65;
             this.label_prescriber.Text = "Prescriber";
             this.label_prescriber.Click += new System.EventHandler(this.label11_Click);
@@ -1015,254 +1080,257 @@
             // label_refill
             // 
             this.label_refill.AutoSize = true;
-            this.label_refill.Location = new System.Drawing.Point(252, 495);
+            this.label_refill.Location = new System.Drawing.Point(189, 402);
+            this.label_refill.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_refill.Name = "label_refill";
-            this.label_refill.Size = new System.Drawing.Size(37, 16);
+            this.label_refill.Size = new System.Drawing.Size(30, 13);
             this.label_refill.TabIndex = 64;
             this.label_refill.Text = "Refill";
             this.label_refill.Click += new System.EventHandler(this.label10_Click);
             // 
-            // textBox__refill5
+            // refill5Pharm
             // 
-            this.textBox__refill5.Location = new System.Drawing.Point(253, 628);
-            this.textBox__refill5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox__refill5.MaxLength = 2;
-            this.textBox__refill5.Name = "textBox__refill5";
-            this.textBox__refill5.ReadOnly = true;
-            this.textBox__refill5.Size = new System.Drawing.Size(39, 22);
-            this.textBox__refill5.TabIndex = 73;
-            this.textBox__refill5.TextChanged += new System.EventHandler(this.textBox20_TextChanged);
+            this.refill5Pharm.Location = new System.Drawing.Point(190, 510);
+            this.refill5Pharm.Margin = new System.Windows.Forms.Padding(2);
+            this.refill5Pharm.MaxLength = 2;
+            this.refill5Pharm.Name = "refill5Pharm";
+            this.refill5Pharm.ReadOnly = true;
+            this.refill5Pharm.Size = new System.Drawing.Size(30, 20);
+            this.refill5Pharm.TabIndex = 73;
+            this.refill5Pharm.TextChanged += new System.EventHandler(this.textBox20_TextChanged);
             // 
-            // textBox__refill4
+            // refill4Pharm
             // 
-            this.textBox__refill4.Location = new System.Drawing.Point(253, 601);
-            this.textBox__refill4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox__refill4.MaxLength = 2;
-            this.textBox__refill4.Name = "textBox__refill4";
-            this.textBox__refill4.ReadOnly = true;
-            this.textBox__refill4.Size = new System.Drawing.Size(39, 22);
-            this.textBox__refill4.TabIndex = 69;
-            this.textBox__refill4.TextChanged += new System.EventHandler(this.textBox19_TextChanged);
+            this.refill4Pharm.Location = new System.Drawing.Point(190, 488);
+            this.refill4Pharm.Margin = new System.Windows.Forms.Padding(2);
+            this.refill4Pharm.MaxLength = 2;
+            this.refill4Pharm.Name = "refill4Pharm";
+            this.refill4Pharm.ReadOnly = true;
+            this.refill4Pharm.Size = new System.Drawing.Size(30, 20);
+            this.refill4Pharm.TabIndex = 69;
+            this.refill4Pharm.TextChanged += new System.EventHandler(this.textBox19_TextChanged);
             // 
-            // textBox_refill3
+            // refill3Pharm
             // 
-            this.textBox_refill3.Location = new System.Drawing.Point(253, 572);
-            this.textBox_refill3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox_refill3.MaxLength = 2;
-            this.textBox_refill3.Name = "textBox_refill3";
-            this.textBox_refill3.ReadOnly = true;
-            this.textBox_refill3.Size = new System.Drawing.Size(39, 22);
-            this.textBox_refill3.TabIndex = 65;
-            this.textBox_refill3.TextChanged += new System.EventHandler(this.textBox18_TextChanged);
+            this.refill3Pharm.Location = new System.Drawing.Point(190, 465);
+            this.refill3Pharm.Margin = new System.Windows.Forms.Padding(2);
+            this.refill3Pharm.MaxLength = 2;
+            this.refill3Pharm.Name = "refill3Pharm";
+            this.refill3Pharm.ReadOnly = true;
+            this.refill3Pharm.Size = new System.Drawing.Size(30, 20);
+            this.refill3Pharm.TabIndex = 65;
+            this.refill3Pharm.TextChanged += new System.EventHandler(this.textBox18_TextChanged);
             // 
-            // textBox_refill2
+            // refill2Pharm
             // 
-            this.textBox_refill2.Location = new System.Drawing.Point(253, 544);
-            this.textBox_refill2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox_refill2.MaxLength = 2;
-            this.textBox_refill2.Name = "textBox_refill2";
-            this.textBox_refill2.ReadOnly = true;
-            this.textBox_refill2.Size = new System.Drawing.Size(39, 22);
-            this.textBox_refill2.TabIndex = 61;
-            this.textBox_refill2.TextChanged += new System.EventHandler(this.textBox17_TextChanged);
+            this.refill2Pharm.Location = new System.Drawing.Point(190, 442);
+            this.refill2Pharm.Margin = new System.Windows.Forms.Padding(2);
+            this.refill2Pharm.MaxLength = 2;
+            this.refill2Pharm.Name = "refill2Pharm";
+            this.refill2Pharm.ReadOnly = true;
+            this.refill2Pharm.Size = new System.Drawing.Size(30, 20);
+            this.refill2Pharm.TabIndex = 61;
+            this.refill2Pharm.TextChanged += new System.EventHandler(this.textBox17_TextChanged);
             // 
-            // textBox_refill1
+            // refill1Pharm
             // 
-            this.textBox_refill1.Location = new System.Drawing.Point(253, 516);
-            this.textBox_refill1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox_refill1.MaxLength = 2;
-            this.textBox_refill1.Name = "textBox_refill1";
-            this.textBox_refill1.ReadOnly = true;
-            this.textBox_refill1.Size = new System.Drawing.Size(39, 22);
-            this.textBox_refill1.TabIndex = 57;
-            this.textBox_refill1.TextChanged += new System.EventHandler(this.textBox16_TextChanged);
+            this.refill1Pharm.Location = new System.Drawing.Point(190, 419);
+            this.refill1Pharm.Margin = new System.Windows.Forms.Padding(2);
+            this.refill1Pharm.MaxLength = 2;
+            this.refill1Pharm.Name = "refill1Pharm";
+            this.refill1Pharm.ReadOnly = true;
+            this.refill1Pharm.Size = new System.Drawing.Size(30, 20);
+            this.refill1Pharm.TabIndex = 57;
+            this.refill1Pharm.TextChanged += new System.EventHandler(this.textBox16_TextChanged);
             // 
             // label_prescriptionList
             // 
             this.label_prescriptionList.AutoSize = true;
-            this.label_prescriptionList.Location = new System.Drawing.Point(39, 495);
+            this.label_prescriptionList.Location = new System.Drawing.Point(29, 402);
+            this.label_prescriptionList.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_prescriptionList.Name = "label_prescriptionList";
-            this.label_prescriptionList.Size = new System.Drawing.Size(101, 16);
+            this.label_prescriptionList.Size = new System.Drawing.Size(81, 13);
             this.label_prescriptionList.TabIndex = 58;
             this.label_prescriptionList.Text = "Prescription List";
             this.label_prescriptionList.Click += new System.EventHandler(this.label9_Click_1);
             // 
-            // textBox_RxList1
+            // prescript1Pharm
             // 
-            this.textBox_RxList1.Location = new System.Drawing.Point(37, 516);
-            this.textBox_RxList1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox_RxList1.MaxLength = 33;
-            this.textBox_RxList1.Name = "textBox_RxList1";
-            this.textBox_RxList1.ReadOnly = true;
-            this.textBox_RxList1.Size = new System.Drawing.Size(209, 22);
-            this.textBox_RxList1.TabIndex = 56;
-            this.textBox_RxList1.TextChanged += new System.EventHandler(this.textBox15_TextChanged);
+            this.prescript1Pharm.Location = new System.Drawing.Point(28, 419);
+            this.prescript1Pharm.Margin = new System.Windows.Forms.Padding(2);
+            this.prescript1Pharm.MaxLength = 33;
+            this.prescript1Pharm.Name = "prescript1Pharm";
+            this.prescript1Pharm.ReadOnly = true;
+            this.prescript1Pharm.Size = new System.Drawing.Size(158, 20);
+            this.prescript1Pharm.TabIndex = 56;
+            this.prescript1Pharm.TextChanged += new System.EventHandler(this.textBox15_TextChanged);
             // 
-            // textBox_RxList2
+            // prescript2Pharm
             // 
-            this.textBox_RxList2.Location = new System.Drawing.Point(37, 544);
-            this.textBox_RxList2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox_RxList2.MaxLength = 33;
-            this.textBox_RxList2.Name = "textBox_RxList2";
-            this.textBox_RxList2.ReadOnly = true;
-            this.textBox_RxList2.Size = new System.Drawing.Size(209, 22);
-            this.textBox_RxList2.TabIndex = 60;
-            this.textBox_RxList2.TextChanged += new System.EventHandler(this.textBox14_TextChanged);
+            this.prescript2Pharm.Location = new System.Drawing.Point(28, 442);
+            this.prescript2Pharm.Margin = new System.Windows.Forms.Padding(2);
+            this.prescript2Pharm.MaxLength = 33;
+            this.prescript2Pharm.Name = "prescript2Pharm";
+            this.prescript2Pharm.ReadOnly = true;
+            this.prescript2Pharm.Size = new System.Drawing.Size(158, 20);
+            this.prescript2Pharm.TabIndex = 60;
+            this.prescript2Pharm.TextChanged += new System.EventHandler(this.textBox14_TextChanged);
             // 
-            // textBox_RxList3
+            // prescript3Pharm
             // 
-            this.textBox_RxList3.Location = new System.Drawing.Point(37, 572);
-            this.textBox_RxList3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox_RxList3.MaxLength = 33;
-            this.textBox_RxList3.Name = "textBox_RxList3";
-            this.textBox_RxList3.ReadOnly = true;
-            this.textBox_RxList3.Size = new System.Drawing.Size(209, 22);
-            this.textBox_RxList3.TabIndex = 64;
-            this.textBox_RxList3.TextChanged += new System.EventHandler(this.textBox13_TextChanged);
+            this.prescript3Pharm.Location = new System.Drawing.Point(28, 465);
+            this.prescript3Pharm.Margin = new System.Windows.Forms.Padding(2);
+            this.prescript3Pharm.MaxLength = 33;
+            this.prescript3Pharm.Name = "prescript3Pharm";
+            this.prescript3Pharm.ReadOnly = true;
+            this.prescript3Pharm.Size = new System.Drawing.Size(158, 20);
+            this.prescript3Pharm.TabIndex = 64;
+            this.prescript3Pharm.TextChanged += new System.EventHandler(this.textBox13_TextChanged);
             // 
-            // textBox_RxList5
+            // prescript5Pharm
             // 
-            this.textBox_RxList5.Location = new System.Drawing.Point(37, 628);
-            this.textBox_RxList5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox_RxList5.MaxLength = 33;
-            this.textBox_RxList5.Name = "textBox_RxList5";
-            this.textBox_RxList5.ReadOnly = true;
-            this.textBox_RxList5.Size = new System.Drawing.Size(209, 22);
-            this.textBox_RxList5.TabIndex = 72;
-            this.textBox_RxList5.TextChanged += new System.EventHandler(this.textBox12_TextChanged);
+            this.prescript5Pharm.Location = new System.Drawing.Point(28, 510);
+            this.prescript5Pharm.Margin = new System.Windows.Forms.Padding(2);
+            this.prescript5Pharm.MaxLength = 33;
+            this.prescript5Pharm.Name = "prescript5Pharm";
+            this.prescript5Pharm.ReadOnly = true;
+            this.prescript5Pharm.Size = new System.Drawing.Size(158, 20);
+            this.prescript5Pharm.TabIndex = 72;
+            this.prescript5Pharm.TextChanged += new System.EventHandler(this.textBox12_TextChanged);
             // 
-            // textBox_RxList4
+            // prescript4Pharm
             // 
-            this.textBox_RxList4.Location = new System.Drawing.Point(37, 601);
-            this.textBox_RxList4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox_RxList4.MaxLength = 33;
-            this.textBox_RxList4.Name = "textBox_RxList4";
-            this.textBox_RxList4.ReadOnly = true;
-            this.textBox_RxList4.Size = new System.Drawing.Size(209, 22);
-            this.textBox_RxList4.TabIndex = 68;
-            this.textBox_RxList4.TextChanged += new System.EventHandler(this.textBox11_TextChanged);
+            this.prescript4Pharm.Location = new System.Drawing.Point(28, 488);
+            this.prescript4Pharm.Margin = new System.Windows.Forms.Padding(2);
+            this.prescript4Pharm.MaxLength = 33;
+            this.prescript4Pharm.Name = "prescript4Pharm";
+            this.prescript4Pharm.ReadOnly = true;
+            this.prescript4Pharm.Size = new System.Drawing.Size(158, 20);
+            this.prescript4Pharm.TabIndex = 68;
+            this.prescript4Pharm.TextChanged += new System.EventHandler(this.textBox11_TextChanged);
             // 
-            // textBox_drugAllergies1
+            // allergiesPharm
             // 
-            this.textBox_drugAllergies1.Location = new System.Drawing.Point(37, 343);
-            this.textBox_drugAllergies1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox_drugAllergies1.MaxLength = 300;
-            this.textBox_drugAllergies1.Multiline = true;
-            this.textBox_drugAllergies1.Name = "textBox_drugAllergies1";
-            this.textBox_drugAllergies1.ReadOnly = true;
-            this.textBox_drugAllergies1.Size = new System.Drawing.Size(209, 72);
-            this.textBox_drugAllergies1.TabIndex = 51;
-            this.textBox_drugAllergies1.Validating += new System.ComponentModel.CancelEventHandler(this.textBox_drugAllergies1_Validating);
+            this.allergiesPharm.Location = new System.Drawing.Point(28, 279);
+            this.allergiesPharm.Margin = new System.Windows.Forms.Padding(2);
+            this.allergiesPharm.MaxLength = 300;
+            this.allergiesPharm.Multiline = true;
+            this.allergiesPharm.Name = "allergiesPharm";
+            this.allergiesPharm.ReadOnly = true;
+            this.allergiesPharm.Size = new System.Drawing.Size(158, 59);
+            this.allergiesPharm.TabIndex = 51;
+            this.allergiesPharm.Validating += new System.ComponentModel.CancelEventHandler(this.allergiesPharm_Validating);
             // 
-            // textBox_zipcode
+            // zipPharm
             // 
-            this.textBox_zipcode.Location = new System.Drawing.Point(283, 235);
-            this.textBox_zipcode.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox_zipcode.MaxLength = 5;
-            this.textBox_zipcode.Name = "textBox_zipcode";
-            this.textBox_zipcode.ReadOnly = true;
-            this.textBox_zipcode.Size = new System.Drawing.Size(93, 22);
-            this.textBox_zipcode.TabIndex = 48;
-            this.textBox_zipcode.Validating += new System.ComponentModel.CancelEventHandler(this.textBox_zipcode_Validating);
+            this.zipPharm.Location = new System.Drawing.Point(212, 191);
+            this.zipPharm.Margin = new System.Windows.Forms.Padding(2);
+            this.zipPharm.MaxLength = 5;
+            this.zipPharm.Name = "zipPharm";
+            this.zipPharm.ReadOnly = true;
+            this.zipPharm.Size = new System.Drawing.Size(71, 20);
+            this.zipPharm.TabIndex = 48;
+            this.zipPharm.Validating += new System.ComponentModel.CancelEventHandler(this.zipPharm_Validating);
             // 
-            // textBox_state
+            // statePharm
             // 
-            this.textBox_state.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox_state.Location = new System.Drawing.Point(216, 235);
-            this.textBox_state.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox_state.MaxLength = 2;
-            this.textBox_state.Name = "textBox_state";
-            this.textBox_state.ReadOnly = true;
-            this.textBox_state.Size = new System.Drawing.Size(52, 22);
-            this.textBox_state.TabIndex = 47;
-            this.textBox_state.TextChanged += new System.EventHandler(this.textBox_state_TextChanged);
-            this.textBox_state.Validating += new System.ComponentModel.CancelEventHandler(this.textBox_state_Validating);
+            this.statePharm.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.statePharm.Location = new System.Drawing.Point(162, 191);
+            this.statePharm.Margin = new System.Windows.Forms.Padding(2);
+            this.statePharm.MaxLength = 2;
+            this.statePharm.Name = "statePharm";
+            this.statePharm.ReadOnly = true;
+            this.statePharm.Size = new System.Drawing.Size(40, 20);
+            this.statePharm.TabIndex = 47;
+            this.statePharm.TextChanged += new System.EventHandler(this.statePharm_TextChanged);
+            this.statePharm.Validating += new System.ComponentModel.CancelEventHandler(this.statePharm_Validating);
             // 
-            // textBox_city
+            // cityPharm
             // 
-            this.textBox_city.Location = new System.Drawing.Point(37, 235);
-            this.textBox_city.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox_city.MaxLength = 33;
-            this.textBox_city.Name = "textBox_city";
-            this.textBox_city.ReadOnly = true;
-            this.textBox_city.Size = new System.Drawing.Size(169, 22);
-            this.textBox_city.TabIndex = 46;
-            this.textBox_city.Validating += new System.ComponentModel.CancelEventHandler(this.textBox_city_Validating);
+            this.cityPharm.Location = new System.Drawing.Point(28, 191);
+            this.cityPharm.Margin = new System.Windows.Forms.Padding(2);
+            this.cityPharm.MaxLength = 33;
+            this.cityPharm.Name = "cityPharm";
+            this.cityPharm.ReadOnly = true;
+            this.cityPharm.Size = new System.Drawing.Size(128, 20);
+            this.cityPharm.TabIndex = 46;
+            this.cityPharm.Validating += new System.ComponentModel.CancelEventHandler(this.cityPharm_Validating);
             // 
-            // textBox_streetAddress
+            // streetPharm
             // 
-            this.textBox_streetAddress.Location = new System.Drawing.Point(37, 190);
-            this.textBox_streetAddress.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox_streetAddress.MaxLength = 33;
-            this.textBox_streetAddress.Name = "textBox_streetAddress";
-            this.textBox_streetAddress.ReadOnly = true;
-            this.textBox_streetAddress.Size = new System.Drawing.Size(337, 22);
-            this.textBox_streetAddress.TabIndex = 45;
-            this.textBox_streetAddress.Validating += new System.ComponentModel.CancelEventHandler(this.textBox_streetAddress_Validating);
+            this.streetPharm.Location = new System.Drawing.Point(28, 154);
+            this.streetPharm.Margin = new System.Windows.Forms.Padding(2);
+            this.streetPharm.MaxLength = 33;
+            this.streetPharm.Name = "streetPharm";
+            this.streetPharm.ReadOnly = true;
+            this.streetPharm.Size = new System.Drawing.Size(254, 20);
+            this.streetPharm.TabIndex = 45;
+            this.streetPharm.Validating += new System.ComponentModel.CancelEventHandler(this.streetPharm_Validating);
             // 
-            // textBox_dateOfBirth
+            // dobPharm
             // 
-            this.textBox_dateOfBirth.Location = new System.Drawing.Point(387, 142);
-            this.textBox_dateOfBirth.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox_dateOfBirth.MaxLength = 10;
-            this.textBox_dateOfBirth.Name = "textBox_dateOfBirth";
-            this.textBox_dateOfBirth.ReadOnly = true;
-            this.textBox_dateOfBirth.Size = new System.Drawing.Size(139, 22);
-            this.textBox_dateOfBirth.TabIndex = 44;
-            this.textBox_dateOfBirth.TextChanged += new System.EventHandler(this.textBox3_TextChanged_1);
-            this.textBox_dateOfBirth.Validating += new System.ComponentModel.CancelEventHandler(this.textBox_dateOfBirth_Validating);
+            this.dobPharm.Location = new System.Drawing.Point(290, 115);
+            this.dobPharm.Margin = new System.Windows.Forms.Padding(2);
+            this.dobPharm.MaxLength = 10;
+            this.dobPharm.Name = "dobPharm";
+            this.dobPharm.ReadOnly = true;
+            this.dobPharm.Size = new System.Drawing.Size(105, 20);
+            this.dobPharm.TabIndex = 44;
+            this.dobPharm.TextChanged += new System.EventHandler(this.textBox3_TextChanged_1);
+            this.dobPharm.Validating += new System.ComponentModel.CancelEventHandler(this.dobPharm_Validating);
             // 
-            // textBox_lastName
+            // lnamePharm
             // 
-            this.textBox_lastName.Location = new System.Drawing.Point(188, 142);
-            this.textBox_lastName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox_lastName.MaxLength = 33;
-            this.textBox_lastName.Name = "textBox_lastName";
-            this.textBox_lastName.ReadOnly = true;
-            this.textBox_lastName.Size = new System.Drawing.Size(187, 22);
-            this.textBox_lastName.TabIndex = 43;
-            this.textBox_lastName.Validating += new System.ComponentModel.CancelEventHandler(this.textBox_lastName_Validating);
+            this.lnamePharm.Location = new System.Drawing.Point(141, 115);
+            this.lnamePharm.Margin = new System.Windows.Forms.Padding(2);
+            this.lnamePharm.MaxLength = 33;
+            this.lnamePharm.Name = "lnamePharm";
+            this.lnamePharm.ReadOnly = true;
+            this.lnamePharm.Size = new System.Drawing.Size(141, 20);
+            this.lnamePharm.TabIndex = 43;
+            this.lnamePharm.Validating += new System.ComponentModel.CancelEventHandler(this.lnamePharm_Validating);
             // 
-            // textBox_firstName
+            // fnamePharm
             // 
-            this.textBox_firstName.Location = new System.Drawing.Point(37, 142);
-            this.textBox_firstName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox_firstName.MaxLength = 33;
-            this.textBox_firstName.Name = "textBox_firstName";
-            this.textBox_firstName.ReadOnly = true;
-            this.textBox_firstName.Size = new System.Drawing.Size(139, 22);
-            this.textBox_firstName.TabIndex = 42;
-            this.textBox_firstName.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            this.textBox_firstName.Validating += new System.ComponentModel.CancelEventHandler(this.textBox_firstName_Validating);
+            this.fnamePharm.Location = new System.Drawing.Point(28, 115);
+            this.fnamePharm.Margin = new System.Windows.Forms.Padding(2);
+            this.fnamePharm.MaxLength = 33;
+            this.fnamePharm.Name = "fnamePharm";
+            this.fnamePharm.ReadOnly = true;
+            this.fnamePharm.Size = new System.Drawing.Size(105, 20);
+            this.fnamePharm.TabIndex = 42;
+            this.fnamePharm.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.fnamePharm.Validating += new System.ComponentModel.CancelEventHandler(this.fnamePharm_Validating);
             // 
             // label_search
             // 
             this.label_search.AutoSize = true;
-            this.label_search.Location = new System.Drawing.Point(39, 49);
+            this.label_search.Location = new System.Drawing.Point(29, 40);
+            this.label_search.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_search.Name = "label_search";
-            this.label_search.Size = new System.Drawing.Size(343, 16);
+            this.label_search.Size = new System.Drawing.Size(277, 13);
             this.label_search.TabIndex = 42;
             this.label_search.Text = "Search customer by first name, last name, or date of birth.";
             this.label_search.Click += new System.EventHandler(this.label9_Click);
             // 
-            // textBox_searchName
+            // searchPharm
             // 
-            this.textBox_searchName.AcceptsReturn = true;
-            this.textBox_searchName.Location = new System.Drawing.Point(37, 70);
-            this.textBox_searchName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox_searchName.MaxLength = 33;
-            this.textBox_searchName.Name = "textBox_searchName";
-            this.textBox_searchName.Size = new System.Drawing.Size(376, 22);
-            this.textBox_searchName.TabIndex = 41;
-            this.textBox_searchName.TextChanged += new System.EventHandler(this.textBox_searchName_TextChanged);
+            this.searchPharm.AcceptsReturn = true;
+            this.searchPharm.Location = new System.Drawing.Point(28, 57);
+            this.searchPharm.Margin = new System.Windows.Forms.Padding(2);
+            this.searchPharm.MaxLength = 33;
+            this.searchPharm.Name = "searchPharm";
+            this.searchPharm.Size = new System.Drawing.Size(283, 20);
+            this.searchPharm.TabIndex = 41;
+            this.searchPharm.TextChanged += new System.EventHandler(this.searchPharm_TextChanged);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(476, 23);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(357, 19);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(63, 50);
+            this.pictureBox1.Size = new System.Drawing.Size(47, 41);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 40;
             this.pictureBox1.TabStop = false;
@@ -1270,877 +1338,973 @@
             // label_drugAllergies
             // 
             this.label_drugAllergies.AutoSize = true;
-            this.label_drugAllergies.Location = new System.Drawing.Point(39, 318);
+            this.label_drugAllergies.Location = new System.Drawing.Point(29, 258);
+            this.label_drugAllergies.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_drugAllergies.Name = "label_drugAllergies";
-            this.label_drugAllergies.Size = new System.Drawing.Size(92, 16);
+            this.label_drugAllergies.Size = new System.Drawing.Size(72, 13);
             this.label_drugAllergies.TabIndex = 29;
             this.label_drugAllergies.Text = "Drug Allergies";
             // 
             // label_dateOfBirth
             // 
             this.label_dateOfBirth.AutoSize = true;
-            this.label_dateOfBirth.Location = new System.Drawing.Point(387, 121);
+            this.label_dateOfBirth.Location = new System.Drawing.Point(290, 98);
+            this.label_dateOfBirth.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_dateOfBirth.Name = "label_dateOfBirth";
-            this.label_dateOfBirth.Size = new System.Drawing.Size(79, 16);
+            this.label_dateOfBirth.Size = new System.Drawing.Size(66, 13);
             this.label_dateOfBirth.TabIndex = 28;
             this.label_dateOfBirth.Text = "Date of Birth";
             // 
             // label_zipcode
             // 
             this.label_zipcode.AutoSize = true;
-            this.label_zipcode.Location = new System.Drawing.Point(284, 214);
+            this.label_zipcode.Location = new System.Drawing.Point(213, 174);
+            this.label_zipcode.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_zipcode.Name = "label_zipcode";
-            this.label_zipcode.Size = new System.Drawing.Size(62, 16);
+            this.label_zipcode.Size = new System.Drawing.Size(50, 13);
             this.label_zipcode.TabIndex = 27;
             this.label_zipcode.Text = "Zip Code";
             // 
             // label_state
             // 
             this.label_state.AutoSize = true;
-            this.label_state.Location = new System.Drawing.Point(220, 214);
+            this.label_state.Location = new System.Drawing.Point(165, 174);
+            this.label_state.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_state.Name = "label_state";
-            this.label_state.Size = new System.Drawing.Size(38, 16);
+            this.label_state.Size = new System.Drawing.Size(32, 13);
             this.label_state.TabIndex = 26;
             this.label_state.Text = "State";
             // 
             // label_city
             // 
             this.label_city.AutoSize = true;
-            this.label_city.Location = new System.Drawing.Point(44, 215);
+            this.label_city.Location = new System.Drawing.Point(33, 175);
+            this.label_city.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_city.Name = "label_city";
-            this.label_city.Size = new System.Drawing.Size(29, 16);
+            this.label_city.Size = new System.Drawing.Size(24, 13);
             this.label_city.TabIndex = 25;
             this.label_city.Text = "City";
             // 
             // label_streetAddress
             // 
             this.label_streetAddress.AutoSize = true;
-            this.label_streetAddress.Location = new System.Drawing.Point(39, 169);
+            this.label_streetAddress.Location = new System.Drawing.Point(29, 137);
+            this.label_streetAddress.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_streetAddress.Name = "label_streetAddress";
-            this.label_streetAddress.Size = new System.Drawing.Size(96, 16);
+            this.label_streetAddress.Size = new System.Drawing.Size(76, 13);
             this.label_streetAddress.TabIndex = 24;
             this.label_streetAddress.Text = "Street Address";
             // 
             // label_lastName
             // 
             this.label_lastName.AutoSize = true;
-            this.label_lastName.Location = new System.Drawing.Point(188, 121);
+            this.label_lastName.Location = new System.Drawing.Point(141, 98);
+            this.label_lastName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_lastName.Name = "label_lastName";
-            this.label_lastName.Size = new System.Drawing.Size(72, 16);
+            this.label_lastName.Size = new System.Drawing.Size(58, 13);
             this.label_lastName.TabIndex = 23;
             this.label_lastName.Text = "Last Name";
             // 
             // label_firstName
             // 
             this.label_firstName.AutoSize = true;
-            this.label_firstName.Location = new System.Drawing.Point(39, 121);
+            this.label_firstName.Location = new System.Drawing.Point(29, 98);
+            this.label_firstName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_firstName.Name = "label_firstName";
-            this.label_firstName.Size = new System.Drawing.Size(72, 16);
+            this.label_firstName.Size = new System.Drawing.Size(57, 13);
             this.label_firstName.TabIndex = 22;
             this.label_firstName.Text = "First Name";
             // 
-            // panel4
+            // refillPanel
             // 
-            this.panel4.Controls.Add(this.goBack_btn);
-            this.panel4.Controls.Add(this.button3);
-            this.panel4.Controls.Add(this.checkBox1);
-            this.panel4.Controls.Add(this.checkBox2);
-            this.panel4.Controls.Add(this.checkBox3);
-            this.panel4.Controls.Add(this.checkBox4);
-            this.panel4.Controls.Add(this.checkBox5);
-            this.panel4.Controls.Add(this.label3);
-            this.panel4.Controls.Add(this.label1);
-            this.panel4.Controls.Add(this.textBox1);
-            this.panel4.Controls.Add(this.textBox2);
-            this.panel4.Controls.Add(this.textBox3);
-            this.panel4.Controls.Add(this.textBox4);
-            this.panel4.Controls.Add(this.textBox5);
-            this.panel4.Controls.Add(this.label2);
-            this.panel4.Controls.Add(this.textBox6);
-            this.panel4.Controls.Add(this.textBox7);
-            this.panel4.Controls.Add(this.textBox8);
-            this.panel4.Controls.Add(this.textBox9);
-            this.panel4.Controls.Add(this.textBox10);
-            this.panel4.Controls.Add(this.RefillRequestTitle);
-            this.panel4.Controls.Add(this.pictureBox2);
-            this.panel4.Location = new System.Drawing.Point(379, 82);
-            this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(381, 388);
-            this.panel4.TabIndex = 5;
-            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
+            this.refillPanel.Controls.Add(this.backRefill);
+            this.refillPanel.Controls.Add(this.submitRefill);
+            this.refillPanel.Controls.Add(this.checkBox5Refill);
+            this.refillPanel.Controls.Add(this.checkBox4Refill);
+            this.refillPanel.Controls.Add(this.checkBox3Refill);
+            this.refillPanel.Controls.Add(this.checkBox2Refill);
+            this.refillPanel.Controls.Add(this.checkBox1Refill);
+            this.refillPanel.Controls.Add(this.label3);
+            this.refillPanel.Controls.Add(this.label1);
+            this.refillPanel.Controls.Add(this.refill5Refill);
+            this.refillPanel.Controls.Add(this.refill4Refill);
+            this.refillPanel.Controls.Add(this.refill3Refill);
+            this.refillPanel.Controls.Add(this.refill2Refill);
+            this.refillPanel.Controls.Add(this.refill1Refill);
+            this.refillPanel.Controls.Add(this.label2);
+            this.refillPanel.Controls.Add(this.prescript1Refill);
+            this.refillPanel.Controls.Add(this.prescript2Refill);
+            this.refillPanel.Controls.Add(this.prescript3Refill);
+            this.refillPanel.Controls.Add(this.prescript5Refill);
+            this.refillPanel.Controls.Add(this.prescript4Refill);
+            this.refillPanel.Controls.Add(this.RefillRequestTitle);
+            this.refillPanel.Controls.Add(this.pictureBox2);
+            this.refillPanel.Location = new System.Drawing.Point(284, 67);
+            this.refillPanel.Margin = new System.Windows.Forms.Padding(2);
+            this.refillPanel.Name = "refillPanel";
+            this.refillPanel.Size = new System.Drawing.Size(286, 315);
+            this.refillPanel.TabIndex = 5;
+            this.refillPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
-            // goBack_btn
+            // backRefill
             // 
-            this.goBack_btn.Location = new System.Drawing.Point(247, 337);
-            this.goBack_btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.goBack_btn.Name = "goBack_btn";
-            this.goBack_btn.Size = new System.Drawing.Size(103, 31);
-            this.goBack_btn.TabIndex = 36;
-            this.goBack_btn.Text = "Go Back";
-            this.goBack_btn.UseVisualStyleBackColor = true;
-            this.goBack_btn.Click += new System.EventHandler(this.goBack_btn_Click_1);
+            this.backRefill.Location = new System.Drawing.Point(185, 274);
+            this.backRefill.Margin = new System.Windows.Forms.Padding(2);
+            this.backRefill.Name = "backRefill";
+            this.backRefill.Size = new System.Drawing.Size(77, 25);
+            this.backRefill.TabIndex = 36;
+            this.backRefill.Text = "Go Back";
+            this.backRefill.UseVisualStyleBackColor = true;
+            this.backRefill.Click += new System.EventHandler(this.backRefill_Click);
             // 
-            // button3
+            // submitRefill
             // 
-            this.button3.Enabled = false;
-            this.button3.Location = new System.Drawing.Point(247, 288);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(103, 36);
-            this.button3.TabIndex = 35;
-            this.button3.Text = "Submit Order";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.submitRefill.Enabled = false;
+            this.submitRefill.Location = new System.Drawing.Point(185, 234);
+            this.submitRefill.Margin = new System.Windows.Forms.Padding(2);
+            this.submitRefill.Name = "submitRefill";
+            this.submitRefill.Size = new System.Drawing.Size(77, 29);
+            this.submitRefill.TabIndex = 35;
+            this.submitRefill.Text = "Submit Order";
+            this.submitRefill.UseVisualStyleBackColor = true;
+            this.submitRefill.Click += new System.EventHandler(this.button3_Click);
             // 
-            // checkBox1
+            // checkBox5Refill
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(332, 252);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(18, 17);
-            this.checkBox1.TabIndex = 34;
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged_1);
+            this.checkBox5Refill.AutoSize = true;
+            this.checkBox5Refill.Location = new System.Drawing.Point(249, 205);
+            this.checkBox5Refill.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBox5Refill.Name = "checkBox5Refill";
+            this.checkBox5Refill.Size = new System.Drawing.Size(15, 14);
+            this.checkBox5Refill.TabIndex = 34;
+            this.checkBox5Refill.UseVisualStyleBackColor = true;
+            this.checkBox5Refill.CheckedChanged += new System.EventHandler(this.checkBox5Refill_CheckedChanged);
             // 
-            // checkBox2
+            // checkBox4Refill
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(332, 223);
-            this.checkBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(18, 17);
-            this.checkBox2.TabIndex = 31;
-            this.checkBox2.UseVisualStyleBackColor = true;
-            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged_1);
+            this.checkBox4Refill.AutoSize = true;
+            this.checkBox4Refill.Location = new System.Drawing.Point(249, 181);
+            this.checkBox4Refill.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBox4Refill.Name = "checkBox4Refill";
+            this.checkBox4Refill.Size = new System.Drawing.Size(15, 14);
+            this.checkBox4Refill.TabIndex = 31;
+            this.checkBox4Refill.UseVisualStyleBackColor = true;
+            this.checkBox4Refill.CheckedChanged += new System.EventHandler(this.checkBox4Refill_CheckedChanged);
             // 
-            // checkBox3
+            // checkBox3Refill
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(332, 194);
-            this.checkBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(18, 17);
-            this.checkBox3.TabIndex = 28;
-            this.checkBox3.UseVisualStyleBackColor = true;
-            this.checkBox3.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged_1);
+            this.checkBox3Refill.AutoSize = true;
+            this.checkBox3Refill.Location = new System.Drawing.Point(249, 158);
+            this.checkBox3Refill.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBox3Refill.Name = "checkBox3Refill";
+            this.checkBox3Refill.Size = new System.Drawing.Size(15, 14);
+            this.checkBox3Refill.TabIndex = 28;
+            this.checkBox3Refill.UseVisualStyleBackColor = true;
+            this.checkBox3Refill.CheckedChanged += new System.EventHandler(this.checkBox3Refill_CheckedChanged);
             // 
-            // checkBox4
+            // checkBox2Refill
             // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(332, 167);
-            this.checkBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(18, 17);
-            this.checkBox4.TabIndex = 25;
-            this.checkBox4.UseVisualStyleBackColor = true;
-            this.checkBox4.CheckedChanged += new System.EventHandler(this.checkBox4_CheckedChanged_1);
+            this.checkBox2Refill.AutoSize = true;
+            this.checkBox2Refill.Location = new System.Drawing.Point(249, 136);
+            this.checkBox2Refill.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBox2Refill.Name = "checkBox2Refill";
+            this.checkBox2Refill.Size = new System.Drawing.Size(15, 14);
+            this.checkBox2Refill.TabIndex = 25;
+            this.checkBox2Refill.UseVisualStyleBackColor = true;
+            this.checkBox2Refill.CheckedChanged += new System.EventHandler(this.checkBox2Refill_CheckedChanged);
             // 
-            // checkBox5
+            // checkBox1Refill
             // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(332, 138);
-            this.checkBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(18, 17);
-            this.checkBox5.TabIndex = 22;
-            this.checkBox5.UseVisualStyleBackColor = true;
-            this.checkBox5.CheckedChanged += new System.EventHandler(this.checkBox5_CheckedChanged_1);
+            this.checkBox1Refill.AutoSize = true;
+            this.checkBox1Refill.Location = new System.Drawing.Point(249, 112);
+            this.checkBox1Refill.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBox1Refill.Name = "checkBox1Refill";
+            this.checkBox1Refill.Size = new System.Drawing.Size(15, 14);
+            this.checkBox1Refill.TabIndex = 22;
+            this.checkBox1Refill.UseVisualStyleBackColor = true;
+            this.checkBox1Refill.CheckedChanged += new System.EventHandler(this.checkBox1Refill_CheckedChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(307, 114);
+            this.label3.Location = new System.Drawing.Point(230, 93);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(57, 16);
+            this.label3.Size = new System.Drawing.Size(45, 13);
             this.label3.TabIndex = 104;
             this.label3.Text = "Reorder";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(260, 114);
+            this.label1.Location = new System.Drawing.Point(195, 93);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(37, 16);
+            this.label1.Size = new System.Drawing.Size(30, 13);
             this.label1.TabIndex = 103;
             this.label1.Text = "Refill";
             // 
-            // textBox1
+            // refill5Refill
             // 
-            this.textBox1.Location = new System.Drawing.Point(261, 247);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox1.MaxLength = 2;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(39, 22);
-            this.textBox1.TabIndex = 33;
+            this.refill5Refill.Location = new System.Drawing.Point(196, 201);
+            this.refill5Refill.Margin = new System.Windows.Forms.Padding(2);
+            this.refill5Refill.MaxLength = 2;
+            this.refill5Refill.Name = "refill5Refill";
+            this.refill5Refill.ReadOnly = true;
+            this.refill5Refill.Size = new System.Drawing.Size(30, 20);
+            this.refill5Refill.TabIndex = 33;
             // 
-            // textBox2
+            // refill4Refill
             // 
-            this.textBox2.Location = new System.Drawing.Point(261, 220);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox2.MaxLength = 2;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(39, 22);
-            this.textBox2.TabIndex = 30;
+            this.refill4Refill.Location = new System.Drawing.Point(196, 179);
+            this.refill4Refill.Margin = new System.Windows.Forms.Padding(2);
+            this.refill4Refill.MaxLength = 2;
+            this.refill4Refill.Name = "refill4Refill";
+            this.refill4Refill.ReadOnly = true;
+            this.refill4Refill.Size = new System.Drawing.Size(30, 20);
+            this.refill4Refill.TabIndex = 30;
             // 
-            // textBox3
+            // refill3Refill
             // 
-            this.textBox3.Location = new System.Drawing.Point(261, 191);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox3.MaxLength = 2;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(39, 22);
-            this.textBox3.TabIndex = 27;
+            this.refill3Refill.Location = new System.Drawing.Point(196, 155);
+            this.refill3Refill.Margin = new System.Windows.Forms.Padding(2);
+            this.refill3Refill.MaxLength = 2;
+            this.refill3Refill.Name = "refill3Refill";
+            this.refill3Refill.ReadOnly = true;
+            this.refill3Refill.Size = new System.Drawing.Size(30, 20);
+            this.refill3Refill.TabIndex = 27;
             // 
-            // textBox4
+            // refill2Refill
             // 
-            this.textBox4.Location = new System.Drawing.Point(261, 162);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox4.MaxLength = 2;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(39, 22);
-            this.textBox4.TabIndex = 24;
+            this.refill2Refill.Location = new System.Drawing.Point(196, 132);
+            this.refill2Refill.Margin = new System.Windows.Forms.Padding(2);
+            this.refill2Refill.MaxLength = 2;
+            this.refill2Refill.Name = "refill2Refill";
+            this.refill2Refill.ReadOnly = true;
+            this.refill2Refill.Size = new System.Drawing.Size(30, 20);
+            this.refill2Refill.TabIndex = 24;
             // 
-            // textBox5
+            // refill1Refill
             // 
-            this.textBox5.Location = new System.Drawing.Point(261, 135);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox5.MaxLength = 2;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(39, 22);
-            this.textBox5.TabIndex = 21;
+            this.refill1Refill.Location = new System.Drawing.Point(196, 110);
+            this.refill1Refill.Margin = new System.Windows.Forms.Padding(2);
+            this.refill1Refill.MaxLength = 2;
+            this.refill1Refill.Name = "refill1Refill";
+            this.refill1Refill.ReadOnly = true;
+            this.refill1Refill.Size = new System.Drawing.Size(30, 20);
+            this.refill1Refill.TabIndex = 21;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(19, 114);
+            this.label2.Location = new System.Drawing.Point(14, 93);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(101, 16);
+            this.label2.Size = new System.Drawing.Size(81, 13);
             this.label2.TabIndex = 97;
             this.label2.Text = "Prescription List";
             // 
-            // textBox6
+            // prescript1Refill
             // 
-            this.textBox6.Location = new System.Drawing.Point(17, 135);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox6.MaxLength = 33;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(239, 22);
-            this.textBox6.TabIndex = 20;
+            this.prescript1Refill.Location = new System.Drawing.Point(13, 110);
+            this.prescript1Refill.Margin = new System.Windows.Forms.Padding(2);
+            this.prescript1Refill.MaxLength = 33;
+            this.prescript1Refill.Name = "prescript1Refill";
+            this.prescript1Refill.ReadOnly = true;
+            this.prescript1Refill.Size = new System.Drawing.Size(180, 20);
+            this.prescript1Refill.TabIndex = 20;
             // 
-            // textBox7
+            // prescript2Refill
             // 
-            this.textBox7.Location = new System.Drawing.Point(17, 162);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox7.MaxLength = 33;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.ReadOnly = true;
-            this.textBox7.Size = new System.Drawing.Size(239, 22);
-            this.textBox7.TabIndex = 23;
+            this.prescript2Refill.Location = new System.Drawing.Point(13, 132);
+            this.prescript2Refill.Margin = new System.Windows.Forms.Padding(2);
+            this.prescript2Refill.MaxLength = 33;
+            this.prescript2Refill.Name = "prescript2Refill";
+            this.prescript2Refill.ReadOnly = true;
+            this.prescript2Refill.Size = new System.Drawing.Size(180, 20);
+            this.prescript2Refill.TabIndex = 23;
             // 
-            // textBox8
+            // prescript3Refill
             // 
-            this.textBox8.Location = new System.Drawing.Point(17, 191);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox8.MaxLength = 33;
-            this.textBox8.Name = "textBox8";
-            this.textBox8.ReadOnly = true;
-            this.textBox8.Size = new System.Drawing.Size(239, 22);
-            this.textBox8.TabIndex = 26;
+            this.prescript3Refill.Location = new System.Drawing.Point(13, 155);
+            this.prescript3Refill.Margin = new System.Windows.Forms.Padding(2);
+            this.prescript3Refill.MaxLength = 33;
+            this.prescript3Refill.Name = "prescript3Refill";
+            this.prescript3Refill.ReadOnly = true;
+            this.prescript3Refill.Size = new System.Drawing.Size(180, 20);
+            this.prescript3Refill.TabIndex = 26;
             // 
-            // textBox9
+            // prescript5Refill
             // 
-            this.textBox9.Location = new System.Drawing.Point(17, 247);
-            this.textBox9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox9.MaxLength = 33;
-            this.textBox9.Name = "textBox9";
-            this.textBox9.ReadOnly = true;
-            this.textBox9.Size = new System.Drawing.Size(239, 22);
-            this.textBox9.TabIndex = 32;
+            this.prescript5Refill.Location = new System.Drawing.Point(13, 201);
+            this.prescript5Refill.Margin = new System.Windows.Forms.Padding(2);
+            this.prescript5Refill.MaxLength = 33;
+            this.prescript5Refill.Name = "prescript5Refill";
+            this.prescript5Refill.ReadOnly = true;
+            this.prescript5Refill.Size = new System.Drawing.Size(180, 20);
+            this.prescript5Refill.TabIndex = 32;
             // 
-            // textBox10
+            // prescript4Refill
             // 
-            this.textBox10.Location = new System.Drawing.Point(17, 220);
-            this.textBox10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox10.MaxLength = 33;
-            this.textBox10.Name = "textBox10";
-            this.textBox10.ReadOnly = true;
-            this.textBox10.Size = new System.Drawing.Size(239, 22);
-            this.textBox10.TabIndex = 29;
+            this.prescript4Refill.Location = new System.Drawing.Point(13, 179);
+            this.prescript4Refill.Margin = new System.Windows.Forms.Padding(2);
+            this.prescript4Refill.MaxLength = 33;
+            this.prescript4Refill.Name = "prescript4Refill";
+            this.prescript4Refill.ReadOnly = true;
+            this.prescript4Refill.Size = new System.Drawing.Size(180, 20);
+            this.prescript4Refill.TabIndex = 29;
             // 
             // RefillRequestTitle
             // 
             this.RefillRequestTitle.AutoSize = true;
             this.RefillRequestTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RefillRequestTitle.Location = new System.Drawing.Point(31, 39);
+            this.RefillRequestTitle.Location = new System.Drawing.Point(23, 32);
+            this.RefillRequestTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.RefillRequestTitle.Name = "RefillRequestTitle";
-            this.RefillRequestTitle.Size = new System.Drawing.Size(246, 29);
+            this.RefillRequestTitle.Size = new System.Drawing.Size(194, 24);
             this.RefillRequestTitle.TabIndex = 91;
             this.RefillRequestTitle.Text = "Refill Request Form";
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(295, 23);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox2.Location = new System.Drawing.Point(221, 19);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(63, 50);
+            this.pictureBox2.Size = new System.Drawing.Size(47, 41);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 90;
             this.pictureBox2.TabStop = false;
             // 
-            // panel5
+            // adminPanel
             // 
-            this.panel5.Controls.Add(this.textbox_expDate3);
-            this.panel5.Controls.Add(this.label23);
-            this.panel5.Controls.Add(this.dailyFill_chkbox);
-            this.panel5.Controls.Add(this.report_btn);
-            this.panel5.Controls.Add(this.orderStatus_dropdown);
-            this.panel5.Controls.Add(this.comboBox1);
-            this.panel5.Controls.Add(this.to_label);
-            this.panel5.Controls.Add(this.dateRange_label);
-            this.panel5.Controls.Add(this.dateRangeTo_picker);
-            this.panel5.Controls.Add(this.dateRangeFrom_picker);
-            this.panel5.Controls.Add(this.adminPanel_label);
-            this.panel5.Controls.Add(this.button2);
-            this.panel5.Controls.Add(this.button4);
-            this.panel5.Controls.Add(this.save_btn);
-            this.panel5.Controls.Add(this.textBox11);
-            this.panel5.Controls.Add(this.textBox12);
-            this.panel5.Controls.Add(this.textBox13);
-            this.panel5.Controls.Add(this.label4);
-            this.panel5.Controls.Add(this.label5);
-            this.panel5.Controls.Add(this.label6);
-            this.panel5.Controls.Add(this.label7);
-            this.panel5.Controls.Add(this.textBox14);
-            this.panel5.Controls.Add(this.textBox15);
-            this.panel5.Controls.Add(this.label8);
-            this.panel5.Controls.Add(this.checkBox6);
-            this.panel5.Controls.Add(this.checkBox7);
-            this.panel5.Controls.Add(this.checkBox8);
-            this.panel5.Controls.Add(this.checkBox9);
-            this.panel5.Controls.Add(this.checkBox10);
-            this.panel5.Controls.Add(this.label9);
-            this.panel5.Controls.Add(this.textBox16);
-            this.panel5.Controls.Add(this.textBox17);
-            this.panel5.Controls.Add(this.textBox18);
-            this.panel5.Controls.Add(this.textBox19);
-            this.panel5.Controls.Add(this.textBox20);
-            this.panel5.Controls.Add(this.label10);
-            this.panel5.Controls.Add(this.label11);
-            this.panel5.Controls.Add(this.textBox21);
-            this.panel5.Controls.Add(this.textBox22);
-            this.panel5.Controls.Add(this.textBox23);
-            this.panel5.Controls.Add(this.textBox24);
-            this.panel5.Controls.Add(this.textBox25);
-            this.panel5.Controls.Add(this.label12);
-            this.panel5.Controls.Add(this.textBox26);
-            this.panel5.Controls.Add(this.textBox27);
-            this.panel5.Controls.Add(this.textBox28);
-            this.panel5.Controls.Add(this.textBox29);
-            this.panel5.Controls.Add(this.textBox30);
-            this.panel5.Controls.Add(this.textBox31);
-            this.panel5.Controls.Add(this.textBox32);
-            this.panel5.Controls.Add(this.textBox33);
-            this.panel5.Controls.Add(this.textBox34);
-            this.panel5.Controls.Add(this.textBox35);
-            this.panel5.Controls.Add(this.textBox36);
-            this.panel5.Controls.Add(this.textBox37);
-            this.panel5.Controls.Add(this.textBox38);
-            this.panel5.Controls.Add(this.label13);
-            this.panel5.Controls.Add(this.textBox39);
-            this.panel5.Controls.Add(this.pictureBox3);
-            this.panel5.Controls.Add(this.label14);
-            this.panel5.Controls.Add(this.label15);
-            this.panel5.Controls.Add(this.label16);
-            this.panel5.Controls.Add(this.label17);
-            this.panel5.Controls.Add(this.label18);
-            this.panel5.Controls.Add(this.label19);
-            this.panel5.Controls.Add(this.label20);
-            this.panel5.Controls.Add(this.label21);
-            this.panel5.Location = new System.Drawing.Point(1339, 36);
-            this.panel5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(565, 911);
-            this.panel5.TabIndex = 6;
+            this.adminPanel.Controls.Add(this.expAdmin);
+            this.adminPanel.Controls.Add(this.label23);
+            this.adminPanel.Controls.Add(this.dailyFill_chkbox);
+            this.adminPanel.Controls.Add(this.report_btn);
+            this.adminPanel.Controls.Add(this.orderStatus_dropdown);
+            this.adminPanel.Controls.Add(this.comboBox1);
+            this.adminPanel.Controls.Add(this.to_label);
+            this.adminPanel.Controls.Add(this.dateRange_label);
+            this.adminPanel.Controls.Add(this.dateRangeTo_picker);
+            this.adminPanel.Controls.Add(this.dateRangeFrom_picker);
+            this.adminPanel.Controls.Add(this.adminPanel_label);
+            this.adminPanel.Controls.Add(this.editAdmin);
+            this.adminPanel.Controls.Add(this.saveAdmin);
+            this.adminPanel.Controls.Add(this.logOutAdmin);
+            this.adminPanel.Controls.Add(this.shippedAdmin);
+            this.adminPanel.Controls.Add(this.emailAdmin);
+            this.adminPanel.Controls.Add(this.telephoneAdmin);
+            this.adminPanel.Controls.Add(this.label4);
+            this.adminPanel.Controls.Add(this.label5);
+            this.adminPanel.Controls.Add(this.label6);
+            this.adminPanel.Controls.Add(this.label7);
+            this.adminPanel.Controls.Add(this.insuranceAdmin);
+            this.adminPanel.Controls.Add(this.ccAdmin);
+            this.adminPanel.Controls.Add(this.label8);
+            this.adminPanel.Controls.Add(this.prescriber1Admin);
+            this.adminPanel.Controls.Add(this.prescriber2Admin);
+            this.adminPanel.Controls.Add(this.prescriber3Admin);
+            this.adminPanel.Controls.Add(this.prescriber5Admin);
+            this.adminPanel.Controls.Add(this.prescriber4Admin);
+            this.adminPanel.Controls.Add(this.label10);
+            this.adminPanel.Controls.Add(this.label11);
+            this.adminPanel.Controls.Add(this.refill5Admin);
+            this.adminPanel.Controls.Add(this.refill4Admin);
+            this.adminPanel.Controls.Add(this.refill3Admin);
+            this.adminPanel.Controls.Add(this.refill2Admin);
+            this.adminPanel.Controls.Add(this.refill1Admin);
+            this.adminPanel.Controls.Add(this.label12);
+            this.adminPanel.Controls.Add(this.prescript1Admin);
+            this.adminPanel.Controls.Add(this.prescript2Admin);
+            this.adminPanel.Controls.Add(this.prescript3Admin);
+            this.adminPanel.Controls.Add(this.prescript5Admin);
+            this.adminPanel.Controls.Add(this.prescript4Admin);
+            this.adminPanel.Controls.Add(this.allergiesAdmin);
+            this.adminPanel.Controls.Add(this.zipAdmin);
+            this.adminPanel.Controls.Add(this.stateAdmin);
+            this.adminPanel.Controls.Add(this.cityAdmin);
+            this.adminPanel.Controls.Add(this.streetAdmin);
+            this.adminPanel.Controls.Add(this.dobAdmin);
+            this.adminPanel.Controls.Add(this.lnameAdmin);
+            this.adminPanel.Controls.Add(this.fnameAdmin);
+            this.adminPanel.Controls.Add(this.label13);
+            this.adminPanel.Controls.Add(this.searchAdmin);
+            this.adminPanel.Controls.Add(this.pictureBox3);
+            this.adminPanel.Controls.Add(this.label14);
+            this.adminPanel.Controls.Add(this.label15);
+            this.adminPanel.Controls.Add(this.label16);
+            this.adminPanel.Controls.Add(this.label17);
+            this.adminPanel.Controls.Add(this.label18);
+            this.adminPanel.Controls.Add(this.label19);
+            this.adminPanel.Controls.Add(this.label20);
+            this.adminPanel.Controls.Add(this.label21);
+            this.adminPanel.Location = new System.Drawing.Point(1004, 29);
+            this.adminPanel.Margin = new System.Windows.Forms.Padding(2);
+            this.adminPanel.Name = "adminPanel";
+            this.adminPanel.Size = new System.Drawing.Size(424, 740);
+            this.adminPanel.TabIndex = 6;
+            this.adminPanel.Visible = false;
             // 
-            // button2
+            // expAdmin
             // 
-            this.button2.Location = new System.Drawing.Point(37, 430);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(68, 30);
-            this.button2.TabIndex = 54;
-            this.button2.Text = "Edit";
-            this.button2.UseVisualStyleBackColor = true;
+            this.expAdmin.Location = new System.Drawing.Point(305, 318);
+            this.expAdmin.Margin = new System.Windows.Forms.Padding(2);
+            this.expAdmin.Name = "expAdmin";
+            this.expAdmin.Size = new System.Drawing.Size(65, 20);
+            this.expAdmin.TabIndex = 115;
             // 
-            // button4
+            // label23
             // 
-            this.button4.Location = new System.Drawing.Point(112, 430);
-            this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(120, 30);
-            this.button4.TabIndex = 55;
-            this.button4.Text = "Save Changes";
-            this.button4.UseVisualStyleBackColor = true;
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(306, 302);
+            this.label23.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(54, 13);
+            this.label23.TabIndex = 114;
+            this.label23.Text = "Exp. Date";
             // 
-            // save_btn
+            // dailyFill_chkbox
             // 
-            this.save_btn.Enabled = false;
-            this.save_btn.Location = new System.Drawing.Point(387, 680);
-            this.save_btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.save_btn.Name = "save_btn";
-            this.save_btn.Size = new System.Drawing.Size(136, 33);
-            this.save_btn.TabIndex = 78;
-            this.save_btn.Text = "Save Changes";
-            this.save_btn.UseVisualStyleBackColor = true;
+            this.dailyFill_chkbox.AutoSize = true;
+            this.dailyFill_chkbox.Location = new System.Drawing.Point(162, 699);
+            this.dailyFill_chkbox.Margin = new System.Windows.Forms.Padding(2);
+            this.dailyFill_chkbox.Name = "dailyFill_chkbox";
+            this.dailyFill_chkbox.Size = new System.Drawing.Size(99, 17);
+            this.dailyFill_chkbox.TabIndex = 113;
+            this.dailyFill_chkbox.Text = "Daily Fill Queue";
+            this.dailyFill_chkbox.UseVisualStyleBackColor = true;
+            this.dailyFill_chkbox.CheckedChanged += new System.EventHandler(this.Adherence_CheckedChanged);
             // 
-            // textBox11
+            // report_btn
             // 
-            this.textBox11.Location = new System.Drawing.Point(37, 687);
-            this.textBox11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox11.MaxLength = 10;
-            this.textBox11.Name = "textBox11";
-            this.textBox11.ReadOnly = true;
-            this.textBox11.Size = new System.Drawing.Size(169, 22);
-            this.textBox11.TabIndex = 76;
+            this.report_btn.Location = new System.Drawing.Point(290, 690);
+            this.report_btn.Margin = new System.Windows.Forms.Padding(2);
+            this.report_btn.Name = "report_btn";
+            this.report_btn.Size = new System.Drawing.Size(102, 27);
+            this.report_btn.TabIndex = 112;
+            this.report_btn.Text = "Request Report";
+            this.report_btn.UseVisualStyleBackColor = true;
+            this.report_btn.Click += new System.EventHandler(this.report_btn_Click);
             // 
-            // textBox12
+            // orderStatus_dropdown
             // 
-            this.textBox12.Location = new System.Drawing.Point(216, 287);
-            this.textBox12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox12.MaxLength = 33;
-            this.textBox12.Name = "textBox12";
-            this.textBox12.ReadOnly = true;
-            this.textBox12.Size = new System.Drawing.Size(276, 22);
-            this.textBox12.TabIndex = 50;
+            this.orderStatus_dropdown.AutoSize = true;
+            this.orderStatus_dropdown.Location = new System.Drawing.Point(29, 682);
+            this.orderStatus_dropdown.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.orderStatus_dropdown.Name = "orderStatus_dropdown";
+            this.orderStatus_dropdown.Size = new System.Drawing.Size(66, 13);
+            this.orderStatus_dropdown.TabIndex = 111;
+            this.orderStatus_dropdown.Text = "Order Status";
             // 
-            // textBox13
+            // comboBox1
             // 
-            this.textBox13.Location = new System.Drawing.Point(37, 287);
-            this.textBox13.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox13.MaxLength = 12;
-            this.textBox13.Name = "textBox13";
-            this.textBox13.ReadOnly = true;
-            this.textBox13.Size = new System.Drawing.Size(169, 22);
-            this.textBox13.TabIndex = 49;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(28, 697);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(92, 21);
+            this.comboBox1.TabIndex = 110;
+            // 
+            // to_label
+            // 
+            this.to_label.AutoSize = true;
+            this.to_label.Location = new System.Drawing.Point(186, 648);
+            this.to_label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.to_label.Name = "to_label";
+            this.to_label.Size = new System.Drawing.Size(16, 13);
+            this.to_label.TabIndex = 109;
+            this.to_label.Text = "to";
+            // 
+            // dateRange_label
+            // 
+            this.dateRange_label.AutoSize = true;
+            this.dateRange_label.Location = new System.Drawing.Point(29, 629);
+            this.dateRange_label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.dateRange_label.Name = "dateRange_label";
+            this.dateRange_label.Size = new System.Drawing.Size(65, 13);
+            this.dateRange_label.TabIndex = 108;
+            this.dateRange_label.Text = "Date Range";
+            this.dateRange_label.Click += new System.EventHandler(this.label22_Click_1);
+            // 
+            // dateRangeTo_picker
+            // 
+            this.dateRangeTo_picker.Location = new System.Drawing.Point(207, 646);
+            this.dateRangeTo_picker.Margin = new System.Windows.Forms.Padding(2);
+            this.dateRangeTo_picker.Name = "dateRangeTo_picker";
+            this.dateRangeTo_picker.Size = new System.Drawing.Size(151, 20);
+            this.dateRangeTo_picker.TabIndex = 107;
+            // 
+            // dateRangeFrom_picker
+            // 
+            this.dateRangeFrom_picker.Location = new System.Drawing.Point(28, 646);
+            this.dateRangeFrom_picker.Margin = new System.Windows.Forms.Padding(2);
+            this.dateRangeFrom_picker.Name = "dateRangeFrom_picker";
+            this.dateRangeFrom_picker.Size = new System.Drawing.Size(151, 20);
+            this.dateRangeFrom_picker.TabIndex = 106;
+            // 
+            // adminPanel_label
+            // 
+            this.adminPanel_label.AutoSize = true;
+            this.adminPanel_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.adminPanel_label.Location = new System.Drawing.Point(28, 593);
+            this.adminPanel_label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.adminPanel_label.Name = "adminPanel_label";
+            this.adminPanel_label.Size = new System.Drawing.Size(151, 20);
+            this.adminPanel_label.TabIndex = 105;
+            this.adminPanel_label.Text = "Report Generator";
+            this.adminPanel_label.Click += new System.EventHandler(this.label22_Click);
+            // 
+            // editAdmin
+            // 
+            this.editAdmin.Location = new System.Drawing.Point(28, 349);
+            this.editAdmin.Margin = new System.Windows.Forms.Padding(2);
+            this.editAdmin.Name = "editAdmin";
+            this.editAdmin.Size = new System.Drawing.Size(51, 24);
+            this.editAdmin.TabIndex = 54;
+            this.editAdmin.Text = "Edit";
+            this.editAdmin.UseVisualStyleBackColor = true;
+            this.editAdmin.Click += new System.EventHandler(this.editAdmin_Click);
+            // 
+            // saveAdmin
+            // 
+            this.saveAdmin.Location = new System.Drawing.Point(84, 349);
+            this.saveAdmin.Margin = new System.Windows.Forms.Padding(2);
+            this.saveAdmin.Name = "saveAdmin";
+            this.saveAdmin.Size = new System.Drawing.Size(90, 24);
+            this.saveAdmin.TabIndex = 55;
+            this.saveAdmin.Text = "Save Changes";
+            this.saveAdmin.UseVisualStyleBackColor = true;
+            this.saveAdmin.Click += new System.EventHandler(this.saveAdmin_Click);
+            // 
+            // logOutAdmin
+            // 
+            this.logOutAdmin.Location = new System.Drawing.Point(290, 552);
+            this.logOutAdmin.Margin = new System.Windows.Forms.Padding(2);
+            this.logOutAdmin.Name = "logOutAdmin";
+            this.logOutAdmin.Size = new System.Drawing.Size(102, 27);
+            this.logOutAdmin.TabIndex = 78;
+            this.logOutAdmin.Text = "Log Out";
+            this.logOutAdmin.UseVisualStyleBackColor = true;
+            this.logOutAdmin.Click += new System.EventHandler(this.logOutButton_Click);
+            // 
+            // shippedAdmin
+            // 
+            this.shippedAdmin.Location = new System.Drawing.Point(28, 558);
+            this.shippedAdmin.Margin = new System.Windows.Forms.Padding(2);
+            this.shippedAdmin.MaxLength = 10;
+            this.shippedAdmin.Name = "shippedAdmin";
+            this.shippedAdmin.ReadOnly = true;
+            this.shippedAdmin.Size = new System.Drawing.Size(128, 20);
+            this.shippedAdmin.TabIndex = 76;
+            // 
+            // emailAdmin
+            // 
+            this.emailAdmin.Location = new System.Drawing.Point(162, 233);
+            this.emailAdmin.Margin = new System.Windows.Forms.Padding(2);
+            this.emailAdmin.MaxLength = 33;
+            this.emailAdmin.Name = "emailAdmin";
+            this.emailAdmin.ReadOnly = true;
+            this.emailAdmin.Size = new System.Drawing.Size(208, 20);
+            this.emailAdmin.TabIndex = 50;
+            this.emailAdmin.Validating += new System.ComponentModel.CancelEventHandler(this.emailAdmin_Validating);
+
+            // 
+            // telephoneAdmin
+            // 
+            this.telephoneAdmin.Location = new System.Drawing.Point(28, 233);
+            this.telephoneAdmin.Margin = new System.Windows.Forms.Padding(2);
+            this.telephoneAdmin.MaxLength = 12;
+            this.telephoneAdmin.Name = "telephoneAdmin";
+            this.telephoneAdmin.ReadOnly = true;
+            this.telephoneAdmin.Size = new System.Drawing.Size(128, 20);
+            this.telephoneAdmin.TabIndex = 49;
+            this.telephoneAdmin.TextChanged += new System.EventHandler(this.telephoneAdmin_TextChanged);
+            this.telephoneAdmin.KeyDown += new System.Windows.Forms.KeyEventHandler(this.telephoneAdmin_KeyDown);
+            this.telephoneAdmin.Validating += new System.ComponentModel.CancelEventHandler(this.telephoneAdmin_Validating);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(220, 266);
+            this.label4.Location = new System.Drawing.Point(165, 216);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(45, 16);
+            this.label4.Size = new System.Drawing.Size(35, 13);
             this.label4.TabIndex = 83;
             this.label4.Text = "E-mail";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(39, 266);
+            this.label5.Location = new System.Drawing.Point(29, 216);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(124, 16);
+            this.label5.Size = new System.Drawing.Size(98, 13);
             this.label5.TabIndex = 82;
             this.label5.Text = "Telephone Number";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(39, 666);
+            this.label6.Location = new System.Drawing.Point(29, 541);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(118, 16);
+            this.label6.Size = new System.Drawing.Size(95, 13);
             this.label6.TabIndex = 81;
             this.label6.Text = "Last Shipped Date";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(284, 419);
+            this.label7.Location = new System.Drawing.Point(213, 340);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(65, 16);
+            this.label7.Size = new System.Drawing.Size(54, 13);
             this.label7.TabIndex = 80;
             this.label7.Text = "Insurance";
             // 
-            // textBox14
+            // insuranceAdmin
             // 
-            this.textBox14.Location = new System.Drawing.Point(283, 438);
-            this.textBox14.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox14.MaxLength = 66;
-            this.textBox14.Name = "textBox14";
-            this.textBox14.ReadOnly = true;
-            this.textBox14.Size = new System.Drawing.Size(209, 22);
-            this.textBox14.TabIndex = 53;
+            this.insuranceAdmin.Location = new System.Drawing.Point(212, 356);
+            this.insuranceAdmin.Margin = new System.Windows.Forms.Padding(2);
+            this.insuranceAdmin.MaxLength = 66;
+            this.insuranceAdmin.Name = "insuranceAdmin";
+            this.insuranceAdmin.ReadOnly = true;
+            this.insuranceAdmin.Size = new System.Drawing.Size(158, 20);
+            this.insuranceAdmin.TabIndex = 53;
+            this.insuranceAdmin.Validating += new System.ComponentModel.CancelEventHandler(this.insuranceAdmin_Validating);
+
             // 
-            // textBox15
+            // ccAdmin
             // 
-            this.textBox15.Location = new System.Drawing.Point(283, 337);
-            this.textBox15.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox15.MaxLength = 19;
-            this.textBox15.Name = "textBox15";
-            this.textBox15.ReadOnly = true;
-            this.textBox15.Size = new System.Drawing.Size(209, 22);
-            this.textBox15.TabIndex = 52;
+            this.ccAdmin.Location = new System.Drawing.Point(212, 274);
+            this.ccAdmin.Margin = new System.Windows.Forms.Padding(2);
+            this.ccAdmin.MaxLength = 19;
+            this.ccAdmin.Name = "ccAdmin";
+            this.ccAdmin.ReadOnly = true;
+            this.ccAdmin.Size = new System.Drawing.Size(158, 20);
+            this.ccAdmin.TabIndex = 52;
+            this.ccAdmin.TextChanged += new System.EventHandler(this.ccAdmin_TextChanged);
+            this.ccAdmin.Validating += new System.ComponentModel.CancelEventHandler(this.ccAdmin_Validating);
+
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(284, 318);
+            this.label8.Location = new System.Drawing.Point(213, 258);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(125, 16);
+            this.label8.Size = new System.Drawing.Size(99, 13);
             this.label8.TabIndex = 77;
             this.label8.Text = "Credit Card Number";
             // 
-            // checkBox6
+            // prescriber1Admin
             // 
-            this.checkBox6.AutoSize = true;
-            this.checkBox6.Location = new System.Drawing.Point(504, 633);
-            this.checkBox6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(18, 17);
-            this.checkBox6.TabIndex = 75;
-            this.checkBox6.UseVisualStyleBackColor = true;
+            this.prescriber1Admin.Location = new System.Drawing.Point(223, 419);
+            this.prescriber1Admin.Margin = new System.Windows.Forms.Padding(2);
+            this.prescriber1Admin.MaxLength = 33;
+            this.prescriber1Admin.Name = "prescriber1Admin";
+            this.prescriber1Admin.ReadOnly = true;
+            this.prescriber1Admin.Size = new System.Drawing.Size(169, 20);
+            this.prescriber1Admin.TabIndex = 58;
             // 
-            // checkBox7
+            // prescriber2Admin
             // 
-            this.checkBox7.AutoSize = true;
-            this.checkBox7.Location = new System.Drawing.Point(504, 604);
-            this.checkBox7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.checkBox7.Name = "checkBox7";
-            this.checkBox7.Size = new System.Drawing.Size(18, 17);
-            this.checkBox7.TabIndex = 71;
-            this.checkBox7.UseVisualStyleBackColor = true;
+            this.prescriber2Admin.Location = new System.Drawing.Point(223, 442);
+            this.prescriber2Admin.Margin = new System.Windows.Forms.Padding(2);
+            this.prescriber2Admin.MaxLength = 33;
+            this.prescriber2Admin.Name = "prescriber2Admin";
+            this.prescriber2Admin.ReadOnly = true;
+            this.prescriber2Admin.Size = new System.Drawing.Size(169, 20);
+            this.prescriber2Admin.TabIndex = 62;
             // 
-            // checkBox8
+            // prescriber3Admin
             // 
-            this.checkBox8.AutoSize = true;
-            this.checkBox8.Location = new System.Drawing.Point(504, 576);
-            this.checkBox8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.checkBox8.Name = "checkBox8";
-            this.checkBox8.Size = new System.Drawing.Size(18, 17);
-            this.checkBox8.TabIndex = 67;
-            this.checkBox8.UseVisualStyleBackColor = true;
+            this.prescriber3Admin.Location = new System.Drawing.Point(223, 465);
+            this.prescriber3Admin.Margin = new System.Windows.Forms.Padding(2);
+            this.prescriber3Admin.MaxLength = 33;
+            this.prescriber3Admin.Name = "prescriber3Admin";
+            this.prescriber3Admin.ReadOnly = true;
+            this.prescriber3Admin.Size = new System.Drawing.Size(169, 20);
+            this.prescriber3Admin.TabIndex = 66;
             // 
-            // checkBox9
+            // prescriber5Admin
             // 
-            this.checkBox9.AutoSize = true;
-            this.checkBox9.Location = new System.Drawing.Point(504, 548);
-            this.checkBox9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.checkBox9.Name = "checkBox9";
-            this.checkBox9.Size = new System.Drawing.Size(18, 17);
-            this.checkBox9.TabIndex = 63;
-            this.checkBox9.UseVisualStyleBackColor = true;
+            this.prescriber5Admin.Location = new System.Drawing.Point(223, 510);
+            this.prescriber5Admin.Margin = new System.Windows.Forms.Padding(2);
+            this.prescriber5Admin.MaxLength = 33;
+            this.prescriber5Admin.Name = "prescriber5Admin";
+            this.prescriber5Admin.ReadOnly = true;
+            this.prescriber5Admin.Size = new System.Drawing.Size(169, 20);
+            this.prescriber5Admin.TabIndex = 74;
             // 
-            // checkBox10
+            // prescriber4Admin
             // 
-            this.checkBox10.AutoSize = true;
-            this.checkBox10.Location = new System.Drawing.Point(504, 519);
-            this.checkBox10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.checkBox10.Name = "checkBox10";
-            this.checkBox10.Size = new System.Drawing.Size(18, 17);
-            this.checkBox10.TabIndex = 59;
-            this.checkBox10.UseVisualStyleBackColor = true;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(479, 495);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(57, 16);
-            this.label9.TabIndex = 71;
-            this.label9.Text = "Reorder";
-            // 
-            // textBox16
-            // 
-            this.textBox16.Location = new System.Drawing.Point(297, 516);
-            this.textBox16.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox16.MaxLength = 33;
-            this.textBox16.Name = "textBox16";
-            this.textBox16.ReadOnly = true;
-            this.textBox16.Size = new System.Drawing.Size(176, 22);
-            this.textBox16.TabIndex = 58;
-            // 
-            // textBox17
-            // 
-            this.textBox17.Location = new System.Drawing.Point(297, 544);
-            this.textBox17.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox17.MaxLength = 33;
-            this.textBox17.Name = "textBox17";
-            this.textBox17.ReadOnly = true;
-            this.textBox17.Size = new System.Drawing.Size(176, 22);
-            this.textBox17.TabIndex = 62;
-            // 
-            // textBox18
-            // 
-            this.textBox18.Location = new System.Drawing.Point(297, 572);
-            this.textBox18.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox18.MaxLength = 33;
-            this.textBox18.Name = "textBox18";
-            this.textBox18.ReadOnly = true;
-            this.textBox18.Size = new System.Drawing.Size(176, 22);
-            this.textBox18.TabIndex = 66;
-            // 
-            // textBox19
-            // 
-            this.textBox19.Location = new System.Drawing.Point(297, 628);
-            this.textBox19.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox19.MaxLength = 33;
-            this.textBox19.Name = "textBox19";
-            this.textBox19.ReadOnly = true;
-            this.textBox19.Size = new System.Drawing.Size(176, 22);
-            this.textBox19.TabIndex = 74;
-            // 
-            // textBox20
-            // 
-            this.textBox20.Location = new System.Drawing.Point(297, 601);
-            this.textBox20.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox20.MaxLength = 33;
-            this.textBox20.Name = "textBox20";
-            this.textBox20.ReadOnly = true;
-            this.textBox20.Size = new System.Drawing.Size(176, 22);
-            this.textBox20.TabIndex = 70;
+            this.prescriber4Admin.Location = new System.Drawing.Point(223, 488);
+            this.prescriber4Admin.Margin = new System.Windows.Forms.Padding(2);
+            this.prescriber4Admin.MaxLength = 33;
+            this.prescriber4Admin.Name = "prescriber4Admin";
+            this.prescriber4Admin.ReadOnly = true;
+            this.prescriber4Admin.Size = new System.Drawing.Size(169, 20);
+            this.prescriber4Admin.TabIndex = 70;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(301, 495);
+            this.label10.Location = new System.Drawing.Point(226, 402);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(69, 16);
+            this.label10.Size = new System.Drawing.Size(54, 13);
             this.label10.TabIndex = 65;
             this.label10.Text = "Prescriber";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(252, 495);
+            this.label11.Location = new System.Drawing.Point(189, 402);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(37, 16);
+            this.label11.Size = new System.Drawing.Size(30, 13);
             this.label11.TabIndex = 64;
             this.label11.Text = "Refill";
             // 
-            // textBox21
+            // refill5Admin
             // 
-            this.textBox21.Location = new System.Drawing.Point(253, 628);
-            this.textBox21.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox21.MaxLength = 2;
-            this.textBox21.Name = "textBox21";
-            this.textBox21.ReadOnly = true;
-            this.textBox21.Size = new System.Drawing.Size(39, 22);
-            this.textBox21.TabIndex = 73;
+            this.refill5Admin.Location = new System.Drawing.Point(190, 510);
+            this.refill5Admin.Margin = new System.Windows.Forms.Padding(2);
+            this.refill5Admin.MaxLength = 2;
+            this.refill5Admin.Name = "refill5Admin";
+            this.refill5Admin.ReadOnly = true;
+            this.refill5Admin.Size = new System.Drawing.Size(30, 20);
+            this.refill5Admin.TabIndex = 73;
             // 
-            // textBox22
+            // refill4Admin
             // 
-            this.textBox22.Location = new System.Drawing.Point(253, 601);
-            this.textBox22.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox22.MaxLength = 2;
-            this.textBox22.Name = "textBox22";
-            this.textBox22.ReadOnly = true;
-            this.textBox22.Size = new System.Drawing.Size(39, 22);
-            this.textBox22.TabIndex = 69;
+            this.refill4Admin.Location = new System.Drawing.Point(190, 488);
+            this.refill4Admin.Margin = new System.Windows.Forms.Padding(2);
+            this.refill4Admin.MaxLength = 2;
+            this.refill4Admin.Name = "refill4Admin";
+            this.refill4Admin.ReadOnly = true;
+            this.refill4Admin.Size = new System.Drawing.Size(30, 20);
+            this.refill4Admin.TabIndex = 69;
             // 
-            // textBox23
+            // refill3Admin
             // 
-            this.textBox23.Location = new System.Drawing.Point(253, 572);
-            this.textBox23.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox23.MaxLength = 2;
-            this.textBox23.Name = "textBox23";
-            this.textBox23.ReadOnly = true;
-            this.textBox23.Size = new System.Drawing.Size(39, 22);
-            this.textBox23.TabIndex = 65;
+            this.refill3Admin.Location = new System.Drawing.Point(190, 465);
+            this.refill3Admin.Margin = new System.Windows.Forms.Padding(2);
+            this.refill3Admin.MaxLength = 2;
+            this.refill3Admin.Name = "refill3Admin";
+            this.refill3Admin.ReadOnly = true;
+            this.refill3Admin.Size = new System.Drawing.Size(30, 20);
+            this.refill3Admin.TabIndex = 65;
             // 
-            // textBox24
+            // refill2Admin
             // 
-            this.textBox24.Location = new System.Drawing.Point(253, 544);
-            this.textBox24.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox24.MaxLength = 2;
-            this.textBox24.Name = "textBox24";
-            this.textBox24.ReadOnly = true;
-            this.textBox24.Size = new System.Drawing.Size(39, 22);
-            this.textBox24.TabIndex = 61;
+            this.refill2Admin.Location = new System.Drawing.Point(190, 442);
+            this.refill2Admin.Margin = new System.Windows.Forms.Padding(2);
+            this.refill2Admin.MaxLength = 2;
+            this.refill2Admin.Name = "refill2Admin";
+            this.refill2Admin.ReadOnly = true;
+            this.refill2Admin.Size = new System.Drawing.Size(30, 20);
+            this.refill2Admin.TabIndex = 61;
             // 
-            // textBox25
+            // refill1Admin
             // 
-            this.textBox25.Location = new System.Drawing.Point(253, 516);
-            this.textBox25.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox25.MaxLength = 2;
-            this.textBox25.Name = "textBox25";
-            this.textBox25.ReadOnly = true;
-            this.textBox25.Size = new System.Drawing.Size(39, 22);
-            this.textBox25.TabIndex = 57;
+            this.refill1Admin.Location = new System.Drawing.Point(190, 419);
+            this.refill1Admin.Margin = new System.Windows.Forms.Padding(2);
+            this.refill1Admin.MaxLength = 2;
+            this.refill1Admin.Name = "refill1Admin";
+            this.refill1Admin.ReadOnly = true;
+            this.refill1Admin.Size = new System.Drawing.Size(30, 20);
+            this.refill1Admin.TabIndex = 57;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(39, 495);
+            this.label12.Location = new System.Drawing.Point(29, 402);
+            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(101, 16);
+            this.label12.Size = new System.Drawing.Size(81, 13);
             this.label12.TabIndex = 58;
             this.label12.Text = "Prescription List";
             // 
-            // textBox26
+            // prescript1Admin
             // 
-            this.textBox26.Location = new System.Drawing.Point(37, 516);
-            this.textBox26.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox26.MaxLength = 33;
-            this.textBox26.Name = "textBox26";
-            this.textBox26.ReadOnly = true;
-            this.textBox26.Size = new System.Drawing.Size(209, 22);
-            this.textBox26.TabIndex = 56;
+            this.prescript1Admin.Location = new System.Drawing.Point(28, 419);
+            this.prescript1Admin.Margin = new System.Windows.Forms.Padding(2);
+            this.prescript1Admin.MaxLength = 33;
+            this.prescript1Admin.Name = "prescript1Admin";
+            this.prescript1Admin.ReadOnly = true;
+            this.prescript1Admin.Size = new System.Drawing.Size(158, 20);
+            this.prescript1Admin.TabIndex = 56;
             // 
-            // textBox27
+            // prescript2Admin
             // 
-            this.textBox27.Location = new System.Drawing.Point(37, 544);
-            this.textBox27.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox27.MaxLength = 33;
-            this.textBox27.Name = "textBox27";
-            this.textBox27.ReadOnly = true;
-            this.textBox27.Size = new System.Drawing.Size(209, 22);
-            this.textBox27.TabIndex = 60;
+            this.prescript2Admin.Location = new System.Drawing.Point(28, 442);
+            this.prescript2Admin.Margin = new System.Windows.Forms.Padding(2);
+            this.prescript2Admin.MaxLength = 33;
+            this.prescript2Admin.Name = "prescript2Admin";
+            this.prescript2Admin.ReadOnly = true;
+            this.prescript2Admin.Size = new System.Drawing.Size(158, 20);
+            this.prescript2Admin.TabIndex = 60;
             // 
-            // textBox28
+            // prescript3Admin
             // 
-            this.textBox28.Location = new System.Drawing.Point(37, 572);
-            this.textBox28.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox28.MaxLength = 33;
-            this.textBox28.Name = "textBox28";
-            this.textBox28.ReadOnly = true;
-            this.textBox28.Size = new System.Drawing.Size(209, 22);
-            this.textBox28.TabIndex = 64;
+            this.prescript3Admin.Location = new System.Drawing.Point(28, 465);
+            this.prescript3Admin.Margin = new System.Windows.Forms.Padding(2);
+            this.prescript3Admin.MaxLength = 33;
+            this.prescript3Admin.Name = "prescript3Admin";
+            this.prescript3Admin.ReadOnly = true;
+            this.prescript3Admin.Size = new System.Drawing.Size(158, 20);
+            this.prescript3Admin.TabIndex = 64;
             // 
-            // textBox29
+            // prescript5Admin
             // 
-            this.textBox29.Location = new System.Drawing.Point(37, 628);
-            this.textBox29.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox29.MaxLength = 33;
-            this.textBox29.Name = "textBox29";
-            this.textBox29.ReadOnly = true;
-            this.textBox29.Size = new System.Drawing.Size(209, 22);
-            this.textBox29.TabIndex = 72;
+            this.prescript5Admin.Location = new System.Drawing.Point(28, 510);
+            this.prescript5Admin.Margin = new System.Windows.Forms.Padding(2);
+            this.prescript5Admin.MaxLength = 33;
+            this.prescript5Admin.Name = "prescript5Admin";
+            this.prescript5Admin.ReadOnly = true;
+            this.prescript5Admin.Size = new System.Drawing.Size(158, 20);
+            this.prescript5Admin.TabIndex = 72;
             // 
-            // textBox30
+            // prescript4Admin
             // 
-            this.textBox30.Location = new System.Drawing.Point(37, 601);
-            this.textBox30.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox30.MaxLength = 33;
-            this.textBox30.Name = "textBox30";
-            this.textBox30.ReadOnly = true;
-            this.textBox30.Size = new System.Drawing.Size(209, 22);
-            this.textBox30.TabIndex = 68;
+            this.prescript4Admin.Location = new System.Drawing.Point(28, 488);
+            this.prescript4Admin.Margin = new System.Windows.Forms.Padding(2);
+            this.prescript4Admin.MaxLength = 33;
+            this.prescript4Admin.Name = "prescript4Admin";
+            this.prescript4Admin.ReadOnly = true;
+            this.prescript4Admin.Size = new System.Drawing.Size(158, 20);
+            this.prescript4Admin.TabIndex = 68;
             // 
-            // textBox31
+            // allergiesAdmin
             // 
-            this.textBox31.Location = new System.Drawing.Point(37, 343);
-            this.textBox31.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox31.MaxLength = 300;
-            this.textBox31.Multiline = true;
-            this.textBox31.Name = "textBox31";
-            this.textBox31.ReadOnly = true;
-            this.textBox31.Size = new System.Drawing.Size(209, 72);
-            this.textBox31.TabIndex = 51;
+            this.allergiesAdmin.Location = new System.Drawing.Point(28, 279);
+            this.allergiesAdmin.Margin = new System.Windows.Forms.Padding(2);
+            this.allergiesAdmin.MaxLength = 300;
+            this.allergiesAdmin.Multiline = true;
+            this.allergiesAdmin.Name = "allergiesAdmin";
+            this.allergiesAdmin.ReadOnly = true;
+            this.allergiesAdmin.Size = new System.Drawing.Size(158, 59);
+            this.allergiesAdmin.TabIndex = 51;
+            this.allergiesAdmin.Validating += new System.ComponentModel.CancelEventHandler(this.allergiesAdmin_Validating);
+
             // 
-            // textBox32
+            // zipAdmin
             // 
-            this.textBox32.Location = new System.Drawing.Point(283, 235);
-            this.textBox32.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox32.MaxLength = 5;
-            this.textBox32.Name = "textBox32";
-            this.textBox32.ReadOnly = true;
-            this.textBox32.Size = new System.Drawing.Size(93, 22);
-            this.textBox32.TabIndex = 48;
+            this.zipAdmin.Location = new System.Drawing.Point(212, 191);
+            this.zipAdmin.Margin = new System.Windows.Forms.Padding(2);
+            this.zipAdmin.MaxLength = 5;
+            this.zipAdmin.Name = "zipAdmin";
+            this.zipAdmin.ReadOnly = true;
+            this.zipAdmin.Size = new System.Drawing.Size(71, 20);
+            this.zipAdmin.TabIndex = 48;
+            this.zipAdmin.Validating += new System.ComponentModel.CancelEventHandler(this.zipAdmin_Validating);
+
             // 
-            // textBox33
+            // stateAdmin
             // 
-            this.textBox33.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox33.Location = new System.Drawing.Point(216, 235);
-            this.textBox33.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox33.MaxLength = 2;
-            this.textBox33.Name = "textBox33";
-            this.textBox33.ReadOnly = true;
-            this.textBox33.Size = new System.Drawing.Size(52, 22);
-            this.textBox33.TabIndex = 47;
+            this.stateAdmin.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.stateAdmin.Location = new System.Drawing.Point(162, 191);
+            this.stateAdmin.Margin = new System.Windows.Forms.Padding(2);
+            this.stateAdmin.MaxLength = 2;
+            this.stateAdmin.Name = "stateAdmin";
+            this.stateAdmin.ReadOnly = true;
+            this.stateAdmin.Size = new System.Drawing.Size(40, 20);
+            this.stateAdmin.TabIndex = 47;
+            this.stateAdmin.TextChanged += new System.EventHandler(this.stateAdmin_TextChanged);
+            this.stateAdmin.Validating += new System.ComponentModel.CancelEventHandler(this.stateAdmin_Validating);
+
             // 
-            // textBox34
+            // cityAdmin
             // 
-            this.textBox34.Location = new System.Drawing.Point(37, 235);
-            this.textBox34.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox34.MaxLength = 33;
-            this.textBox34.Name = "textBox34";
-            this.textBox34.ReadOnly = true;
-            this.textBox34.Size = new System.Drawing.Size(169, 22);
-            this.textBox34.TabIndex = 46;
+            this.cityAdmin.Location = new System.Drawing.Point(28, 191);
+            this.cityAdmin.Margin = new System.Windows.Forms.Padding(2);
+            this.cityAdmin.MaxLength = 33;
+            this.cityAdmin.Name = "cityAdmin";
+            this.cityAdmin.ReadOnly = true;
+            this.cityAdmin.Size = new System.Drawing.Size(128, 20);
+            this.cityAdmin.TabIndex = 46;
+            this.cityAdmin.Validating += new System.ComponentModel.CancelEventHandler(this.cityAdmin_Validating);
+
             // 
-            // textBox35
+            // streetAdmin
             // 
-            this.textBox35.Location = new System.Drawing.Point(37, 190);
-            this.textBox35.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox35.MaxLength = 33;
-            this.textBox35.Name = "textBox35";
-            this.textBox35.ReadOnly = true;
-            this.textBox35.Size = new System.Drawing.Size(337, 22);
-            this.textBox35.TabIndex = 45;
+            this.streetAdmin.Location = new System.Drawing.Point(28, 154);
+            this.streetAdmin.Margin = new System.Windows.Forms.Padding(2);
+            this.streetAdmin.MaxLength = 33;
+            this.streetAdmin.Name = "streetAdmin";
+            this.streetAdmin.ReadOnly = true;
+            this.streetAdmin.Size = new System.Drawing.Size(254, 20);
+            this.streetAdmin.TabIndex = 45;
+            this.streetAdmin.Validating += new System.ComponentModel.CancelEventHandler(this.streetAdmin_Validating);
+
             // 
-            // textBox36
+            // dobAdmin
             // 
-            this.textBox36.Location = new System.Drawing.Point(387, 142);
-            this.textBox36.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox36.MaxLength = 10;
-            this.textBox36.Name = "textBox36";
-            this.textBox36.ReadOnly = true;
-            this.textBox36.Size = new System.Drawing.Size(139, 22);
-            this.textBox36.TabIndex = 44;
+            this.dobAdmin.Location = new System.Drawing.Point(290, 115);
+            this.dobAdmin.Margin = new System.Windows.Forms.Padding(2);
+            this.dobAdmin.MaxLength = 10;
+            this.dobAdmin.Name = "dobAdmin";
+            this.dobAdmin.ReadOnly = true;
+            this.dobAdmin.Size = new System.Drawing.Size(105, 20);
+            this.dobAdmin.TabIndex = 44;
+            this.dobAdmin.Validating += new System.ComponentModel.CancelEventHandler(this.dobAdmin_Validating);
+
             // 
-            // textBox37
+            // lnameAdmin
             // 
-            this.textBox37.Location = new System.Drawing.Point(188, 142);
-            this.textBox37.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox37.MaxLength = 33;
-            this.textBox37.Name = "textBox37";
-            this.textBox37.ReadOnly = true;
-            this.textBox37.Size = new System.Drawing.Size(187, 22);
-            this.textBox37.TabIndex = 43;
+            this.lnameAdmin.Location = new System.Drawing.Point(141, 115);
+            this.lnameAdmin.Margin = new System.Windows.Forms.Padding(2);
+            this.lnameAdmin.MaxLength = 33;
+            this.lnameAdmin.Name = "lnameAdmin";
+            this.lnameAdmin.ReadOnly = true;
+            this.lnameAdmin.Size = new System.Drawing.Size(141, 20);
+            this.lnameAdmin.TabIndex = 43;
+            this.lnameAdmin.Validating += new System.ComponentModel.CancelEventHandler(this.lnameAdmin_Validating);
+
             // 
-            // textBox38
+            // fnameAdmin
             // 
-            this.textBox38.Location = new System.Drawing.Point(37, 142);
-            this.textBox38.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox38.MaxLength = 33;
-            this.textBox38.Name = "textBox38";
-            this.textBox38.ReadOnly = true;
-            this.textBox38.Size = new System.Drawing.Size(139, 22);
-            this.textBox38.TabIndex = 42;
+            this.fnameAdmin.Location = new System.Drawing.Point(28, 115);
+            this.fnameAdmin.Margin = new System.Windows.Forms.Padding(2);
+            this.fnameAdmin.MaxLength = 33;
+            this.fnameAdmin.Name = "fnameAdmin";
+            this.fnameAdmin.ReadOnly = true;
+            this.fnameAdmin.Size = new System.Drawing.Size(105, 20);
+            this.fnameAdmin.TabIndex = 42;
+            this.fnameAdmin.Validating += new System.ComponentModel.CancelEventHandler(this.fnameAdmin_Validating);
+
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(39, 49);
+            this.label13.Location = new System.Drawing.Point(29, 40);
+            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(343, 16);
+            this.label13.Size = new System.Drawing.Size(277, 13);
             this.label13.TabIndex = 42;
             this.label13.Text = "Search customer by first name, last name, or date of birth.";
             // 
-            // textBox39
+            // searchAdmin
             // 
-            this.textBox39.AcceptsReturn = true;
-            this.textBox39.Location = new System.Drawing.Point(37, 70);
-            this.textBox39.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox39.MaxLength = 33;
-            this.textBox39.Name = "textBox39";
-            this.textBox39.Size = new System.Drawing.Size(376, 22);
-            this.textBox39.TabIndex = 41;
+            this.searchAdmin.AcceptsReturn = true;
+            this.searchAdmin.Location = new System.Drawing.Point(28, 57);
+            this.searchAdmin.Margin = new System.Windows.Forms.Padding(2);
+            this.searchAdmin.MaxLength = 33;
+            this.searchAdmin.Name = "searchAdmin";
+            this.searchAdmin.Size = new System.Drawing.Size(283, 20);
+            this.searchAdmin.TabIndex = 41;
+            this.searchAdmin.TextChanged += new System.EventHandler(this.searchAdmin_TextChanged);
             // 
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(476, 23);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox3.Location = new System.Drawing.Point(357, 19);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(63, 50);
+            this.pictureBox3.Size = new System.Drawing.Size(47, 41);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 40;
             this.pictureBox3.TabStop = false;
@@ -2148,244 +2312,111 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(39, 318);
+            this.label14.Location = new System.Drawing.Point(29, 258);
+            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(92, 16);
+            this.label14.Size = new System.Drawing.Size(72, 13);
             this.label14.TabIndex = 29;
             this.label14.Text = "Drug Allergies";
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(387, 121);
+            this.label15.Location = new System.Drawing.Point(290, 98);
+            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(79, 16);
+            this.label15.Size = new System.Drawing.Size(66, 13);
             this.label15.TabIndex = 28;
             this.label15.Text = "Date of Birth";
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(284, 214);
+            this.label16.Location = new System.Drawing.Point(213, 174);
+            this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(62, 16);
+            this.label16.Size = new System.Drawing.Size(50, 13);
             this.label16.TabIndex = 27;
             this.label16.Text = "Zip Code";
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(220, 214);
+            this.label17.Location = new System.Drawing.Point(165, 174);
+            this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(38, 16);
+            this.label17.Size = new System.Drawing.Size(32, 13);
             this.label17.TabIndex = 26;
             this.label17.Text = "State";
             // 
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(44, 215);
+            this.label18.Location = new System.Drawing.Point(33, 175);
+            this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(29, 16);
+            this.label18.Size = new System.Drawing.Size(24, 13);
             this.label18.TabIndex = 25;
             this.label18.Text = "City";
             // 
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(39, 169);
+            this.label19.Location = new System.Drawing.Point(29, 137);
+            this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(96, 16);
+            this.label19.Size = new System.Drawing.Size(76, 13);
             this.label19.TabIndex = 24;
             this.label19.Text = "Street Address";
             // 
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(188, 121);
+            this.label20.Location = new System.Drawing.Point(141, 98);
+            this.label20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(72, 16);
+            this.label20.Size = new System.Drawing.Size(58, 13);
             this.label20.TabIndex = 23;
             this.label20.Text = "Last Name";
             // 
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(39, 121);
+            this.label21.Location = new System.Drawing.Point(29, 98);
+            this.label21.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(72, 16);
+            this.label21.Size = new System.Drawing.Size(57, 13);
             this.label21.TabIndex = 22;
             this.label21.Text = "First Name";
             // 
-            // adminPanel_label
-            // 
-            this.adminPanel_label.AutoSize = true;
-            this.adminPanel_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.adminPanel_label.Location = new System.Drawing.Point(37, 730);
-            this.adminPanel_label.Name = "adminPanel_label";
-            this.adminPanel_label.Size = new System.Drawing.Size(177, 25);
-            this.adminPanel_label.TabIndex = 105;
-            this.adminPanel_label.Text = "Report Generator";
-            this.adminPanel_label.Click += new System.EventHandler(this.label22_Click);
-            // 
-            // dateRangeFrom_picker
-            // 
-            this.dateRangeFrom_picker.Location = new System.Drawing.Point(37, 795);
-            this.dateRangeFrom_picker.Name = "dateRangeFrom_picker";
-            this.dateRangeFrom_picker.Size = new System.Drawing.Size(200, 22);
-            this.dateRangeFrom_picker.TabIndex = 106;
-            // 
-            // dateRangeTo_picker
-            // 
-            this.dateRangeTo_picker.Location = new System.Drawing.Point(276, 795);
-            this.dateRangeTo_picker.Name = "dateRangeTo_picker";
-            this.dateRangeTo_picker.Size = new System.Drawing.Size(200, 22);
-            this.dateRangeTo_picker.TabIndex = 107;
-            // 
-            // dateRange_label
-            // 
-            this.dateRange_label.AutoSize = true;
-            this.dateRange_label.Location = new System.Drawing.Point(39, 774);
-            this.dateRange_label.Name = "dateRange_label";
-            this.dateRange_label.Size = new System.Drawing.Size(80, 16);
-            this.dateRange_label.TabIndex = 108;
-            this.dateRange_label.Text = "Date Range";
-            this.dateRange_label.Click += new System.EventHandler(this.label22_Click_1);
-            // 
-            // to_label
-            // 
-            this.to_label.AutoSize = true;
-            this.to_label.Location = new System.Drawing.Point(248, 797);
-            this.to_label.Name = "to_label";
-            this.to_label.Size = new System.Drawing.Size(18, 16);
-            this.to_label.TabIndex = 109;
-            this.to_label.Text = "to";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(38, 858);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 110;
-            // 
-            // orderStatus_dropdown
-            // 
-            this.orderStatus_dropdown.AutoSize = true;
-            this.orderStatus_dropdown.Location = new System.Drawing.Point(39, 839);
-            this.orderStatus_dropdown.Name = "orderStatus_dropdown";
-            this.orderStatus_dropdown.Size = new System.Drawing.Size(81, 16);
-            this.orderStatus_dropdown.TabIndex = 111;
-            this.orderStatus_dropdown.Text = "Order Status";
-            // 
-            // report_btn
-            // 
-            this.report_btn.Location = new System.Drawing.Point(387, 849);
-            this.report_btn.Name = "report_btn";
-            this.report_btn.Size = new System.Drawing.Size(136, 33);
-            this.report_btn.TabIndex = 112;
-            this.report_btn.Text = "Request Report";
-            this.report_btn.UseVisualStyleBackColor = true;
-            this.report_btn.Click += new System.EventHandler(this.report_btn_Click);
-            // 
-            // dailyFill_chkbox
-            // 
-            this.dailyFill_chkbox.AutoSize = true;
-            this.dailyFill_chkbox.Location = new System.Drawing.Point(216, 860);
-            this.dailyFill_chkbox.Name = "dailyFill_chkbox";
-            this.dailyFill_chkbox.Size = new System.Drawing.Size(123, 20);
-            this.dailyFill_chkbox.TabIndex = 113;
-            this.dailyFill_chkbox.Text = "Daily Fill Queue";
-            this.dailyFill_chkbox.UseVisualStyleBackColor = true;
-            this.dailyFill_chkbox.CheckedChanged += new System.EventHandler(this.Adherence_CheckedChanged);
-            // 
-            // expDate_label
-            // 
-            this.expDate_label.AutoSize = true;
-            this.expDate_label.Location = new System.Drawing.Point(451, 286);
-            this.expDate_label.Name = "expDate_label";
-            this.expDate_label.Size = new System.Drawing.Size(65, 16);
-            this.expDate_label.TabIndex = 29;
-            this.expDate_label.Text = "Exp. Date";
-            // 
-            // textbox_expDate1
-            // 
-            this.textbox_expDate1.Location = new System.Drawing.Point(450, 305);
-            this.textbox_expDate1.Name = "textbox_expDate1";
-            this.textbox_expDate1.Size = new System.Drawing.Size(85, 22);
-            this.textbox_expDate1.TabIndex = 30;
-            // 
-            // textbox_expDate2
-            // 
-            this.textbox_expDate2.Location = new System.Drawing.Point(407, 391);
-            this.textbox_expDate2.Name = "textbox_expDate2";
-            this.textbox_expDate2.Size = new System.Drawing.Size(85, 22);
-            this.textbox_expDate2.TabIndex = 85;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(408, 372);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(65, 16);
-            this.label22.TabIndex = 84;
-            this.label22.Text = "Exp. Date";
-            // 
-            // textbox_expDate3
-            // 
-            this.textbox_expDate3.Location = new System.Drawing.Point(407, 391);
-            this.textbox_expDate3.Name = "textbox_expDate3";
-            this.textbox_expDate3.Size = new System.Drawing.Size(85, 22);
-            this.textbox_expDate3.TabIndex = 115;
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(408, 372);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(65, 16);
-            this.label23.TabIndex = 114;
-            this.label23.Text = "Exp. Date";
-            // 
-            // newUser_chkBox
-            // 
-            this.newUser_chkBox.AutoSize = true;
-            this.newUser_chkBox.Location = new System.Drawing.Point(118, 404);
-            this.newUser_chkBox.Name = "newUser_chkBox";
-            this.newUser_chkBox.Size = new System.Drawing.Size(88, 20);
-            this.newUser_chkBox.TabIndex = 7;
-            this.newUser_chkBox.Text = "New User";
-            this.newUser_chkBox.UseVisualStyleBackColor = true;
-            this.newUser_chkBox.CheckedChanged += new System.EventHandler(this.checkBox11_CheckedChanged);
-            // 
             // Form1
             // 
-            this.AcceptButton = this.submit;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AcceptButton = this.login;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1924, 1055);
-            this.Controls.Add(this.panel5);
-            this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ClientSize = new System.Drawing.Size(1443, 805);
+            this.Controls.Add(this.adminPanel);
+            this.Controls.Add(this.refillPanel);
+            this.Controls.Add(this.pharmPanel);
+            this.Controls.Add(this.userPanel);
+            this.Controls.Add(this.loginPanel);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.loginPanel.ResumeLayout(false);
+            this.loginPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.uspsLogo)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.userPanel.ResumeLayout(false);
+            this.userPanel.PerformLayout();
+            this.pharmPanel.ResumeLayout(false);
+            this.pharmPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
+            this.refillPanel.ResumeLayout(false);
+            this.refillPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
+            this.adminPanel.ResumeLayout(false);
+            this.adminPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
@@ -2393,7 +2424,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel loginPanel;
         private System.Windows.Forms.Label userName;
         private System.Windows.Forms.TextBox pass;
         private System.Windows.Forms.TextBox user;
@@ -2401,7 +2432,7 @@
         private System.Windows.Forms.Label loginLabel;
         private System.Windows.Forms.Label welcomeText;
         private System.Windows.Forms.Label password;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel userPanel;
         private System.Windows.Forms.Label firstName;
         private System.Windows.Forms.Label lastName;
         private System.Windows.Forms.Label streetAddress;
@@ -2412,23 +2443,23 @@
         private System.Windows.Forms.Label state;
         private System.Windows.Forms.Label city;
         private System.Windows.Forms.Label drugAllergies;
-        private System.Windows.Forms.TextBox dateOfBirthTextBox;
-        private System.Windows.Forms.TextBox lastNameTextBox;
-        private System.Windows.Forms.TextBox firstNameTextBox;
-        private System.Windows.Forms.TextBox streetAddressTextBox;
-        private System.Windows.Forms.TextBox paymentMethodTextBox;
-        private System.Windows.Forms.TextBox insuranceTextBox;
-        private System.Windows.Forms.TextBox zipCodeTextBox;
-        private System.Windows.Forms.TextBox stateTextBox;
-        private System.Windows.Forms.TextBox cityTextBox;
+        private System.Windows.Forms.TextBox dobUser;
+        private System.Windows.Forms.TextBox lnameUser;
+        private System.Windows.Forms.TextBox fnameUser;
+        private System.Windows.Forms.TextBox streetUser;
+        private System.Windows.Forms.TextBox ccUser;
+        private System.Windows.Forms.TextBox insuranceUser;
+        private System.Windows.Forms.TextBox zipUser;
+        private System.Windows.Forms.TextBox stateUser;
+        private System.Windows.Forms.TextBox cityUser;
         private System.Windows.Forms.Button requestRefill;
-        private System.Windows.Forms.Button Save;
-        private System.Windows.Forms.Button edit;
-        private System.Windows.Forms.Button submit;
-        private System.Windows.Forms.Button logOutButton;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button saveUser;
+        private System.Windows.Forms.Button editUser;
+        private System.Windows.Forms.Button login;
+        private System.Windows.Forms.Button logOutUser;
+        private System.Windows.Forms.Panel pharmPanel;
         private System.Windows.Forms.Label label_search;
-        private System.Windows.Forms.TextBox textBox_searchName;
+        private System.Windows.Forms.TextBox searchPharm;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label_drugAllergies;
         private System.Windows.Forms.Label label_dateOfBirth;
@@ -2438,128 +2469,122 @@
         private System.Windows.Forms.Label label_streetAddress;
         private System.Windows.Forms.Label label_lastName;
         private System.Windows.Forms.Label label_firstName;
-        private System.Windows.Forms.TextBox textBox_dateOfBirth;
-        private System.Windows.Forms.TextBox textBox_lastName;
-        private System.Windows.Forms.TextBox textBox_firstName;
+        private System.Windows.Forms.TextBox dobPharm;
+        private System.Windows.Forms.TextBox lnamePharm;
+        private System.Windows.Forms.TextBox fnamePharm;
         private System.Windows.Forms.Label label_prescriptionList;
-        private System.Windows.Forms.TextBox textBox_RxList1;
-        private System.Windows.Forms.TextBox textBox_RxList2;
-        private System.Windows.Forms.TextBox textBox_RxList3;
-        private System.Windows.Forms.TextBox textBox_RxList5;
-        private System.Windows.Forms.TextBox textBox_RxList4;
-        private System.Windows.Forms.TextBox textBox_drugAllergies1;
-        private System.Windows.Forms.TextBox textBox_zipcode;
-        private System.Windows.Forms.TextBox textBox_state;
-        private System.Windows.Forms.TextBox textBox_city;
-        private System.Windows.Forms.TextBox textBox_streetAddress;
+        private System.Windows.Forms.TextBox prescript1Pharm;
+        private System.Windows.Forms.TextBox prescript2Pharm;
+        private System.Windows.Forms.TextBox prescript3Pharm;
+        private System.Windows.Forms.TextBox prescript5Pharm;
+        private System.Windows.Forms.TextBox prescript4Pharm;
+        private System.Windows.Forms.TextBox allergiesPharm;
+        private System.Windows.Forms.TextBox zipPharm;
+        private System.Windows.Forms.TextBox statePharm;
+        private System.Windows.Forms.TextBox cityPharm;
+        private System.Windows.Forms.TextBox streetPharm;
         private System.Windows.Forms.Label label_refill;
-        private System.Windows.Forms.TextBox textBox__refill5;
-        private System.Windows.Forms.TextBox textBox__refill4;
-        private System.Windows.Forms.TextBox textBox_refill3;
-        private System.Windows.Forms.TextBox textBox_refill2;
-        private System.Windows.Forms.TextBox textBox_refill1;
+        private System.Windows.Forms.TextBox refill5Pharm;
+        private System.Windows.Forms.TextBox refill4Pharm;
+        private System.Windows.Forms.TextBox refill3Pharm;
+        private System.Windows.Forms.TextBox refill2Pharm;
+        private System.Windows.Forms.TextBox refill1Pharm;
         private System.Windows.Forms.Label label_prescriber;
-        private System.Windows.Forms.CheckBox checkBox1_reorder;
+        private System.Windows.Forms.CheckBox checkBox1Pharm;
         private System.Windows.Forms.Label label_reorder;
-        private System.Windows.Forms.TextBox textBox_prescriber1;
-        private System.Windows.Forms.TextBox textBox__prescriber2;
-        private System.Windows.Forms.TextBox textBox__prescriber3;
-        private System.Windows.Forms.TextBox textBox__prescriber5;
-        private System.Windows.Forms.TextBox textBox__prescriber4;
-        private System.Windows.Forms.Button Edit_onPharmForm;
-        private System.Windows.Forms.Button saveChanges;
-        private System.Windows.Forms.Button SubmitOrder;
-        private System.Windows.Forms.TextBox textBox_lastShippedDate;
-        private System.Windows.Forms.TextBox textBox_email;
-        private System.Windows.Forms.TextBox textBox_telephone;
+        private System.Windows.Forms.TextBox prescriber1Pharm;
+        private System.Windows.Forms.TextBox prescriber2Pharm;
+        private System.Windows.Forms.TextBox prescriber3Pharm;
+        private System.Windows.Forms.TextBox prescriber5Pharm;
+        private System.Windows.Forms.TextBox prescriber4Pharm;
+        private System.Windows.Forms.Button editPharm;
+        private System.Windows.Forms.Button savePharm;
+        private System.Windows.Forms.Button SubmitOrderPharm;
+        private System.Windows.Forms.TextBox shippedPharm;
+        private System.Windows.Forms.TextBox emailPharm;
+        private System.Windows.Forms.TextBox telephonePharm;
         private System.Windows.Forms.Label label_email;
         private System.Windows.Forms.Label label_telephone;
         private System.Windows.Forms.Label label_lastShippedDate;
         private System.Windows.Forms.Label label_insurance;
-        private System.Windows.Forms.TextBox textBox_insurance;
-        private System.Windows.Forms.TextBox textBox_paymentMethod;
+        private System.Windows.Forms.TextBox insurancePharm;
+        private System.Windows.Forms.TextBox ccPharm;
         private System.Windows.Forms.Label label_paymentMethod;
-        private System.Windows.Forms.CheckBox checkBox5_reorder;
-        private System.Windows.Forms.CheckBox checkBox4_reorder;
-        private System.Windows.Forms.CheckBox checkBox3_reorder;
-        private System.Windows.Forms.CheckBox checkBox2__reorder;
+        private System.Windows.Forms.CheckBox checkBox5Pharm;
+        private System.Windows.Forms.CheckBox checkBox4Pharm;
+        private System.Windows.Forms.CheckBox checkBox3Pharm;
+        private System.Windows.Forms.CheckBox checkBox2Pharm;
         private System.Windows.Forms.Button logOutPharm;
         private System.Windows.Forms.Label phoneNumber;
-        private System.Windows.Forms.TextBox emailTextBox;
+        private System.Windows.Forms.TextBox emailUser;
         private System.Windows.Forms.Label email;
-        private System.Windows.Forms.TextBox telephoneNumberTextBox;
-        private System.Windows.Forms.RichTextBox allergyTextBox;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.CheckBox checkBox5;
+        private System.Windows.Forms.TextBox telephoneUser;
+        private System.Windows.Forms.RichTextBox allergiesUser;
+        private System.Windows.Forms.Panel refillPanel;
+        private System.Windows.Forms.Button submitRefill;
+        private System.Windows.Forms.CheckBox checkBox5Refill;
+        private System.Windows.Forms.CheckBox checkBox4Refill;
+        private System.Windows.Forms.CheckBox checkBox3Refill;
+        private System.Windows.Forms.CheckBox checkBox2Refill;
+        private System.Windows.Forms.CheckBox checkBox1Refill;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox refill5Refill;
+        private System.Windows.Forms.TextBox refill4Refill;
+        private System.Windows.Forms.TextBox refill3Refill;
+        private System.Windows.Forms.TextBox refill2Refill;
+        private System.Windows.Forms.TextBox refill1Refill;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox prescript1Refill;
+        private System.Windows.Forms.TextBox prescript2Refill;
+        private System.Windows.Forms.TextBox prescript3Refill;
+        private System.Windows.Forms.TextBox prescript5Refill;
+        private System.Windows.Forms.TextBox prescript4Refill;
         private System.Windows.Forms.Label RefillRequestTitle;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Button goBack_btn;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button save_btn;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.TextBox textBox13;
+        private System.Windows.Forms.Button backRefill;
+        private System.Windows.Forms.Panel adminPanel;
+        private System.Windows.Forms.Button editAdmin;
+        private System.Windows.Forms.Button saveAdmin;
+        private System.Windows.Forms.Button logOutAdmin;
+        private System.Windows.Forms.TextBox shippedAdmin;
+        private System.Windows.Forms.TextBox emailAdmin;
+        private System.Windows.Forms.TextBox telephoneAdmin;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.TextBox textBox15;
+        private System.Windows.Forms.TextBox insuranceAdmin;
+        private System.Windows.Forms.TextBox ccAdmin;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.CheckBox checkBox6;
-        private System.Windows.Forms.CheckBox checkBox7;
-        private System.Windows.Forms.CheckBox checkBox8;
-        private System.Windows.Forms.CheckBox checkBox9;
-        private System.Windows.Forms.CheckBox checkBox10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox16;
-        private System.Windows.Forms.TextBox textBox17;
-        private System.Windows.Forms.TextBox textBox18;
-        private System.Windows.Forms.TextBox textBox19;
-        private System.Windows.Forms.TextBox textBox20;
+        private System.Windows.Forms.TextBox prescriber1Admin;
+        private System.Windows.Forms.TextBox prescriber2Admin;
+        private System.Windows.Forms.TextBox prescriber3Admin;
+        private System.Windows.Forms.TextBox prescriber5Admin;
+        private System.Windows.Forms.TextBox prescriber4Admin;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox21;
-        private System.Windows.Forms.TextBox textBox22;
-        private System.Windows.Forms.TextBox textBox23;
-        private System.Windows.Forms.TextBox textBox24;
-        private System.Windows.Forms.TextBox textBox25;
+        private System.Windows.Forms.TextBox refill5Admin;
+        private System.Windows.Forms.TextBox refill4Admin;
+        private System.Windows.Forms.TextBox refill3Admin;
+        private System.Windows.Forms.TextBox refill2Admin;
+        private System.Windows.Forms.TextBox refill1Admin;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox26;
-        private System.Windows.Forms.TextBox textBox27;
-        private System.Windows.Forms.TextBox textBox28;
-        private System.Windows.Forms.TextBox textBox29;
-        private System.Windows.Forms.TextBox textBox30;
-        private System.Windows.Forms.TextBox textBox31;
-        private System.Windows.Forms.TextBox textBox32;
-        private System.Windows.Forms.TextBox textBox33;
-        private System.Windows.Forms.TextBox textBox34;
-        private System.Windows.Forms.TextBox textBox35;
-        private System.Windows.Forms.TextBox textBox36;
-        private System.Windows.Forms.TextBox textBox37;
-        private System.Windows.Forms.TextBox textBox38;
+        private System.Windows.Forms.TextBox prescript1Admin;
+        private System.Windows.Forms.TextBox prescript2Admin;
+        private System.Windows.Forms.TextBox prescript3Admin;
+        private System.Windows.Forms.TextBox prescript5Admin;
+        private System.Windows.Forms.TextBox prescript4Admin;
+        private System.Windows.Forms.TextBox allergiesAdmin;
+        private System.Windows.Forms.TextBox zipAdmin;
+        private System.Windows.Forms.TextBox stateAdmin;
+        private System.Windows.Forms.TextBox cityAdmin;
+        private System.Windows.Forms.TextBox streetAdmin;
+        private System.Windows.Forms.TextBox dobAdmin;
+        private System.Windows.Forms.TextBox lnameAdmin;
+        private System.Windows.Forms.TextBox fnameAdmin;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox39;
+        private System.Windows.Forms.TextBox searchAdmin;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
@@ -2578,13 +2603,13 @@
         private System.Windows.Forms.Label orderStatus_dropdown;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label to_label;
-        private System.Windows.Forms.TextBox textbox_expDate1;
+        private System.Windows.Forms.TextBox expUser;
         private System.Windows.Forms.Label expDate_label;
-        private System.Windows.Forms.TextBox textbox_expDate2;
+        private System.Windows.Forms.TextBox expPharm;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.TextBox textbox_expDate3;
+        private System.Windows.Forms.TextBox expAdmin;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.CheckBox newUser_chkBox;
+        private System.Windows.Forms.CheckBox newUser;
     }
 }
 

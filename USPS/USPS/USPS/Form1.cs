@@ -1909,6 +1909,20 @@ namespace USPS
 
         }
 
+        private void adminPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pharmPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label_paymentMethod_Click(object sender, EventArgs e)
+        {
+
+        }
     }
     public static partial class ValidationFunctions
     {

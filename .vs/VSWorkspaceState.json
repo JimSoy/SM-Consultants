@@ -1,10 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\USPS",
-    "\\USPS\\USPS",
-    "\\USPS\\USPS\\USPS"
+    ""
   ],
-  "SelectedNode": "\\USPS\\USPS\\USPS\\DB.cs",
+  "SelectedNode": "\\USPS.sln",
   "PreviewInSolutionExplorer": false
 }

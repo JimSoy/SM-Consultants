@@ -230,6 +230,15 @@
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.pictureBox17 = new System.Windows.Forms.PictureBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.drName_textbox = new System.Windows.Forms.TextBox();
+            this.drPhone_textbox = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.drEmai_textbox = new System.Windows.Forms.TextBox();
+            this.pictureBox18 = new System.Windows.Forms.PictureBox();
+            this.label25 = new System.Windows.Forms.Label();
             this.loginPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
@@ -252,6 +261,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).BeginInit();
             this.SuspendLayout();
             // 
             // loginPanel
@@ -2674,12 +2686,116 @@
             this.label21.TabIndex = 22;
             this.label21.Text = "First Name";
             // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.label25);
+            this.panel3.Controls.Add(this.pictureBox18);
+            this.panel3.Controls.Add(this.drEmai_textbox);
+            this.panel3.Controls.Add(this.label24);
+            this.panel3.Controls.Add(this.drPhone_textbox);
+            this.panel3.Controls.Add(this.drName_textbox);
+            this.panel3.Controls.Add(this.label9);
+            this.panel3.Controls.Add(this.pictureBox17);
+            this.panel3.Location = new System.Drawing.Point(1011, 772);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(320, 192);
+            this.panel3.TabIndex = 7;
+            // 
+            // pictureBox17
+            // 
+            this.pictureBox17.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox17.BackgroundImage")));
+            this.pictureBox17.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox17.Location = new System.Drawing.Point(304, 0);
+            this.pictureBox17.Name = "pictureBox17";
+            this.pictureBox17.Size = new System.Drawing.Size(15, 192);
+            this.pictureBox17.TabIndex = 118;
+            this.pictureBox17.TabStop = false;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Roboto", 8.25F);
+            this.label9.ForeColor = System.Drawing.Color.DimGray;
+            this.label9.Location = new System.Drawing.Point(21, 42);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(111, 17);
+            this.label9.TabIndex = 119;
+            this.label9.Text = "Prescriber Name";
+            this.label9.Click += new System.EventHandler(this.label9_Click_2);
+            // 
+            // drName_textbox
+            // 
+            this.drName_textbox.Location = new System.Drawing.Point(24, 65);
+            this.drName_textbox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.drName_textbox.MaxLength = 33;
+            this.drName_textbox.Name = "drName_textbox";
+            this.drName_textbox.ReadOnly = true;
+            this.drName_textbox.Size = new System.Drawing.Size(263, 22);
+            this.drName_textbox.TabIndex = 120;
+            // 
+            // drPhone_textbox
+            // 
+            this.drPhone_textbox.Location = new System.Drawing.Point(24, 125);
+            this.drPhone_textbox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.drPhone_textbox.MaxLength = 33;
+            this.drPhone_textbox.Name = "drPhone_textbox";
+            this.drPhone_textbox.ReadOnly = true;
+            this.drPhone_textbox.Size = new System.Drawing.Size(263, 22);
+            this.drPhone_textbox.TabIndex = 121;
+            this.drPhone_textbox.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Roboto", 8.25F);
+            this.label24.ForeColor = System.Drawing.Color.DimGray;
+            this.label24.Location = new System.Drawing.Point(21, 107);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(86, 17);
+            this.label24.TabIndex = 122;
+            this.label24.Text = "Contact Info";
+            this.label24.Click += new System.EventHandler(this.label24_Click);
+            // 
+            // drEmai_textbox
+            // 
+            this.drEmai_textbox.Location = new System.Drawing.Point(24, 151);
+            this.drEmai_textbox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.drEmai_textbox.MaxLength = 33;
+            this.drEmai_textbox.Name = "drEmai_textbox";
+            this.drEmai_textbox.ReadOnly = true;
+            this.drEmai_textbox.Size = new System.Drawing.Size(263, 22);
+            this.drEmai_textbox.TabIndex = 123;
+            // 
+            // pictureBox18
+            // 
+            this.pictureBox18.BackColor = System.Drawing.Color.LightCoral;
+            this.pictureBox18.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox18.BackgroundImage")));
+            this.pictureBox18.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox18.Location = new System.Drawing.Point(267, 14);
+            this.pictureBox18.Name = "pictureBox18";
+            this.pictureBox18.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox18.TabIndex = 124;
+            this.pictureBox18.TabStop = false;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Roboto", 8.25F);
+            this.label25.ForeColor = System.Drawing.Color.DimGray;
+            this.label25.Location = new System.Drawing.Point(221, 17);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(42, 17);
+            this.label25.TabIndex = 125;
+            this.label25.Text = "Close";
+            this.label25.Click += new System.EventHandler(this.label25_Click);
+            // 
             // Form1
             // 
             this.AcceptButton = this.login;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1924, 1032);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.adminPanel);
             this.Controls.Add(this.refillPanel);
             this.Controls.Add(this.pharmPanel);
@@ -2716,6 +2832,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2923,6 +3043,15 @@
         private System.Windows.Forms.PictureBox pictureBox16;
         private System.Windows.Forms.PictureBox pictureBox15;
         private System.Windows.Forms.PictureBox pictureBox12;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.TextBox drPhone_textbox;
+        private System.Windows.Forms.TextBox drName_textbox;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.PictureBox pictureBox17;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.PictureBox pictureBox18;
+        private System.Windows.Forms.TextBox drEmai_textbox;
+        private System.Windows.Forms.Label label25;
     }
 }
 

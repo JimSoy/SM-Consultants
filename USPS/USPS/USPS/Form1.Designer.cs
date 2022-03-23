@@ -230,7 +230,7 @@
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.prescriberPanel = new System.Windows.Forms.Panel();
             this.label25 = new System.Windows.Forms.Label();
             this.pictureBox18 = new System.Windows.Forms.PictureBox();
             this.drEmai_textbox = new System.Windows.Forms.TextBox();
@@ -261,7 +261,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.panel3.SuspendLayout();
+            this.prescriberPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
             this.SuspendLayout();
@@ -2761,21 +2761,22 @@
             this.label21.TabIndex = 22;
             this.label21.Text = "First Name";
             // 
-            // panel3
+            // prescriberPanel
             // 
-            this.panel3.Controls.Add(this.label25);
-            this.panel3.Controls.Add(this.pictureBox18);
-            this.panel3.Controls.Add(this.drEmai_textbox);
-            this.panel3.Controls.Add(this.label24);
-            this.panel3.Controls.Add(this.drPhone_textbox);
-            this.panel3.Controls.Add(this.drName_textbox);
-            this.panel3.Controls.Add(this.label9);
-            this.panel3.Controls.Add(this.pictureBox17);
-            this.panel3.Location = new System.Drawing.Point(758, 627);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(240, 156);
-            this.panel3.TabIndex = 7;
+            this.prescriberPanel.Controls.Add(this.label25);
+            this.prescriberPanel.Controls.Add(this.pictureBox18);
+            this.prescriberPanel.Controls.Add(this.drEmai_textbox);
+            this.prescriberPanel.Controls.Add(this.label24);
+            this.prescriberPanel.Controls.Add(this.drPhone_textbox);
+            this.prescriberPanel.Controls.Add(this.drName_textbox);
+            this.prescriberPanel.Controls.Add(this.label9);
+            this.prescriberPanel.Controls.Add(this.pictureBox17);
+            this.prescriberPanel.Location = new System.Drawing.Point(758, 627);
+            this.prescriberPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.prescriberPanel.Name = "prescriberPanel";
+            this.prescriberPanel.Size = new System.Drawing.Size(240, 156);
+            this.prescriberPanel.TabIndex = 7;
+            this.prescriberPanel.Visible = false;
             // 
             // label25
             // 
@@ -2875,8 +2876,8 @@
             this.AcceptButton = this.login;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1443, 716);
-            this.Controls.Add(this.panel3);
+            this.ClientSize = new System.Drawing.Size(1442, 793);
+            this.Controls.Add(this.prescriberPanel);
             this.Controls.Add(this.adminPanel);
             this.Controls.Add(this.refillPanel);
             this.Controls.Add(this.pharmPanel);
@@ -2913,8 +2914,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.prescriberPanel.ResumeLayout(false);
+            this.prescriberPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
             this.ResumeLayout(false);
@@ -3124,7 +3125,7 @@
         private System.Windows.Forms.PictureBox pictureBox16;
         private System.Windows.Forms.PictureBox pictureBox15;
         private System.Windows.Forms.PictureBox pictureBox12;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel prescriberPanel;
         private System.Windows.Forms.TextBox drPhone_textbox;
         private System.Windows.Forms.TextBox drName_textbox;
         private System.Windows.Forms.Label label9;

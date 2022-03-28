@@ -91,6 +91,10 @@ namespace USPS
 
             userPass = pass.Text;
         }
+        private void passPic_Click(object sender, EventArgs e)
+        {
+
+        }
         private void newUser_CheckedChanged(object sender, EventArgs e)
         {
             if (newUser.Checked == true)
@@ -540,7 +544,20 @@ namespace USPS
                 {
                     refillPanel.Visible = false;
                 }
+                if (prescriberPanel.Visible)
+                {
+                    prescriberPanel.Visible = false;
+                }
             }
+        }
+        private void prescriberName_DoubleClick(object sender, EventArgs e)
+        {
+            prescriberPanel.Visible = true;
+            prescriberPanel.Location = new System.Drawing.Point(450, 29);
+        }
+        private void prescriberCloseClick(object sender, EventArgs e)
+        {
+            prescriberPanel.Visible = false;
         }
 
         //refil panel stuff
@@ -556,6 +573,41 @@ namespace USPS
         }
 
         //refill checkbox area -- customer
+        private void submitRefill_Click(object sender, EventArgs e)
+        {
+            string orders = "";
+
+            if (checkBox1Refill.Checked)
+            {
+                orders += prescript1Refill.Text + "\n";
+            }
+            if (checkBox2Refill.Checked)
+            {
+                orders += prescript2Refill.Text + "\n";
+            }
+            if (checkBox3Refill.Checked)
+            {
+                orders += prescript3Refill.Text + "\n";
+            }
+            if (checkBox4Refill.Checked)
+            {
+                orders += prescript4Refill.Text + "\n";
+            }
+            if (checkBox5Refill.Checked)
+            {
+                orders += prescript5Refill.Text + "\n";
+            }
+            
+            string orderConf = $"Prescriptions:\n\n" + orders + "__________\n\n" + "Shipped to:\n\n" 
+                + fnameUser.Text + " " + lnameUser.Text +"\n" + streetUser.Text + "\n" + cityUser.Text 
+                + ", " + stateUser.Text + " " + zipUser.Text;
+
+            DialogResult dR = MessageBox.Show(orderConf, "Confirm your order", MessageBoxButtons.OKCancel);
+            if (dR == DialogResult.OK)
+            {
+                mySystemMessage("Your order has been placed!");
+            }
+        }
         private void checkBox1Refill_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox1Refill.Checked == true)
@@ -642,6 +694,41 @@ namespace USPS
         }
 
         //refil checkbox area -- pharm
+        private void submitPharm_Click(object sender, EventArgs e)
+        {
+            string orders = "";
+
+            if (checkBox1Pharm.Checked)
+            {
+                orders += prescript1Pharm.Text + "\n";
+            }
+            if (checkBox2Pharm.Checked)
+            {
+                orders += prescript2Pharm.Text + "\n";
+            }
+            if (checkBox3Pharm.Checked)
+            {
+                orders += prescript3Pharm.Text + "\n";
+            }
+            if (checkBox4Pharm.Checked)
+            {
+                orders += prescript4Pharm.Text + "\n";
+            }
+            if (checkBox5Pharm.Checked)
+            {
+                orders += prescript5Pharm.Text + "\n";
+            }
+
+            string orderConf = $"Prescriptions:\n\n" + orders + "__________\n\n" + "Shipped to:\n\n"
+                + fnameUser.Text + " " + lnameUser.Text + "\n" + streetUser.Text + "\n" + cityUser.Text
+                + ", " + stateUser.Text + " " + zipUser.Text;
+
+            DialogResult dR = MessageBox.Show(orderConf, "Confirm your order", MessageBoxButtons.OKCancel);
+            if (dR == DialogResult.OK)
+            {
+                mySystemMessage("Your order has been placed!");
+            }
+        }
 
         private void checkBox1Pharm_CheckedChanged(object sender, EventArgs e)
         {
@@ -1848,11 +1935,6 @@ namespace USPS
 
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
         private void label12_Click(object sender, EventArgs e)
         {
 
@@ -1944,11 +2026,6 @@ namespace USPS
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
         {
 
         }

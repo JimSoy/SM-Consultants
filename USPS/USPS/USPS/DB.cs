@@ -241,7 +241,6 @@ namespace USPS
         {
             //temp string to store and convert date if present
             string dt = "";
-            string queryString = "";
 
             //check the string to see if date is present, then store to string dt
             if (!Regex.IsMatch(searchString, "[^0-9/]"))

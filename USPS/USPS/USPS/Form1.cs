@@ -118,6 +118,9 @@ namespace USPS
         {
             //populate user query data into dictionary, then use those keys to populate textboxes
             Dictionary<string, string> info = db.infoUpdateQuery();
+            List<string> scriptInfo = db.scripts();
+            List<int> refillInfo = db.refills();
+            List<string> prescribersInfo = db.prescribers();
 
             if (info != null)
             {
@@ -131,6 +134,27 @@ namespace USPS
                 cityUser.Text = cityPharm.Text = cityAdmin.Text = info["city"];
                 zipUser.Text = zipPharm.Text =zipAdmin.Text = info["zip"];
                 allergiesUser.Text = allergiesPharm.Text = allergiesAdmin.Text = info["allergy"];
+                ccUser.Text = ccPharm.Text = ccAdmin.Text = info["cc"];
+                expUser.Text = expPharm.Text = expAdmin.Text = info["exp"];
+                drFname.Text = info["docFname"];
+                drLname.Text = info["docLname"];
+                drPhone.Text = info["docPhone"];
+                drEmail.Text = info["docEmail"];
+                prescript1Refill.Text = prescript1Pharm.Text = prescript1Admin.Text = scriptInfo[0];
+                prescript2Refill.Text = prescript2Pharm.Text = prescript2Admin.Text = scriptInfo[1];
+                prescript3Refill.Text = prescript3Pharm.Text = prescript3Admin.Text = scriptInfo[2];
+                prescript4Refill.Text = prescript4Pharm.Text = prescript4Admin.Text = scriptInfo[3];
+                prescript5Refill.Text = prescript5Pharm.Text = prescript5Admin.Text = scriptInfo[4];
+                refill1Refill.Text = refill1Pharm.Text = refill1Admin.Text = refillInfo[0].ToString();
+                refill2Refill.Text = refill2Pharm.Text = refill2Admin.Text = refillInfo[1].ToString();
+                refill3Refill.Text = refill3Pharm.Text = refill3Admin.Text = refillInfo[2].ToString();
+                refill4Refill.Text = refill4Pharm.Text = refill4Admin.Text = refillInfo[3].ToString();
+                refill5Refill.Text = refill5Pharm.Text = refill5Admin.Text = refillInfo[4].ToString();
+                prescriber1Admin.Text = prescriber1Pharm.Text = prescribersInfo[0];
+                prescriber2Admin.Text = prescriber2Pharm.Text = prescribersInfo[1];
+                prescriber3Admin.Text = prescriber3Pharm.Text = prescribersInfo[2];
+                prescriber4Admin.Text = prescriber4Pharm.Text = prescribersInfo[3];
+                prescriber5Admin.Text = prescriber5Pharm.Text = prescribersInfo[4];
                 dbID = info["ID"];
             }
             if (!failed)
@@ -140,7 +164,7 @@ namespace USPS
                     adminPanelSwitch = true;
                     formSwitch1();
                 }
-                else if (userID == "Pharmacy")
+                else if (userID == "Pharmacist")
                 {
                     pharmPanelSwitch = true;
                     formSwitch1();
@@ -152,7 +176,8 @@ namespace USPS
                 }
             }
         }
-        public void searchResults(Dictionary<string, string> info)
+        public void searchResults(Dictionary<string, string> info, List<string> scriptInfo, 
+            List<int> refillInfo, List<string> prescribersInfo)
         {
             if (info != null)
             {
@@ -166,6 +191,27 @@ namespace USPS
                 cityUser.Text = cityPharm.Text = cityAdmin.Text = info["city"];
                 zipUser.Text = zipPharm.Text = zipAdmin.Text = info["zip"];
                 allergiesUser.Text = allergiesPharm.Text = allergiesAdmin.Text = info["allergy"];
+                ccUser.Text = ccPharm.Text = ccAdmin.Text = info["cc"];
+                expUser.Text = expPharm.Text = expAdmin.Text = info["exp"];
+                drFname.Text = info["docFname"];
+                drLname.Text = info["docLname"];
+                drPhone.Text = info["docPhone"];
+                drEmail.Text = info["docEmail"];
+                prescript1Refill.Text = prescript1Pharm.Text = prescript1Admin.Text = scriptInfo[0];
+                prescript2Refill.Text = prescript2Pharm.Text = prescript2Admin.Text = scriptInfo[1];
+                prescript3Refill.Text = prescript3Pharm.Text = prescript3Admin.Text = scriptInfo[2];
+                prescript4Refill.Text = prescript4Pharm.Text = prescript4Admin.Text = scriptInfo[3];
+                prescript5Refill.Text = prescript5Pharm.Text = prescript5Admin.Text = scriptInfo[4];
+                refill1Refill.Text = refill1Pharm.Text = refill1Admin.Text = refillInfo[0].ToString();
+                refill2Refill.Text = refill2Pharm.Text = refill2Admin.Text = refillInfo[1].ToString();
+                refill3Refill.Text = refill3Pharm.Text = refill3Admin.Text = refillInfo[2].ToString();
+                refill4Refill.Text = refill4Pharm.Text = refill4Admin.Text = refillInfo[3].ToString();
+                refill5Refill.Text = refill5Pharm.Text = refill5Admin.Text = refillInfo[4].ToString();
+                prescriber1Admin.Text = prescriber1Pharm.Text = prescribersInfo[0];
+                prescriber2Admin.Text = prescriber2Pharm.Text = prescribersInfo[1];
+                prescriber3Admin.Text = prescriber3Pharm.Text = prescribersInfo[2];
+                prescriber4Admin.Text = prescriber4Pharm.Text = prescribersInfo[3];
+                prescriber5Admin.Text = prescriber5Pharm.Text = prescribersInfo[4];
                 dbID = info["ID"];
             }
         }
@@ -188,6 +234,12 @@ namespace USPS
                 info.Add("state", stateUser.Text);
                 info.Add("zip", zipUser.Text);
                 info.Add("allergy", allergiesUser.Text);
+                info.Add("cc", ccUser.Text);
+                info.Add("exp", expUser.Text);
+                info.Add("docFname", drFname.Text);
+                info.Add("docLname", drLname.Text);
+                info.Add("docPhone", drPhone.Text);
+                info.Add("docEmail", drEmail.Text);
 
                 db.infoUpdater(info);
             }
@@ -205,6 +257,12 @@ namespace USPS
                 info.Add("state", statePharm.Text);
                 info.Add("zip", zipPharm.Text);
                 info.Add("allergy", allergiesPharm.Text);
+                info.Add("cc", ccPharm.Text);
+                info.Add("exp", expPharm.Text);
+                info.Add("docFname", drFname.Text);
+                info.Add("docLname", drLname.Text);
+                info.Add("docPhone", drPhone.Text);
+                info.Add("docEmail", drEmail.Text);
 
                 db.infoUpdater(info);
             }
@@ -222,6 +280,12 @@ namespace USPS
                 info.Add("state", stateAdmin.Text);
                 info.Add("zip", zipAdmin.Text);
                 info.Add("allergy", allergiesAdmin.Text);
+                info.Add("cc", ccAdmin.Text);
+                info.Add("exp", expAdmin.Text);
+                info.Add("docFname", drFname.Text);
+                info.Add("docLname", drLname.Text);
+                info.Add("docPhone", drPhone.Text);
+                info.Add("docEmail", drEmail.Text);
 
                 db.infoUpdater(info);
             }
@@ -368,7 +432,10 @@ namespace USPS
             {
                 //Do something
                 Dictionary<string, string> info = db.searchCustomers(searchPharm.Text);
-                searchResults(info);
+                List<string> scriptInfo = db.scripts();
+                List<int> refillInfo = db.refills();
+                List<string> prescribersInfo = db.prescribers(); 
+                searchResults(info, scriptInfo, refillInfo, prescribersInfo);
                 e.Handled = true;
             }
         }
@@ -449,7 +516,10 @@ namespace USPS
             {
                 //Do something
                 Dictionary<string, string> info = db.searchCustomers(searchAdmin.Text);
-                searchResults(info);
+                List<string> scriptInfo = db.scripts();
+                List<int> refillInfo = db.refills();
+                List<string> prescriberInfo = db.prescribers();
+                searchResults(info, scriptInfo, refillInfo, prescriberInfo);
                 e.Handled = true;
             }
         }
@@ -466,6 +536,10 @@ namespace USPS
             {
                 db.logOut();
                 formSwitch1();
+                if (refillPanel.Visible)
+                {
+                    refillPanel.Visible = false;
+                }
             }
         }
 
@@ -1940,6 +2014,11 @@ namespace USPS
         }
 
         private void label25_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged_2(object sender, EventArgs e)
         {
 
         }

@@ -233,12 +233,13 @@
             this.prescriberPanel = new System.Windows.Forms.Panel();
             this.label25 = new System.Windows.Forms.Label();
             this.pictureBox18 = new System.Windows.Forms.PictureBox();
-            this.drEmai_textbox = new System.Windows.Forms.TextBox();
+            this.drEmail = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
-            this.drPhone_textbox = new System.Windows.Forms.TextBox();
-            this.drName_textbox = new System.Windows.Forms.TextBox();
+            this.drPhone = new System.Windows.Forms.TextBox();
+            this.drFname = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.pictureBox17 = new System.Windows.Forms.PictureBox();
+            this.drLname = new System.Windows.Forms.TextBox();
             this.loginPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
@@ -283,7 +284,7 @@
             this.loginPanel.Controls.Add(this.userName);
             this.loginPanel.Controls.Add(this.pictureBox4);
             this.loginPanel.Location = new System.Drawing.Point(9, 29);
-            this.loginPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.loginPanel.Margin = new System.Windows.Forms.Padding(2);
             this.loginPanel.Name = "loginPanel";
             this.loginPanel.Size = new System.Drawing.Size(269, 353);
             this.loginPanel.TabIndex = 0;
@@ -293,7 +294,7 @@
             this.pictureBox10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox10.BackgroundImage")));
             this.pictureBox10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureBox10.Location = new System.Drawing.Point(35, 271);
-            this.pictureBox10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox10.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(15, 16);
             this.pictureBox10.TabIndex = 9;
@@ -304,7 +305,7 @@
             this.pictureBox9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox9.BackgroundImage")));
             this.pictureBox9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureBox9.Location = new System.Drawing.Point(35, 229);
-            this.pictureBox9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox9.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(15, 16);
             this.pictureBox9.TabIndex = 7;
@@ -314,7 +315,7 @@
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.panel2.Location = new System.Drawing.Point(54, 289);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(150, 1);
             this.panel2.TabIndex = 8;
@@ -323,7 +324,7 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.panel1.Location = new System.Drawing.Point(54, 247);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(150, 1);
             this.panel1.TabIndex = 7;
@@ -333,7 +334,7 @@
             this.newUser.AutoSize = true;
             this.newUser.Font = new System.Drawing.Font("Roboto", 7F);
             this.newUser.Location = new System.Drawing.Point(98, 333);
-            this.newUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.newUser.Margin = new System.Windows.Forms.Padding(2);
             this.newUser.Name = "newUser";
             this.newUser.Size = new System.Drawing.Size(68, 17);
             this.newUser.TabIndex = 7;
@@ -348,7 +349,7 @@
             this.login.Font = new System.Drawing.Font("Roboto", 8.25F);
             this.login.ForeColor = System.Drawing.Color.Black;
             this.login.Location = new System.Drawing.Point(94, 299);
-            this.login.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.login.Margin = new System.Windows.Forms.Padding(2);
             this.login.Name = "login";
             this.login.Size = new System.Drawing.Size(75, 30);
             this.login.TabIndex = 3;
@@ -358,14 +359,15 @@
             // 
             // uspsLogo
             // 
+            this.uspsLogo.BackColor = System.Drawing.Color.Transparent;
             this.uspsLogo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("uspsLogo.BackgroundImage")));
             this.uspsLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.uspsLogo.Image = ((System.Drawing.Image)(resources.GetObject("uspsLogo.Image")));
             this.uspsLogo.InitialImage = ((System.Drawing.Image)(resources.GetObject("uspsLogo.InitialImage")));
-            this.uspsLogo.Location = new System.Drawing.Point(56, 13);
-            this.uspsLogo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.uspsLogo.Location = new System.Drawing.Point(54, 12);
+            this.uspsLogo.Margin = new System.Windows.Forms.Padding(2);
             this.uspsLogo.Name = "uspsLogo";
-            this.uspsLogo.Size = new System.Drawing.Size(155, 125);
+            this.uspsLogo.Size = new System.Drawing.Size(155, 122);
             this.uspsLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.uspsLogo.TabIndex = 6;
             this.uspsLogo.TabStop = false;
@@ -410,7 +412,7 @@
             this.pass.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.pass.Font = new System.Drawing.Font("Roboto", 8.25F);
             this.pass.Location = new System.Drawing.Point(54, 272);
-            this.pass.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pass.Margin = new System.Windows.Forms.Padding(2);
             this.pass.Name = "pass";
             this.pass.Size = new System.Drawing.Size(149, 15);
             this.pass.TabIndex = 2;
@@ -424,7 +426,7 @@
             this.user.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.user.Font = new System.Drawing.Font("Roboto", 8.25F);
             this.user.Location = new System.Drawing.Point(54, 230);
-            this.user.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.user.Margin = new System.Windows.Forms.Padding(2);
             this.user.Name = "user";
             this.user.Size = new System.Drawing.Size(149, 15);
             this.user.TabIndex = 1;
@@ -445,11 +447,12 @@
             // 
             // pictureBox4
             // 
+            this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox4.BackgroundImage")));
             this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox4.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox4.InitialImage")));
             this.pictureBox4.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(269, 150);
             this.pictureBox4.TabIndex = 8;
@@ -491,7 +494,7 @@
             this.userPanel.Controls.Add(this.firstName);
             this.userPanel.Font = new System.Drawing.Font("Roboto", 8.25F);
             this.userPanel.Location = new System.Drawing.Point(10, 385);
-            this.userPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.userPanel.Margin = new System.Windows.Forms.Padding(2);
             this.userPanel.Name = "userPanel";
             this.userPanel.Size = new System.Drawing.Size(418, 437);
             this.userPanel.TabIndex = 2;
@@ -502,7 +505,7 @@
             this.pictureBox13.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox13.BackgroundImage")));
             this.pictureBox13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureBox13.Location = new System.Drawing.Point(351, 380);
-            this.pictureBox13.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox13.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox13.Name = "pictureBox13";
             this.pictureBox13.Size = new System.Drawing.Size(15, 16);
             this.pictureBox13.TabIndex = 87;
@@ -513,7 +516,7 @@
             this.pictureBox8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox8.BackgroundImage")));
             this.pictureBox8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox8.Location = new System.Drawing.Point(406, 1);
-            this.pictureBox8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox8.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(11, 436);
             this.pictureBox8.TabIndex = 116;
@@ -522,7 +525,7 @@
             // expUser
             // 
             this.expUser.Location = new System.Drawing.Point(328, 236);
-            this.expUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.expUser.Margin = new System.Windows.Forms.Padding(2);
             this.expUser.Name = "expUser";
             this.expUser.Size = new System.Drawing.Size(65, 22);
             this.expUser.TabIndex = 30;
@@ -542,7 +545,7 @@
             // allergiesUser
             // 
             this.allergiesUser.Location = new System.Drawing.Point(16, 295);
-            this.allergiesUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.allergiesUser.Margin = new System.Windows.Forms.Padding(2);
             this.allergiesUser.MaxLength = 300;
             this.allergiesUser.Name = "allergiesUser";
             this.allergiesUser.ReadOnly = true;
@@ -554,7 +557,7 @@
             // emailUser
             // 
             this.emailUser.Location = new System.Drawing.Point(172, 180);
-            this.emailUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.emailUser.Margin = new System.Windows.Forms.Padding(2);
             this.emailUser.MaxLength = 33;
             this.emailUser.Name = "emailUser";
             this.emailUser.ReadOnly = true;
@@ -577,7 +580,7 @@
             // telephoneUser
             // 
             this.telephoneUser.Location = new System.Drawing.Point(17, 180);
-            this.telephoneUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.telephoneUser.Margin = new System.Windows.Forms.Padding(2);
             this.telephoneUser.MaxLength = 12;
             this.telephoneUser.Name = "telephoneUser";
             this.telephoneUser.ReadOnly = true;
@@ -616,7 +619,7 @@
             this.requestRefill.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(217)))), ((int)(((byte)(196)))));
             this.requestRefill.FlatAppearance.BorderSize = 0;
             this.requestRefill.Location = new System.Drawing.Point(280, 336);
-            this.requestRefill.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.requestRefill.Margin = new System.Windows.Forms.Padding(2);
             this.requestRefill.Name = "requestRefill";
             this.requestRefill.Size = new System.Drawing.Size(94, 32);
             this.requestRefill.TabIndex = 18;
@@ -629,7 +632,7 @@
             this.saveUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(217)))), ((int)(((byte)(196)))));
             this.saveUser.FlatAppearance.BorderSize = 0;
             this.saveUser.Location = new System.Drawing.Point(83, 386);
-            this.saveUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.saveUser.Margin = new System.Windows.Forms.Padding(2);
             this.saveUser.Name = "saveUser";
             this.saveUser.Size = new System.Drawing.Size(56, 32);
             this.saveUser.TabIndex = 17;
@@ -642,7 +645,7 @@
             this.editUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(217)))), ((int)(((byte)(196)))));
             this.editUser.FlatAppearance.BorderSize = 0;
             this.editUser.Location = new System.Drawing.Point(20, 386);
-            this.editUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.editUser.Margin = new System.Windows.Forms.Padding(2);
             this.editUser.Name = "editUser";
             this.editUser.Size = new System.Drawing.Size(56, 32);
             this.editUser.TabIndex = 16;
@@ -653,7 +656,7 @@
             // ccUser
             // 
             this.ccUser.Location = new System.Drawing.Point(172, 236);
-            this.ccUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ccUser.Margin = new System.Windows.Forms.Padding(2);
             this.ccUser.MaxLength = 19;
             this.ccUser.Name = "ccUser";
             this.ccUser.ReadOnly = true;
@@ -664,7 +667,7 @@
             // insuranceUser
             // 
             this.insuranceUser.Location = new System.Drawing.Point(16, 236);
-            this.insuranceUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.insuranceUser.Margin = new System.Windows.Forms.Padding(2);
             this.insuranceUser.MaxLength = 66;
             this.insuranceUser.Name = "insuranceUser";
             this.insuranceUser.ReadOnly = true;
@@ -675,7 +678,7 @@
             // zipUser
             // 
             this.zipUser.Location = new System.Drawing.Point(328, 125);
-            this.zipUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.zipUser.Margin = new System.Windows.Forms.Padding(2);
             this.zipUser.MaxLength = 5;
             this.zipUser.Name = "zipUser";
             this.zipUser.ReadOnly = true;
@@ -689,7 +692,7 @@
             this.stateUser.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.stateUser.Cursor = System.Windows.Forms.Cursors.SizeAll;
             this.stateUser.Location = new System.Drawing.Point(282, 125);
-            this.stateUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.stateUser.Margin = new System.Windows.Forms.Padding(2);
             this.stateUser.MaxLength = 2;
             this.stateUser.Name = "stateUser";
             this.stateUser.ReadOnly = true;
@@ -701,7 +704,7 @@
             // cityUser
             // 
             this.cityUser.Location = new System.Drawing.Point(17, 125);
-            this.cityUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cityUser.Margin = new System.Windows.Forms.Padding(2);
             this.cityUser.MaxLength = 33;
             this.cityUser.Name = "cityUser";
             this.cityUser.ReadOnly = true;
@@ -713,7 +716,7 @@
             // streetUser
             // 
             this.streetUser.Location = new System.Drawing.Point(17, 81);
-            this.streetUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.streetUser.Margin = new System.Windows.Forms.Padding(2);
             this.streetUser.MaxLength = 33;
             this.streetUser.Name = "streetUser";
             this.streetUser.ReadOnly = true;
@@ -725,7 +728,7 @@
             // dobUser
             // 
             this.dobUser.Location = new System.Drawing.Point(281, 36);
-            this.dobUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dobUser.Margin = new System.Windows.Forms.Padding(2);
             this.dobUser.MaxLength = 10;
             this.dobUser.Name = "dobUser";
             this.dobUser.ReadOnly = true;
@@ -736,7 +739,7 @@
             // lnameUser
             // 
             this.lnameUser.Location = new System.Drawing.Point(130, 36);
-            this.lnameUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lnameUser.Margin = new System.Windows.Forms.Padding(2);
             this.lnameUser.MaxLength = 33;
             this.lnameUser.Name = "lnameUser";
             this.lnameUser.ReadOnly = true;
@@ -748,7 +751,7 @@
             // fnameUser
             // 
             this.fnameUser.Location = new System.Drawing.Point(17, 36);
-            this.fnameUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.fnameUser.Margin = new System.Windows.Forms.Padding(2);
             this.fnameUser.MaxLength = 33;
             this.fnameUser.Name = "fnameUser";
             this.fnameUser.ReadOnly = true;
@@ -947,7 +950,7 @@
             this.pharmPanel.Controls.Add(this.label_firstName);
             this.pharmPanel.Font = new System.Drawing.Font("Roboto", 8.25F);
             this.pharmPanel.Location = new System.Drawing.Point(575, 29);
-            this.pharmPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pharmPanel.Margin = new System.Windows.Forms.Padding(2);
             this.pharmPanel.Name = "pharmPanel";
             this.pharmPanel.Size = new System.Drawing.Size(424, 593);
             this.pharmPanel.TabIndex = 4;
@@ -959,7 +962,7 @@
             this.pictureBox14.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox14.BackgroundImage")));
             this.pictureBox14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureBox14.Location = new System.Drawing.Point(268, 552);
-            this.pictureBox14.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox14.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox14.Name = "pictureBox14";
             this.pictureBox14.Size = new System.Drawing.Size(15, 16);
             this.pictureBox14.TabIndex = 117;
@@ -970,7 +973,7 @@
             this.pictureBox11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox11.BackgroundImage")));
             this.pictureBox11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureBox11.Location = new System.Drawing.Point(17, 34);
-            this.pictureBox11.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox11.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox11.Name = "pictureBox11";
             this.pictureBox11.Size = new System.Drawing.Size(15, 16);
             this.pictureBox11.TabIndex = 86;
@@ -981,7 +984,7 @@
             this.pictureBox6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox6.BackgroundImage")));
             this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox6.Location = new System.Drawing.Point(412, 0);
-            this.pictureBox6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox6.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(11, 593);
             this.pictureBox6.TabIndex = 8;
@@ -990,7 +993,7 @@
             // expPharm
             // 
             this.expPharm.Location = new System.Drawing.Point(321, 318);
-            this.expPharm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.expPharm.Margin = new System.Windows.Forms.Padding(2);
             this.expPharm.Name = "expPharm";
             this.expPharm.Size = new System.Drawing.Size(65, 22);
             this.expPharm.TabIndex = 85;
@@ -1024,7 +1027,7 @@
             this.editPharm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(217)))), ((int)(((byte)(196)))));
             this.editPharm.FlatAppearance.BorderSize = 0;
             this.editPharm.Location = new System.Drawing.Point(17, 347);
-            this.editPharm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.editPharm.Margin = new System.Windows.Forms.Padding(2);
             this.editPharm.Name = "editPharm";
             this.editPharm.Size = new System.Drawing.Size(56, 32);
             this.editPharm.TabIndex = 54;
@@ -1037,7 +1040,7 @@
             this.savePharm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(217)))), ((int)(((byte)(196)))));
             this.savePharm.FlatAppearance.BorderSize = 0;
             this.savePharm.Location = new System.Drawing.Point(80, 347);
-            this.savePharm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.savePharm.Margin = new System.Windows.Forms.Padding(2);
             this.savePharm.Name = "savePharm";
             this.savePharm.Size = new System.Drawing.Size(56, 32);
             this.savePharm.TabIndex = 55;
@@ -1051,7 +1054,7 @@
             this.SubmitOrderPharm.Enabled = false;
             this.SubmitOrderPharm.FlatAppearance.BorderSize = 0;
             this.SubmitOrderPharm.Location = new System.Drawing.Point(300, 544);
-            this.SubmitOrderPharm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.SubmitOrderPharm.Margin = new System.Windows.Forms.Padding(2);
             this.SubmitOrderPharm.Name = "SubmitOrderPharm";
             this.SubmitOrderPharm.Size = new System.Drawing.Size(94, 32);
             this.SubmitOrderPharm.TabIndex = 78;
@@ -1062,7 +1065,7 @@
             // shippedPharm
             // 
             this.shippedPharm.Location = new System.Drawing.Point(18, 556);
-            this.shippedPharm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.shippedPharm.Margin = new System.Windows.Forms.Padding(2);
             this.shippedPharm.MaxLength = 10;
             this.shippedPharm.Name = "shippedPharm";
             this.shippedPharm.ReadOnly = true;
@@ -1073,7 +1076,7 @@
             // emailPharm
             // 
             this.emailPharm.Location = new System.Drawing.Point(152, 231);
-            this.emailPharm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.emailPharm.Margin = new System.Windows.Forms.Padding(2);
             this.emailPharm.MaxLength = 33;
             this.emailPharm.Name = "emailPharm";
             this.emailPharm.ReadOnly = true;
@@ -1084,7 +1087,7 @@
             // telephonePharm
             // 
             this.telephonePharm.Location = new System.Drawing.Point(18, 231);
-            this.telephonePharm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.telephonePharm.Margin = new System.Windows.Forms.Padding(2);
             this.telephonePharm.MaxLength = 12;
             this.telephonePharm.Name = "telephonePharm";
             this.telephonePharm.ReadOnly = true;
@@ -1146,7 +1149,7 @@
             // insurancePharm
             // 
             this.insurancePharm.Location = new System.Drawing.Point(228, 356);
-            this.insurancePharm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.insurancePharm.Margin = new System.Windows.Forms.Padding(2);
             this.insurancePharm.MaxLength = 66;
             this.insurancePharm.Name = "insurancePharm";
             this.insurancePharm.ReadOnly = true;
@@ -1157,7 +1160,7 @@
             // ccPharm
             // 
             this.ccPharm.Location = new System.Drawing.Point(228, 274);
-            this.ccPharm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ccPharm.Margin = new System.Windows.Forms.Padding(2);
             this.ccPharm.MaxLength = 19;
             this.ccPharm.Name = "ccPharm";
             this.ccPharm.ReadOnly = true;
@@ -1182,7 +1185,7 @@
             // 
             this.checkBox5Pharm.AutoSize = true;
             this.checkBox5Pharm.Location = new System.Drawing.Point(368, 512);
-            this.checkBox5Pharm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkBox5Pharm.Margin = new System.Windows.Forms.Padding(2);
             this.checkBox5Pharm.Name = "checkBox5Pharm";
             this.checkBox5Pharm.Size = new System.Drawing.Size(15, 14);
             this.checkBox5Pharm.TabIndex = 75;
@@ -1193,7 +1196,7 @@
             // 
             this.checkBox4Pharm.AutoSize = true;
             this.checkBox4Pharm.Location = new System.Drawing.Point(368, 488);
-            this.checkBox4Pharm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkBox4Pharm.Margin = new System.Windows.Forms.Padding(2);
             this.checkBox4Pharm.Name = "checkBox4Pharm";
             this.checkBox4Pharm.Size = new System.Drawing.Size(15, 14);
             this.checkBox4Pharm.TabIndex = 71;
@@ -1204,7 +1207,7 @@
             // 
             this.checkBox3Pharm.AutoSize = true;
             this.checkBox3Pharm.Location = new System.Drawing.Point(368, 466);
-            this.checkBox3Pharm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkBox3Pharm.Margin = new System.Windows.Forms.Padding(2);
             this.checkBox3Pharm.Name = "checkBox3Pharm";
             this.checkBox3Pharm.Size = new System.Drawing.Size(15, 14);
             this.checkBox3Pharm.TabIndex = 67;
@@ -1215,7 +1218,7 @@
             // 
             this.checkBox2Pharm.AutoSize = true;
             this.checkBox2Pharm.Location = new System.Drawing.Point(368, 443);
-            this.checkBox2Pharm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkBox2Pharm.Margin = new System.Windows.Forms.Padding(2);
             this.checkBox2Pharm.Name = "checkBox2Pharm";
             this.checkBox2Pharm.Size = new System.Drawing.Size(15, 14);
             this.checkBox2Pharm.TabIndex = 63;
@@ -1226,7 +1229,7 @@
             // 
             this.checkBox1Pharm.AutoSize = true;
             this.checkBox1Pharm.Location = new System.Drawing.Point(368, 419);
-            this.checkBox1Pharm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkBox1Pharm.Margin = new System.Windows.Forms.Padding(2);
             this.checkBox1Pharm.Name = "checkBox1Pharm";
             this.checkBox1Pharm.Size = new System.Drawing.Size(15, 14);
             this.checkBox1Pharm.TabIndex = 59;
@@ -1248,7 +1251,7 @@
             // prescriber1Pharm
             // 
             this.prescriber1Pharm.Location = new System.Drawing.Point(213, 417);
-            this.prescriber1Pharm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.prescriber1Pharm.Margin = new System.Windows.Forms.Padding(2);
             this.prescriber1Pharm.MaxLength = 33;
             this.prescriber1Pharm.Name = "prescriber1Pharm";
             this.prescriber1Pharm.ReadOnly = true;
@@ -1259,7 +1262,7 @@
             // prescriber2Pharm
             // 
             this.prescriber2Pharm.Location = new System.Drawing.Point(213, 440);
-            this.prescriber2Pharm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.prescriber2Pharm.Margin = new System.Windows.Forms.Padding(2);
             this.prescriber2Pharm.MaxLength = 33;
             this.prescriber2Pharm.Name = "prescriber2Pharm";
             this.prescriber2Pharm.ReadOnly = true;
@@ -1270,7 +1273,7 @@
             // prescriber3Pharm
             // 
             this.prescriber3Pharm.Location = new System.Drawing.Point(213, 462);
-            this.prescriber3Pharm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.prescriber3Pharm.Margin = new System.Windows.Forms.Padding(2);
             this.prescriber3Pharm.MaxLength = 33;
             this.prescriber3Pharm.Name = "prescriber3Pharm";
             this.prescriber3Pharm.ReadOnly = true;
@@ -1281,7 +1284,7 @@
             // prescriber5Pharm
             // 
             this.prescriber5Pharm.Location = new System.Drawing.Point(213, 508);
-            this.prescriber5Pharm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.prescriber5Pharm.Margin = new System.Windows.Forms.Padding(2);
             this.prescriber5Pharm.MaxLength = 33;
             this.prescriber5Pharm.Name = "prescriber5Pharm";
             this.prescriber5Pharm.ReadOnly = true;
@@ -1292,7 +1295,7 @@
             // prescriber4Pharm
             // 
             this.prescriber4Pharm.Location = new System.Drawing.Point(213, 486);
-            this.prescriber4Pharm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.prescriber4Pharm.Margin = new System.Windows.Forms.Padding(2);
             this.prescriber4Pharm.MaxLength = 33;
             this.prescriber4Pharm.Name = "prescriber4Pharm";
             this.prescriber4Pharm.ReadOnly = true;
@@ -1329,7 +1332,7 @@
             // refill5Pharm
             // 
             this.refill5Pharm.Location = new System.Drawing.Point(180, 508);
-            this.refill5Pharm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.refill5Pharm.Margin = new System.Windows.Forms.Padding(2);
             this.refill5Pharm.MaxLength = 2;
             this.refill5Pharm.Name = "refill5Pharm";
             this.refill5Pharm.ReadOnly = true;
@@ -1340,7 +1343,7 @@
             // refill4Pharm
             // 
             this.refill4Pharm.Location = new System.Drawing.Point(180, 486);
-            this.refill4Pharm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.refill4Pharm.Margin = new System.Windows.Forms.Padding(2);
             this.refill4Pharm.MaxLength = 2;
             this.refill4Pharm.Name = "refill4Pharm";
             this.refill4Pharm.ReadOnly = true;
@@ -1351,7 +1354,7 @@
             // refill3Pharm
             // 
             this.refill3Pharm.Location = new System.Drawing.Point(180, 462);
-            this.refill3Pharm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.refill3Pharm.Margin = new System.Windows.Forms.Padding(2);
             this.refill3Pharm.MaxLength = 2;
             this.refill3Pharm.Name = "refill3Pharm";
             this.refill3Pharm.ReadOnly = true;
@@ -1362,7 +1365,7 @@
             // refill2Pharm
             // 
             this.refill2Pharm.Location = new System.Drawing.Point(180, 440);
-            this.refill2Pharm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.refill2Pharm.Margin = new System.Windows.Forms.Padding(2);
             this.refill2Pharm.MaxLength = 2;
             this.refill2Pharm.Name = "refill2Pharm";
             this.refill2Pharm.ReadOnly = true;
@@ -1373,7 +1376,7 @@
             // refill1Pharm
             // 
             this.refill1Pharm.Location = new System.Drawing.Point(180, 417);
-            this.refill1Pharm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.refill1Pharm.Margin = new System.Windows.Forms.Padding(2);
             this.refill1Pharm.MaxLength = 2;
             this.refill1Pharm.Name = "refill1Pharm";
             this.refill1Pharm.ReadOnly = true;
@@ -1397,7 +1400,7 @@
             // prescript1Pharm
             // 
             this.prescript1Pharm.Location = new System.Drawing.Point(18, 417);
-            this.prescript1Pharm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.prescript1Pharm.Margin = new System.Windows.Forms.Padding(2);
             this.prescript1Pharm.MaxLength = 33;
             this.prescript1Pharm.Name = "prescript1Pharm";
             this.prescript1Pharm.ReadOnly = true;
@@ -1408,7 +1411,7 @@
             // prescript2Pharm
             // 
             this.prescript2Pharm.Location = new System.Drawing.Point(18, 440);
-            this.prescript2Pharm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.prescript2Pharm.Margin = new System.Windows.Forms.Padding(2);
             this.prescript2Pharm.MaxLength = 33;
             this.prescript2Pharm.Name = "prescript2Pharm";
             this.prescript2Pharm.ReadOnly = true;
@@ -1419,7 +1422,7 @@
             // prescript3Pharm
             // 
             this.prescript3Pharm.Location = new System.Drawing.Point(18, 462);
-            this.prescript3Pharm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.prescript3Pharm.Margin = new System.Windows.Forms.Padding(2);
             this.prescript3Pharm.MaxLength = 33;
             this.prescript3Pharm.Name = "prescript3Pharm";
             this.prescript3Pharm.ReadOnly = true;
@@ -1430,7 +1433,7 @@
             // prescript5Pharm
             // 
             this.prescript5Pharm.Location = new System.Drawing.Point(18, 508);
-            this.prescript5Pharm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.prescript5Pharm.Margin = new System.Windows.Forms.Padding(2);
             this.prescript5Pharm.MaxLength = 33;
             this.prescript5Pharm.Name = "prescript5Pharm";
             this.prescript5Pharm.ReadOnly = true;
@@ -1441,7 +1444,7 @@
             // prescript4Pharm
             // 
             this.prescript4Pharm.Location = new System.Drawing.Point(18, 486);
-            this.prescript4Pharm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.prescript4Pharm.Margin = new System.Windows.Forms.Padding(2);
             this.prescript4Pharm.MaxLength = 33;
             this.prescript4Pharm.Name = "prescript4Pharm";
             this.prescript4Pharm.ReadOnly = true;
@@ -1452,7 +1455,7 @@
             // allergiesPharm
             // 
             this.allergiesPharm.Location = new System.Drawing.Point(18, 274);
-            this.allergiesPharm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.allergiesPharm.Margin = new System.Windows.Forms.Padding(2);
             this.allergiesPharm.MaxLength = 300;
             this.allergiesPharm.Multiline = true;
             this.allergiesPharm.Name = "allergiesPharm";
@@ -1464,7 +1467,7 @@
             // zipPharm
             // 
             this.zipPharm.Location = new System.Drawing.Point(325, 189);
-            this.zipPharm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.zipPharm.Margin = new System.Windows.Forms.Padding(2);
             this.zipPharm.MaxLength = 5;
             this.zipPharm.Name = "zipPharm";
             this.zipPharm.ReadOnly = true;
@@ -1476,7 +1479,7 @@
             // 
             this.statePharm.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.statePharm.Location = new System.Drawing.Point(278, 189);
-            this.statePharm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.statePharm.Margin = new System.Windows.Forms.Padding(2);
             this.statePharm.MaxLength = 2;
             this.statePharm.Name = "statePharm";
             this.statePharm.ReadOnly = true;
@@ -1488,7 +1491,7 @@
             // cityPharm
             // 
             this.cityPharm.Location = new System.Drawing.Point(18, 188);
-            this.cityPharm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cityPharm.Margin = new System.Windows.Forms.Padding(2);
             this.cityPharm.MaxLength = 33;
             this.cityPharm.Name = "cityPharm";
             this.cityPharm.ReadOnly = true;
@@ -1499,7 +1502,7 @@
             // streetPharm
             // 
             this.streetPharm.Location = new System.Drawing.Point(18, 152);
-            this.streetPharm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.streetPharm.Margin = new System.Windows.Forms.Padding(2);
             this.streetPharm.MaxLength = 33;
             this.streetPharm.Name = "streetPharm";
             this.streetPharm.ReadOnly = true;
@@ -1510,7 +1513,7 @@
             // dobPharm
             // 
             this.dobPharm.Location = new System.Drawing.Point(280, 113);
-            this.dobPharm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dobPharm.Margin = new System.Windows.Forms.Padding(2);
             this.dobPharm.MaxLength = 10;
             this.dobPharm.Name = "dobPharm";
             this.dobPharm.ReadOnly = true;
@@ -1522,7 +1525,7 @@
             // lnamePharm
             // 
             this.lnamePharm.Location = new System.Drawing.Point(131, 113);
-            this.lnamePharm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lnamePharm.Margin = new System.Windows.Forms.Padding(2);
             this.lnamePharm.MaxLength = 33;
             this.lnamePharm.Name = "lnamePharm";
             this.lnamePharm.ReadOnly = true;
@@ -1533,7 +1536,7 @@
             // fnamePharm
             // 
             this.fnamePharm.Location = new System.Drawing.Point(18, 113);
-            this.fnamePharm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.fnamePharm.Margin = new System.Windows.Forms.Padding(2);
             this.fnamePharm.MaxLength = 33;
             this.fnamePharm.Name = "fnamePharm";
             this.fnamePharm.ReadOnly = true;
@@ -1558,7 +1561,7 @@
             // 
             this.searchPharm.AcceptsReturn = true;
             this.searchPharm.Location = new System.Drawing.Point(18, 54);
-            this.searchPharm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.searchPharm.Margin = new System.Windows.Forms.Padding(2);
             this.searchPharm.MaxLength = 33;
             this.searchPharm.Name = "searchPharm";
             this.searchPharm.Size = new System.Drawing.Size(290, 22);
@@ -1569,7 +1572,7 @@
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(355, 12);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(47, 41);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1699,7 +1702,7 @@
             this.refillPanel.Controls.Add(this.pictureBox2);
             this.refillPanel.Controls.Add(this.pictureBox5);
             this.refillPanel.Location = new System.Drawing.Point(284, 84);
-            this.refillPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.refillPanel.Margin = new System.Windows.Forms.Padding(2);
             this.refillPanel.Name = "refillPanel";
             this.refillPanel.Size = new System.Drawing.Size(286, 298);
             this.refillPanel.TabIndex = 5;
@@ -1711,7 +1714,7 @@
             this.pictureBox16.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox16.BackgroundImage")));
             this.pictureBox16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureBox16.Location = new System.Drawing.Point(76, 254);
-            this.pictureBox16.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox16.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox16.Name = "pictureBox16";
             this.pictureBox16.Size = new System.Drawing.Size(15, 16);
             this.pictureBox16.TabIndex = 118;
@@ -1723,7 +1726,7 @@
             this.backRefill.FlatAppearance.BorderSize = 0;
             this.backRefill.Font = new System.Drawing.Font("Roboto", 8.25F);
             this.backRefill.Location = new System.Drawing.Point(69, 247);
-            this.backRefill.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.backRefill.Margin = new System.Windows.Forms.Padding(2);
             this.backRefill.Name = "backRefill";
             this.backRefill.Size = new System.Drawing.Size(94, 32);
             this.backRefill.TabIndex = 36;
@@ -1738,7 +1741,7 @@
             this.submitRefill.FlatAppearance.BorderSize = 0;
             this.submitRefill.Font = new System.Drawing.Font("Roboto", 8.25F);
             this.submitRefill.Location = new System.Drawing.Point(169, 247);
-            this.submitRefill.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.submitRefill.Margin = new System.Windows.Forms.Padding(2);
             this.submitRefill.Name = "submitRefill";
             this.submitRefill.Size = new System.Drawing.Size(94, 32);
             this.submitRefill.TabIndex = 35;
@@ -1750,7 +1753,7 @@
             // 
             this.checkBox5Refill.AutoSize = true;
             this.checkBox5Refill.Location = new System.Drawing.Point(247, 205);
-            this.checkBox5Refill.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkBox5Refill.Margin = new System.Windows.Forms.Padding(2);
             this.checkBox5Refill.Name = "checkBox5Refill";
             this.checkBox5Refill.Size = new System.Drawing.Size(15, 14);
             this.checkBox5Refill.TabIndex = 34;
@@ -1761,7 +1764,7 @@
             // 
             this.checkBox4Refill.AutoSize = true;
             this.checkBox4Refill.Location = new System.Drawing.Point(247, 181);
-            this.checkBox4Refill.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkBox4Refill.Margin = new System.Windows.Forms.Padding(2);
             this.checkBox4Refill.Name = "checkBox4Refill";
             this.checkBox4Refill.Size = new System.Drawing.Size(15, 14);
             this.checkBox4Refill.TabIndex = 31;
@@ -1772,7 +1775,7 @@
             // 
             this.checkBox3Refill.AutoSize = true;
             this.checkBox3Refill.Location = new System.Drawing.Point(247, 158);
-            this.checkBox3Refill.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkBox3Refill.Margin = new System.Windows.Forms.Padding(2);
             this.checkBox3Refill.Name = "checkBox3Refill";
             this.checkBox3Refill.Size = new System.Drawing.Size(15, 14);
             this.checkBox3Refill.TabIndex = 28;
@@ -1783,7 +1786,7 @@
             // 
             this.checkBox2Refill.AutoSize = true;
             this.checkBox2Refill.Location = new System.Drawing.Point(247, 136);
-            this.checkBox2Refill.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkBox2Refill.Margin = new System.Windows.Forms.Padding(2);
             this.checkBox2Refill.Name = "checkBox2Refill";
             this.checkBox2Refill.Size = new System.Drawing.Size(15, 14);
             this.checkBox2Refill.TabIndex = 25;
@@ -1794,7 +1797,7 @@
             // 
             this.checkBox1Refill.AutoSize = true;
             this.checkBox1Refill.Location = new System.Drawing.Point(247, 112);
-            this.checkBox1Refill.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkBox1Refill.Margin = new System.Windows.Forms.Padding(2);
             this.checkBox1Refill.Name = "checkBox1Refill";
             this.checkBox1Refill.Size = new System.Drawing.Size(15, 14);
             this.checkBox1Refill.TabIndex = 22;
@@ -1828,7 +1831,7 @@
             // refill5Refill
             // 
             this.refill5Refill.Location = new System.Drawing.Point(194, 201);
-            this.refill5Refill.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.refill5Refill.Margin = new System.Windows.Forms.Padding(2);
             this.refill5Refill.MaxLength = 2;
             this.refill5Refill.Name = "refill5Refill";
             this.refill5Refill.ReadOnly = true;
@@ -1838,7 +1841,7 @@
             // refill4Refill
             // 
             this.refill4Refill.Location = new System.Drawing.Point(194, 179);
-            this.refill4Refill.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.refill4Refill.Margin = new System.Windows.Forms.Padding(2);
             this.refill4Refill.MaxLength = 2;
             this.refill4Refill.Name = "refill4Refill";
             this.refill4Refill.ReadOnly = true;
@@ -1848,7 +1851,7 @@
             // refill3Refill
             // 
             this.refill3Refill.Location = new System.Drawing.Point(194, 155);
-            this.refill3Refill.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.refill3Refill.Margin = new System.Windows.Forms.Padding(2);
             this.refill3Refill.MaxLength = 2;
             this.refill3Refill.Name = "refill3Refill";
             this.refill3Refill.ReadOnly = true;
@@ -1858,7 +1861,7 @@
             // refill2Refill
             // 
             this.refill2Refill.Location = new System.Drawing.Point(194, 132);
-            this.refill2Refill.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.refill2Refill.Margin = new System.Windows.Forms.Padding(2);
             this.refill2Refill.MaxLength = 2;
             this.refill2Refill.Name = "refill2Refill";
             this.refill2Refill.ReadOnly = true;
@@ -1868,7 +1871,7 @@
             // refill1Refill
             // 
             this.refill1Refill.Location = new System.Drawing.Point(194, 110);
-            this.refill1Refill.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.refill1Refill.Margin = new System.Windows.Forms.Padding(2);
             this.refill1Refill.MaxLength = 2;
             this.refill1Refill.Name = "refill1Refill";
             this.refill1Refill.ReadOnly = true;
@@ -1890,7 +1893,7 @@
             // prescript1Refill
             // 
             this.prescript1Refill.Location = new System.Drawing.Point(10, 110);
-            this.prescript1Refill.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.prescript1Refill.Margin = new System.Windows.Forms.Padding(2);
             this.prescript1Refill.MaxLength = 33;
             this.prescript1Refill.Name = "prescript1Refill";
             this.prescript1Refill.ReadOnly = true;
@@ -1900,7 +1903,7 @@
             // prescript2Refill
             // 
             this.prescript2Refill.Location = new System.Drawing.Point(10, 132);
-            this.prescript2Refill.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.prescript2Refill.Margin = new System.Windows.Forms.Padding(2);
             this.prescript2Refill.MaxLength = 33;
             this.prescript2Refill.Name = "prescript2Refill";
             this.prescript2Refill.ReadOnly = true;
@@ -1910,7 +1913,7 @@
             // prescript3Refill
             // 
             this.prescript3Refill.Location = new System.Drawing.Point(10, 155);
-            this.prescript3Refill.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.prescript3Refill.Margin = new System.Windows.Forms.Padding(2);
             this.prescript3Refill.MaxLength = 33;
             this.prescript3Refill.Name = "prescript3Refill";
             this.prescript3Refill.ReadOnly = true;
@@ -1920,7 +1923,7 @@
             // prescript5Refill
             // 
             this.prescript5Refill.Location = new System.Drawing.Point(10, 201);
-            this.prescript5Refill.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.prescript5Refill.Margin = new System.Windows.Forms.Padding(2);
             this.prescript5Refill.MaxLength = 33;
             this.prescript5Refill.Name = "prescript5Refill";
             this.prescript5Refill.ReadOnly = true;
@@ -1930,7 +1933,7 @@
             // prescript4Refill
             // 
             this.prescript4Refill.Location = new System.Drawing.Point(10, 179);
-            this.prescript4Refill.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.prescript4Refill.Margin = new System.Windows.Forms.Padding(2);
             this.prescript4Refill.MaxLength = 33;
             this.prescript4Refill.Name = "prescript4Refill";
             this.prescript4Refill.ReadOnly = true;
@@ -1952,7 +1955,7 @@
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(215, 12);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(47, 41);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1964,7 +1967,7 @@
             this.pictureBox5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox5.BackgroundImage")));
             this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox5.Location = new System.Drawing.Point(274, 0);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(11, 298);
             this.pictureBox5.TabIndex = 7;
@@ -2037,7 +2040,7 @@
             this.adminPanel.Controls.Add(this.label20);
             this.adminPanel.Controls.Add(this.label21);
             this.adminPanel.Location = new System.Drawing.Point(1004, 29);
-            this.adminPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.adminPanel.Margin = new System.Windows.Forms.Padding(2);
             this.adminPanel.Name = "adminPanel";
             this.adminPanel.Size = new System.Drawing.Size(424, 740);
             this.adminPanel.TabIndex = 6;
@@ -2050,7 +2053,7 @@
             this.pictureBox15.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox15.BackgroundImage")));
             this.pictureBox15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureBox15.Location = new System.Drawing.Point(360, 559);
-            this.pictureBox15.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox15.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox15.Name = "pictureBox15";
             this.pictureBox15.Size = new System.Drawing.Size(15, 16);
             this.pictureBox15.TabIndex = 88;
@@ -2061,7 +2064,7 @@
             this.pictureBox12.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox12.BackgroundImage")));
             this.pictureBox12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureBox12.Location = new System.Drawing.Point(28, 36);
-            this.pictureBox12.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox12.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox12.Name = "pictureBox12";
             this.pictureBox12.Size = new System.Drawing.Size(15, 16);
             this.pictureBox12.TabIndex = 116;
@@ -2072,7 +2075,7 @@
             this.pictureBox7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox7.BackgroundImage")));
             this.pictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox7.Location = new System.Drawing.Point(412, 0);
-            this.pictureBox7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox7.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(11, 740);
             this.pictureBox7.TabIndex = 86;
@@ -2081,7 +2084,7 @@
             // expAdmin
             // 
             this.expAdmin.Location = new System.Drawing.Point(331, 322);
-            this.expAdmin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.expAdmin.Margin = new System.Windows.Forms.Padding(2);
             this.expAdmin.Name = "expAdmin";
             this.expAdmin.Size = new System.Drawing.Size(65, 20);
             this.expAdmin.TabIndex = 115;
@@ -2104,7 +2107,7 @@
             this.dailyFill_chkbox.Font = new System.Drawing.Font("Roboto", 8.25F);
             this.dailyFill_chkbox.ForeColor = System.Drawing.Color.DimGray;
             this.dailyFill_chkbox.Location = new System.Drawing.Point(162, 699);
-            this.dailyFill_chkbox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dailyFill_chkbox.Margin = new System.Windows.Forms.Padding(2);
             this.dailyFill_chkbox.Name = "dailyFill_chkbox";
             this.dailyFill_chkbox.Size = new System.Drawing.Size(104, 19);
             this.dailyFill_chkbox.TabIndex = 113;
@@ -2118,7 +2121,7 @@
             this.report_btn.FlatAppearance.BorderSize = 0;
             this.report_btn.Font = new System.Drawing.Font("Roboto", 8.25F);
             this.report_btn.Location = new System.Drawing.Point(290, 690);
-            this.report_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.report_btn.Margin = new System.Windows.Forms.Padding(2);
             this.report_btn.Name = "report_btn";
             this.report_btn.Size = new System.Drawing.Size(94, 32);
             this.report_btn.TabIndex = 112;
@@ -2142,7 +2145,7 @@
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(28, 697);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(92, 21);
             this.comboBox1.TabIndex = 110;
@@ -2173,7 +2176,7 @@
             // dateRangeTo_picker
             // 
             this.dateRangeTo_picker.Location = new System.Drawing.Point(207, 646);
-            this.dateRangeTo_picker.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateRangeTo_picker.Margin = new System.Windows.Forms.Padding(2);
             this.dateRangeTo_picker.Name = "dateRangeTo_picker";
             this.dateRangeTo_picker.Size = new System.Drawing.Size(151, 20);
             this.dateRangeTo_picker.TabIndex = 107;
@@ -2181,7 +2184,7 @@
             // dateRangeFrom_picker
             // 
             this.dateRangeFrom_picker.Location = new System.Drawing.Point(28, 646);
-            this.dateRangeFrom_picker.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateRangeFrom_picker.Margin = new System.Windows.Forms.Padding(2);
             this.dateRangeFrom_picker.Name = "dateRangeFrom_picker";
             this.dateRangeFrom_picker.Size = new System.Drawing.Size(151, 20);
             this.dateRangeFrom_picker.TabIndex = 106;
@@ -2203,7 +2206,7 @@
             this.editAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(217)))), ((int)(((byte)(196)))));
             this.editAdmin.FlatAppearance.BorderSize = 0;
             this.editAdmin.Location = new System.Drawing.Point(26, 349);
-            this.editAdmin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.editAdmin.Margin = new System.Windows.Forms.Padding(2);
             this.editAdmin.Name = "editAdmin";
             this.editAdmin.Size = new System.Drawing.Size(56, 32);
             this.editAdmin.TabIndex = 54;
@@ -2216,7 +2219,7 @@
             this.saveAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(217)))), ((int)(((byte)(196)))));
             this.saveAdmin.FlatAppearance.BorderSize = 0;
             this.saveAdmin.Location = new System.Drawing.Point(89, 349);
-            this.saveAdmin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.saveAdmin.Margin = new System.Windows.Forms.Padding(2);
             this.saveAdmin.Name = "saveAdmin";
             this.saveAdmin.Size = new System.Drawing.Size(56, 32);
             this.saveAdmin.TabIndex = 55;
@@ -2230,7 +2233,7 @@
             this.logOutAdmin.FlatAppearance.BorderSize = 0;
             this.logOutAdmin.Font = new System.Drawing.Font("Roboto", 8.25F);
             this.logOutAdmin.Location = new System.Drawing.Point(290, 552);
-            this.logOutAdmin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.logOutAdmin.Margin = new System.Windows.Forms.Padding(2);
             this.logOutAdmin.Name = "logOutAdmin";
             this.logOutAdmin.Size = new System.Drawing.Size(94, 32);
             this.logOutAdmin.TabIndex = 78;
@@ -2241,7 +2244,7 @@
             // shippedAdmin
             // 
             this.shippedAdmin.Location = new System.Drawing.Point(28, 558);
-            this.shippedAdmin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.shippedAdmin.Margin = new System.Windows.Forms.Padding(2);
             this.shippedAdmin.MaxLength = 10;
             this.shippedAdmin.Name = "shippedAdmin";
             this.shippedAdmin.ReadOnly = true;
@@ -2251,7 +2254,7 @@
             // emailAdmin
             // 
             this.emailAdmin.Location = new System.Drawing.Point(162, 233);
-            this.emailAdmin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.emailAdmin.Margin = new System.Windows.Forms.Padding(2);
             this.emailAdmin.MaxLength = 33;
             this.emailAdmin.Name = "emailAdmin";
             this.emailAdmin.ReadOnly = true;
@@ -2262,7 +2265,7 @@
             // telephoneAdmin
             // 
             this.telephoneAdmin.Location = new System.Drawing.Point(28, 233);
-            this.telephoneAdmin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.telephoneAdmin.Margin = new System.Windows.Forms.Padding(2);
             this.telephoneAdmin.MaxLength = 12;
             this.telephoneAdmin.Name = "telephoneAdmin";
             this.telephoneAdmin.ReadOnly = true;
@@ -2323,7 +2326,7 @@
             // insuranceAdmin
             // 
             this.insuranceAdmin.Location = new System.Drawing.Point(238, 360);
-            this.insuranceAdmin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.insuranceAdmin.Margin = new System.Windows.Forms.Padding(2);
             this.insuranceAdmin.MaxLength = 66;
             this.insuranceAdmin.Name = "insuranceAdmin";
             this.insuranceAdmin.ReadOnly = true;
@@ -2334,7 +2337,7 @@
             // ccAdmin
             // 
             this.ccAdmin.Location = new System.Drawing.Point(238, 278);
-            this.ccAdmin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ccAdmin.Margin = new System.Windows.Forms.Padding(2);
             this.ccAdmin.MaxLength = 19;
             this.ccAdmin.Name = "ccAdmin";
             this.ccAdmin.ReadOnly = true;
@@ -2358,7 +2361,7 @@
             // prescriber1Admin
             // 
             this.prescriber1Admin.Location = new System.Drawing.Point(223, 419);
-            this.prescriber1Admin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.prescriber1Admin.Margin = new System.Windows.Forms.Padding(2);
             this.prescriber1Admin.MaxLength = 33;
             this.prescriber1Admin.Name = "prescriber1Admin";
             this.prescriber1Admin.ReadOnly = true;
@@ -2368,7 +2371,7 @@
             // prescriber2Admin
             // 
             this.prescriber2Admin.Location = new System.Drawing.Point(223, 442);
-            this.prescriber2Admin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.prescriber2Admin.Margin = new System.Windows.Forms.Padding(2);
             this.prescriber2Admin.MaxLength = 33;
             this.prescriber2Admin.Name = "prescriber2Admin";
             this.prescriber2Admin.ReadOnly = true;
@@ -2378,7 +2381,7 @@
             // prescriber3Admin
             // 
             this.prescriber3Admin.Location = new System.Drawing.Point(223, 465);
-            this.prescriber3Admin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.prescriber3Admin.Margin = new System.Windows.Forms.Padding(2);
             this.prescriber3Admin.MaxLength = 33;
             this.prescriber3Admin.Name = "prescriber3Admin";
             this.prescriber3Admin.ReadOnly = true;
@@ -2388,7 +2391,7 @@
             // prescriber5Admin
             // 
             this.prescriber5Admin.Location = new System.Drawing.Point(223, 510);
-            this.prescriber5Admin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.prescriber5Admin.Margin = new System.Windows.Forms.Padding(2);
             this.prescriber5Admin.MaxLength = 33;
             this.prescriber5Admin.Name = "prescriber5Admin";
             this.prescriber5Admin.ReadOnly = true;
@@ -2398,7 +2401,7 @@
             // prescriber4Admin
             // 
             this.prescriber4Admin.Location = new System.Drawing.Point(223, 488);
-            this.prescriber4Admin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.prescriber4Admin.Margin = new System.Windows.Forms.Padding(2);
             this.prescriber4Admin.MaxLength = 33;
             this.prescriber4Admin.Name = "prescriber4Admin";
             this.prescriber4Admin.ReadOnly = true;
@@ -2432,7 +2435,7 @@
             // refill5Admin
             // 
             this.refill5Admin.Location = new System.Drawing.Point(190, 510);
-            this.refill5Admin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.refill5Admin.Margin = new System.Windows.Forms.Padding(2);
             this.refill5Admin.MaxLength = 2;
             this.refill5Admin.Name = "refill5Admin";
             this.refill5Admin.ReadOnly = true;
@@ -2442,7 +2445,7 @@
             // refill4Admin
             // 
             this.refill4Admin.Location = new System.Drawing.Point(190, 488);
-            this.refill4Admin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.refill4Admin.Margin = new System.Windows.Forms.Padding(2);
             this.refill4Admin.MaxLength = 2;
             this.refill4Admin.Name = "refill4Admin";
             this.refill4Admin.ReadOnly = true;
@@ -2452,7 +2455,7 @@
             // refill3Admin
             // 
             this.refill3Admin.Location = new System.Drawing.Point(190, 465);
-            this.refill3Admin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.refill3Admin.Margin = new System.Windows.Forms.Padding(2);
             this.refill3Admin.MaxLength = 2;
             this.refill3Admin.Name = "refill3Admin";
             this.refill3Admin.ReadOnly = true;
@@ -2462,7 +2465,7 @@
             // refill2Admin
             // 
             this.refill2Admin.Location = new System.Drawing.Point(190, 442);
-            this.refill2Admin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.refill2Admin.Margin = new System.Windows.Forms.Padding(2);
             this.refill2Admin.MaxLength = 2;
             this.refill2Admin.Name = "refill2Admin";
             this.refill2Admin.ReadOnly = true;
@@ -2472,7 +2475,7 @@
             // refill1Admin
             // 
             this.refill1Admin.Location = new System.Drawing.Point(190, 419);
-            this.refill1Admin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.refill1Admin.Margin = new System.Windows.Forms.Padding(2);
             this.refill1Admin.MaxLength = 2;
             this.refill1Admin.Name = "refill1Admin";
             this.refill1Admin.ReadOnly = true;
@@ -2494,7 +2497,7 @@
             // prescript1Admin
             // 
             this.prescript1Admin.Location = new System.Drawing.Point(28, 419);
-            this.prescript1Admin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.prescript1Admin.Margin = new System.Windows.Forms.Padding(2);
             this.prescript1Admin.MaxLength = 33;
             this.prescript1Admin.Name = "prescript1Admin";
             this.prescript1Admin.ReadOnly = true;
@@ -2504,7 +2507,7 @@
             // prescript2Admin
             // 
             this.prescript2Admin.Location = new System.Drawing.Point(28, 442);
-            this.prescript2Admin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.prescript2Admin.Margin = new System.Windows.Forms.Padding(2);
             this.prescript2Admin.MaxLength = 33;
             this.prescript2Admin.Name = "prescript2Admin";
             this.prescript2Admin.ReadOnly = true;
@@ -2514,7 +2517,7 @@
             // prescript3Admin
             // 
             this.prescript3Admin.Location = new System.Drawing.Point(28, 465);
-            this.prescript3Admin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.prescript3Admin.Margin = new System.Windows.Forms.Padding(2);
             this.prescript3Admin.MaxLength = 33;
             this.prescript3Admin.Name = "prescript3Admin";
             this.prescript3Admin.ReadOnly = true;
@@ -2524,7 +2527,7 @@
             // prescript5Admin
             // 
             this.prescript5Admin.Location = new System.Drawing.Point(28, 510);
-            this.prescript5Admin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.prescript5Admin.Margin = new System.Windows.Forms.Padding(2);
             this.prescript5Admin.MaxLength = 33;
             this.prescript5Admin.Name = "prescript5Admin";
             this.prescript5Admin.ReadOnly = true;
@@ -2534,7 +2537,7 @@
             // prescript4Admin
             // 
             this.prescript4Admin.Location = new System.Drawing.Point(28, 488);
-            this.prescript4Admin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.prescript4Admin.Margin = new System.Windows.Forms.Padding(2);
             this.prescript4Admin.MaxLength = 33;
             this.prescript4Admin.Name = "prescript4Admin";
             this.prescript4Admin.ReadOnly = true;
@@ -2544,7 +2547,7 @@
             // allergiesAdmin
             // 
             this.allergiesAdmin.Location = new System.Drawing.Point(28, 277);
-            this.allergiesAdmin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.allergiesAdmin.Margin = new System.Windows.Forms.Padding(2);
             this.allergiesAdmin.MaxLength = 300;
             this.allergiesAdmin.Multiline = true;
             this.allergiesAdmin.Name = "allergiesAdmin";
@@ -2556,7 +2559,7 @@
             // zipAdmin
             // 
             this.zipAdmin.Location = new System.Drawing.Point(338, 191);
-            this.zipAdmin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.zipAdmin.Margin = new System.Windows.Forms.Padding(2);
             this.zipAdmin.MaxLength = 5;
             this.zipAdmin.Name = "zipAdmin";
             this.zipAdmin.ReadOnly = true;
@@ -2568,7 +2571,7 @@
             // 
             this.stateAdmin.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.stateAdmin.Location = new System.Drawing.Point(290, 190);
-            this.stateAdmin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.stateAdmin.Margin = new System.Windows.Forms.Padding(2);
             this.stateAdmin.MaxLength = 2;
             this.stateAdmin.Name = "stateAdmin";
             this.stateAdmin.ReadOnly = true;
@@ -2580,7 +2583,7 @@
             // cityAdmin
             // 
             this.cityAdmin.Location = new System.Drawing.Point(28, 191);
-            this.cityAdmin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cityAdmin.Margin = new System.Windows.Forms.Padding(2);
             this.cityAdmin.MaxLength = 33;
             this.cityAdmin.Name = "cityAdmin";
             this.cityAdmin.ReadOnly = true;
@@ -2591,7 +2594,7 @@
             // streetAdmin
             // 
             this.streetAdmin.Location = new System.Drawing.Point(28, 154);
-            this.streetAdmin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.streetAdmin.Margin = new System.Windows.Forms.Padding(2);
             this.streetAdmin.MaxLength = 33;
             this.streetAdmin.Name = "streetAdmin";
             this.streetAdmin.ReadOnly = true;
@@ -2602,7 +2605,7 @@
             // dobAdmin
             // 
             this.dobAdmin.Location = new System.Drawing.Point(290, 115);
-            this.dobAdmin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dobAdmin.Margin = new System.Windows.Forms.Padding(2);
             this.dobAdmin.MaxLength = 10;
             this.dobAdmin.Name = "dobAdmin";
             this.dobAdmin.ReadOnly = true;
@@ -2613,7 +2616,7 @@
             // lnameAdmin
             // 
             this.lnameAdmin.Location = new System.Drawing.Point(141, 115);
-            this.lnameAdmin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lnameAdmin.Margin = new System.Windows.Forms.Padding(2);
             this.lnameAdmin.MaxLength = 33;
             this.lnameAdmin.Name = "lnameAdmin";
             this.lnameAdmin.ReadOnly = true;
@@ -2624,7 +2627,7 @@
             // fnameAdmin
             // 
             this.fnameAdmin.Location = new System.Drawing.Point(28, 115);
-            this.fnameAdmin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.fnameAdmin.Margin = new System.Windows.Forms.Padding(2);
             this.fnameAdmin.MaxLength = 33;
             this.fnameAdmin.Name = "fnameAdmin";
             this.fnameAdmin.ReadOnly = true;
@@ -2647,7 +2650,7 @@
             // 
             this.searchAdmin.AcceptsReturn = true;
             this.searchAdmin.Location = new System.Drawing.Point(28, 57);
-            this.searchAdmin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.searchAdmin.Margin = new System.Windows.Forms.Padding(2);
             this.searchAdmin.MaxLength = 33;
             this.searchAdmin.Name = "searchAdmin";
             this.searchAdmin.Size = new System.Drawing.Size(290, 20);
@@ -2658,7 +2661,7 @@
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
             this.pictureBox3.Location = new System.Drawing.Point(355, 12);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(47, 41);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -2763,16 +2766,17 @@
             // 
             // prescriberPanel
             // 
+            this.prescriberPanel.Controls.Add(this.drLname);
             this.prescriberPanel.Controls.Add(this.label25);
             this.prescriberPanel.Controls.Add(this.pictureBox18);
-            this.prescriberPanel.Controls.Add(this.drEmai_textbox);
+            this.prescriberPanel.Controls.Add(this.drEmail);
             this.prescriberPanel.Controls.Add(this.label24);
-            this.prescriberPanel.Controls.Add(this.drPhone_textbox);
-            this.prescriberPanel.Controls.Add(this.drName_textbox);
+            this.prescriberPanel.Controls.Add(this.drPhone);
+            this.prescriberPanel.Controls.Add(this.drFname);
             this.prescriberPanel.Controls.Add(this.label9);
             this.prescriberPanel.Controls.Add(this.pictureBox17);
             this.prescriberPanel.Location = new System.Drawing.Point(758, 627);
-            this.prescriberPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.prescriberPanel.Margin = new System.Windows.Forms.Padding(2);
             this.prescriberPanel.Name = "prescriberPanel";
             this.prescriberPanel.Size = new System.Drawing.Size(240, 156);
             this.prescriberPanel.TabIndex = 7;
@@ -2797,21 +2801,21 @@
             this.pictureBox18.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox18.BackgroundImage")));
             this.pictureBox18.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureBox18.Location = new System.Drawing.Point(200, 11);
-            this.pictureBox18.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox18.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox18.Name = "pictureBox18";
             this.pictureBox18.Size = new System.Drawing.Size(15, 16);
             this.pictureBox18.TabIndex = 124;
             this.pictureBox18.TabStop = false;
             // 
-            // drEmai_textbox
+            // drEmail
             // 
-            this.drEmai_textbox.Location = new System.Drawing.Point(18, 123);
-            this.drEmai_textbox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.drEmai_textbox.MaxLength = 33;
-            this.drEmai_textbox.Name = "drEmai_textbox";
-            this.drEmai_textbox.ReadOnly = true;
-            this.drEmai_textbox.Size = new System.Drawing.Size(198, 20);
-            this.drEmai_textbox.TabIndex = 123;
+            this.drEmail.Location = new System.Drawing.Point(18, 123);
+            this.drEmail.Margin = new System.Windows.Forms.Padding(2);
+            this.drEmail.MaxLength = 33;
+            this.drEmail.Name = "drEmail";
+            this.drEmail.ReadOnly = true;
+            this.drEmail.Size = new System.Drawing.Size(198, 20);
+            this.drEmail.TabIndex = 123;
             // 
             // label24
             // 
@@ -2826,26 +2830,26 @@
             this.label24.Text = "Contact Info";
             this.label24.Click += new System.EventHandler(this.label24_Click);
             // 
-            // drPhone_textbox
+            // drPhone
             // 
-            this.drPhone_textbox.Location = new System.Drawing.Point(18, 102);
-            this.drPhone_textbox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.drPhone_textbox.MaxLength = 33;
-            this.drPhone_textbox.Name = "drPhone_textbox";
-            this.drPhone_textbox.ReadOnly = true;
-            this.drPhone_textbox.Size = new System.Drawing.Size(198, 20);
-            this.drPhone_textbox.TabIndex = 121;
-            this.drPhone_textbox.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
+            this.drPhone.Location = new System.Drawing.Point(18, 102);
+            this.drPhone.Margin = new System.Windows.Forms.Padding(2);
+            this.drPhone.MaxLength = 33;
+            this.drPhone.Name = "drPhone";
+            this.drPhone.ReadOnly = true;
+            this.drPhone.Size = new System.Drawing.Size(198, 20);
+            this.drPhone.TabIndex = 121;
+            this.drPhone.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
             // 
-            // drName_textbox
+            // drFname
             // 
-            this.drName_textbox.Location = new System.Drawing.Point(18, 53);
-            this.drName_textbox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.drName_textbox.MaxLength = 33;
-            this.drName_textbox.Name = "drName_textbox";
-            this.drName_textbox.ReadOnly = true;
-            this.drName_textbox.Size = new System.Drawing.Size(198, 20);
-            this.drName_textbox.TabIndex = 120;
+            this.drFname.Location = new System.Drawing.Point(18, 54);
+            this.drFname.Margin = new System.Windows.Forms.Padding(2);
+            this.drFname.MaxLength = 33;
+            this.drFname.Name = "drFname";
+            this.drFname.ReadOnly = true;
+            this.drFname.Size = new System.Drawing.Size(82, 20);
+            this.drFname.TabIndex = 120;
             // 
             // label9
             // 
@@ -2865,11 +2869,19 @@
             this.pictureBox17.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox17.BackgroundImage")));
             this.pictureBox17.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox17.Location = new System.Drawing.Point(228, 0);
-            this.pictureBox17.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox17.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox17.Name = "pictureBox17";
             this.pictureBox17.Size = new System.Drawing.Size(11, 156);
             this.pictureBox17.TabIndex = 118;
             this.pictureBox17.TabStop = false;
+            // 
+            // drLname
+            // 
+            this.drLname.Location = new System.Drawing.Point(116, 54);
+            this.drLname.Name = "drLname";
+            this.drLname.Size = new System.Drawing.Size(100, 20);
+            this.drLname.TabIndex = 126;
+            this.drLname.TextChanged += new System.EventHandler(this.textBox1_TextChanged_2);
             // 
             // Form1
             // 
@@ -2883,7 +2895,8 @@
             this.Controls.Add(this.pharmPanel);
             this.Controls.Add(this.userPanel);
             this.Controls.Add(this.loginPanel);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -3126,14 +3139,15 @@
         private System.Windows.Forms.PictureBox pictureBox15;
         private System.Windows.Forms.PictureBox pictureBox12;
         private System.Windows.Forms.Panel prescriberPanel;
-        private System.Windows.Forms.TextBox drPhone_textbox;
-        private System.Windows.Forms.TextBox drName_textbox;
+        private System.Windows.Forms.TextBox drPhone;
+        private System.Windows.Forms.TextBox drFname;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.PictureBox pictureBox17;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.PictureBox pictureBox18;
-        private System.Windows.Forms.TextBox drEmai_textbox;
+        private System.Windows.Forms.TextBox drEmail;
         private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.TextBox drLname;
     }
 }
 

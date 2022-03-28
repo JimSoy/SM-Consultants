@@ -157,6 +157,14 @@ namespace USPS
             info.Add("state", "");
             info.Add("zip", "");
             info.Add("allergy", "");
+            info.Add("payID", "");
+            info.Add("cc", "");
+            info.Add("exp", "");
+            info.Add("doc", "");
+            info.Add("docFname", "");
+            info.Add("docLname", "");
+            info.Add("docPhone", "");
+            info.Add("docEmail", "");
 
             SqlDataReader dataReader;
 
@@ -165,8 +173,19 @@ namespace USPS
             {
                 cnn.Open();
 
-                string infoQuery = $"SELECT * FROM Customers_List WHERE Customer_UserName = '{userID}'";
-                SqlCommand cmd = new SqlCommand(infoQuery, cnn);
+                SqlCommand cmd = new SqlCommand("SELECT CL.Customer_ID, Customer_FirstName, Customer_LastName, Customer_UserName, " +
+                    "Customer_DateOfBirth, Customer_Phone, Customer_Email, Customer_Address, " +
+                    "Customer_City, Customer_State, Customer_ZipCode, Customer_DrugAllergy, Customer_Payment_ID, " +
+                    "Customer_Credit_Number, Customer_Credit_ExpDate, Doctor_ID, Doctor_FirstName, " +
+                    "Doctor_LastName, Doctor_Phone, Doctor_Email, PI.Prescription_ID, Prescription_Name, " +
+                    "Prescription_Quantity, Prescription_Refill, PI.Prescription_Price, PO_ID, PO_Date, " +
+                    "PO_Total, PO_ShipDate FROM Customers_List AS CL " +
+                    "INNER JOIN Customers_Payment_Info AS CPI ON CL.Customer_ID = CPI.Customer_ID " +
+                    "INNER JOIN Doctor_List AS DL ON CPI.Customer_ID = DL.Customer_ID " + 
+                    "INNER JOIN Prescription_Item AS PI ON DL.Customer_ID = PI.Customer_ID " +
+                    "INNER JOIN Purchase_Orders AS PO ON PI.Customer_ID = PO.Customer_ID " +
+                    "WHERE Customer_UserName = @un", cnn);
+                cmd.Parameters.AddWithValue("@un", userID);
                 try
                 {
                     dataReader = cmd.ExecuteReader();
@@ -177,14 +196,22 @@ namespace USPS
                             info["ID"] = dataReader[0].ToString();
                             info["fname"] = dataReader[1].ToString();
                             info["lname"] = dataReader[2].ToString();
-                            info["dob"] = dataReader[5].ToString().Remove(10);
-                            info["phone"] = dataReader[6].ToString();
-                            info["email"] = dataReader[7].ToString();
-                            info["address"] = dataReader[8].ToString();
-                            info["city"] = dataReader[9].ToString();
-                            info["state"] = dataReader[10].ToString();
-                            info["zip"] = dataReader[11].ToString();
-                            info["allergy"] = dataReader[12].ToString();
+                            info["dob"] = dataReader[4].ToString().Remove(10);
+                            info["phone"] = dataReader[5].ToString();
+                            info["email"] = dataReader[6].ToString();
+                            info["address"] = dataReader[7].ToString();
+                            info["city"] = dataReader[8].ToString();
+                            info["state"] = dataReader[9].ToString();
+                            info["zip"] = dataReader[10].ToString();
+                            info["allergy"] = dataReader[11].ToString();
+                            info["payID"] = dataReader[12].ToString();
+                            info["cc"] = dataReader[13].ToString();
+                            info["exp"] = dataReader[14].ToString().Remove(10);
+                            info["doc"] = dataReader[15].ToString();
+                            info["docFname"] = dataReader[16].ToString();
+                            info["docLname"] = dataReader[17].ToString();
+                            info["docPhone"] = dataReader[18].ToString();
+                            info["docEmail"] = dataReader[19].ToString();
                         }
                         catch (Exception ex)
                         {
@@ -198,7 +225,6 @@ namespace USPS
                     Form1.mySystemMessage(ex.Message);
                     return null;
                 }
-
                 dbID = info["ID"];
 
                 return info;
@@ -209,7 +235,6 @@ namespace USPS
 
             }
             return null;
-            
         }
 
         public Dictionary<string, string> searchCustomers(string searchString)
@@ -227,17 +252,6 @@ namespace USPS
                     Convert.ToInt32(dateSplit[0]), Convert.ToInt32(dateSplit[1]));
                 dt = td.ToShortDateString();
             }
-            
-            //if dt is not empty, search by date, otherwise search by name
-            if (dt != "")
-            {
-                queryString = $"SELECT * FROM Customers_List WHERE Customer_DateOfBirth = '{dt}'";
-            }
-            else
-            {
-                queryString = $"SELECT * FROM Customers_List WHERE Customer_FirstName = '{searchString}' " +
-                $"OR Customer_LastName = '{searchString}'";
-            }
 
             Dictionary<string, string> info = new Dictionary<string, string>();
             info.Add("ID", "");
@@ -251,6 +265,99 @@ namespace USPS
             info.Add("state", "");
             info.Add("zip", "");
             info.Add("allergy", "");
+            info.Add("payID", "");
+            info.Add("cc", "");
+            info.Add("exp", "");
+            info.Add("doc", "");
+            info.Add("docFname", "");
+            info.Add("docLname", "");
+            info.Add("docPhone", "");
+            info.Add("docEmail", "");
+
+            SqlDataReader dataReader;
+
+            //if dt is not empty, search by date, otherwise search by name
+            SqlConnection cnn = new SqlConnection(connectionstring);
+            SqlCommand cmd = new SqlCommand();
+            cnn.Open();
+            if (dt != "")
+            {
+                cmd = new SqlCommand("SELECT CL.Customer_ID, Customer_FirstName, Customer_LastName, Customer_UserName, " +
+                    "Customer_DateOfBirth, Customer_Phone, Customer_Email, Customer_Address, " +
+                    "Customer_City, Customer_State, Customer_ZipCode, Customer_DrugAllergy, Customer_Payment_ID, " +
+                    "Customer_Credit_Number, Customer_Credit_ExpDate, Doctor_ID, Doctor_FirstName, " +
+                    "Doctor_LastName, Doctor_Phone, Doctor_Email, PI.Prescription_ID, Prescription_Name, " +
+                    "Prescription_Quantity, Prescription_Refill, PI.Prescription_Price, PO_ID, PO_Date, " +
+                    "PO_Total, PO_ShipDate FROM Customers_List AS CL " +
+                    "INNER JOIN Customers_Payment_Info AS CPI ON CL.Customer_ID = CPI.Customer_ID " +
+                    "INNER JOIN Doctor_List AS DL ON CPI.Customer_ID = DL.Customer_ID " +
+                    "INNER JOIN Prescription_Item AS PI ON DL.Customer_ID = PI.Customer_ID " +
+                    "INNER JOIN Purchase_Orders AS PO ON PI.Customer_ID = PO.Customer_ID " +
+                    "WHERE Customer_DateOfBirth = @dti", cnn);
+                cmd.Parameters.AddWithValue("@dti", dt);
+            }
+            else
+            {
+                cmd = new SqlCommand("SELECT CL.Customer_ID, Customer_FirstName, Customer_LastName, Customer_UserName, " +
+                    "Customer_DateOfBirth, Customer_Phone, Customer_Email, Customer_Address, " +
+                    "Customer_City, Customer_State, Customer_ZipCode, Customer_DrugAllergy, Customer_Payment_ID, " +
+                    "Customer_Credit_Number, Customer_Credit_ExpDate, Doctor_ID, Doctor_FirstName, " +
+                    "Doctor_LastName, Doctor_Phone, Doctor_Email, PI.Prescription_ID, Prescription_Name, " +
+                    "Prescription_Quantity, Prescription_Refill, PI.Prescription_Price, PO_ID, PO_Date, " +
+                    "PO_Total, PO_ShipDate FROM Customers_List AS CL " +
+                    "INNER JOIN Customers_Payment_Info AS CPI ON CL.Customer_ID = CPI.Customer_ID " +
+                    "INNER JOIN Doctor_List AS DL ON CPI.Customer_ID = DL.Customer_ID " +
+                    "INNER JOIN Prescription_Item AS PI ON DL.Customer_ID = PI.Customer_ID " +
+                    "INNER JOIN Purchase_Orders AS PO ON PI.Customer_ID = PO.Customer_ID " +
+                    "WHERE Customer_FirstName = @ss OR Customer_LastName = @ss", cnn);
+                cmd.Parameters.AddWithValue("@ss", searchString);            }
+            try
+            {
+                dataReader = cmd.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    try
+                    {
+                        info["ID"] = dataReader[0].ToString();
+                        info["fname"] = dataReader[1].ToString();
+                        info["lname"] = dataReader[2].ToString();
+                        info["dob"] = dataReader[4].ToString().Remove(10);
+                        info["phone"] = dataReader[5].ToString();
+                        info["email"] = dataReader[6].ToString();
+                        info["address"] = dataReader[7].ToString();
+                        info["city"] = dataReader[8].ToString();
+                        info["state"] = dataReader[9].ToString();
+                        info["zip"] = dataReader[10].ToString();
+                        info["allergy"] = dataReader[11].ToString();
+                        info["payID"] = dataReader[12].ToString();
+                        info["cc"] = dataReader[13].ToString();
+                        info["exp"] = dataReader[14].ToString().Remove(10);
+                        info["doc"] = dataReader[15].ToString();
+                        info["docFname"] = dataReader[16].ToString();
+                        info["docLname"] = dataReader[17].ToString();
+                        info["docPhone"] = dataReader[18].ToString();
+                        info["docEmail"] = dataReader[19].ToString();
+                    }
+                    catch (Exception ex)
+                    {
+                        Form1.mySystemMessage("Error with query.");
+                        Console.WriteLine(ex.Message);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Form1.mySystemMessage(ex.Message);
+            }
+            dbID = info["ID"];
+            cnn.Close();
+            scripts();
+            return info;
+        }
+        public List<string> scripts()
+        {
+            List<string> scriptsInfo = new List<string>(5);
+            string queryString = $"SELECT Prescription_Name FROM Prescription_Item WHERE Customer_ID = '{dbID}'";
 
             SqlDataReader dataReader;
 
@@ -265,17 +372,45 @@ namespace USPS
                 {
                     try
                     {
-                        info["ID"] = dataReader[0].ToString();
-                        info["fname"] = dataReader[1].ToString();
-                        info["lname"] = dataReader[2].ToString();
-                        info["dob"] = dataReader[5].ToString().Remove(10);
-                        info["phone"] = dataReader[6].ToString();
-                        info["email"] = dataReader[7].ToString();
-                        info["address"] = dataReader[8].ToString();
-                        info["city"] = dataReader[9].ToString();
-                        info["state"] = dataReader[10].ToString();
-                        info["zip"] = dataReader[11].ToString();
-                        info["allergy"] = dataReader[12].ToString();
+                        scriptsInfo.Add(dataReader[0].ToString());
+                    }
+                    catch(Exception ex)
+                    {
+                        Form1.mySystemMessage("Error with query.");
+                        Console.WriteLine(ex.Message);
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                Form1.mySystemMessage(ex.Message);
+            }
+            cnn.Close();
+            while (scriptsInfo.Count() < 5)
+            {
+                scriptsInfo.Add("");
+            }
+            return scriptsInfo;
+        }
+        public List<int> refills()
+        {
+            List<int> refillInfo = new List<int>(5);
+            string queryString = $"SELECT Prescription_Refill FROM Prescription_Item WHERE Customer_ID = '{dbID}'";
+
+            SqlDataReader dataReader;
+
+            SqlConnection cnn = new SqlConnection(connectionstring);
+            cnn.Open();
+
+            SqlCommand cmd = new SqlCommand(queryString, cnn);
+            try
+            {
+                dataReader = cmd.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    try
+                    {
+                        refillInfo.Add(Int32.Parse(dataReader[0].ToString()));
                     }
                     catch (Exception ex)
                     {
@@ -288,10 +423,50 @@ namespace USPS
             {
                 Form1.mySystemMessage(ex.Message);
             }
+            cnn.Close();
+            while (refillInfo.Count() < 5)
+            {
+                refillInfo.Add(0);
+            }
+            return refillInfo;
+        }
+        public List<string> prescribers()
+        {
+            List<string> prescribersInfo = new List<string>(5);
+            string queryString = $"SELECT Doctor_FirstName, Doctor_LastName FROM Doctor_List WHERE Customer_ID = '{dbID}'";
 
-            dbID = info["ID"];
+            SqlDataReader dataReader;
 
-            return info;
+            SqlConnection cnn = new SqlConnection(connectionstring);
+            cnn.Open();
+
+            SqlCommand cmd = new SqlCommand(queryString, cnn);
+            try
+            {
+                dataReader = cmd.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    try
+                    {
+                        prescribersInfo.Add(dataReader[0].ToString() + " " + dataReader[1].ToString());
+                    }
+                    catch (Exception ex)
+                    {
+                        Form1.mySystemMessage("Error with query.");
+                        Console.WriteLine(ex.Message);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Form1.mySystemMessage(ex.Message);
+            }
+            cnn.Close();
+            while (prescribersInfo.Count() < 5)
+            {
+                prescribersInfo.Add("");
+            }
+            return prescribersInfo;
         }
     }
 }

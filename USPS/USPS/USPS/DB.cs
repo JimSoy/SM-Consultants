@@ -85,8 +85,8 @@ namespace USPS
                 {
                     cmd = new SqlCommand("INSERT INTO Customers_List (Customer_FirstName, Customer_LastName, " +
                     $"Customer_DateOfBirth, Customer_Address, Customer_City, Customer_State, Customer_ZipCode, " +
-                    $"Customer_DrugAllergy, Customer_Phone, Customer_Email, Customer_UserName) VALUES (@fn, @ln, " +
-                    $"@db, @ad, @ci, @st, @zp, @al, @ph, @em, @id)", cnn);
+                    $"Customer_DrugAllergy, Customer_Phone, Customer_Email, Customer_UserName, Customer_Insurance) VALUES (@fn, @ln, " +
+                    $"@db, @ad, @ci, @st, @zp, @al, @ph, @em, @id, @in)", cnn);
 
                     cmd.Parameters.AddWithValue("@fn", info["fname"]);
                     cmd.Parameters.AddWithValue("@ln", info["lname"]);
@@ -99,6 +99,7 @@ namespace USPS
                     cmd.Parameters.AddWithValue("@ph", info["phone"]);
                     cmd.Parameters.AddWithValue("@em", info["email"]);
                     cmd.Parameters.AddWithValue("@id", userID);
+                    cmd.Parameters.AddWithValue("@in", info["insure"]);
 
                     cmd.ExecuteNonQuery();
                     Form1.newUserCheck = false;
@@ -113,8 +114,8 @@ namespace USPS
                 SqlCommand cmd = new SqlCommand("UPDATE Customers_List SET Customer_FirstName = @fn, " +
                                 $"Customer_LastName = @ln, Customer_DateOfBirth = @db, Customer_Address = @ad, " +
                                 $"Customer_City = @ci, Customer_State = @st, Customer_ZipCode = @zp, " +
-                                $"Customer_DrugAllergy = @al, Customer_Phone = @ph, Customer_Email = @em " +
-                                $"WHERE Customer_ID = @id", cnn);
+                                $"Customer_DrugAllergy = @al, Customer_Phone = @ph, Customer_Email = @em, " +
+                                $"Customer_Insurance = @in WHERE Customer_ID = @id", cnn);
 
                 cmd.Parameters.AddWithValue("@fn", info["fname"]);
                 cmd.Parameters.AddWithValue("@ln", info["lname"]);
@@ -126,6 +127,7 @@ namespace USPS
                 cmd.Parameters.AddWithValue("@al", info["allergy"]);
                 cmd.Parameters.AddWithValue("@ph", info["phone"]);
                 cmd.Parameters.AddWithValue("@em", info["email"]);
+                cmd.Parameters.AddWithValue("@in", info["insure"]);
                 cmd.Parameters.AddWithValue("@id", dbID);
 
                 using (cmd)
@@ -165,6 +167,7 @@ namespace USPS
             info.Add("docLname", "");
             info.Add("docPhone", "");
             info.Add("docEmail", "");
+            info.Add("insure", "");
 
             SqlDataReader dataReader;
 
@@ -176,7 +179,7 @@ namespace USPS
                 SqlCommand cmd = new SqlCommand("SELECT CL.Customer_ID, Customer_FirstName, Customer_LastName, Customer_UserName, " +
                     "Customer_DateOfBirth, Customer_Phone, Customer_Email, Customer_Address, " +
                     "Customer_City, Customer_State, Customer_ZipCode, Customer_DrugAllergy, Customer_Payment_ID, " +
-                    "Customer_Credit_Number, Customer_Credit_ExpDate, Doctor_ID, Doctor_FirstName, " +
+                    "Customer_Credit_Number, Customer_Credit_ExpDate, Customer_Insurance, Doctor_ID, Doctor_FirstName, " +
                     "Doctor_LastName, Doctor_Phone, Doctor_Email, PI.Prescription_ID, Prescription_Name, " +
                     "Prescription_Quantity, Prescription_Refill, PI.Prescription_Price, PO_ID, PO_Date, " +
                     "PO_Total, PO_ShipDate FROM Customers_List AS CL " +
@@ -207,11 +210,12 @@ namespace USPS
                             info["payID"] = dataReader[12].ToString();
                             info["cc"] = dataReader[13].ToString();
                             info["exp"] = dataReader[14].ToString().Remove(10);
-                            info["doc"] = dataReader[15].ToString();
-                            info["docFname"] = dataReader[16].ToString();
-                            info["docLname"] = dataReader[17].ToString();
-                            info["docPhone"] = dataReader[18].ToString();
-                            info["docEmail"] = dataReader[19].ToString();
+                            info["doc"] = dataReader[16].ToString();
+                            info["docFname"] = dataReader[17].ToString();
+                            info["docLname"] = dataReader[18].ToString();
+                            info["docPhone"] = dataReader[19].ToString();
+                            info["docEmail"] = dataReader[20].ToString();
+                            info["insure"] = dataReader[15].ToString();
                         }
                         catch (Exception ex)
                         {
@@ -272,6 +276,7 @@ namespace USPS
             info.Add("docLname", "");
             info.Add("docPhone", "");
             info.Add("docEmail", "");
+            info.Add("insure", "");
 
             SqlDataReader dataReader;
 
@@ -284,7 +289,7 @@ namespace USPS
                 cmd = new SqlCommand("SELECT CL.Customer_ID, Customer_FirstName, Customer_LastName, Customer_UserName, " +
                     "Customer_DateOfBirth, Customer_Phone, Customer_Email, Customer_Address, " +
                     "Customer_City, Customer_State, Customer_ZipCode, Customer_DrugAllergy, Customer_Payment_ID, " +
-                    "Customer_Credit_Number, Customer_Credit_ExpDate, Doctor_ID, Doctor_FirstName, " +
+                    "Customer_Credit_Number, Customer_Credit_ExpDate, Customer_Insurance, Doctor_ID, Doctor_FirstName, " +
                     "Doctor_LastName, Doctor_Phone, Doctor_Email, PI.Prescription_ID, Prescription_Name, " +
                     "Prescription_Quantity, Prescription_Refill, PI.Prescription_Price, PO_ID, PO_Date, " +
                     "PO_Total, PO_ShipDate FROM Customers_List AS CL " +
@@ -300,7 +305,7 @@ namespace USPS
                 cmd = new SqlCommand("SELECT CL.Customer_ID, Customer_FirstName, Customer_LastName, Customer_UserName, " +
                     "Customer_DateOfBirth, Customer_Phone, Customer_Email, Customer_Address, " +
                     "Customer_City, Customer_State, Customer_ZipCode, Customer_DrugAllergy, Customer_Payment_ID, " +
-                    "Customer_Credit_Number, Customer_Credit_ExpDate, Doctor_ID, Doctor_FirstName, " +
+                    "Customer_Credit_Number, Customer_Credit_ExpDate, Customer_Insurance, Doctor_ID, Doctor_FirstName, " +
                     "Doctor_LastName, Doctor_Phone, Doctor_Email, PI.Prescription_ID, Prescription_Name, " +
                     "Prescription_Quantity, Prescription_Refill, PI.Prescription_Price, PO_ID, PO_Date, " +
                     "PO_Total, PO_ShipDate FROM Customers_List AS CL " +
@@ -331,11 +336,12 @@ namespace USPS
                         info["payID"] = dataReader[12].ToString();
                         info["cc"] = dataReader[13].ToString();
                         info["exp"] = dataReader[14].ToString().Remove(10);
-                        info["doc"] = dataReader[15].ToString();
-                        info["docFname"] = dataReader[16].ToString();
-                        info["docLname"] = dataReader[17].ToString();
-                        info["docPhone"] = dataReader[18].ToString();
-                        info["docEmail"] = dataReader[19].ToString();
+                        info["doc"] = dataReader[16].ToString();
+                        info["docFname"] = dataReader[17].ToString();
+                        info["docLname"] = dataReader[18].ToString();
+                        info["docPhone"] = dataReader[19].ToString();
+                        info["docEmail"] = dataReader[20].ToString();
+                        info["insure"] = dataReader[15].ToString();
                     }
                     catch (Exception ex)
                     {
@@ -356,14 +362,14 @@ namespace USPS
         public List<string> scripts()
         {
             List<string> scriptsInfo = new List<string>(5);
-            string queryString = $"SELECT Prescription_Name FROM Prescription_Item WHERE Customer_ID = '{dbID}'";
-
             SqlDataReader dataReader;
 
             SqlConnection cnn = new SqlConnection(connectionstring);
             cnn.Open();
 
-            SqlCommand cmd = new SqlCommand(queryString, cnn);
+            SqlCommand cmd = new SqlCommand("SELECT Prescription_Name FROM Prescription_Item " +
+                "WHERE Customer_ID = @id", cnn);
+            cmd.Parameters.AddWithValue("@id", dbID);
             try
             {
                 dataReader = cmd.ExecuteReader();
@@ -394,14 +400,14 @@ namespace USPS
         public List<int> refills()
         {
             List<int> refillInfo = new List<int>(5);
-            string queryString = $"SELECT Prescription_Refill FROM Prescription_Item WHERE Customer_ID = '{dbID}'";
-
             SqlDataReader dataReader;
 
             SqlConnection cnn = new SqlConnection(connectionstring);
             cnn.Open();
 
-            SqlCommand cmd = new SqlCommand(queryString, cnn);
+            SqlCommand cmd = new SqlCommand("SELECT Prescription_Refill FROM Prescription_Item " +
+                "WHERE Customer_ID = @id", cnn);
+            cmd.Parameters.AddWithValue("@id", dbID);
             try
             {
                 dataReader = cmd.ExecuteReader();
@@ -432,14 +438,14 @@ namespace USPS
         public List<string> prescribers()
         {
             List<string> prescribersInfo = new List<string>(5);
-            string queryString = $"SELECT Doctor_FirstName, Doctor_LastName FROM Doctor_List WHERE Customer_ID = '{dbID}'";
-
             SqlDataReader dataReader;
 
             SqlConnection cnn = new SqlConnection(connectionstring);
             cnn.Open();
 
-            SqlCommand cmd = new SqlCommand(queryString, cnn);
+            SqlCommand cmd = new SqlCommand("SELECT Doctor_FirstName, Doctor_LastName FROM Doctor_List " +
+                "WHERE Customer_ID = @id", cnn);
+            cmd.Parameters.AddWithValue("@id", dbID);
             try
             {
                 dataReader = cmd.ExecuteReader();
@@ -466,6 +472,39 @@ namespace USPS
                 prescribersInfo.Add("");
             }
             return prescribersInfo;
+        }
+        public string recentOrder()
+        {
+            string recent = "";
+            SqlDataReader dataReader;
+
+            SqlConnection cnn = new SqlConnection(connectionstring);
+            cnn.Open();
+
+            SqlCommand cmd = new SqlCommand("SELECT TOP(1) PO_Date FROM Purchase_Orders WHERE Customer_ID = @id", cnn);
+            cmd.Parameters.AddWithValue("@id", dbID);
+            try
+            {
+                dataReader = cmd.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    try
+                    {
+                        recent = dataReader[0].ToString().Remove(10);
+                    }
+                    catch (Exception ex)
+                    {
+                        Form1.mySystemMessage("Error with query.");
+                        Console.WriteLine(ex.Message);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Form1.mySystemMessage(ex.Message);
+            }
+            cnn.Close();
+            return recent;
         }
     }
 }

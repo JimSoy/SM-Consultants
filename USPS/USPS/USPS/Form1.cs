@@ -125,6 +125,7 @@ namespace USPS
             List<string> scriptInfo = db.scripts();
             List<int> refillInfo = db.refills();
             List<string> prescribersInfo = db.prescribers();
+            string recent = db.recentOrder();
 
             if (info != null)
             {
@@ -140,6 +141,8 @@ namespace USPS
                 allergiesUser.Text = allergiesPharm.Text = allergiesAdmin.Text = info["allergy"];
                 ccUser.Text = ccPharm.Text = ccAdmin.Text = info["cc"];
                 expUser.Text = expPharm.Text = expAdmin.Text = info["exp"];
+                insuranceUser.Text = insurancePharm.Text = insuranceAdmin.Text = info["insure"];
+
                 drFname.Text = info["docFname"];
                 drLname.Text = info["docLname"];
                 drPhone.Text = info["docPhone"];
@@ -159,6 +162,7 @@ namespace USPS
                 prescriber3Admin.Text = prescriber3Pharm.Text = prescribersInfo[2];
                 prescriber4Admin.Text = prescriber4Pharm.Text = prescribersInfo[3];
                 prescriber5Admin.Text = prescriber5Pharm.Text = prescribersInfo[4];
+                shippedPharm.Text = shippedAdmin.Text = recent;
                 dbID = info["ID"];
             }
             if (!failed)
@@ -181,7 +185,7 @@ namespace USPS
             }
         }
         public void searchResults(Dictionary<string, string> info, List<string> scriptInfo, 
-            List<int> refillInfo, List<string> prescribersInfo)
+            List<int> refillInfo, List<string> prescribersInfo, string recent)
         {
             if (info != null)
             {
@@ -197,6 +201,7 @@ namespace USPS
                 allergiesUser.Text = allergiesPharm.Text = allergiesAdmin.Text = info["allergy"];
                 ccUser.Text = ccPharm.Text = ccAdmin.Text = info["cc"];
                 expUser.Text = expPharm.Text = expAdmin.Text = info["exp"];
+                insuranceUser.Text = insurancePharm.Text = insuranceAdmin.Text = info["insure"];
                 drFname.Text = info["docFname"];
                 drLname.Text = info["docLname"];
                 drPhone.Text = info["docPhone"];
@@ -216,6 +221,8 @@ namespace USPS
                 prescriber3Admin.Text = prescriber3Pharm.Text = prescribersInfo[2];
                 prescriber4Admin.Text = prescriber4Pharm.Text = prescribersInfo[3];
                 prescriber5Admin.Text = prescriber5Pharm.Text = prescribersInfo[4];
+                shippedPharm.Text = shippedAdmin.Text = recent;
+
                 dbID = info["ID"];
             }
         }
@@ -244,6 +251,8 @@ namespace USPS
                 info.Add("docLname", drLname.Text);
                 info.Add("docPhone", drPhone.Text);
                 info.Add("docEmail", drEmail.Text);
+                info.Add("insure", insuranceUser.Text);
+
 
                 db.infoUpdater(info);
             }
@@ -267,6 +276,7 @@ namespace USPS
                 info.Add("docLname", drLname.Text);
                 info.Add("docPhone", drPhone.Text);
                 info.Add("docEmail", drEmail.Text);
+                info.Add("insure", insurancePharm.Text);
 
                 db.infoUpdater(info);
             }
@@ -290,6 +300,7 @@ namespace USPS
                 info.Add("docLname", drLname.Text);
                 info.Add("docPhone", drPhone.Text);
                 info.Add("docEmail", drEmail.Text);
+                info.Add("insure", insuranceAdmin.Text);
 
                 db.infoUpdater(info);
             }
@@ -439,7 +450,8 @@ namespace USPS
                 List<string> scriptInfo = db.scripts();
                 List<int> refillInfo = db.refills();
                 List<string> prescribersInfo = db.prescribers(); 
-                searchResults(info, scriptInfo, refillInfo, prescribersInfo);
+                string recent = db.recentOrder();
+                searchResults(info, scriptInfo, refillInfo, prescribersInfo, recent);
                 e.Handled = true;
             }
         }
@@ -523,7 +535,8 @@ namespace USPS
                 List<string> scriptInfo = db.scripts();
                 List<int> refillInfo = db.refills();
                 List<string> prescriberInfo = db.prescribers();
-                searchResults(info, scriptInfo, refillInfo, prescriberInfo);
+                string recent = db.recentOrder();
+                searchResults(info, scriptInfo, refillInfo, prescriberInfo, recent);
                 e.Handled = true;
             }
         }

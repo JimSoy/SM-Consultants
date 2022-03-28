@@ -91,6 +91,10 @@ namespace USPS
 
             userPass = pass.Text;
         }
+        private void passPic_Click(object sender, EventArgs e)
+        {
+
+        }
         private void newUser_CheckedChanged(object sender, EventArgs e)
         {
             if (newUser.Checked == true)
@@ -118,6 +122,10 @@ namespace USPS
         {
             //populate user query data into dictionary, then use those keys to populate textboxes
             Dictionary<string, string> info = db.infoUpdateQuery();
+            List<string> scriptInfo = db.scripts();
+            List<int> refillInfo = db.refills();
+            List<string> prescribersInfo = db.prescribers();
+            string recent = db.recentOrder();
 
             if (info != null)
             {
@@ -131,6 +139,30 @@ namespace USPS
                 cityUser.Text = cityPharm.Text = cityAdmin.Text = info["city"];
                 zipUser.Text = zipPharm.Text =zipAdmin.Text = info["zip"];
                 allergiesUser.Text = allergiesPharm.Text = allergiesAdmin.Text = info["allergy"];
+                ccUser.Text = ccPharm.Text = ccAdmin.Text = info["cc"];
+                expUser.Text = expPharm.Text = expAdmin.Text = info["exp"];
+                insuranceUser.Text = insurancePharm.Text = insuranceAdmin.Text = info["insure"];
+
+                drFname.Text = info["docFname"];
+                drLname.Text = info["docLname"];
+                drPhone.Text = info["docPhone"];
+                drEmail.Text = info["docEmail"];
+                prescript1Refill.Text = prescript1Pharm.Text = prescript1Admin.Text = scriptInfo[0];
+                prescript2Refill.Text = prescript2Pharm.Text = prescript2Admin.Text = scriptInfo[1];
+                prescript3Refill.Text = prescript3Pharm.Text = prescript3Admin.Text = scriptInfo[2];
+                prescript4Refill.Text = prescript4Pharm.Text = prescript4Admin.Text = scriptInfo[3];
+                prescript5Refill.Text = prescript5Pharm.Text = prescript5Admin.Text = scriptInfo[4];
+                refill1Refill.Text = refill1Pharm.Text = refill1Admin.Text = refillInfo[0].ToString();
+                refill2Refill.Text = refill2Pharm.Text = refill2Admin.Text = refillInfo[1].ToString();
+                refill3Refill.Text = refill3Pharm.Text = refill3Admin.Text = refillInfo[2].ToString();
+                refill4Refill.Text = refill4Pharm.Text = refill4Admin.Text = refillInfo[3].ToString();
+                refill5Refill.Text = refill5Pharm.Text = refill5Admin.Text = refillInfo[4].ToString();
+                prescriber1Admin.Text = prescriber1Pharm.Text = prescribersInfo[0];
+                prescriber2Admin.Text = prescriber2Pharm.Text = prescribersInfo[1];
+                prescriber3Admin.Text = prescriber3Pharm.Text = prescribersInfo[2];
+                prescriber4Admin.Text = prescriber4Pharm.Text = prescribersInfo[3];
+                prescriber5Admin.Text = prescriber5Pharm.Text = prescribersInfo[4];
+                shippedPharm.Text = shippedAdmin.Text = recent;
                 dbID = info["ID"];
             }
             if (!failed)
@@ -140,7 +172,7 @@ namespace USPS
                     adminPanelSwitch = true;
                     formSwitch1();
                 }
-                else if (userID == "Pharmacy")
+                else if (userID == "Pharmacist")
                 {
                     pharmPanelSwitch = true;
                     formSwitch1();
@@ -152,7 +184,8 @@ namespace USPS
                 }
             }
         }
-        public void searchResults(Dictionary<string, string> info)
+        public void searchResults(Dictionary<string, string> info, List<string> scriptInfo, 
+            List<int> refillInfo, List<string> prescribersInfo, string recent)
         {
             if (info != null)
             {
@@ -166,6 +199,30 @@ namespace USPS
                 cityUser.Text = cityPharm.Text = cityAdmin.Text = info["city"];
                 zipUser.Text = zipPharm.Text = zipAdmin.Text = info["zip"];
                 allergiesUser.Text = allergiesPharm.Text = allergiesAdmin.Text = info["allergy"];
+                ccUser.Text = ccPharm.Text = ccAdmin.Text = info["cc"];
+                expUser.Text = expPharm.Text = expAdmin.Text = info["exp"];
+                insuranceUser.Text = insurancePharm.Text = insuranceAdmin.Text = info["insure"];
+                drFname.Text = info["docFname"];
+                drLname.Text = info["docLname"];
+                drPhone.Text = info["docPhone"];
+                drEmail.Text = info["docEmail"];
+                prescript1Refill.Text = prescript1Pharm.Text = prescript1Admin.Text = scriptInfo[0];
+                prescript2Refill.Text = prescript2Pharm.Text = prescript2Admin.Text = scriptInfo[1];
+                prescript3Refill.Text = prescript3Pharm.Text = prescript3Admin.Text = scriptInfo[2];
+                prescript4Refill.Text = prescript4Pharm.Text = prescript4Admin.Text = scriptInfo[3];
+                prescript5Refill.Text = prescript5Pharm.Text = prescript5Admin.Text = scriptInfo[4];
+                refill1Refill.Text = refill1Pharm.Text = refill1Admin.Text = refillInfo[0].ToString();
+                refill2Refill.Text = refill2Pharm.Text = refill2Admin.Text = refillInfo[1].ToString();
+                refill3Refill.Text = refill3Pharm.Text = refill3Admin.Text = refillInfo[2].ToString();
+                refill4Refill.Text = refill4Pharm.Text = refill4Admin.Text = refillInfo[3].ToString();
+                refill5Refill.Text = refill5Pharm.Text = refill5Admin.Text = refillInfo[4].ToString();
+                prescriber1Admin.Text = prescriber1Pharm.Text = prescribersInfo[0];
+                prescriber2Admin.Text = prescriber2Pharm.Text = prescribersInfo[1];
+                prescriber3Admin.Text = prescriber3Pharm.Text = prescribersInfo[2];
+                prescriber4Admin.Text = prescriber4Pharm.Text = prescribersInfo[3];
+                prescriber5Admin.Text = prescriber5Pharm.Text = prescribersInfo[4];
+                shippedPharm.Text = shippedAdmin.Text = recent;
+
                 dbID = info["ID"];
             }
         }
@@ -188,6 +245,14 @@ namespace USPS
                 info.Add("state", stateUser.Text);
                 info.Add("zip", zipUser.Text);
                 info.Add("allergy", allergiesUser.Text);
+                info.Add("cc", ccUser.Text);
+                info.Add("exp", expUser.Text);
+                info.Add("docFname", drFname.Text);
+                info.Add("docLname", drLname.Text);
+                info.Add("docPhone", drPhone.Text);
+                info.Add("docEmail", drEmail.Text);
+                info.Add("insure", insuranceUser.Text);
+
 
                 db.infoUpdater(info);
             }
@@ -205,6 +270,13 @@ namespace USPS
                 info.Add("state", statePharm.Text);
                 info.Add("zip", zipPharm.Text);
                 info.Add("allergy", allergiesPharm.Text);
+                info.Add("cc", ccPharm.Text);
+                info.Add("exp", expPharm.Text);
+                info.Add("docFname", drFname.Text);
+                info.Add("docLname", drLname.Text);
+                info.Add("docPhone", drPhone.Text);
+                info.Add("docEmail", drEmail.Text);
+                info.Add("insure", insurancePharm.Text);
 
                 db.infoUpdater(info);
             }
@@ -222,6 +294,13 @@ namespace USPS
                 info.Add("state", stateAdmin.Text);
                 info.Add("zip", zipAdmin.Text);
                 info.Add("allergy", allergiesAdmin.Text);
+                info.Add("cc", ccAdmin.Text);
+                info.Add("exp", expAdmin.Text);
+                info.Add("docFname", drFname.Text);
+                info.Add("docLname", drLname.Text);
+                info.Add("docPhone", drPhone.Text);
+                info.Add("docEmail", drEmail.Text);
+                info.Add("insure", insuranceAdmin.Text);
 
                 db.infoUpdater(info);
             }
@@ -368,7 +447,11 @@ namespace USPS
             {
                 //Do something
                 Dictionary<string, string> info = db.searchCustomers(searchPharm.Text);
-                searchResults(info);
+                List<string> scriptInfo = db.scripts();
+                List<int> refillInfo = db.refills();
+                List<string> prescribersInfo = db.prescribers(); 
+                string recent = db.recentOrder();
+                searchResults(info, scriptInfo, refillInfo, prescribersInfo, recent);
                 e.Handled = true;
             }
         }
@@ -449,7 +532,11 @@ namespace USPS
             {
                 //Do something
                 Dictionary<string, string> info = db.searchCustomers(searchAdmin.Text);
-                searchResults(info);
+                List<string> scriptInfo = db.scripts();
+                List<int> refillInfo = db.refills();
+                List<string> prescriberInfo = db.prescribers();
+                string recent = db.recentOrder();
+                searchResults(info, scriptInfo, refillInfo, prescriberInfo, recent);
                 e.Handled = true;
             }
         }
@@ -466,7 +553,24 @@ namespace USPS
             {
                 db.logOut();
                 formSwitch1();
+                if (refillPanel.Visible)
+                {
+                    refillPanel.Visible = false;
+                }
+                if (prescriberPanel.Visible)
+                {
+                    prescriberPanel.Visible = false;
+                }
             }
+        }
+        private void prescriberName_DoubleClick(object sender, EventArgs e)
+        {
+            prescriberPanel.Visible = true;
+            prescriberPanel.Location = new System.Drawing.Point(450, 29);
+        }
+        private void prescriberCloseClick(object sender, EventArgs e)
+        {
+            prescriberPanel.Visible = false;
         }
 
         //refil panel stuff
@@ -482,11 +586,54 @@ namespace USPS
         }
 
         //refill checkbox area -- customer
+        private void submitRefill_Click(object sender, EventArgs e)
+        {
+            string orders = "";
+
+            if ((checkBox1Refill.Checked) && (refill1Refill.Text != "0"))
+            {
+                orders += prescript1Refill.Text + "\n";
+            }
+            if ((checkBox2Refill.Checked) && (refill2Refill.Text != "0"))
+            {
+                orders += prescript2Refill.Text + "\n";
+            }
+            if ((checkBox3Refill.Checked) && (refill3Refill.Text != "0"))
+            {
+                orders += prescript3Refill.Text + "\n";
+            }
+            if ((checkBox4Refill.Checked) && (refill4Refill.Text != "0"))
+            {
+                orders += prescript4Refill.Text + "\n";
+            }
+            if ((checkBox5Refill.Checked) && (refill5Refill.Text != "0"))
+            {
+                orders += prescript5Refill.Text + "\n";
+            }
+            
+            string orderConf = $"Prescriptions:\n\n" + orders + "__________\n\n" + "Shipped to:\n\n" 
+                + fnameUser.Text + " " + lnameUser.Text +"\n" + streetUser.Text + "\n" + cityUser.Text 
+                + ", " + stateUser.Text + " " + zipUser.Text;
+
+            DialogResult dR = MessageBox.Show(orderConf, "Confirm your order", MessageBoxButtons.OKCancel);
+            if (dR == DialogResult.OK)
+            {
+                mySystemMessage("Your order has been placed!");
+            }
+        }
         private void checkBox1Refill_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox1Refill.Checked == true)
             {
-                submitRefill.Enabled = true;
+                if (refill1Refill.Text == "0")
+                {
+                    mySystemMessage($"You have no available refills of {prescript1Refill.Text}. " +
+                        $"Please unselect this item.");
+                }
+                else
+                {
+                    submitRefill.Enabled = true;
+                }
             }
             else if ((checkBox5Refill.Checked == true) || (checkBox4Refill.Checked == true) ||
                 (checkBox3Refill.Checked == true) || (checkBox2Refill.Checked == true) || (checkBox1Refill.Checked == true))
@@ -503,7 +650,15 @@ namespace USPS
         {
             if (checkBox2Refill.Checked == true)
             {
-                submitRefill.Enabled = true;
+                if (refill2Refill.Text == "0")
+                {
+                    mySystemMessage($"You have no available refills of {prescript2Refill.Text}. " +
+                        $"Please unselect this item.");
+                }
+                else
+                {
+                    submitRefill.Enabled = true;
+                }
             }
             else if ((checkBox5Refill.Checked == true) || (checkBox4Refill.Checked == true) ||
                 (checkBox3Refill.Checked == true) || (checkBox2Refill.Checked == true) || (checkBox1Refill.Checked == true))
@@ -520,7 +675,15 @@ namespace USPS
         {
             if (checkBox3Refill.Checked == true)
             {
-                submitRefill.Enabled = true;
+                if (refill3Refill.Text == "0")
+                {
+                    mySystemMessage($"You have no available refills of {prescript3Refill.Text}. " +
+                        $"Please unselect this item.");
+                }
+                else
+                {
+                    submitRefill.Enabled = true;
+                }
             }
             else if ((checkBox5Refill.Checked == true) || (checkBox4Refill.Checked == true) ||
                 (checkBox3Refill.Checked == true) || (checkBox2Refill.Checked == true) || (checkBox1Refill.Checked == true))
@@ -537,7 +700,15 @@ namespace USPS
         {
             if (checkBox4Refill.Checked == true)
             {
-                submitRefill.Enabled = true;
+                if (refill4Refill.Text == "0")
+                {
+                    mySystemMessage($"You have no available refills of {prescript4Refill.Text}. " +
+                        $"Please unselect this item.");
+                }
+                else
+                {
+                    submitRefill.Enabled = true;
+                }
             }
             else if ((checkBox5Refill.Checked == true) || (checkBox4Refill.Checked == true) ||
                 (checkBox3Refill.Checked == true) || (checkBox2Refill.Checked == true) || (checkBox1Refill.Checked == true))
@@ -554,7 +725,15 @@ namespace USPS
         {
             if (checkBox5Refill.Checked == true)
             {
-                submitRefill.Enabled = true;
+                if (refill5Refill.Text == "0")
+                {
+                    mySystemMessage($"You have no available refills of {prescript5Refill.Text}. " +
+                        $"Please unselect this item.");
+                }
+                else
+                {
+                    submitRefill.Enabled = true;
+                }
             }
             else if ((checkBox5Refill.Checked == true) || (checkBox4Refill.Checked == true) ||
                 (checkBox3Refill.Checked == true) || (checkBox2Refill.Checked == true) || (checkBox1Refill.Checked == true))
@@ -568,12 +747,55 @@ namespace USPS
         }
 
         //refil checkbox area -- pharm
+        private void submitPharm_Click(object sender, EventArgs e)
+        {
+            string orders = "";
+
+            if ((checkBox1Pharm.Checked) && (refill1Pharm.Text != "0"))
+            {
+                orders += prescript1Pharm.Text + "\n";
+            }
+            if ((checkBox2Pharm.Checked) && (refill2Pharm.Text != "0"))
+            {
+                orders += prescript2Pharm.Text + "\n";
+            }
+            if ((checkBox3Pharm.Checked) && (refill3Pharm.Text != "0"))
+            {
+                orders += prescript3Pharm.Text + "\n";
+            }
+            if ((checkBox4Pharm.Checked) && (refill4Pharm.Text != "0"))
+            {
+                orders += prescript4Pharm.Text + "\n";
+            }
+            if ((checkBox5Pharm.Checked) && (refill5Pharm.Text != "0"))
+            {
+                orders += prescript5Pharm.Text + "\n";
+            }
+
+            string orderConf = $"Prescriptions:\n\n" + orders + "__________\n\n" + "Shipped to:\n\n"
+                + fnameUser.Text + " " + lnameUser.Text + "\n" + streetUser.Text + "\n" + cityUser.Text
+                + ", " + stateUser.Text + " " + zipUser.Text;
+
+            DialogResult dR = MessageBox.Show(orderConf, "Confirm your order", MessageBoxButtons.OKCancel);
+            if (dR == DialogResult.OK)
+            {
+                mySystemMessage("Your order has been placed!");
+            }
+        }
 
         private void checkBox1Pharm_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox1Pharm.Checked == true)
             {
-                SubmitOrderPharm.Enabled = true;
+                if (refill1Pharm.Text == "0")
+                {
+                    mySystemMessage($"You have no available refills of {prescript1Pharm.Text}. " +
+                        $"Please unselect this item.");
+                }
+                else
+                {
+                    SubmitOrderPharm.Enabled = true;
+                }
             }
             else if ((checkBox1Pharm.Checked == true) || (checkBox2Pharm.Checked == true) ||
                 (checkBox3Pharm.Checked == true) || (checkBox4Pharm.Checked == true) || (checkBox5Pharm.Checked == true))
@@ -589,7 +811,15 @@ namespace USPS
         {
             if (checkBox2Pharm.Checked == true)
             {
-                SubmitOrderPharm.Enabled = true;
+                if (refill2Pharm.Text == "0")
+                {
+                    mySystemMessage($"You have no available refills of {prescript2Pharm.Text}. " +
+                        $"Please unselect this item.");
+                }
+                else
+                {
+                    SubmitOrderPharm.Enabled = true;
+                }
             }
             else if ((checkBox1Pharm.Checked == true) || (checkBox2Pharm.Checked == true) ||
                 (checkBox3Pharm.Checked == true) || (checkBox4Pharm.Checked == true) || (checkBox5Pharm.Checked == true))
@@ -605,7 +835,15 @@ namespace USPS
         {
             if (checkBox3Pharm.Checked == true)
             {
-                SubmitOrderPharm.Enabled = true;
+                if (refill3Pharm.Text == "0")
+                {
+                    mySystemMessage($"You have no available refills of {prescript3Pharm.Text}. " +
+                        $"Please unselect this item.");
+                }
+                else
+                {
+                    SubmitOrderPharm.Enabled = true;
+                }
             }
             else if ((checkBox1Pharm.Checked == true) || (checkBox2Pharm.Checked == true) ||
                 (checkBox3Pharm.Checked == true) || (checkBox4Pharm.Checked == true) || (checkBox5Pharm.Checked == true))
@@ -621,7 +859,15 @@ namespace USPS
         {
             if (checkBox4Pharm.Checked == true)
             {
-                SubmitOrderPharm.Enabled = true;
+                if (refill4Pharm.Text == "0")
+                {
+                    mySystemMessage($"You have no available refills of {prescript4Pharm.Text}. " +
+                        $"Please unselect this item.");
+                }
+                else
+                {
+                    SubmitOrderPharm.Enabled = true;
+                }
             }
             else if ((checkBox1Pharm.Checked == true) || (checkBox2Pharm.Checked == true) ||
                 (checkBox3Pharm.Checked == true) || (checkBox4Pharm.Checked == true) || (checkBox5Pharm.Checked == true))
@@ -637,7 +883,15 @@ namespace USPS
         {
             if (checkBox5Pharm.Checked == true)
             {
-                SubmitOrderPharm.Enabled = true;
+                if (refill5Pharm.Text == "0")
+                {
+                    mySystemMessage($"You have no available refills of {prescript5Pharm.Text}. " +
+                        $"Please unselect this item.");
+                }
+                else
+                {
+                    SubmitOrderPharm.Enabled = true;
+                }
             }
             else if ((checkBox1Pharm.Checked == true) || (checkBox2Pharm.Checked == true) ||
                 (checkBox3Pharm.Checked == true) || (checkBox4Pharm.Checked == true) || (checkBox5Pharm.Checked == true))
@@ -1774,11 +2028,6 @@ namespace USPS
 
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
         private void label12_Click(object sender, EventArgs e)
         {
 
@@ -1874,11 +2123,6 @@ namespace USPS
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void panel4_Paint(object sender, PaintEventArgs e)
         {
 
@@ -1940,6 +2184,11 @@ namespace USPS
         }
 
         private void label25_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged_2(object sender, EventArgs e)
         {
 
         }

@@ -590,23 +590,23 @@ namespace USPS
         {
             string orders = "";
 
-            if (checkBox1Refill.Checked)
+            if ((checkBox1Refill.Checked) && (refill1Refill.Text != "0"))
             {
                 orders += prescript1Refill.Text + "\n";
             }
-            if (checkBox2Refill.Checked)
+            if ((checkBox2Refill.Checked) && (refill2Refill.Text != "0"))
             {
                 orders += prescript2Refill.Text + "\n";
             }
-            if (checkBox3Refill.Checked)
+            if ((checkBox3Refill.Checked) && (refill3Refill.Text != "0"))
             {
                 orders += prescript3Refill.Text + "\n";
             }
-            if (checkBox4Refill.Checked)
+            if ((checkBox4Refill.Checked) && (refill4Refill.Text != "0"))
             {
                 orders += prescript4Refill.Text + "\n";
             }
-            if (checkBox5Refill.Checked)
+            if ((checkBox5Refill.Checked) && (refill5Refill.Text != "0"))
             {
                 orders += prescript5Refill.Text + "\n";
             }
@@ -625,7 +625,15 @@ namespace USPS
         {
             if (checkBox1Refill.Checked == true)
             {
-                submitRefill.Enabled = true;
+                if (refill1Refill.Text == "0")
+                {
+                    mySystemMessage($"You have no available refills of {prescript1Refill.Text}. " +
+                        $"Please unselect this item.");
+                }
+                else
+                {
+                    submitRefill.Enabled = true;
+                }
             }
             else if ((checkBox5Refill.Checked == true) || (checkBox4Refill.Checked == true) ||
                 (checkBox3Refill.Checked == true) || (checkBox2Refill.Checked == true) || (checkBox1Refill.Checked == true))
@@ -642,7 +650,15 @@ namespace USPS
         {
             if (checkBox2Refill.Checked == true)
             {
-                submitRefill.Enabled = true;
+                if (refill2Refill.Text == "0")
+                {
+                    mySystemMessage($"You have no available refills of {prescript2Refill.Text}. " +
+                        $"Please unselect this item.");
+                }
+                else
+                {
+                    submitRefill.Enabled = true;
+                }
             }
             else if ((checkBox5Refill.Checked == true) || (checkBox4Refill.Checked == true) ||
                 (checkBox3Refill.Checked == true) || (checkBox2Refill.Checked == true) || (checkBox1Refill.Checked == true))
@@ -659,7 +675,15 @@ namespace USPS
         {
             if (checkBox3Refill.Checked == true)
             {
-                submitRefill.Enabled = true;
+                if (refill3Refill.Text == "0")
+                {
+                    mySystemMessage($"You have no available refills of {prescript3Refill.Text}. " +
+                        $"Please unselect this item.");
+                }
+                else
+                {
+                    submitRefill.Enabled = true;
+                }
             }
             else if ((checkBox5Refill.Checked == true) || (checkBox4Refill.Checked == true) ||
                 (checkBox3Refill.Checked == true) || (checkBox2Refill.Checked == true) || (checkBox1Refill.Checked == true))
@@ -676,7 +700,15 @@ namespace USPS
         {
             if (checkBox4Refill.Checked == true)
             {
-                submitRefill.Enabled = true;
+                if (refill4Refill.Text == "0")
+                {
+                    mySystemMessage($"You have no available refills of {prescript4Refill.Text}. " +
+                        $"Please unselect this item.");
+                }
+                else
+                {
+                    submitRefill.Enabled = true;
+                }
             }
             else if ((checkBox5Refill.Checked == true) || (checkBox4Refill.Checked == true) ||
                 (checkBox3Refill.Checked == true) || (checkBox2Refill.Checked == true) || (checkBox1Refill.Checked == true))
@@ -693,7 +725,15 @@ namespace USPS
         {
             if (checkBox5Refill.Checked == true)
             {
-                submitRefill.Enabled = true;
+                if (refill5Refill.Text == "0")
+                {
+                    mySystemMessage($"You have no available refills of {prescript5Refill.Text}. " +
+                        $"Please unselect this item.");
+                }
+                else
+                {
+                    submitRefill.Enabled = true;
+                }
             }
             else if ((checkBox5Refill.Checked == true) || (checkBox4Refill.Checked == true) ||
                 (checkBox3Refill.Checked == true) || (checkBox2Refill.Checked == true) || (checkBox1Refill.Checked == true))
@@ -711,23 +751,23 @@ namespace USPS
         {
             string orders = "";
 
-            if (checkBox1Pharm.Checked)
+            if ((checkBox1Pharm.Checked) && (refill1Pharm.Text != "0"))
             {
                 orders += prescript1Pharm.Text + "\n";
             }
-            if (checkBox2Pharm.Checked)
+            if ((checkBox2Pharm.Checked) && (refill2Pharm.Text != "0"))
             {
                 orders += prescript2Pharm.Text + "\n";
             }
-            if (checkBox3Pharm.Checked)
+            if ((checkBox3Pharm.Checked) && (refill3Pharm.Text != "0"))
             {
                 orders += prescript3Pharm.Text + "\n";
             }
-            if (checkBox4Pharm.Checked)
+            if ((checkBox4Pharm.Checked) && (refill4Pharm.Text != "0"))
             {
                 orders += prescript4Pharm.Text + "\n";
             }
-            if (checkBox5Pharm.Checked)
+            if ((checkBox5Pharm.Checked) && (refill5Pharm.Text != "0"))
             {
                 orders += prescript5Pharm.Text + "\n";
             }
@@ -747,7 +787,15 @@ namespace USPS
         {
             if (checkBox1Pharm.Checked == true)
             {
-                SubmitOrderPharm.Enabled = true;
+                if (refill1Pharm.Text == "0")
+                {
+                    mySystemMessage($"You have no available refills of {prescript1Pharm.Text}. " +
+                        $"Please unselect this item.");
+                }
+                else
+                {
+                    SubmitOrderPharm.Enabled = true;
+                }
             }
             else if ((checkBox1Pharm.Checked == true) || (checkBox2Pharm.Checked == true) ||
                 (checkBox3Pharm.Checked == true) || (checkBox4Pharm.Checked == true) || (checkBox5Pharm.Checked == true))
@@ -763,7 +811,15 @@ namespace USPS
         {
             if (checkBox2Pharm.Checked == true)
             {
-                SubmitOrderPharm.Enabled = true;
+                if (refill2Pharm.Text == "0")
+                {
+                    mySystemMessage($"You have no available refills of {prescript2Pharm.Text}. " +
+                        $"Please unselect this item.");
+                }
+                else
+                {
+                    SubmitOrderPharm.Enabled = true;
+                }
             }
             else if ((checkBox1Pharm.Checked == true) || (checkBox2Pharm.Checked == true) ||
                 (checkBox3Pharm.Checked == true) || (checkBox4Pharm.Checked == true) || (checkBox5Pharm.Checked == true))
@@ -779,7 +835,15 @@ namespace USPS
         {
             if (checkBox3Pharm.Checked == true)
             {
-                SubmitOrderPharm.Enabled = true;
+                if (refill3Pharm.Text == "0")
+                {
+                    mySystemMessage($"You have no available refills of {prescript3Pharm.Text}. " +
+                        $"Please unselect this item.");
+                }
+                else
+                {
+                    SubmitOrderPharm.Enabled = true;
+                }
             }
             else if ((checkBox1Pharm.Checked == true) || (checkBox2Pharm.Checked == true) ||
                 (checkBox3Pharm.Checked == true) || (checkBox4Pharm.Checked == true) || (checkBox5Pharm.Checked == true))
@@ -795,7 +859,15 @@ namespace USPS
         {
             if (checkBox4Pharm.Checked == true)
             {
-                SubmitOrderPharm.Enabled = true;
+                if (refill4Pharm.Text == "0")
+                {
+                    mySystemMessage($"You have no available refills of {prescript4Pharm.Text}. " +
+                        $"Please unselect this item.");
+                }
+                else
+                {
+                    SubmitOrderPharm.Enabled = true;
+                }
             }
             else if ((checkBox1Pharm.Checked == true) || (checkBox2Pharm.Checked == true) ||
                 (checkBox3Pharm.Checked == true) || (checkBox4Pharm.Checked == true) || (checkBox5Pharm.Checked == true))
@@ -811,7 +883,15 @@ namespace USPS
         {
             if (checkBox5Pharm.Checked == true)
             {
-                SubmitOrderPharm.Enabled = true;
+                if (refill5Pharm.Text == "0")
+                {
+                    mySystemMessage($"You have no available refills of {prescript5Pharm.Text}. " +
+                        $"Please unselect this item.");
+                }
+                else
+                {
+                    SubmitOrderPharm.Enabled = true;
+                }
             }
             else if ((checkBox1Pharm.Checked == true) || (checkBox2Pharm.Checked == true) ||
                 (checkBox3Pharm.Checked == true) || (checkBox4Pharm.Checked == true) || (checkBox5Pharm.Checked == true))

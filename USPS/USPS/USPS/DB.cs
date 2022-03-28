@@ -199,7 +199,14 @@ namespace USPS
                             info["ID"] = dataReader[0].ToString();
                             info["fname"] = dataReader[1].ToString();
                             info["lname"] = dataReader[2].ToString();
-                            info["dob"] = dataReader[4].ToString().Remove(10);
+                            if (dataReader[4].ToString().Length > 20)
+                            {
+                                info["dob"] = dataReader[4].ToString().Remove(10);
+                            }
+                            else
+                            {
+                                info["dob"] = dataReader[4].ToString().Remove(9);
+                            }
                             info["phone"] = dataReader[5].ToString();
                             info["email"] = dataReader[6].ToString();
                             info["address"] = dataReader[7].ToString();
@@ -209,7 +216,14 @@ namespace USPS
                             info["allergy"] = dataReader[11].ToString();
                             info["payID"] = dataReader[12].ToString();
                             info["cc"] = dataReader[13].ToString();
-                            info["exp"] = dataReader[14].ToString().Remove(10);
+                            if (dataReader[14].ToString().Length > 20)
+                            {
+                                info["exp"] = dataReader[14].ToString().Remove(10);
+                            }
+                            else
+                            {
+                                info["exp"] = dataReader[14].ToString().Remove(9);
+                            }
                             info["doc"] = dataReader[16].ToString();
                             info["docFname"] = dataReader[17].ToString();
                             info["docLname"] = dataReader[18].ToString();
@@ -325,7 +339,14 @@ namespace USPS
                         info["ID"] = dataReader[0].ToString();
                         info["fname"] = dataReader[1].ToString();
                         info["lname"] = dataReader[2].ToString();
-                        info["dob"] = dataReader[4].ToString().Remove(10);
+                        if (dataReader[4].ToString().Length > 20)
+                        {
+                            info["dob"] = dataReader[4].ToString().Remove(10);
+                        }
+                        else
+                        {
+                            info["dob"] = dataReader[4].ToString().Remove(9);
+                        }
                         info["phone"] = dataReader[5].ToString();
                         info["email"] = dataReader[6].ToString();
                         info["address"] = dataReader[7].ToString();
@@ -335,7 +356,14 @@ namespace USPS
                         info["allergy"] = dataReader[11].ToString();
                         info["payID"] = dataReader[12].ToString();
                         info["cc"] = dataReader[13].ToString();
-                        info["exp"] = dataReader[14].ToString().Remove(10);
+                        if (dataReader[14].ToString().Length > 20)
+                        {
+                            info["exp"] = dataReader[14].ToString().Remove(10);
+                        }
+                        else
+                        {
+                            info["exp"] = dataReader[14].ToString().Remove(9);
+                        }
                         info["doc"] = dataReader[16].ToString();
                         info["docFname"] = dataReader[17].ToString();
                         info["docLname"] = dataReader[18].ToString();
